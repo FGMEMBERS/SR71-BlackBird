@@ -14,7 +14,7 @@
 		<type>noshadow</type>
 		<object-name>Temoin</object-name>
 	</animation>
-
+<!--
 	<model>
 		<name>Bezel</name>
 		<path>Aircraft/F-8E/Instruments/Temoin-BasePt.xml</path>
@@ -25,7 +25,7 @@
 			<pitch-deg>0</pitch-deg>
 		</offsets>
 	</model>
-
+-->
 
 	<animation>
 		<type>select</type>

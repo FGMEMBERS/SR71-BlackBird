@@ -13,7 +13,7 @@
 		<type>noshadow</type>
 		<object-name>AI</object-name>
 	</animation>
-
+<!--
 	<model>
 		<name>Bezel</name>
 		<path>Aircraft/F-8E/Instruments/Bezel_pt-f8e.xml</path>
@@ -24,7 +24,7 @@
 			<pitch-deg>0</pitch-deg>
 		</offsets>
 	</model>
-
+-->
 	<animation include="Instrument-Light4.xml">
 		<object-name>Couronne</object-name>
 	</animation>
