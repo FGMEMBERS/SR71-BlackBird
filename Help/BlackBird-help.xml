@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!--
+    Usable with FlightGear
+    Property of Gerard Robin
+    Copyright License:  GPL
+-->
+<PropertyList>
+    <help>
+        <title>SR71-BackBird</title>
+        <key>
+                <name>d</name>
+                <desc>Toggle canopy</desc>
+        </key>
+
+        <!--<key>
+                <name>Space </name>
+                <desc>Start the Engine</desc>
+        </key>
+
+        <key>
+                <name>$</name>
+                <desc>Turbines   CutOFF </desc>
+        </key>-->
+
+        <!--<line>========Start and Stop Routine=========</line>
+        <line>To start the engines</line>
+        <line>increase magneto switch  and electric master switch "on" ( key  name "}")</line>
+        <line>start engines ( key   "space" )</line>
+        <line>cutoff turbojets engines  "off" (key name"%" toggle key)</line>
+        <line >wait for the EP Ratio needle close to 1.1</line>
+        <line>then take off</line>
+        <line></line>-->
+        <!--<line>To take off</line>
+
+        <line></line>
+        <line>To stop the engines</line>
+        <line>cutoff turbojets engines  "on" (key name"%" toggle key)</line>
+        <line>decrease magneto switch  and electric master switch "off" ( key  name "{")</line>
+        <line></line>
+        <line></line>
+        <line></line>-->
+
+    </help>
+</PropertyList>

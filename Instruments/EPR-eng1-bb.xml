@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+
+<!--
+    Usable with FlightGear
+    Property of Gerard Robin
+    Copyright License:  GPL
+-->
+
+<PropertyList>
+
+ <path>Models/epr-bb.ac</path>
+ <texture-path>Models/Textures</texture-path>
+
+ 	<animation>
+		<type>noshadow</type>
+		<object-name>EPR</object-name>
+	</animation>
+
+
+
+
+        <!--<model>
+                <name>Bouton</name>
+                <path>Aircraft/F-8E/Instruments/Bouton_pt-f8e.xml</path>
+                <offsets>
+                        <x-m>0.0161728</x-m>
+                        <y-m>-0.0295</y-m>
+                        <z-m>-0.0295</z-m>
+                        <pitch-deg>0</pitch-deg>
+                </offsets>
+        </model>-->
+
+        <animation include="Instrument-Light4.xml">
+                <object-name>Aiguille</object-name>
+                <object-name>Index-n-xx</object-name>
+                <object-name>Index-x-nx</object-name>
+                <object-name>Index-x-xn</object-name>
+                <object-name>Index</object-name>
+        </animation>
+
+        <animation include="Instrument-Light3.xml">
+                <object-name>Cadran</object-name>
+        </animation>
+
+        <animation>
+                <type>rotate</type>
+                <object-name>Aiguille</object-name>
+                <property>engines/engine[1]/epr</property>
+                <interpolation>
+                        <entry>
+                                <ind>1</ind>
+                                <dep>0</dep>
+                        </entry>
+                        <entry>
+                                <ind>1.066</ind>  <!--1.1-->
+                                <dep>50</dep>
+                        </entry>
+                        <entry>
+                                <ind>1.132</ind>  <!--1.2-->
+                                <dep>90</dep>
+                        </entry>
+                        <entry>
+                                <ind>1.33</ind>   <!--1.5-->
+                                <dep>120</dep>
+                        </entry>
+                        <entry>
+                                <ind>1.66</ind>  <!-- 2-->
+                                <dep>200</dep>
+                        </entry>
+                        <entry>
+                                <ind>1.99</ind>  <!-- 2.5-->
+                                <dep>280</dep>
+                        </entry>
+                        <entry>
+                                <ind>2.32</ind>  <!-- 3.0-->
+                                <dep>360</dep>
+                        </entry>
+                </interpolation>
+                <axis>
+                        <x>-1</x>
+                        <y>0</y>
+                        <z>0</z>
+                </axis>
+        </animation>
+
+</PropertyList>

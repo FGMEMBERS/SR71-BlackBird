@@ -1,0 +1,264 @@
+<?xml version="1.0"?>
+
+<!--
+    Usable with FlightGear
+    Property of Gerard Robin
+    Copyright License:  GPL
+-->
+<PropertyList>
+
+ <path>Models/asi-bb.ac</path>
+ <texture-path>Models/Textures</texture-path>
+
+    <animation>
+            <type>noshadow</type>
+            <object-name>ASI</object-name>
+    </animation>
+
+    <animation>
+            <name>Alpha Order Group</name>
+            <object-name>Aiguille</object-name>
+            <object-name>Mach</object-name>
+            <object-name>Knot-Ext</object-name>
+            <object-name>Knot-Int</object-name>
+    </animation>
+
+
+
+    <!--<model>
+            <name>Bouton</name>
+            <path>Aircraft/F-8E/Instruments/Bouton-f8e.xml</path>
+            <offsets>
+                    <x-m>0.0206361</x-m>
+                    <y-m>-0.039</y-m>
+                    <z-m>-0.039</z-m>
+                    <pitch-deg>0</pitch-deg>
+            </offsets>
+    </model>-->
+
+    <animation include="Instrument-Light4.xml">
+            <object-name>Aiguille</object-name>
+            <object-name>Index</object-name>
+    </animation>
+
+
+
+    <animation include="Instrument-Light3.xml">
+            <object-name>Mach</object-name>
+            <object-name>Knot-Ext</object-name>
+            <object-name>Knot-Int</object-name>
+    </animation>
+
+    <animation>
+            <type>rotate</type>
+            <object-name>Index</object-name>
+            <property>/instrumentation/airspeed-indicator/landing-speed</property>
+            <interpolation>
+                    <entry>
+                            <ind>0</ind>
+                            <dep>0</dep>
+                    </entry>
+                    <entry>
+                            <ind>80</ind>
+                            <dep>37</dep>
+                    </entry>
+                    <entry>
+                            <ind>100</ind>   <!--45 deg = 50-->
+                            <dep>45</dep>
+                    </entry>
+                    <entry>
+                            <ind>150</ind>
+                            <dep>90</dep>
+                    </entry>
+                    <entry>
+                            <ind>200</ind>
+                            <dep>135</dep>
+                    </entry>
+            </interpolation>
+            <axis>
+                    <x>-1</x>
+                    <y>0</y>
+                    <z>0</z>
+            </axis>
+    </animation>
+
+
+
+
+
+<!-- ***********************************KNOTS Indicator***************************************-->
+    <animation>
+            <type>rotate</type>
+            <object-name>Aiguille</object-name>
+            <object-name>Knot-Masque</object-name>
+            <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
+            <interpolation>
+                    <entry>
+                            <ind>0</ind>
+                            <dep>0</dep>
+                    </entry>
+                    <entry>
+                            <ind>80</ind>  <!--45 deg = 50-->
+                            <dep>37</dep>
+                    </entry>
+                    <entry>
+                            <ind>100</ind>
+                            <dep>45</dep>
+                    </entry>
+                    <entry>
+                            <ind>150</ind>
+                            <dep>90</dep>
+                    </entry>
+                    <entry>
+                            <ind>200</ind>     <!--32 deg = 100-->
+                            <dep>135</dep>
+                    </entry>
+                    <entry>
+                            <ind>300</ind>
+                            <dep>167</dep>
+                    </entry>
+                    <entry>
+                            <ind>400</ind>
+                            <dep>199</dep>
+                    </entry>
+                    <entry>
+                            <ind>800</ind>
+                            <dep>327</dep>
+                    </entry>
+
+
+            </interpolation>
+            <axis>
+                    <x>-1</x>
+                    <y>0</y>
+                    <z>0</z>
+            </axis>
+    </animation>
+
+
+
+
+
+
+    <!--******************MACH Indicator******************************************************-->
+    <!-- Must follow the needle -->
+    <animation>
+            <type>rotate</type>
+            <object-name>Mach</object-name>
+            <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
+            <interpolation>
+                    <entry>
+                            <ind>0</ind>
+                            <dep>0</dep>
+                    </entry>
+                    <entry>
+                            <ind>300</ind>
+                            <dep>0</dep>
+                    </entry>
+                    <entry>
+                            <ind>800</ind>
+                            <dep>160</dep>
+                    </entry>
+
+                    <entry>
+                            <ind>975</ind>
+                            <dep>160</dep>
+                    </entry>
+            </interpolation>
+            <axis>
+                    <x>-1</x>
+                    <y>0</y>
+                    <z>0</z>
+            </axis>
+    </animation>
+
+        <!-- Right Mach Value according to the needle -->
+    <animation>
+            <!--<condition>
+                    <greater-than>
+                            <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
+                            <value>300</value>
+                    </greater-than>
+            </condition>-->
+            <type>rotate</type>
+            <object-name>Mach</object-name>
+            <property>/velocities/mach</property>
+            <interpolation>
+                    <entry>
+                            <ind>0</ind>
+                            <dep>0</dep>
+                    </entry>
+                    <entry>
+                            <ind>0.4</ind>  <!--25 deg = 0.1-->
+                            <dep>0</dep>
+                    </entry>
+                    <entry>
+                            <ind>0.7</ind> <!--22 deg = 0.1-->
+                            <dep>75</dep>
+                    </entry>
+                    <entry>
+                            <ind>0.8</ind> <!--18 deg =0.1-->
+                            <dep>97</dep>
+                    </entry>
+                    <entry>
+                            <ind>1</ind>   <!--12 deg = 0.1-->
+                            <dep>133</dep>
+                    </entry>
+                    <entry>
+                            <ind>1.2</ind>  <!--8 deg = 0.1-->
+                            <dep>157</dep>
+                    </entry>
+                    <entry>
+                            <ind>1.4</ind> <!--8 deg =0.1-->
+                            <dep>173</dep>
+                    </entry>
+                    <entry>
+                            <ind>2.4</ind> <!--8 deg= 0.1-->
+                            <dep>253</dep>
+                    </entry>
+                    <entry>
+                            <ind>2.5</ind>
+                            <dep>261</dep>
+                    </entry>
+                    <entry>
+                            <ind>2.6</ind>
+                            <dep>269</dep>
+                    </entry>
+                    <entry>
+                            <ind>3.6</ind>
+                            <dep>349</dep>
+                    </entry>
+                    <entry>
+                            <ind>3.7</ind>
+                            <dep>357</dep>
+                    </entry>
+
+            </interpolation>
+            <axis>
+                    <x>1</x>
+                    <y>0</y>
+                    <z>0</z>
+            </axis>
+    </animation>
+
+
+    <!--<animation>
+            <type>rotate</type>
+            <object-name>Bouton</object-name>
+            <property>/instrumentation/airspeed-indicator/landing-speed</property>
+            <factor>50</factor>
+            <center>
+                    <x-m>0</x-m>
+                    <y-m>-0.039</y-m>
+                    <z-m>-0.039</z-m>
+            </center>
+            <axis>
+                    <x>-1</x>
+                    <y>0</y>
+                    <z>0</z>
+            </axis>
+    </animation>-->
+
+
+
+</PropertyList>

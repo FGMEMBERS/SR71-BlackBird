@@ -1,0 +1,131 @@
+<?xml version="1.0"?>
+
+<!--
+    Usable with FlightGear
+    Property of Gerard Robin
+    Copyright License:  GPL
+-->
+<PropertyList>
+
+	<path>Models/ai-bb.ac</path>
+	<texture-path>Models/Textures</texture-path>
+	<animation>
+		<type>noshadow</type>
+		<object-name>AI-f8e</object-name>
+	</animation>
+
+	<animation include="Instrument-Light3.xml">
+		<object-name>noshadow.AICouronne</object-name>
+	</animation>
+
+	<animation include="Instrument-Light2.xml">
+		<object-name>noshadow.AIMasque</object-name>
+	</animation>
+
+	<animation include="Instrument-Light2.xml">
+		<object-name>Bezel</object-name>
+	</animation>
+
+	<animation include="Instrument-Light2.xml">
+		<object-name>noshadow.AISlip</object-name>
+	</animation>
+
+	<animation include="Instrument-Light1.xml">
+		<object-name>noshadow.AISphere</object-name>
+	</animation>
+
+	<animation include="Instrument-Light4.xml">
+		<object-name>noshadow.AISlip-I</object-name>
+		<object-name>noshadow.AIAvion</object-name>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>noshadow.AISphere</object-name>
+		<property>/orientation/roll-deg</property>
+		<center>
+			<x-m>0</x-m>
+			<y-m>0.0</y-m>
+			<z-m>0.0</z-m>
+		</center>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>noshadow.AISphere</object-name>
+		<property>/orientation/pitch-deg</property>
+		<center>
+			<x-m>-0.00237479</x-m>
+			<y-m>0.0</y-m>
+			<z-m>0.0</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>noshadow.AIMasque</object-name>
+		<property>/orientation/roll-deg</property>
+		<center>
+			<x-m>-0.0</x-m>
+			<y-m>0.0</y-m>
+			<z-m>0.0</z-m>
+		</center>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+			</axis>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>noshadow.AISlip</object-name>
+		<property>/instrumentation/slip-skid-ball/indicated-slip-skid</property>
+		<factor>1.6</factor>
+		<min-deg>-11</min-deg>
+		<max-deg>11</max-deg>
+		<center>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>0.0279031</z-m>
+		</center>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+        <animation>
+                <type>translate</type>
+                <object-name>Roll-pilotage-indic</object-name>
+                <property>controls/flight/aileron</property>
+                <factor>0.025</factor>
+                 <axis>
+                    <x>0</x>
+                    <y>1</y>
+                    <z>0</z>
+                </axis>
+        </animation>
+
+        <animation>
+                <type>translate</type>
+                <object-name>Pitch-pilotage-indic</object-name>
+                <property>controls/flight/elevator</property>
+                <factor>0.03</factor>
+                <axis>
+                    <x>0</x>
+                    <y>0</y>
+                    <z>1</z>
+                </axis>
+        </animation>
+
+</PropertyList>

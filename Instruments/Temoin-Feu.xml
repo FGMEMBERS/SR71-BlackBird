@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+
+<!--
+    Usable with FlightGear
+    Property of Gerard Robin
+    Copyright License:  GPL
+-->
+<PropertyList>
+
+ <path>Models/Temoin-Feu.ac</path>
+ <texture-path>Models/Textures</texture-path>
+
+ 	<animation>
+		<type>noshadow</type>
+		<object-name>Temoin</object-name>
+	</animation>
+
+	<model>
+		<name>Bezel</name>
+		<path>Aircraft/F-8E/Instruments/Temoin-BasePt.xml</path>
+		<offsets>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>0</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
+
+
+	<animation>
+		<type>select</type>
+		<object-name>Temoin-Fire</object-name>
+		<object-name>TemoinMActif</object-name>
+		<condition>
+			<equals>
+				<property>instrumentation/annunciator/engine-fire</property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>Temoin-Actif</object-name>
+		<!--NULL-->
+	</animation>
+
+</PropertyList>
