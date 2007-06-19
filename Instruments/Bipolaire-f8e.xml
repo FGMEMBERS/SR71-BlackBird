@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+
+<!--
+Dedicated only to FlightGear
+Gerard Robin
+License:  GPL
+-->
+<PropertyList>
+
+	<path>Models/bipolaire-f8e.ac</path>
+	<texture-path>Models/Textures</texture-path>
+
+		<animation>
+			<type>noshadow</type>
+			<object-name>BIPOL</object-name>
+		</animation>
+
+		<animation include="Instrument-Light5.xml">
+			<object-name>Couronne</object-name>
+		</animation>
+
+
+</PropertyList>

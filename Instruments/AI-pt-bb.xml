@@ -56,7 +56,7 @@
                 <object-name>Boule</object-name>
                 <property>orientation/pitch-deg</property>
                 <center>
-                        <x-m>-0.0241339</x-m>
+                        <x-m>-0.0245783</x-m>
                         <y-m>0</y-m>
                         <z-m>0</z-m>
                 </center>

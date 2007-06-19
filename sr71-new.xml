@@ -9,6 +9,33 @@
         <filecreationdate> 2005-24-06</filecreationdate>
         <version> 0.1 </version>
         <description> Models a SR-71 </description>
+        <documentation>
+            Manufacturer: Lockheed Aircraft Corporation
+            Length:107' 5"
+            Length of Nose Probe:4' 11"
+            Wing Span:55' 7"
+            Wing Area:1,795 ft. sq.
+            Wing Aspect Ratio:1.939
+            Wing Root Chord:60.533
+            Wing Dihedral Angle:0 degrees
+            Wing Chord:0.00
+            Wing Sweep:52.629 degrees
+            Inboard Elevon Area:39.00 ft. sq.
+            Outboard Elevon Area:52.50 ft. sq.
+            Total Vertical Rudder Area:150.76 ft. sq.
+            Moveable Rudder Area:70.24 ft. sq.
+            Rudder Root Chord:14.803 ft.
+            Rudder Tip Chord:7.833 ft.
+            Height:18' 6"
+            Empty Weight:59,000 lbs.
+            Maximum Weight:170,000 lbs.
+            Fuselage Diameter:5.33 ft.
+            Service Ceiling:85,000'+
+            Maximum Speed:Mach 3.3+ (Limit CIT of 427 degrees C)
+            Cruising Speed:Mach 3.2
+            Engines:2 Pratt  Whittney J-58 (JT11D-20A) with 34,000 lbs. of thrust.
+            Range:3,200 nautical miles without refueling
+        </documentation>
     </fileheader>
 
     <metrics>
@@ -43,7 +70,7 @@
         <ixy unit="SLUG*FT2"> 0 </ixy>
         <ixz unit="SLUG*FT2"> 0 </ixz>
         <iyz unit="SLUG*FT2"> 0 </iyz>
-        <emptywt unit="LBS"> 102000 </emptywt>
+        <emptywt unit="LBS"> 59000</emptywt>
         <location name="CG" unit="IN">
             <x> 0 </x>
             <y> 0 </y>
@@ -275,6 +302,15 @@
     <flight_control name="FCS: SR-71">
         <property>fcs/canopy-cmd-norm</property>
         <property>fcs/canopy-pos-norm</property>
+        <property>/controls/flight/probe-refuel</property>
+        <property>fcs/refueling-pos-norm</property>
+        <property>fcs/chute-cmd-norm</property>
+        <property>fcs/chute-pos-norm</property>
+        <property>fcs/chute-pos-deg</property>
+        <property>fcs/pitch-deg</property>
+        <property>sim/model/controls/chute</property>
+
+
      <channel name="Pitch">
         <summer name="Pitch Trim Sum">
             <input>fcs/elevator-cmd-norm</input>
@@ -432,22 +468,19 @@
         </kinematic>
     </channel>
 
-    <!--<channel name="Speedbrake">
-        <kinematic name="Speedbrake Control">
-            <input>fcs/speedbrake-cmd-norm</input>
-            <traverse>
-                <setting>
-                    <position>0.0000</position>
-                    <time>0.0000</time>
-                </setting>
-                <setting>
-                    <position>1.0000</position>
-                    <time>1.0000</time>
-                </setting>
-            </traverse>
-            <output>fcs/speedbrake-pos-norm</output>
-        </kinematic>
-    </channel>-->
+    <channel name="Throttle">
+            <pure_gain name="Throttle1">
+                <input>fcs/throttle-cmd-norm[1]</input>
+                <gain>2</gain>
+                <output>fcs/throttle-pos-norm[1]</output>
+            </pure_gain>
+            <pure_gain name="Throttle0">
+                <input>fcs/throttle-cmd-norm[0]</input>
+                <gain>2</gain>
+                <output>fcs/throttle-pos-norm[0]</output>
+            </pure_gain>
+    </channel>
+
 
     <channel name="Canopy">
         <kinematic name="Canopy">
@@ -465,6 +498,88 @@
             <output>fcs/canopy-pos-norm</output>
         </kinematic>
      </channel>
+
+     <channel name="Refuel Probe">
+
+
+    <kinematic name="Probe Refueling Control">
+        <input>/controls/flight/probe-refuel</input>
+        <traverse>
+            <setting>
+                <position>0.0000</position>
+                <time>5.0000</time>
+            </setting>
+            <setting>
+                <position>1.0000</position>
+                <time>5.0000</time>
+            </setting>
+        </traverse>
+        <output>fcs/refueling-pos-norm</output>
+    </kinematic>
+
+     <pure_gain name="Probe Refueling surface">
+        <input>fcs/refueling-pos-norm</input>
+        <gain>1</gain>
+        <output>/surface-positions/refueling-pos-norm</output>
+    </pure_gain>
+
+     </channel>
+
+     <channel name="Drag Chute">
+        <kinematic name="Chute Control">
+            <input>fcs/chute-cmd-norm</input>
+            <traverse>
+                <setting>
+                    <position>0.0000</position>
+                    <time>0.0000</time>
+                </setting>
+                <setting>
+                    <position>1.0000</position>
+                    <time>3.0000</time>
+                </setting>
+            </traverse>
+            <output>fcs/chute-pos-norm</output>
+        </kinematic>
+
+        <pure_gain name="Chute Command">
+                <input>/sim/model/controls/chute</input>
+                <gain>1</gain>
+                <output>fcs/chute-cmd-norm</output>
+            </pure_gain>
+
+        <switch name="Brake Chute Deploy">
+                <default value="0"/>
+                <test  logic="AND" value="1">
+                    fcs/chute-pos-norm == 1
+                    velocities/vc-kts lt 200
+                    velocities/vc-kts gt 50
+                    position/h-agl-ft lt  20
+                    fcs/throttle-pos-norm  lt 0.1
+                </test>
+        </switch>
+
+
+
+
+        <!--<pure_gain name="Pitch Deg">
+            <input>attitude/pitch-rad</input>
+            <gain>57.29578</gain>
+            <output>fcs/pitch-deg</output>
+        </pure_gain>
+
+        <aerosurface_scale name="Chute Position">
+            <input>fcs/pitch-deg</input>
+            <range>
+                <min>-40</min>
+                <max>40</max>
+            </range>
+            <output>fcs/chute-pos-deg</output>
+        </aerosurface_scale>-->
+
+     </channel>
+
+
+
 
 
     </flight_control>
@@ -492,6 +607,29 @@
                             </table>
                     </product>
             </function>
+            <function name="aero/function/kCLge">
+            <description>Change_in_lift_due_to_ground_effect</description>
+            <product>
+                  <table>
+                      <independentVar>aero/h_b-mac-ft</independentVar>
+                      <tableData>
+                          0.0000  1.2290
+                          0.1000  1.1240
+                          0.1500  1.1160
+                          0.2000  1.1240
+                          0.3000  1.1050
+                          0.4000  1.0410
+                          0.5000  1.0340
+                          0.6000  1.0190
+                          0.7000  1.0080
+                          0.8000  1.0030
+                          0.9000  1.0010
+                          1.0000  1.0000
+                          1.1000  1.0000
+                      </tableData>
+                  </table>
+            </product>
+        </function>
 
         <axis name="DRAG">
 
@@ -550,45 +688,8 @@
                       </table>
                 </product>
             </function>
-            <!--<function name="aero/coefficient/CDbeta">
-                <description>Drag_due_to_beta</description>
-                <product>
-                    <property>aero/qbar-psf</property>
-                    <property>metrics/Sw-sqft</property>
-                    <property>aero/mag-beta-rad</property>
-                    <property>aero/function/kCDge</property>
-                      <table>
-                          <independentVar>aero/alpha-rad</independentVar>
-                          <tableData>
-                              -0.3490    2.5954
-                              -0.2620    3.2686
-                              -0.1750    3.3563
-                              -0.0870    3.0533
-                              0.0000    3.8228
-                              0.0700    4.3450
-                              0.1400    4.1909
-                              0.2090    3.7331
-                              0.2790    3.1268
-                              0.3490    2.8246
-                              0.4190    2.4657
-                              0.4890    2.2127
-                              0.5590    1.9317
-                              0.6980    1.2283
-                              0.7850    0.9522
-                              0.8730    0.7015
-                          </tableData>
-                      </table>
-                </product>
-            </function>-->
-            <function name="aero/coefficient/CDflap">
-                <description>Drag_due_to_flaps</description>
-                <product>
-                    <property>aero/qbar-psf</property>
-                    <property>metrics/Sw-sqft</property>
-                    <property>fcs/flap-pos-norm</property>
-                    <value>0.0750</value>
-                </product>
-            </function>
+
+
             <function name="aero/coefficient/CDgear">
                 <description>Drag_due_to_gear</description>
                 <product>
@@ -598,15 +699,17 @@
                     <value>0.0200</value>
                 </product>
             </function>
+
             <function name="aero/coefficient/CDsb">
-                <description>Drag_due_to_speedbrakes</description>
+                <description>Drag_due_to_Chute</description>
                 <product>
                     <property>aero/qbar-psf</property>
                     <property>metrics/Sw-sqft</property>
-                    <property>fcs/speedbrake-pos-norm</property>
-                    <value>0.0240</value>
+                    <property>fcs/brake-chute-deploy</property>
+                    <value>0.2</value>
                 </product>
             </function>
+
             <function name="aero/coefficient/CDbeta">
                 <description>Drag_due_to_sideslip</description>
                 <product>
@@ -653,35 +756,83 @@
                 <product>
                     <property>aero/qbar-psf</property>
                     <property>metrics/Sw-sqft</property>
+                    <property>aero/function/kCLge</property>
                       <table>
                           <independentVar>aero/alpha-rad</independentVar>
                           <tableData>
-                              -0.2000    -0.6400
-                              0.0000    0.0800
-                              0.2600    1.0000
-                              0.6000    0.4480
+                                -0.2443460 -1.03860
+                                -0.1745329 -0.880907
+                                -0.1047197 -0.551318
+                                -0.0349065 -0.216206
+                                0.0349065  0.154461
+                                0.1047197  0.560857
+                                0.1745329  0.951575
+                                0.2443460  1.24168
+                                0.3141592  1.39786
+                                0.3839724  1.53103
+                                0.4537856  1.64110
+                                0.5235987  1.77724
+                                0.5934119  1.88652
+                                0.6632251  1.88940
+                                0.7330382  1.80975
+                                0.8028514  1.68556
+                                0.8726646  1.57524
+                                0.9424777  1.46011
+                                1.0122909  1.31884
+                                1.0821041  1.17117
+                                1.1519173  1.02151
+                                1.2217304  0.858875
+                                1.2915436  0.685334
+                                1.3613568  0.529482
+                                1.4311699  0.378268
+                                1.5009831  0.229349
+                                1.5707963  0.0910933
                           </tableData>
                       </table>
                 </product>
             </function>
-            <function name="aero/coefficient/dCLflap">
-                <description>Delta_Lift_due_to_flaps</description>
+            <function name="aero/coefficient/CLqalpha">
+                <description>Lift_due_to_alpha_and_pitch_rate</description>
                 <product>
                     <property>aero/qbar-psf</property>
                     <property>metrics/Sw-sqft</property>
-                    <property>fcs/flap-pos-norm</property>
-                    <value>0.3500</value>
+                    <property>aero/ci2vel</property>
+                    <property>velocities/q-aero-rad_sec</property>
+                      <table>
+                          <independentVar>aero/alpha-rad</independentVar>
+                          <tableData>
+                                -0.2443460 4.51
+                                -0.1745329 4.51
+                                -0.1047197 4.51
+                                -0.0349065 4.5175
+                                0.0349065 4.3825
+                                0.1047197 3.9625
+                                0.1745329 3.63
+                                0.2443460 3.4325
+                                0.3141592 3.375
+                                0.3839724 3.47
+                                0.4537856 3.6025
+                                0.5235987 3.9625
+                                0.5934119 5.095
+                                0.6632251 6.875
+                                0.7330382 8.47
+                                0.8028514 9.15
+                                0.8726646 7.55
+                                0.9424777 5.95
+                                1.0122909 5.28
+                                1.0821041 5.04
+                                1.1519173 4.95
+                                1.2217304 4.95
+                                1.2915436 4.87
+                                1.3613568 4.73
+                                1.4311699 4.57
+                                1.5009831 4.39
+                                1.5707963 4.15
+                          </tableData>
+                      </table>
                 </product>
             </function>
-            <function name="aero/coefficient/dCLsb">
-                <description>Delta_Lift_due_to_speedbrake</description>
-                <product>
-                    <property>aero/qbar-psf</property>
-                    <property>metrics/Sw-sqft</property>
-                    <property>fcs/speedbrake-pos-norm</property>
-                    <value>0.0000</value>
-                </product>
-            </function>
+
             <function name="aero/coefficient/CLde">
                 <description>Lift_due_to_Elevator_Deflection</description>
                 <product>

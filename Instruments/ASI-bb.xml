@@ -126,6 +126,11 @@
                             <dep>327</dep>
                     </entry>
 
+                    <entry>
+                            <ind>3000</ind>
+                            <dep>327</dep>
+                    </entry>
+
 
             </interpolation>
             <axis>
@@ -141,10 +146,57 @@
 
 
     <!--******************MACH Indicator******************************************************-->
+
+    <animation>
+            <type>select</type>
+            <object-name>Mach-Masque</object-name>
+            <condition>
+                <and>
+                    <less-than>
+                        <property>instrumentation/airspeed-indicator/indicated-speed-kt</property>
+                        <value>850</value>
+                    </less-than>
+                    <greater-than>
+                        <property>velocities/mach</property>
+                        <value>1.4</value>
+                    </greater-than>
+                </and>
+            </condition>
+    </animation>
     <!-- Must follow the needle -->
     <animation>
             <type>rotate</type>
             <object-name>Mach</object-name>
+            <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
+            <interpolation>
+                    <entry>
+                            <ind>0</ind>
+                            <dep>0</dep>
+                    </entry>
+                    <entry>
+                            <ind>300</ind>
+                            <dep>0</dep>
+                    </entry>
+                    <entry>
+                            <ind>800</ind>
+                            <dep>160</dep>
+                    </entry>
+
+                    <entry>
+                            <ind>975</ind>
+                            <dep>160</dep>
+                    </entry>
+            </interpolation>
+            <axis>
+                    <x>-1</x>
+                    <y>0</y>
+                    <z>0</z>
+            </axis>
+    </animation>
+
+    <animation>
+            <type>rotate</type>
+            <object-name>Mach-Masque</object-name>
             <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
             <interpolation>
                     <entry>
@@ -232,6 +284,83 @@
                             <ind>3.7</ind>
                             <dep>357</dep>
                     </entry>
+                    <entry>
+                            <ind>10</ind>
+                            <dep>357</dep>
+                    </entry>
+
+
+            </interpolation>
+            <axis>
+                    <x>1</x>
+                    <y>0</y>
+                    <z>0</z>
+            </axis>
+    </animation>
+    <animation>
+            <!--<condition>
+                    <greater-than>
+                            <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
+                            <value>300</value>
+                    </greater-than>
+            </condition>-->
+            <type>rotate</type>
+            <object-name>Mach-Masque</object-name>
+            <property>/velocities/mach</property>
+            <interpolation>
+                    <entry>
+                            <ind>0</ind>
+                            <dep>0</dep>
+                    </entry>
+                    <entry>
+                            <ind>0.4</ind>  <!--25 deg = 0.1-->
+                            <dep>0</dep>
+                    </entry>
+                    <entry>
+                            <ind>0.7</ind> <!--22 deg = 0.1-->
+                            <dep>75</dep>
+                    </entry>
+                    <entry>
+                            <ind>0.8</ind> <!--18 deg =0.1-->
+                            <dep>97</dep>
+                    </entry>
+                    <entry>
+                            <ind>1</ind>   <!--12 deg = 0.1-->
+                            <dep>133</dep>
+                    </entry>
+                    <entry>
+                            <ind>1.2</ind>  <!--8 deg = 0.1-->
+                            <dep>157</dep>
+                    </entry>
+                    <entry>
+                            <ind>1.4</ind> <!--8 deg =0.1-->
+                            <dep>173</dep>
+                    </entry>
+                    <entry>
+                            <ind>2.4</ind> <!--8 deg= 0.1-->
+                            <dep>253</dep>
+                    </entry>
+                    <entry>
+                            <ind>2.5</ind>
+                            <dep>261</dep>
+                    </entry>
+                    <entry>
+                            <ind>2.6</ind>
+                            <dep>269</dep>
+                    </entry>
+                    <entry>
+                            <ind>3.6</ind>
+                            <dep>349</dep>
+                    </entry>
+                    <entry>
+                            <ind>3.7</ind>
+                            <dep>357</dep>
+                    </entry>
+                    <entry>
+                            <ind>10</ind>
+                            <dep>357</dep>
+                    </entry>
+
 
             </interpolation>
             <axis>

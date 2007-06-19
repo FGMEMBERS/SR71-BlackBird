@@ -61,6 +61,18 @@
 	</offsets>
 </model>
 
+<model>
+    <name>BrakeChute</name>
+	<path>Aircraft/SR71-BlackBird/Models/Brake-Chute_BB.xml</path>
+	<offsets>
+		<x-m>0</x-m>
+		<y-m>0</y-m>
+		<z-m>0</z-m>
+                <pitch-deg>0</pitch-deg>
+	</offsets>
+</model>
+
+
 
  <animation>
   <type>select</type>
@@ -87,6 +99,23 @@
 			 </equals>
 		 </not>
 	 </condition>
+ </animation>
+
+ <animation>
+    <type>select</type>
+    <object-name>BrakeChute</object-name>
+    <condition>
+        <and>
+        <equals>
+            <property>/fdm/jsbsim/fcs/brake-chute-deploy</property>
+            <value>1</value>
+        </equals>
+        <equals>
+            <property>/fdm/jsbsim/fcs/chute-switch-once</property>
+            <value>0</value>
+        </equals>
+        </and>
+    </condition>
  </animation>
 
  <animation>
@@ -188,6 +217,249 @@
 		 <z>0</z>
 	 </axis>
  </animation>
+
+
+
+ <animation>
+	 <type>translate</type>
+	 <object-name>RF-Probe</object-name>
+	 <property>surface-positions/refueling-pos-norm</property>
+
+	 <interpolation>
+		 <entry>
+			 <ind>0.0</ind>
+			 <dep>3.32</dep>
+		 </entry>
+		 <entry>
+			 <ind>0.3</ind>
+			 <dep>3.32</dep>
+		 </entry>
+		 <entry>
+			 <ind>0.5</ind>
+			 <dep>1.7</dep>
+		 </entry>
+		 <entry>
+			 <ind>0.8</ind>
+			 <dep>00</dep>
+		 </entry>
+		 <entry>
+			 <ind>1</ind>
+			 <dep>0</dep>
+		 </entry>
+	 </interpolation>
+         <axis>
+                <x>3.03389</x>
+                <y>0</y>
+                <z>-1.38274</z>
+        </axis>
+         <!--<axis>
+                <x1-m>-9.59622</x1-m>
+                <y1-m>0</y1-m>
+                <z1-m>1.43663</z1-m>
+                <x2-m>-6.56233</x2-m>
+                <y2-m>0</y2-m>
+                <z2-m>0.05389</z2-m>
+         </axis> -->
+ </animation>
+
+ <animation>
+	 <type>rotate</type>
+	 <object-name>RF-Probe</object-name>
+	 <property>surface-positions/refueling-pos-norm</property>
+	 <interpolation>
+		 <entry>
+			 <ind>0.0</ind>
+			 <dep>-13</dep>
+		 </entry>
+		 <entry>
+			 <ind>0.3</ind>
+			 <dep>-13</dep>
+		 </entry>
+		 <entry>
+			 <ind>0.5</ind>
+			 <dep>-13</dep>
+		 </entry>
+		 <entry>
+			 <ind>0.8</ind>
+			 <dep>-13</dep>
+		 </entry>
+		 <entry>
+			 <ind>1</ind>
+			 <dep>0</dep>
+		 </entry>
+	 </interpolation>
+	 <center>
+		 <x-m>-9.39515</x-m>
+		 <y-m>0.0</y-m>
+		 <z-m>1.44267</z-m>
+	 </center>
+	 <axis>
+		 <x>0</x>
+		 <y>1</y>
+		 <z>0</z>
+	 </axis>
+ </animation>
+
+
+
+ <animation>
+        <type>rotate</type>
+        <object-name>Probe-GPorte</object-name>
+        <object-name>Probe-GPorte-Doublage</object-name>
+        <property>surface-positions/refueling-pos-norm</property>
+        <interpolation>
+                <entry>
+                <ind>0.0</ind>
+                <dep>0</dep>
+                </entry>
+                <entry>
+                <ind>0.3</ind>
+                <dep>90</dep>
+                </entry>
+                <entry>
+                <ind>0.5</ind>
+                <dep>90</dep>
+                </entry>
+                <entry>
+                <ind>1.0</ind>
+                <dep>90</dep>
+                </entry>
+            </interpolation>
+            <center>
+                <x-m>0</x-m>
+                <y-m>-0.167972</y-m>
+                <z-m>1.48539</z-m>
+        </center>
+        <axis>
+                <x>1</x>
+                <y>0</y>
+                <z>0</z>
+        </axis>
+ </animation>
+
+ <animation>
+        <type>rotate</type>
+        <object-name>Probe-DPorte</object-name>
+        <object-name>Probe-DPorte-Doublage</object-name>
+        <property>surface-positions/refueling-pos-norm</property>
+        <interpolation>
+                <entry>
+                <ind>0.0</ind>
+                <dep>0</dep>
+                </entry>
+                <entry>
+                <ind>0.3</ind>
+                <dep>90</dep>
+                </entry>
+                <entry>
+                <ind>0.5</ind>
+                <dep>90</dep>
+                </entry>
+                <entry>
+                <ind>1.0</ind>
+                <dep>90</dep>
+                </entry>
+            </interpolation>
+            <center>
+                <x-m>0</x-m>
+                <y-m>0.167972</y-m>
+                <z-m>1.48539</z-m>
+        </center>
+        <axis>
+                <x>-1</x>
+                <y>0</y>
+                <z>0</z>
+        </axis>
+ </animation>
+
+
+<animation>
+	 <type>rotate</type>
+	 <object-name>Chute-GPorte</object-name>
+         <object-name>Chute-GPorte-Doublage</object-name>
+	 <property>/fdm/jsbsim/fcs/chute-pos-norm</property>
+	 <interpolation>
+		 <entry>
+			 <ind>0.0</ind>
+			 <dep>0</dep>
+		 </entry>
+		 <entry>
+			 <ind>0.5</ind>
+			 <dep>90</dep>
+		 </entry>
+		 <entry>
+			 <ind>1</ind>
+			 <dep>90</dep>
+		 </entry>
+	 </interpolation>
+         <axis>
+                <x1-m>3.99074</x1-m>
+                <y1-m>-0.322582</y1-m>
+                <z1-m>1.40247</z1-m>
+                <x2-m>5.21811</x2-m>
+                <y2-m>-0.322582</y2-m>
+                <z2-m>1.37894</z2-m>
+         </axis>
+ </animation>
+
+ <animation>
+	 <type>rotate</type>
+	 <object-name>Chute-DPorte</object-name>
+         <object-name>Chute-DPorte-Doublage</object-name>
+	 <property>/fdm/jsbsim/fcs/chute-pos-norm</property>
+	 <interpolation>
+		 <entry>
+			 <ind>0.0</ind>
+			 <dep>0</dep>
+		 </entry>
+		 <entry>
+			 <ind>0.5</ind>
+			 <dep>-90</dep>
+		 </entry>
+		 <entry>
+			 <ind>1</ind>
+			 <dep>-90</dep>
+		 </entry>
+	 </interpolation>
+         <axis>
+                <x1-m>3.99074</x1-m>
+                <y1-m>0.322582</y1-m>
+                <z1-m>1.40247</z1-m>
+                <x2-m>5.21811</x2-m>
+                <y2-m>0.322582</y2-m>
+                <z2-m>1.37894</z2-m>
+         </axis>
+ </animation>
+
+ <animation>
+	 <type>translate</type>
+	 <object-name>Chute-Etrier</object-name>
+	 <property>/fdm/jsbsim/fcs/chute-pos-norm</property>
+
+	 <interpolation>
+		 <entry>
+			 <ind>0.0</ind>
+			 <dep>-0.8</dep>
+		 </entry>
+		 <entry>
+			 <ind>0.5</ind>
+			 <dep>-0.5</dep>
+		 </entry>
+		 <entry>
+			 <ind>1</ind>
+			 <dep>0</dep>
+		 </entry>
+	 </interpolation>
+         <axis>
+                <x>0</x>
+                <y>0</y>
+                <z>1</z>
+        </axis>
+ </animation>
+
+
+
+
 
 
 
@@ -934,7 +1206,7 @@
                 </axis>
         </animation>
 
-            <animation>
+           <animation>
                 <type>rotate</type>
                 <object-name>GVGouv</object-name>
                 <property>controls/flight/rudder</property>
@@ -947,8 +1219,9 @@
                         <y2-m>-3.28674</y2-m>
                         <z2-m>4.57159</z2-m>
                 </axis>
-
         </animation>
+
+
 
 
 

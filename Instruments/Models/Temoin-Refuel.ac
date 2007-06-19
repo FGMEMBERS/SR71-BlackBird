@@ -1,0 +1,23 @@
+AC3Db
+MATERIAL "ac3dmat14" rgb 1 1 1  amb 1 1 1  emis 1 1 1  spec 1 1 1  shi 128  trans 0
+OBJECT world
+kids 1
+OBJECT poly
+name "Temoin-Probe"
+loc 0.0043583 0.000148449 -0.0186442
+texture "Temoin-PrbSpdbk.rgb"
+crease 45.000000
+numvert 4
+0 0.00990075 0.0335106
+0 -0.00990075 0.0335106
+0 -0.00990075 0.00392994
+0 0.00990075 0.00392994
+numsurf 1
+SURF 0x20
+mat 0
+refs 4
+3 1.00284 0.998803
+0 -0.0280736 0.998803
+1 -0.0280736 0.576092
+2 1.00284 0.576092
+kids 0

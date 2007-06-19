@@ -7,13 +7,15 @@
 -->
 <PropertyList>
 
- <path>Models/Temoin-Feu.ac</path>
+ <path>Models/Temoin-Refuel.ac</path>
  <texture-path>Models/Textures</texture-path>
 
  	<animation>
 		<type>noshadow</type>
 		<object-name>Temoin</object-name>
 	</animation>
+
+
 
 	<model>
 		<name>Bezel</name>
@@ -27,22 +29,32 @@
 	</model>
 
 
-	<animation>
+        <animation>
 		<type>select</type>
-		<object-name>Temoin-Fire</object-name>
-		<object-name>TemoinMActif</object-name>
+		<object-name>Temoin-Marquage</object-name>
+		<!--<object-name>Temoin-Probe</object-name>-->
 		<condition>
-			<equals>
-				<property>instrumentation/annunciator/engine-fire</property>
-				<value>1</value>
-			</equals>
+			<and>
+				<greater-than>
+					<property>/surface-positions/refueling-pos-norm</property>
+					<value>0</value>
+				</greater-than>
+			</and>
 		</condition>
 	</animation>
 
 	<animation>
 		<type>select</type>
-		<object-name>Temoin-Actif</object-name>
-		<!--NULL-->
+		<!--<object-name>Temoin1MActif</object-name>-->
+		<object-name>Temoin-Probe</object-name>
+		<condition>
+			<and>
+				<greater-than>
+					<property>/surface-positions/refueling-pos-norm</property>
+					<value>0</value>
+				</greater-than>
+			</and>
+		</condition>
 	</animation>
 
 </PropertyList>

@@ -11,6 +11,45 @@
                 <name>d</name>
                 <desc>Toggle canopy</desc>
         </key>
+        <key>
+                <name>F</name>
+                <desc>Toggle refuel  on/off</desc>
+        </key>
+
+        <line></line>
+        <line>===Refueling====</line>
+        <line>On gound refueling, if Airspeed less than 20 kts</line>
+        <line>Does not need Probe</line>
+        <line>Air refueling if Airspeed more than 200 kts and Agl more  than 300 feet</line>
+        <line>Probe is first automatically raised </line>
+        <line>this is temporary => it does not need refuel contact with Tanker</line>
+        <line>Please wait for a further update, to get it </line>
+        <line></line>
+        <line></line>
+
+        <key>
+                <name>Ctrl-j</name>
+                <desc>Prepare braking chute deployement, open the doors</desc>
+        </key>
+
+        <line>===Braking Chute====</line>
+        <line>the braking chute will be automaticlly deployed</line>
+        <line>When the following conditions are all true</line>
+        <line></line>
+        <line>Airspeed less than 200 kts</line>
+        <line>Agl less than 20 feet</line>
+        <line>Throttle position less than 0.1</line>
+        <line></line>
+        <line>the braking will be released, untied</line>
+        <line>When</line>
+        <line>Airspeed less than 50 kts</line>
+        <line>REMEMBER       it can be used only once</line>
+        <line>If you want it again you must reload it =>  key j</line>
+
+        <key>
+                <name>j</name>
+                <desc>Reload Braking Chute, and close the doors</desc>
+        </key>
 
         <!--<key>
                 <name>Space </name>

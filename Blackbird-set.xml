@@ -12,44 +12,21 @@
         <version>0.1</version>
         <flight-model>jsb</flight-model>
         <startup>
-                <splash-texture>Aircraft/SR71-BlackBird/splash-BB.rgb</splash-texture>
+                <splash-texture>Aircraft/SR71-BlackBird/splash3-BB.rgb</splash-texture>
         </startup>
         <flight-model>jsb</flight-model>
         <aero>sr71-new</aero>
         <model>
             <path archive="y">Aircraft/SR71-BlackBird/Models/BlackBird-model.xml</path>
+            <controls>
+                <chute>0</chute>
+            </controls>
         </model>
         <sound>
                     <audible>true</audible>
                     <path>Aircraft/SR71-BlackBird/Sounds/f16-sound.xml</path>
         </sound>
         <virtual-cockpit archive="y">true</virtual-cockpit>
-
-
-        <!--<hud>
-                <path n="1">Huds/f16.xml</path>
-                <visibility n="1">true</visibility>
-                <color>
-                        <transparent type="bool">true</transparent>
-                        <antialiased type="bool">true</antialiased>
-                        <brightness type="float">0.85</brightness>
-                        <alpha type="float">0.85</alpha>
-                </color>
-                <palette>
-                        <color n="0">
-                                <red type="float">0.38</red>
-                                <green type="float">1.0</green>
-                                <blue type="float">0.22</blue>
-                        </color>
-                        <color n="1">
-                                <red type="float">1.0</red>
-                                <green type="float">0.0</green>
-                                <blue type="float">0.0</blue>
-                        </color>
-                </palette>
-
-        </hud>-->
-
 
 
 
@@ -131,6 +108,40 @@
                             <property>/fdm/jsbsim/fcs/canopy-cmd-norm</property>
                     </binding>
             </key>
+            <key n="70">
+                <name>F</name>
+                <desc>Refuel On/Off</desc>
+                    <binding>
+                            <command>nasal</command>
+                            <script>
+                                    consumable.refuel();
+                            </script>
+                    </binding>
+            </key>
+
+            <key n="10">
+                <name>Ctrl-j</name>
+                <desc>Braking Chute Deploy</desc>
+                <binding>
+                        <property>sim/model/controls/chute</property>
+                        <command>property-assign</command>
+                        <value>1</value>
+                </binding>
+        </key>
+        <key n="106">
+                <name>j</name>
+                <desc>Braking Chute Reload</desc>
+                <binding>
+                        <property>sim/model/controls/chute</property>
+                        <command>property-assign</command>
+                        <value>0</value>
+                </binding>
+                <binding>
+                        <property>/fdm/jsbsim/fcs/chute-switch-once</property>
+                        <command>property-assign</command>
+                        <value>0</value>
+                </binding>
+        </key>
         </keyboard>
     </input>
 
@@ -158,22 +169,36 @@
     <consumables>
         <fuel>
             <tank n="0">
-            <level-gal_us archive="y">6000</level-gal_us>
+            <level-gal_us archive="y">3000</level-gal_us>
             </tank>
             <tank n="1">
-            <level-gal_us archive="y">6000</level-gal_us>
+            <level-gal_us archive="y">3000</level-gal_us>
             </tank>
             <tank n="2">
-            <level-gal_us archive="y">6000</level-gal_us>
+            <level-gal_us archive="y">4500</level-gal_us>
             </tank>
         </fuel>
     </consumables>
+    <!--<fdm><jsbsim>
+        <fcs>
+            <chute-switch-once>1</chute-switch-once>
+        </fcs>
+    </jsbsim></fdm>-->
 
 
     <nasal>
             <electrical>
-                    <file>Aircraft/SR71-BlackBird/System/electrical.nas</file>
+                <file>Aircraft/SR71-BlackBird/System/electrical.nas</file>
             </electrical>
+            <switch>
+                <file>Aircraft/SR71-BlackBird/System/blackbird.nas</file>
+            </switch>
+            <!--<aar>
+                <file>Aircraft/Generic/aar.nas</file>   later on will replace partly specific refuel.nas
+            </aar>-->
+            <consumable>
+                    <file>Aircraft/SR71-BlackBird/System/refuel.nas</file>
+            </consumable>
     </nasal>
 
 </PropertyList>

@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<!--
+    Usable with FlightGear
+    Property of Gerard Robin
+    Copyright License:  GPL
+-->
+<PropertyList>
+
+ <path>Models/fupump-bb.ac</path>
+ <texture-path>Models/Textures</texture-path>
+
+ 	<animation>
+		<type>noshadow</type>
+		<object-name>Fuel</object-name>
+	</animation>
+
+
+	<animation include="Instrument-Light4.xml">
+		<object-name>Pump-Marquage</object-name>
+	</animation>
+
+	<model>
+		<name>Bipolaire</name>
+		<path>Aircraft/SR71-BlackBird/Instruments/Bipolaire-f8e.xml</path>
+		<offsets>
+			<x-m>0.021342</x-m>
+			<y-m>0.007</y-m>
+			<z-m>-0.016</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
+
+	<!--<animation>
+		<type>rotate</type>
+		<object-name>Pump-Handle</object-name>
+                <property>/surface-positions/refueling-pos-norm</property>
+		<interpolation>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>0.99</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>-90</dep>
+			</entry>
+		</interpolation>
+		<center>
+			<x-m>0.00805799</x-m>
+			<y-m>0</y-m>
+			<z-m>0.012498</z-m>
+	 	</center>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>-->
+
+	<animation>
+		<type>rotate</type>
+		<object-name>Interrupteur</object-name>
+		<property>/controls/flight/fuel-pump</property>
+		<interpolation>
+			<entry>
+				<ind>0</ind>
+				<dep>-30</dep>
+			</entry>
+			<entry>
+				<ind>0.99</ind>
+				<dep>-30</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>30</dep>
+			</entry>
+		</interpolation>
+
+		<center>
+			<x-m>0.0</x-m>
+			<y-m>0.0</y-m>
+			<z-m>0.0</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+</PropertyList>

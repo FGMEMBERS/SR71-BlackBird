@@ -1,0 +1,32 @@
+AC3Db
+MATERIAL "ac3dmat1" rgb 1 1 1  amb 0.898 1 1  emis 0 0 0  spec 1 0.929 1  shi 90  trans 0
+OBJECT world
+kids 1
+OBJECT group
+name "Probe"
+loc -2.42777 -0.163534 0.172898
+kids 1
+OBJECT poly
+name "Probe-Marquage"
+loc 2.42851 0.155558 -0.177543
+texture "fuelpump.rgb"
+crease 45.000000
+numvert 4
+0 0.0183815 -0.0265713
+0 0.0183815 0.0160221
+0 -0.0183815 0.0160221
+0 -0.0183815 -0.0265713
+numsurf 2
+SURF 0x20
+mat 0
+refs 3
+2 0.596081 0.297564
+0 0.911605 0.790767
+1 0.596081 0.790767
+SURF 0x20
+mat 0
+refs 3
+0 0.911605 0.790767
+2 0.596081 0.297564
+3 0.911605 0.297564
+kids 0

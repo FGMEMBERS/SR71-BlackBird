@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+
+<!--
+    Usable with FlightGear
+    Property of Gerard Robin
+    Copyright License:  GPL
+-->
+<PropertyList>
+
+ <path>Models/Temoin-PrbSpdbk.ac</path>
+ <texture-path>Models/Textures</texture-path>
+
+ 	<animation>
+		<type>noshadow</type>
+		<object-name>Temoin</object-name>
+	</animation>
+
+
+
+
+
+	<model>
+		<name>Bezel</name>
+		<path>Aircraft/F-8E/Instruments/Temoin-2Base.xml</path>
+		<offsets>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>0</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
+
+	<animation>
+		<type>select</type>
+		<object-name>Temoin2-Actif</object-name>
+		<condition>
+			<equals>
+				<property><!--surface-positions/speedbrake-pos-norm--></property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>Temoin2MActif</object-name>
+		<object-name>Temoin-Brake</object-name>
+		<condition>
+			<greater-than>
+				<property>surface-positions/speed_brake-pos-norm</property>
+				<value>0</value>
+			</greater-than>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>Temoin1-Actif</object-name>
+		<condition>
+			<equals>
+				<property><!--/surface-positions/refueling-pos-norm--></property>
+				<value>1.0</value>
+			</equals>
+		</condition>
+	</animation>
+
+
+	<animation>
+		<type>select</type>
+		<object-name>Temoin1MActif</object-name>
+		<!--<object-name>Temoin-Probe</object-name>-->
+		<condition>
+			<and>
+				<greater-than>
+					<property>/surface-positions/refueling-pos-norm</property>
+					<value>0</value>
+				</greater-than>
+			</and>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<!--<object-name>Temoin1MActif</object-name>-->
+		<object-name>Temoin-Probe</object-name>
+		<condition>
+			<and>
+				<greater-than>
+					<property>/surface-positions/refueling-pos-norm</property>
+					<value>0</value>
+				</greater-than>
+			</and>
+		</condition>
+	</animation>
+
+
+
+</PropertyList>

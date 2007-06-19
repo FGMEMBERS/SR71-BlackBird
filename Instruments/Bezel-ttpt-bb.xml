@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!--
+    Usable with FlightGear
+    Property of Gerard Robin
+    Copyright License:  GPL
+-->
+<PropertyList>
+
+	<path>Models/bezel-ttpt-bb.ac</path>
+	<texture-path>Models/Textures</texture-path>
+
+
+	<!--<animation include="Instrument-Light5.xml">
+		<object-name>Couronne</object-name>
+	</animation>
+
+	<animation include="Instrument-Light2.xml">
+		<object-name>Corps</object-name>
+	</animation>-->
+
+</PropertyList>
