@@ -1,0 +1,394 @@
+<?xml version="1.0"?>
+<!--
+    Usable with FlightGear
+    Property of Gerard Robin
+    Copyright License:  GPL
+-->
+<PropertyList>
+
+ <path>SR-71B-Blackbird.ac</path>
+ <texture-path>Texture-USAF/</texture-path>
+
+
+    <offsets>
+        <z-m>0.10</z-m>
+        <pitch-deg>0</pitch-deg>
+    </offsets>
+
+     <model>
+        <name>model-base</name>
+        <path>Aircraft/SR71-BlackBird/Models/BlackBird-Base.xml</path>
+        <offsets>
+                <x-m>0</x-m>
+                <y-m>0</y-m>
+                <z-m>0</z-m>
+                <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <name>Cockpit-PiloteStud</name>
+        <path>Aircraft/SR71-BlackBird/Models/SR71-Cockpit-avant.xml</path>
+        <offsets>
+                <x-m>0</x-m>
+                <y-m>0</y-m>
+                <z-m>0</z-m>
+                <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+    <animation>
+            <type>noshadow</type>
+            <object-name>Cockpit-PiloteStud</object-name>
+    </animation>
+
+    <model>
+        <name>Cockpit-Pilote-Controles</name>
+        <path>Aircraft/SR71-BlackBird/Models/SR71-Cockpit-controles.xml</path>
+        <offsets>
+                <x-m>-11.8579</x-m>
+                <y-m>0</y-m>
+                <z-m>0.87</z-m>
+                <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+    <animation>
+            <type>noshadow</type>
+            <object-name>Cockpit-Pilote-Controles</object-name>
+    </animation>
+
+
+
+    <model>
+        <name>PanelV-InstrPilote</name>
+        <path>Aircraft/SR71-BlackBird/Panels/SR71_FPanel.xml</path>
+        <offsets>
+                <x-m>-12.388</x-m>
+                <y-m>0</y-m>
+                <z-m>1.29024</z-m>
+                <pitch-deg>-15</pitch-deg>
+        </offsets>
+    </model>
+
+    <animation>
+            <type>noshadow</type>
+            <object-name>PanelV-InstrPilote</object-name>
+    </animation>
+
+ <model>
+ <name>Stud-Pilote</name>
+        <path>Aircraft/SR71-BlackBird/Models/Astro-Pilote.xml</path>
+        <offsets>
+                <x-m>-13.9343</x-m>
+                <y-m>0</y-m>
+                <z-m>1.05049</z-m>
+                <pitch-deg>10</pitch-deg>
+        </offsets>
+    </model>
+
+    <animation>
+            <type>noshadow</type>
+            <object-name>Stud-Pilote</object-name>
+    </animation>
+
+    <model>
+    <name>Instr-Pilote</name>
+        <path>Aircraft/SR71-BlackBird/Models/Astro-Pilote.xml</path>
+        <offsets>
+                <x-m>-12.0257</x-m>
+                <y-m>0</y-m>
+                <z-m>1.37286</z-m>
+                <pitch-deg>10</pitch-deg>
+        </offsets>
+    </model>
+
+    <animation>
+            <type>noshadow</type>
+            <object-name>Instr-Pilote</object-name>
+    </animation>
+
+<animation>
+    <type>select</type>
+    <object-name>Stud-Pilote</object-name>
+    <condition>
+        <not>
+            <equals>
+                <property>sim/current-view/view-number</property>
+                <value>7</value>
+            </equals>
+        </not>
+    </condition>
+ </animation>
+
+
+    <animation>
+        <type>select</type>
+        <object-name>Instr-Pilote</object-name>
+        <condition>
+            <not>
+                <equals>
+                    <property>sim/current-view/view-number</property>
+                    <value>0</value>
+                </equals>
+            </not>
+        </condition>
+    </animation>
+
+    <animation>
+            <type>rotate</type>
+            <object-name>Canopy-PiloteStud</object-name>
+            <property>surface-positions/canopy-pos-norm</property>
+            <interpolation>
+                    <entry>
+                            <ind>0.0</ind>
+                            <dep>0.0</dep>
+                    </entry>
+                    <entry>
+                            <ind>0.05</ind>
+                            <dep>2.0</dep>
+                    </entry>
+                    <entry>
+                            <ind>0.10</ind>
+                            <dep>5.0</dep>
+                    </entry>
+                    <entry>
+                            <ind>0.20</ind>
+                            <dep>10.0</dep>
+                    </entry>
+                    <entry>
+                            <ind>0.35</ind>
+                            <dep>15.0</dep>
+                    </entry>
+                    <entry>
+                            <ind>0.55</ind>
+                            <dep>25.0</dep>
+                    </entry>
+                    <entry>
+                            <ind>0.75</ind>
+                            <dep>35.0</dep>
+                    </entry>
+                    <entry>
+                            <ind>1.0</ind>
+                            <dep>45.0</dep>
+                    </entry>
+            </interpolation>
+            <center>
+                    <x-m>-12.87</x-m>
+                    <y-m>0.0</y-m>
+                    <z-m>1.55659</z-m>
+            </center>
+            <axis>
+                    <x>0</x>
+                    <y>1</y>
+                    <z>0</z>
+            </axis>
+    </animation>
+
+    <animation>
+            <type>rotate</type>
+            <object-name>Canopy-PiloteInstr</object-name>
+            <property>surface-positions/canopy-pos-norm</property>
+            <interpolation>
+                    <entry>
+                            <ind>0.0</ind>
+                            <dep>0.0</dep>
+                    </entry>
+                    <entry>
+                            <ind>0.05</ind>
+                            <dep>2.0</dep>
+                    </entry>
+                    <entry>
+                            <ind>0.10</ind>
+                            <dep>5.0</dep>
+                    </entry>
+                    <entry>
+                            <ind>0.20</ind>
+                            <dep>10.0</dep>
+                    </entry>
+                    <entry>
+                            <ind>0.35</ind>
+                            <dep>15.0</dep>
+                    </entry>
+                    <entry>
+                            <ind>0.55</ind>
+                            <dep>25.0</dep>
+                    </entry>
+                    <entry>
+                            <ind>0.75</ind>
+                            <dep>35.0</dep>
+                    </entry>
+                    <entry>
+                            <ind>1.0</ind>
+                            <dep>45.0</dep>
+                    </entry>
+            </interpolation>
+            <center>
+                    <x-m>-11.0803</x-m>
+                    <y-m>0.0</y-m>
+                    <z-m>1.84916</z-m>
+            </center>
+            <axis>
+                    <x>0</x>
+                    <y>1</y>
+                    <z>0</z>
+            </axis>
+    </animation>
+
+
+
+    <animation>
+            <type>translate</type>
+            <object-name>RF-Probe</object-name>
+            <property>surface-positions/refueling-pos-norm</property>
+
+            <interpolation>
+                    <entry>
+                            <ind>0.0</ind>
+                            <dep>3.32</dep>
+                    </entry>
+                    <entry>
+                            <ind>0.3</ind>
+                            <dep>3.32</dep>
+                    </entry>
+                    <entry>
+                            <ind>0.5</ind>
+                            <dep>1.7</dep>
+                    </entry>
+                    <entry>
+                            <ind>0.8</ind>
+                            <dep>00</dep>
+                    </entry>
+                    <entry>
+                            <ind>1</ind>
+                            <dep>0</dep>
+                    </entry>
+            </interpolation>
+            <axis>
+                <x>3.03389</x>
+                <y>0</y>
+                <z>-1.38274</z>
+        </axis>
+            <!--<axis>
+                <x1-m>-9.59622</x1-m>
+                <y1-m>0</y1-m>
+                <z1-m>1.43663</z1-m>
+                <x2-m>-6.56233</x2-m>
+                <y2-m>0</y2-m>
+                <z2-m>0.05389</z2-m>
+            </axis> -->
+    </animation>
+
+    <animation>
+            <type>rotate</type>
+            <object-name>RF-Probe</object-name>
+            <property>surface-positions/refueling-pos-norm</property>
+            <interpolation>
+                    <entry>
+                            <ind>0.0</ind>
+                            <dep>-13</dep>
+                    </entry>
+                    <entry>
+                            <ind>0.3</ind>
+                            <dep>-13</dep>
+                    </entry>
+                    <entry>
+                            <ind>0.5</ind>
+                            <dep>-13</dep>
+                    </entry>
+                    <entry>
+                            <ind>0.8</ind>
+                            <dep>-13</dep>
+                    </entry>
+                    <entry>
+                            <ind>1</ind>
+                            <dep>0</dep>
+                    </entry>
+            </interpolation>
+            <center>
+                    <x-m>-8.63731</x-m>
+                    <y-m>0.0</y-m>
+                    <z-m>1.44267</z-m>
+            </center>
+            <axis>
+                    <x>0</x>
+                    <y>1</y>
+                    <z>0</z>
+            </axis>
+    </animation>
+
+
+
+ <animation>
+        <type>rotate</type>
+        <object-name>Probe-GPorte</object-name>
+        <object-name>Probe-GPorte-Doublage</object-name>
+        <property>surface-positions/refueling-pos-norm</property>
+        <interpolation>
+                <entry>
+                <ind>0.0</ind>
+                <dep>0</dep>
+                </entry>
+                <entry>
+                <ind>0.3</ind>
+                <dep>90</dep>
+                </entry>
+                <entry>
+                <ind>0.5</ind>
+                <dep>90</dep>
+                </entry>
+                <entry>
+                <ind>1.0</ind>
+                <dep>90</dep>
+                </entry>
+            </interpolation>
+            <center>
+                <x-m>0</x-m>
+                <y-m>-0.202344</y-m>
+                <z-m>1.48</z-m>
+        </center>
+        <axis>
+                <x>1</x>
+                <y>0</y>
+                <z>0</z>
+        </axis>
+ </animation>
+
+ <animation>
+        <type>rotate</type>
+        <object-name>Probe-DPorte</object-name>
+        <object-name>Probe-DPorte-Doublage</object-name>
+        <property>surface-positions/refueling-pos-norm</property>
+        <interpolation>
+                <entry>
+                <ind>0.0</ind>
+                <dep>0</dep>
+                </entry>
+                <entry>
+                <ind>0.3</ind>
+                <dep>90</dep>
+                </entry>
+                <entry>
+                <ind>0.5</ind>
+                <dep>90</dep>
+                </entry>
+                <entry>
+                <ind>1.0</ind>
+                <dep>90</dep>
+                </entry>
+            </interpolation>
+            <center>
+                <x-m>0</x-m>
+                <y-m>0.202344</y-m>
+                <z-m>1.48</z-m>
+        </center>
+        <axis>
+                <x>-1</x>
+                <y>0</y>
+                <z>0</z>
+        </axis>
+ </animation>
+
+
+
+</PropertyList>

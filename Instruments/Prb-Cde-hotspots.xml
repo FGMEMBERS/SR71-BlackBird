@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE PropertyList SYSTEM "panel.dtd">
+
+<!--
+Usable with FlightGear
+Property of Gerard Robin
+Copyright License:  GPL
+-->
+<PropertyList>
+
+
+
+    <name>Panel Hotspots</name>
+    <background>Aircraft/SR71-BlackBird/Panels/Textures/transparent-bg.rgb</background>
+    <w>512</w>
+    <h>512</h>
+    <y-offset>0</y-offset>
+
+
+    <instruments>
+        <instrument>
+                <name>Control</name>
+                <x>256</x>
+                <y>256</y>
+                <w>512</w>
+                <h>512</h>
+                <w-base>1024</w-base>
+                <h-base>1024</h-base>
+                <actions>
+                    <action>
+                        <name>probe fuel activate</name>
+                        <button>0</button>
+                        <x>-300</x>
+                        <y>00</y>
+                        <w>500</w>
+                        <h>400</h>
+                        <binding>
+                            <command>nasal</command>
+                            <script>
+                                    consumable.refuel();
+                            </script>
+                        </binding>
+                    </action>
+                </actions>
+        </instrument>
+    </instruments>
+
+</PropertyList>
+
+
+

@@ -12,16 +12,16 @@
 
 
 
-        <!--<model>
+        <model>
                 <name>Bouton</name>
-                <path>Aircraft/F-8E/Instruments/Bouton-f8e.xml</path>
+                <path>Aircraft/SR71-BlackBird/Instruments/Bouton-Nord.xml</path>
                 <offsets>
                         <x-m>0.0206361</x-m>
-                        <y-m>-0.039</y-m>
-                        <z-m>-0.039</z-m>
+                        <y-m>-0.047</y-m>
+                        <z-m>-0.047</z-m>
                         <pitch-deg>0</pitch-deg>
                 </offsets>
-        </model>-->
+        </model>
 
         <animation include="Instrument-Light4.xml">
                 <object-name>Aiguille</object-name>
@@ -47,6 +47,27 @@
                 <object-name>PA-un</object-name>
                 <object-name>PA-di</object-name>
         </animation>
+
+        <!--******************** Hotspots ******************************-->
+	<panel>
+		<path>Aircraft/SR71-BlackBird/Instruments/ALT-bb-hotspots.xml</path>
+		<bottom-left>
+			<x-m>0.014</x-m>
+			<y-m>-0.0596174</y-m>
+			<z-m>-0.0596174</z-m>
+		</bottom-left>
+		<bottom-right>
+			<x-m>0.014</x-m>
+			<y-m>0.0596174</y-m>
+			<z-m>-0.0596174</z-m>
+		</bottom-right>
+		<top-left>
+			<x-m>0.014</x-m>
+			<y-m>-0.0596174</y-m>
+			<z-m>0.0596174</z-m>
+		</top-left>
+	</panel>
+<!--*************************************************-->
 
         <animation>
                 <type>rotate</type>
@@ -114,22 +135,22 @@
                 </axis>
         </animation>
 
-        <!--<animation>
+        <animation>
                 <type>rotate</type>
                 <object-name>Bouton</object-name>
                 <property>/instrumentation/altimeter/setting-inhg</property>
                 <factor>1000</factor>
                 <center>
                         <x-m>0</x-m>
-                        <y-m>-0.039</y-m>
-                        <z-m>-0.039</z-m>
+                        <y-m>-0.047</y-m>
+                        <z-m>-0.047</z-m>
                 </center>
                 <axis>
                         <x>-1</x>
                         <y>0</y>
                         <z>0</z>
                 </axis>
-        </animation>-->
+        </animation>
 
 
 

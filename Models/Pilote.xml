@@ -6,49 +6,49 @@
 -->
 <PropertyList>
 
- <path>pilote.ac</path>
- <texture-path>Texture-SR71/</texture-path>
+<path>pilote.ac</path>
+<texture-path>Texture-USAF/</texture-path>
 
-	<animation>
-		<type>select</type>
-		<object-name>Lunette</object-name>
-		<object-name>Tube</object-name>
-		<condition>
-			<equals>
-				<property>/fdm/jsbsim/fcs/canopy-pos-norm</property>
-				<value>0</value>
-			</equals>
-		</condition>
-	</animation>
+    <animation>
+            <type>select</type>
+            <object-name>Lunette</object-name>
+            <object-name>Tube</object-name>
+            <condition>
+                    <equals>
+                            <property>/fdm/jsbsim/fcs/canopy-pos-norm</property>
+                            <value>0</value>
+                    </equals>
+            </condition>
+    </animation>
 
-	<animation>
-		<type>rotate</type>
-		<object-name>Masque</object-name>
-		<property>/fdm/jsbsim/fcs/canopy-pos-norm</property>
-		<interpolation>
-			<entry>
-				<ind>0.0</ind>
-				<dep>0.0</dep>
-			</entry>
-			<entry>
-				<ind>0.2</ind>
-				<dep>120</dep>
-			</entry>
-			<entry>
-				<ind>1.0</ind>
-				<dep>120</dep>
-			</entry>
-		</interpolation>
-		<center>
-			<x-m>0.218867</x-m>
-			<y-m>-0.0704587</y-m>    <!-- -0.157516-->
-			<z-m>0.315853</z-m>        <!--0.177874-->
-		</center>
-		<axis>
-			<x>0</x>
-			<y>-0.08705</y>
-			<z>1.3798</z>
-		</axis>
-	</animation>
+    <animation>
+            <type>rotate</type>
+            <object-name>Masque</object-name>
+            <property>/fdm/jsbsim/fcs/canopy-pos-norm</property>
+            <interpolation>
+                    <entry>
+                            <ind>0.0</ind>
+                            <dep>0.0</dep>
+                    </entry>
+                    <entry>
+                            <ind>0.2</ind>
+                            <dep>120</dep>
+                    </entry>
+                    <entry>
+                            <ind>1.0</ind>
+                            <dep>120</dep>
+                    </entry>
+            </interpolation>
+            <center>
+                    <x-m>0.218867</x-m>
+                    <y-m>-0.0704587</y-m>    <!-- -0.157516-->
+                    <z-m>0.315853</z-m>        <!--0.177874-->
+            </center>
+            <axis>
+                    <x>0</x>
+                    <y>-0.08705</y>
+                    <z>1.3798</z>
+            </axis>
+    </animation>
 
 </PropertyList>

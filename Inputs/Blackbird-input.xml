@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<!--
+    Usable with FlightGear
+    Property of Gerard Robin  gh.robin@laposte.net
+    Copyright License:  GPL
+-->
+<PropertyList>
+
+    <keyboard>
+            <key n="1">
+            <name>Ctrl-A</name>
+            <desc>Toggle autopilot altitude lock.</desc>
+                    <binding>
+                            <command>property-toggle</command>
+                            <property>/autopilot/switch-altitude</property>
+                    </binding>
+            </key>
+            <!--<key n="8">
+            <name>Ctrl-H</name>
+            <desc>Toggle autopilot heading lock.</desc>
+                    <binding>
+                            <command>property-toggle</command>
+                            <property>/autopilot/switch-heading</property>
+                    </binding>
+            </key>-->
+            <key n="100">
+                <name>d</name>
+                <desc>Toggle Canopy</desc>
+                    <binding>
+                            <command>property-toggle</command>
+                            <property>/fdm/jsbsim/fcs/canopy-cmd-norm</property>
+                    </binding>
+            </key>
+            <key n="70">
+                <name>F</name>
+                <desc>Refuel On/Off</desc>
+                    <binding>
+                            <command>nasal</command>
+                            <script>
+                                    consumable.refuel();
+                            </script>
+                    </binding>
+            </key>
+            <key n="10">
+                <name>Ctrl-j</name>
+                <desc>Braking Chute Deploy</desc>
+                <binding>
+                        <property>sim/model/controls/chute</property>
+                        <command>property-assign</command>
+                        <value>1</value>
+                </binding>
+        </key>
+        <key n="106">
+                <name>j</name>
+                <desc>Braking Chute Reload</desc>
+                <binding>
+                        <property>sim/model/controls/chute</property>
+                        <command>property-assign</command>
+                        <value>0</value>
+                </binding>
+                <binding>
+                        <property>/fdm/jsbsim/fcs/chute-switch-once</property>
+                        <command>property-assign</command>
+                        <value>0</value>
+                </binding>
+        </key>
+        <key n="125">
+                <name>}</name>
+                <desc>Master Electric  Switch</desc>
+                        <binding>
+                                <command>property-toggle</command>
+                                <property>/controls/electric/master-switch</property>
+                        </binding>
+        </key>
+        <key n="123">
+                <name>{</name>
+                <desc>Cutoff ON/OFF</desc>
+                        <binding>
+                                <command>nasal</command>
+                                <script>switch.Cutoff_Cmd();</script>
+                        </binding>
+        </key>
+        </keyboard>
+</PropertyList>

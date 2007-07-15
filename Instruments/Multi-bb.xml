@@ -1,0 +1,236 @@
+<?xml version="1.0"?>
+<!--
+    Usable with FlightGear
+    Property of Gerard Robin
+    Copyright License:  GPL
+-->
+<PropertyList>
+
+    <path>Models/multi-bb.ac</path>
+    <texture-path>Models/Textures</texture-path>
+
+
+
+    <animation include="Instrument-Light2.xml">
+            <object-name>Corps</object-name>
+    </animation>
+
+    <animation include="Instrument-Light3.xml">
+                <object-name>Cadran</object-name>
+    </animation>
+
+    <animation include="Instrument-Light3.xml">
+            <object-name>Calt</object-name>
+            <object-name>Dalt</object-name>
+            <object-name>Ualt</object-name>
+            <object-name>Malt</object-name>
+            <object-name>DMalt</object-name>
+    </animation>
+     <animation include="Instrument-Light3.xml">
+            <object-name>Ceas</object-name>
+            <object-name>Deas</object-name>
+            <object-name>Ueas</object-name>
+    </animation>
+    <animation include="Instrument-Light3.xml">
+            <object-name>Cmach</object-name>
+            <object-name>Dmach</object-name>
+            <object-name>Umach</object-name>
+    </animation>
+    <animation include="Instrument-Light3.xml">
+            <object-name>Plus</object-name>
+    </animation>
+
+
+    <animation>
+            <type>textranslate</type>
+            <object-name>Ualt</object-name>
+            <property>/position/altitude-ft</property>
+            <factor>0.1</factor>
+            <step>1</step>
+            <scroll>0</scroll>
+            <axis>
+                    <x>0</x>
+                    <y>-1</y>
+                    <z>0</z>
+            </axis>
+    </animation>
+
+    <animation>
+            <type>textranslate</type>
+            <object-name>Dalt</object-name>
+           <property>/position/altitude-ft</property>
+            <factor>0.01</factor>
+            <step>10</step>
+            <scroll>0</scroll>
+            <axis>
+                    <x>0</x>
+                    <y>-1</y>
+                    <z>0</z>
+            </axis>
+    </animation>
+
+    <animation>
+            <type>textranslate</type>
+            <object-name>Calt</object-name>
+          <property>/position/altitude-ft</property>
+            <factor>0.001</factor>
+            <step>100</step>
+            <scroll>0</scroll>
+            <axis>
+                    <x>0</x>
+                    <y>-1</y>
+                    <z>0</z>
+            </axis>
+    </animation>
+
+    <animation>
+            <type>textranslate</type>
+            <object-name>Malt</object-name>
+          <property>/position/altitude-ft</property>
+            <factor>0.0001</factor>
+            <step>1000</step>
+            <scroll>0</scroll>
+            <axis>
+                    <x>0</x>
+                    <y>-1</y>
+                    <z>0</z>
+            </axis>
+    </animation>
+
+    <animation>
+            <type>textranslate</type>
+            <object-name>DMalt</object-name>
+          <property>/position/altitude-ft</property>
+            <factor>0.00001</factor>
+            <step>10000</step>
+            <scroll>0</scroll>
+            <axis>
+                    <x>0</x>
+                    <y>-1</y>
+                    <z>0</z>
+            </axis>
+    </animation>
+
+<!--================================================================-->
+
+    <animation>
+            <type>select</type>
+            <object-name>Ueas</object-name>
+            <condition>
+                    <less-than>
+                        <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
+                        <value>1000</value>
+                    </less-than>
+            </condition>
+    </animation>
+
+    <animation>
+            <type>select</type>
+            <object-name>Deas</object-name>
+            <condition>
+                    <less-than>
+                        <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
+                        <value>1000</value>
+                    </less-than>
+            </condition>
+    </animation>
+
+    <animation>
+            <type>select</type>
+            <object-name>Ceas</object-name>
+            <condition>
+                    <less-than>
+                        <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
+                        <value>1000</value>
+                    </less-than>
+            </condition>
+    </animation>
+
+    <animation>
+            <type>textranslate</type>
+            <object-name>Ueas</object-name>
+            <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
+            <factor>0.1</factor>
+            <step>1</step>
+            <scroll>0</scroll>
+            <axis>
+                    <x>0</x>
+                    <y>-1</y>
+                    <z>0</z>
+            </axis>
+    </animation>
+
+    <animation>
+            <type>textranslate</type>
+            <object-name>Deas</object-name>
+           <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
+            <factor>0.01</factor>
+            <step>10</step>
+            <scroll>0</scroll>
+            <axis>
+                    <x>0</x>
+                    <y>-1</y>
+                    <z>0</z>
+            </axis>
+    </animation>
+
+    <animation>
+            <type>textranslate</type>
+            <object-name>Ceas</object-name>
+          <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
+            <factor>0.001</factor>
+            <step>100</step>
+            <scroll>0</scroll>
+            <axis>
+                    <x>0</x>
+                    <y>-1</y>
+                    <z>0</z>
+            </axis>
+    </animation>
+
+    <!--============================================-->
+
+    <animation>
+            <type>textranslate</type>
+            <object-name>Umach</object-name>
+            <property>/velocities/mach</property>
+            <factor>10</factor>
+            <step>0.01</step>
+            <scroll>0</scroll>
+            <axis>
+                    <x>0</x>
+                    <y>-1</y>
+                    <z>0</z>
+            </axis>
+    </animation>
+
+    <animation>
+            <type>textranslate</type>
+            <object-name>Dmach</object-name>
+           <property>/velocities/mach</property>
+            <factor>1</factor>
+            <step>0.1</step>
+            <scroll>0</scroll>
+            <axis>
+                    <x>0</x>
+                    <y>-1</y>
+                    <z>0</z>
+            </axis>
+    </animation>
+
+    <animation>
+            <type>textranslate</type>
+            <object-name>Cmach</object-name>
+          <property>/velocities/mach</property>
+            <factor>0.1</factor>
+            <step>1</step>
+            <scroll>0</scroll>
+            <axis>
+                    <x>0</x>
+                    <y>-1</y>
+                    <z>0</z>
+            </axis>
+    </animation>
+
+
+</PropertyList>

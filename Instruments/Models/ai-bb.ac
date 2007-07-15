@@ -7,7 +7,39 @@ MATERIAL "ac3dmat14" rgb 0.8 0.8 0.8  amb 0.2 0.2 0.2  emis 0 0 0  spec 0 0 0  s
 MATERIAL "ac3dmat1" rgb 1 1 1  amb 1 1 1  emis 0 0 0  spec 1 1 1  shi 116  trans 0
 MATERIAL "ac3dmat4" rgb 0.69 0.584 0.475  amb 0.2 0.2 0.2  emis 0 0 0  spec 0 0 0  shi 99  trans 0
 OBJECT world
-kids 9
+kids 10
+OBJECT group
+name "EGT"
+loc 0.000203266 0.0023469 0.00432692
+kids 1
+OBJECT poly
+name "OFF"
+loc -0.00912087 0.011794 0.0695379
+texture "egt.rgb"
+crease 45.000000
+numvert 6
+0.0792083 -0.0623509 -0.0206163
+0.0792083 -0.0623509 -0.0134705
+0.0792083 -0.0292926 -0.0134706
+0.0792083 -0.0430449 -0.0134706
+0.0792083 -0.0430449 -0.0206163
+0.0792083 -0.0292927 -0.0206163
+numsurf 2
+SURF 0x0
+mat 1
+refs 4
+3 0.0670673 0.829958
+1 0.0670673 0.829958
+0 0.0670673 0.829958
+4 0.0670673 0.829958
+SURF 0x20
+mat 0
+refs 4
+2 0.164826 0.975086
+3 0.0228844 0.975086
+4 0.0228844 0.903189
+5 0.164826 0.903189
+kids 0
 OBJECT poly
 name "Roll-pilotage-indic"
 loc 0.00181282 -0.000941831 0.000376734

@@ -1,0 +1,115 @@
+#===================================================================
+Property of Gerard Robin  France
+This Model is under Copyright GNU GENERAL PUBLIC LICENSE
+see COPYING  file attached to this package.
+
+====================================================================
+Here is the basic flyable models.
+Both variants are available
+
+BlackBird-SR71-A was the usual  Aircrfat, with Pilot and RSO, you can launch it with:      fg --aircraft=Blackbird-A
+BlackBird-SR71-B was the training  Aircrfat, with Instructor Pilot and Student Pilot,  you can launch it with:      fg --aircraft=Blackbird-B
+
+Mainly to be done:
+--------A lot (huge)  of improvement regarding the FDM, Aero and Engine performance.
+--------Cockpits with more instrumentation.
+
+
+=============================================================================
+   =====================HERE THE  COPY OF THE ONLINE AIRCRAFT HELP=========================
+
+        <title>SR71-BackBird</title>
+        <key>
+                <name>}</name>
+                <desc>toggle Electric Master Switch On/Off</desc>
+        </key>
+        <key>
+                <name>Space  or "s"  with the recent CVS keyboard.xml update</name>
+                <desc>Starter</desc>
+        </key>
+
+        <key>
+                <name>{</name>
+                <desc>toggle Cutoff False/True</desc>
+        </key>
+        <key>
+                <name>d</name>
+                <desc>Toggle canopy</desc>
+        </key>
+        <key>
+                <name>F</name>
+                <desc>Toggle refuel  on/off</desc>
+        </key>
+        
+        <key>
+                <name>Ctrl-A</name>
+                <desc>Toggle Unlock/Lock Autopilot on the current Altitude</desc>
+        </key>
+        <key>
+                <name>Ctrl-j</name>
+                <desc>Prepare braking chute deployement, open the doors</desc>
+        </key>
+        <key>
+                <name>j</name>
+                <desc>Reload Braking Chute, and close the doors</desc>
+        </key>
+
+        <line>First Contact with Blackbird</line>
+        <line>Now you are sitting in the Pilot cockpit</line>
+        <line>On the Forward Cockpit if Blackbird   SR71-A</line>
+        <line>With view "7" you can see the RSO cockpit (not yet with equipemnts)</line>
+        <line>On the Rear Cockpit if Blackbird   SR71-B  training</line>
+        <line>With view "7" you can see the Pilot Student cockpit</line>
+        <line>The Electric Master is OFF</line>
+        <line>The Engines is "cut off" ON</line>
+        <line>The canopy are "open"</line>
+        <line>The Parking Brake is ON</line>
+         <line></line>
+        <line>====Start Routine==========</line>
+        <line>Electric Master Switch On => key "}"</line>
+        <line>Get the external Starter ressources  (depress "space" or "s"  with the recent CVS keyboard.xml update)</line>
+        <line>The engine will spin up to a maximum of about %25 N2 (%5.2 N1)</line>
+        <line>This simulates the action of the external starter.</line>
+        <line>After reaching %15 N2,  Cutoff to False  => key "{"</line>
+        <line >wait for the EP Ratio needle close to 1.1</line>
+        <line>Don't forget to close the canopy key => "d"</line>
+        <line>Parking brake Off</line>
+        <line>then push the throttle to  take off</line>
+        <line></line>
+        <line>====Refueling============</line>
+        <line>With key "F"</line>
+        <line>On gound refueling, if Airspeed less than 20 kts</line>
+        <line>Does not need Probe, the probe is not raised</line>
+        <line>Air refueling if Airspeed more than 200 kts and Agl more  than 300 feet</line>
+        <line>Probe is first automatically raised </line>
+        <line>for your facility it does not need refuel contact with Tanker </line>
+        <line>however, the air refueling function  is automatically activated if you get the contact with the tanker</line>
+        <line></line>
+        <line></line>
+        <line>====Braking Chute==========</line>
+        <line>the braking chute will be automaticlly deployed</line>
+        <line>When the following conditions are all true</line>
+        <line></line>
+        <line>Airspeed less than 200 kts</line>
+        <line>Agl less than 20 feet</line>
+        <line>Throttle position less than 0.1</line>
+        <line></line>
+        <line>the braking chute will be released, untied</line>
+        <line>When</line>
+        <line>Airspeed less than 50 kts</line>
+        <line>REMEMBER       it can be used only once</line>
+        <line>If you want it again you must reload it =>  key j</line>
+        <line></line>
+        <line>====Radar================</line>
+        <line>That Radar is the last version ("Vivian" Radar ) </line>
+        <line> you can choose the range by clicking on the switch =>mouse button 1 to decrease =>mouse button 0 to increase</line>
+        <line></line>
+        <line>====Tacan================</line>
+        <line>The Tacan instrument is situated or the left side of the cockpit</line>
+        <line>That instrument is fully operationnal, look at the hotspot to enter the right values</line>
+        <line>====Autopilot==============</line>
+        <line>The autopilot can be ON/OFF with Altitude and Heading</line>
+        <line> with key => "Ctrl A"  (toggle ON/OF) for the current Altitude  </line>
+       
+        <line></line>
+

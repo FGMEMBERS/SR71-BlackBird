@@ -1,0 +1,195 @@
+<?xml version="1.0"?>
+<!--
+    Usable with FlightGear
+    Property of Gerard Robin
+    Copyright License:  GPL
+-->
+
+
+<!-- Textures and animations where extracted from "boeing747-400-pfd-jw", adapted by Gerard Robin for F-8E HUD -->
+
+<PropertyList>
+
+ <path>Models/hud-i1-f8e.ac</path>
+ <texture-path>Models/Textures</texture-path>
+
+    <animation>
+            <type>noshadow</type>
+            <object-name>HUD-I1</object-name>
+    </animation>
+
+    <!--<animation include="Instrument-Light2.xml">
+            <object-name></object-name>
+    </animation>-->
+
+
+
+    <animation>
+            <type>select</type>
+            <object-name>asitape1</object-name>
+            <condition>
+                    <less-than>
+                            <property>/velocities/airspeed-kt</property>
+                            <value>480.01</value>
+                    </less-than>
+            </condition>
+    </animation>
+
+    <animation>
+            <type>select</type>
+            <object-name>asitape2</object-name>
+            <condition>
+                    <greater-than>
+                            <property>/velocities/airspeed-kt</property>
+                            <value>479.99</value>
+                    </greater-than>
+            </condition>
+    </animation>
+
+    <animation>
+            <type>textranslate</type>
+            <object-name>asitape1</object-name>
+            <property>/velocities/airspeed-kt</property>
+            <factor>0.001665</factor>
+            <min>0.0499</min>
+            <axis>
+                    <x>0</x>
+                    <y>1</y>
+                    <z>0</z>
+            </axis>
+    </animation>
+
+    <animation>
+            <type>textranslate</type>
+            <object-name>asitape2</object-name>
+            <property>/velocities/airspeed-kt</property>
+            <factor>0.001665</factor>
+            <min>0.0499</min>
+            <axis>
+                    <x>0</x>
+                    <y>1</y>
+                    <z>0</z>
+            </axis>
+    </animation>
+
+    <animation>
+            <type>select</type>
+            <object-name>alttapeindex1</object-name>
+            <condition>
+                    <less-than>
+                            <property>/position/altitude-ft</property>
+                            <value>2100.01</value>
+                    </less-than>
+            </condition>
+    </animation>
+
+    <animation>
+            <type>select</type>
+            <object-name>alttapeindex2</object-name>
+            <condition>
+                <and>
+                    <greater-than>
+                            <property>/position/altitude-ft</property>
+                            <value>2099.99</value>
+                    </greater-than>
+                     <less-than>
+                            <property>/position/altitude-ft</property>
+                            <value>46600.01</value>
+                    </less-than>
+                </and>
+            </condition>
+    </animation>
+
+    <animation>
+            <type>select</type>
+            <object-name>alttape</object-name>
+            <condition>
+                    <less-than>
+                            <property>/position/altitude-ft</property>
+                            <value>46600.01</value>
+                    </less-than>
+            </condition>
+    </animation>
+
+    <animation>
+            <type>textranslate</type>
+            <object-name>alttapeindex1</object-name>
+            <property>/position/altitude-ft</property>
+            <factor>0.0003333</factor>
+            <axis>
+                    <x>0</x>
+                    <y>1</y>
+                    <z>0</z>
+            </axis>
+    </animation>
+
+    <animation>
+            <type>textranslate</type>
+            <object-name>alttapeindex2</object-name>
+            <property>/position/altitude-ft</property>
+            <factor>0.0003333</factor>
+            <axis>
+                    <x>0</x>
+                    <y>1</y>
+                    <z>0</z>
+            </axis>
+    </animation>
+
+    <animation>
+            <type>texmultiple</type>
+            <object-name>alttape</object-name>
+            <transform>
+                    <subtype>textranslate</subtype>
+                    <property>/position/altitude-ft</property>
+                    <factor>0.0003333</factor>
+                    <axis>
+                            <x>0</x>
+                            <y>1</y>
+                            <z>0</z>
+                    </axis>
+            </transform>
+            <transform>
+                    <subtype>textranslate</subtype>
+                    <property>/position/altitude-ft</property>
+                    <step>2100.0</step>
+                    <factor>0.0000186012</factor>
+                    <axis>
+                            <x>1</x>
+                            <y>0</y>
+                            <z>0</z>
+                    </axis>
+            </transform>
+    </animation>
+
+    <animation>
+            <type>texmultiple</type>
+            <object-name>attitude</object-name>
+            <transform>
+                    <property>/orientation/pitch-deg</property>
+                    <subtype>textranslate</subtype>
+                    <factor>0.004665</factor>
+                    <axis>
+                            <x>0</x>
+                            <y>1</y>
+                            <z>0</z>
+                    </axis>
+            </transform>
+    </animation>
+    <animation>
+            <type>rotate</type>
+            <object-name>attitude</object-name>
+            <property>/orientation/roll-deg</property>
+            <center>
+                    <x-m>0</x-m>
+                    <y-m>0</y-m>
+                    <z-m>-0.0134144</z-m>
+            </center>
+            <axis>
+                    <x>1</x>
+                    <y>0</y>
+                    <z>0</z>
+            </axis>
+    </animation>
+
+
+</PropertyList>

@@ -37,7 +37,19 @@
 	<animation include="Instrument-Light4.xml">
 		<object-name>noshadow.AISlip-I</object-name>
 		<object-name>noshadow.AIAvion</object-name>
+                <object-name>OFF</object-name>
 	</animation>
+
+        <animation>
+                <type>select</type>
+                <object-name>OFF</object-name>
+                <condition>
+                        <less-than>
+                                <property>/systems/electrical/outputs/instr-ignition-switch</property>
+                                <value>27</value>
+                        </less-than>
+                </condition>
+        </animation>
 
 	<animation>
 		<type>rotate</type>

@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
- 
+
 <!-- FA-18 Autopilot Configuration, Initially taken from the Generic Autopilot -->
 
 <!-- Each component is evaluated in the order specified.  You can make up -->
@@ -13,7 +13,7 @@
   <!-- Roll Axis Modes                                                 -->
   <!-- =============================================================== -->
 
-  <!-- Wing leveler --> 
+  <!-- Wing leveler -->
   <pid-controller>
     <name>Wing Leveler (Turn Coordinator based)</name>
     <debug>false</debug>
@@ -237,7 +237,7 @@
  <!-- Pitch Axis Modes                                                -->
  <!-- =============================================================== -->
 
- <!-- Simple pitch hold --> 
+ <!-- Simple pitch hold -->
  <pid-controller>
     <name>Pitch hold</name>
     <debug>false</debug>
@@ -267,7 +267,7 @@
     </config>
    </pid-controller>
 
- <!-- Simple angle of attack hold --> 
+ <!-- Simple angle of attack hold -->
  <pid-controller>
     <name>AOA hold</name>
     <debug>false</debug>
@@ -481,7 +481,7 @@
  <!-- Velocity Modes                                                  -->
  <!-- =============================================================== -->
 
- <!-- Auto throttle --> 
+ <!-- Auto throttle -->
  <pid-controller>
     <name>Auto Throttle (5 sec lookahead)</name>
     <debug>false</debug>
@@ -519,7 +519,7 @@
     </config>
   </pid-controller>
 
- <!-- Hold speed by varying pitch trim (Two stage cascading controller) --> 
+ <!-- Hold speed by varying pitch trim (Two stage cascading controller) -->
  <pid-controller>
     <name>Speed hold (vary pitch trim) Stage #1</name>
     <debug>false</debug>

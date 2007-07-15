@@ -1,0 +1,118 @@
+<?xml version="1.0"?>
+
+
+<PropertyList>
+
+    <sim include="Help/BlackBird-help.xml" >
+        <systems>
+            <autopilot>
+                <path>Aircraft/SR71-BlackBird/System/autopilot.xml</path>
+            </autopilot>
+            <autoflight>
+                <serviceable type="bool">true</serviceable>
+            </autoflight>
+             <path>Aircraft/SR71-BlackBird/System/systems.xml</path>
+        </systems>
+        <instrumentation>
+            <path>Aircraft/SR71-BlackBird/System/instrumentation.xml</path>
+        </instrumentation>
+    </sim>
+
+    <input include="Inputs/Blackbird-input.xml"/>
+
+    <controls>
+        <!-- Start with the Parking Brake on -->
+        <gear>
+            <brake-parking type="double">1.0</brake-parking>
+        </gear>
+        <switches>
+            <landing-light>true</landing-light>
+        </switches>
+    </controls>
+
+    <engines>
+        <engine n="0">
+                    <running>false</running>
+        </engine>
+        <engine n="1">
+                    <running>false</running>
+        </engine>
+    </engines>
+
+
+    <consumables>
+        <fuel>
+            <tank n="0">
+            <level-gal_us archive="y">3000</level-gal_us>
+            </tank>
+            <tank n="1">
+            <level-gal_us archive="y">3000</level-gal_us>
+            </tank>
+            <tank n="2">
+            <level-gal_us archive="y">4500</level-gal_us>
+            </tank>
+        </fuel>
+    </consumables>
+
+    <autopilot>
+            <settings>
+                    <target-agl-ft type="float">800</target-agl-ft>
+                    <target-altitude-ft type="float">25000</target-altitude-ft>
+                    <target-aoa-deg type="float">0.3</target-aoa-deg>
+                    <target-pitch-deg type="float">1.5</target-pitch-deg>]
+                    <take-off-pitch-deg type="float">9</take-off-pitch-deg>
+                    <climb-out-pitch-deg type="float">8</climb-out-pitch-deg>
+                    <target-speed-kt type="float">800.0</target-speed-kt>
+                    <target-mach type="float">0.9</target-mach>
+                    <approach-AoA-deg type="float">12.7</approach-AoA-deg>
+            </settings>
+    </autopilot>
+
+    <instrumentation>
+            <radar>
+                <switch type="string" archive="y">ON</switch>
+                <mode-control type="int" archive="y">1</mode-control>
+                <display-controls>
+                        <WX type="bool" archive="y">false</WX>
+                        <data type="bool"  archive="y">false</data>
+                        <pos type="bool" archive="y">true</pos>
+                </display-controls>
+                <serviceable type="bool">true</serviceable>
+                <range type="int"  archive="y">40</range>
+                <mode type="string" archive="y">WX</mode>
+                <lightning type="bool"  archive="y">false</lightning>
+                <display-mode type="string"  archive="y">plan</display-mode>
+                <minimized type="bool" archive="y">false</minimized>
+            </radar>
+    </instrumentation>
+
+    <fdm>
+            <jsbsim>
+                    <fcs>
+                            <canopy-cmd-norm>1</canopy-cmd-norm>
+                    </fcs>
+            </jsbsim>
+    </fdm>
+
+
+    <nasal>
+            <electrical>
+                <file>Aircraft/SR71-BlackBird/System/electrical.nas</file>
+            </electrical>
+            <switch>
+                <file>Aircraft/SR71-BlackBird/System/blackbird.nas</file>
+            </switch>
+            <consumable>
+                <file>Aircraft/SR71-BlackBird/System/refuel.nas</file>
+            </consumable>
+            <radar>
+                <file>Aircraft/SR71-BlackBird/System/radar.nas</file>
+            </radar>
+            <nav>
+                <file>Aircraft/SR71-BlackBird/System/nav.nas</file>
+            </nav>
+    </nasal>
+
+</PropertyList>
+
+

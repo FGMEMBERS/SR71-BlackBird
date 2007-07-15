@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+
+
+<!--
+    Usable with FlightGear
+    Property of Gerard Robin
+    Copyright License:  GPL
+-->
+<PropertyList>
+
+ <path>Models/fuel-capacity-bb.ac</path>
+ <texture-path>Models/Textures</texture-path>
+
+    <animation include="Instrument-Light4.xml">
+            <object-name>Aiguille</object-name>
+    </animation>
+
+    <animation include="Instrument-Light3.xml">
+            <object-name>Cadran</object-name>
+    </animation>
+
+    <animation include="Instrument-Light3.xml">
+            <object-name>CCpcty</object-name>
+            <object-name>DCpcty</object-name>
+            <object-name>UCpcty</object-name>
+            <object-name>MCpcty</object-name>
+            <object-name>DMCpcty</object-name>
+    </animation>
+
+    <animation>
+            <type>rotate</type>
+            <object-name>Aiguille</object-name>
+            <object-name>Aiguille-Fond</object-name>
+            <property>/consumables/fuel/total-fuel-lbs</property>
+            <factor>0.002776470588235294118</factor>
+            <axis>
+                    <x>-1</x>
+                    <y>0</y>
+                    <z>0</z>
+            </axis>
+    </animation>
+
+
+    <animation>
+            <type>textranslate</type>
+            <object-name>UCpcty</object-name>
+            <property>/consumables/fuel/total-fuel-lbs</property>
+            <factor>0.1</factor>
+            <step>1</step>
+            <scroll>0</scroll>
+            <axis>
+                    <x>0</x>
+                    <y>-1</y>
+                    <z>0</z>
+            </axis>
+    </animation>
+
+    <animation>
+            <type>textranslate</type>
+            <object-name>DCpcty</object-name>
+           <property>/consumables/fuel/total-fuel-lbs</property>
+            <factor>0.01</factor>
+            <step>10</step>
+            <scroll>0</scroll>
+            <axis>
+                    <x>0</x>
+                    <y>-1</y>
+                    <z>0</z>
+            </axis>
+    </animation>
+
+    <animation>
+            <type>textranslate</type>
+            <object-name>CCpcty</object-name>
+          <property>/consumables/fuel/total-fuel-lbs</property>
+            <factor>0.001</factor>
+            <step>100</step>
+            <scroll>0</scroll>
+            <axis>
+                    <x>0</x>
+                    <y>-1</y>
+                    <z>0</z>
+            </axis>
+    </animation>
+
+    <animation>
+            <type>textranslate</type>
+            <object-name>MCpcty</object-name>
+          <property>/consumables/fuel/total-fuel-lbs</property>
+            <factor>0.0001</factor>
+            <step>1000</step>
+            <scroll>0</scroll>
+            <axis>
+                    <x>0</x>
+                    <y>-1</y>
+                    <z>0</z>
+            </axis>
+    </animation>
+
+    <animation>
+            <type>textranslate</type>
+            <object-name>DMCpcty</object-name>
+          <property>/consumables/fuel/total-fuel-lbs</property>
+            <factor>0.00001</factor>
+            <step>10000</step>
+            <scroll>0</scroll>
+            <axis>
+                    <x>0</x>
+                    <y>-1</y>
+                    <z>0</z>
+            </axis>
+    </animation>
+
+
+</PropertyList>

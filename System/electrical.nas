@@ -3,7 +3,7 @@
 # preliminary battery charge/discharge model and realistic ammeter
 # gauge modeling.
 #
-# Modified By G ROBIN  , that nasal code must not be modified without authorization of the author
+# Modified By G ROBIN 
 
 
 ##

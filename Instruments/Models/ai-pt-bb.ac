@@ -6,7 +6,30 @@ MATERIAL "ac3dmat1" rgb 1 1 1  amb 1 1 1  emis 0 0 0  spec 1 1 1  shi 116  trans
 MATERIAL "ac3dmat1" rgb 1 1 1  amb 0.584 0.612 0.663  emis 0 0 0  spec 0.208 0.188 0.18  shi 67  trans 0
 MATERIAL "ac3dmat1" rgb 0.302 0.404 0.404  amb 0.302 0.404 0.404  emis 0 0 0  spec 0.62 0.647 0.733  shi 125  trans 0
 OBJECT world
-kids 2
+kids 3
+OBJECT group
+name "EGT"
+loc 0.000203266 0.0023469 0.00432692
+kids 1
+OBJECT poly
+name "OFF"
+loc 0.00807896 -0.0202178 0.0228504
+texture "egt.rgb"
+crease 45.000000
+numvert 4
+0 0.00235416 -0.00453067
+0 0.00235416 0.00453067
+0 -0.00235417 0.00453067
+0 -0.00235417 -0.00453067
+numsurf 1
+SURF 0x20
+mat 1
+refs 4
+0 0.164826 0.975086
+1 0.0228844 0.975086
+2 0.0228844 0.903189
+3 0.164826 0.903189
+kids 0
 OBJECT group
 name "AI"
 loc 0.0023827 0.00993407 -2.34264e-05

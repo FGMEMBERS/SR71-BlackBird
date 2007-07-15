@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+<!DOCTYPE PropertyList SYSTEM "panel.dtd">
+
+<!--
+    Usable with FlightGear
+    Property of Gerard Robin
+    Copyright License:  GPL
+-->
+<PropertyList>
+
+ <name>Panel Hotspots</name>
+ <background>Aircraft/SR71-BlackBird/Panels/Textures/transparent-bg.rgb</background>
+ <w>512</w>
+ <h>512</h>
+ <y-offset>0</y-offset>
+
+
+ <instruments>
+    <instrument>
+            <name>Control</name>
+            <x>256</x>
+            <y>256</y>
+            <w>512</w>
+            <h>512</h>
+            <w-base>1024</w-base>
+            <h-base>1024</h-base>
+            <actions>
+<!--*******************************************************************-->
+                    <action>
+                            <name>calibrate fine</name>
+                            <button>0</button>
+                            <x>-490</x>
+                            <y>-400</y>
+                            <w>100</w>
+                            <h>180</h>
+                            <binding>
+                                    <command>property-adjust</command>
+                                    <property>/instrumentation/heading-indicator/setting-manual-hdg</property>
+                                    <step>-1</step>
+                                    <min>0</min>
+                                    <max>360</max>
+                                    <wrap>1</wrap>
+                            </binding>
+                    </action>
+
+                    <action>
+                            <name>calibrate coarse</name>
+                            <button>1</button>
+                            <x>-490</x>
+                            <y>-400</y>
+                            <w>100</w>
+                            <h>180</h>
+                            <binding>
+                                    <command>property-adjust</command>
+                                    <property>/instrumentation/heading-indicator/setting-manual-hdg</property>
+                                    <step>-5</step>
+                                    <min>0</min>
+                                    <max>360</max>
+                                    <wrap>1</wrap>
+                            </binding>
+                    </action>
+
+                    <action>
+                            <name>calibrate fine</name>
+                            <button>0</button>
+                            <x>-370</x>
+                            <y>-400</y>
+                            <w>100</w>
+                            <h>180</h>
+                            <binding>
+                                    <command>property-adjust</command>
+                                    <property>/instrumentation/heading-indicator/setting-manual-hdg</property>
+                                    <step>1</step>
+                                    <min>0</min>
+                                    <max>360</max>
+                                    <wrap>1</wrap>
+                            </binding>
+                    </action>
+
+                    <action>
+                            <name>calibrate coarse</name>
+                            <button>1</button>
+                            <x>-370</x>
+                            <y>-400</y>
+                            <w>100</w>
+                            <h>180</h>
+                            <binding>
+                                    <command>property-adjust</command>
+                                    <property>/instrumentation/heading-indicator/setting-manual-hdg</property>
+                                    <step>5</step>
+                                    <min>0</min>
+                                    <max>360</max>
+                                    <wrap>1</wrap>
+                            </binding>
+                    </action>
+
+
+
+
+            </actions>
+        </instrument>
+    </instruments>
+
+</PropertyList>
+
+
+

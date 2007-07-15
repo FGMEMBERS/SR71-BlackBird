@@ -238,7 +238,7 @@
                 </location>
                 <orient unit="DEG">
                     <roll> 0.0 </roll>
-                    <pitch> 0.0 </pitch>
+                    <pitch> -1.0 </pitch>
                     <yaw> 0.0 </yaw>
                 </orient>
             </thruster>
@@ -265,7 +265,7 @@
                 </location>
                 <orient unit="DEG">
                     <roll> 0.0 </roll>
-                    <pitch> 0.0 </pitch>
+                    <pitch> -1.0 </pitch>
                     <yaw> 0.0 </yaw>
                 </orient>
             </thruster>
@@ -294,7 +294,7 @@
                 <y> 0 </y>
                 <z> -32.25 </z>
             </location>
-            <capacity unit="LBS"> 30000 </capacity>
+            <capacity unit="LBS"> 25000 </capacity>
             <contents unit="LBS"> 15000 </contents>
         </tank>
     </propulsion>
@@ -309,6 +309,19 @@
         <property>fcs/chute-pos-deg</property>
         <property>fcs/pitch-deg</property>
         <property>sim/model/controls/chute</property>
+        <property>/consumables/fuel/total-fuel-gals</property>
+        <property>/consumables/fuel/tank[1]level-gal_us</property>
+        <property>/consumables/fuel/tank[2]level-gal_us</property>
+        <property>/consumables/fuel/total-fuel-lbs</property>
+        <property>/consumables/fuel/tank[0]level-lb</property>
+        <property>/consumables/fuel/tank[1]level-lb</property>
+        <property>/consumables/fuel/tank[2]level-lb</property>
+        <property>fcs/fuel-tank0-level-gal_us</property>
+        <property>fcs/fuel-tank0-cpty-level-gal_us</property>
+         <property>fcs/fuel-tank0-level-gal_us-load</property>
+        <property>fcs/fuel-tank1-level-gal_us</property>
+        <property>fcs/fuel-tank2-level-gal_us</property>
+
 
 
      <channel name="Pitch">
@@ -429,26 +442,19 @@
             </range>
             <output>fcs/rudder-pos-rad</output>
         </aerosurface_scale>
-    </channel>
-    <channel name="Flaps">
-        <kinematic name="Flaps Control">
-            <input>fcs/flap-cmd-norm</input>
-            <traverse>
-                <setting>
-                    <position>0.0000</position>
-                    <time>0.0000</time>
-                </setting>
-                <setting>
-                    <position>15.0000</position>
-                    <time>4.0000</time>
-                </setting>
-                <setting>
-                    <position>30.0000</position>
-                    <time>3.0000</time>
-                </setting>
-            </traverse>
-            <output>fcs/flap-pos-deg</output>
-        </kinematic>
+
+        <scheduled_gain name="Scheduled Steer Cmd Deg">
+                <input>fcs/steer-cmd-norm</input>
+                <table>
+                    <independentVar>velocities/vg-fps</independentVar>
+                    <tableData>
+                        10.0000	80.0000
+                        50.0000	15.0000
+                        150.0000	2.0000
+                    </tableData>
+                </table>
+                <output>fcs/steer-pos-deg</output>
+            </scheduled_gain>
     </channel>
 
     <channel name="Landing Gear">
@@ -481,6 +487,132 @@
             </pure_gain>
     </channel>
 
+    <channel name="g Load">
+            <summer name="constant one">
+                <input>fcs/aileron-cmd-norm</input>
+                <clipto>
+                    <min>1.0000</min>
+                    <max>1.0000</max>
+                </clipto>
+            </summer>
+
+            <summer name="g load">
+                <input>-accelerations/n-pilot-z-norm</input>
+                <input>-fcs/constant-one</input>
+            </summer>
+
+            <pure_gain name="g load norm">
+                <input>fcs/g-load</input>
+                <gain>0.1000</gain>
+            </pure_gain>
+
+            <summer name="neg g load norm">
+                <input>fcs/g-load-norm</input>
+                <clipto>
+                    <min>-1.0000</min>
+                    <max>0.0000</max>
+                </clipto>
+            </summer>
+
+            <summer name="pos g load norm">
+                <input>fcs/g-load-norm</input>
+                <clipto>
+                    <min>0.0000</min>
+                    <max>1.0000</max>
+                </clipto>
+            </summer>
+
+            <summer name="abs g load norm">
+                <input>fcs/pos-g-load-norm</input>
+                <input>-fcs/neg-g-load-norm</input>
+            </summer>
+
+            <summer name="g blend scheduler">
+                <input>fcs/abs-g-load-norm</input>
+                <input>velocities/mach</input>
+            </summer>
+
+            <scheduled_gain name="g load blend">
+                <input>fcs/g-load-norm</input>
+                <table>
+                    <independentVar>fcs/g-blend-scheduler</independentVar>
+                    <tableData>
+                        0.0000	0.0000
+                        1.0000	1.0000
+                    </tableData>
+                </table>
+            </scheduled_gain>
+
+            <pure_gain name="alpha norm">
+                <input>aero/alpha-deg</input>
+                <gain>0.0200</gain>
+            </pure_gain>
+
+            <scheduled_gain name="scheduled alpha norm">
+                <input>fcs/alpha-norm</input>
+                <table>
+                    <independentVar>fcs/g-blend-scheduler</independentVar>
+                    <tableData>
+                        0.0000	1.0000
+                        1.2000	0.0000
+                    </tableData>
+                </table>
+            </scheduled_gain>
+
+            <pure_gain name="pitch rate gain">
+                <input>velocities/q-aero-rad_sec</input>
+                <gain>1</gain>
+            </pure_gain>
+
+            <summer name="pitch cmd error">
+                <input>fcs/pitch-trim-sum</input>
+                <input>fcs/g-load-norm</input>
+                <input>fcs/scheduled-alpha-norm</input>
+                <input>fcs/pitch-rate-gain</input>
+            </summer>
+
+            <scheduled_gain name="g load p">
+                <input>fcs/pitch-cmd-error</input>
+                <table>
+                    <independentVar>velocities/mach</independentVar>
+                    <tableData>
+                        0.2000	0.5000
+                        1.8000	0.1000
+                    </tableData>
+                </table>
+            </scheduled_gain>
+
+            <integrator name="g load i">
+                <input>fcs/pitch-cmd-error</input>
+                <c1>0.0050</c1>
+            </integrator>
+
+            <lead_lag_filter name="g load d">
+                <input>fcs/pitch-cmd-error</input>
+                <c1>0.0010</c1>
+                <c2>0.0001</c2>
+                <c4>1.0000</c4>
+            </lead_lag_filter>
+
+            <summer name="g load command">
+                <input>fcs/g-load-p</input>
+                <clipto>
+                    <min>-1.0000</min>
+                    <max>1.0000</max>
+                </clipto>
+            </summer>
+
+            <scheduled_gain name="pitch cmd norm">
+                <input>fcs/g-load-command</input>
+                <table>
+                    <independentVar>velocities/mach</independentVar>
+                    <tableData>
+                        0.2000	1.0000
+                        1.8000	1.0000
+                    </tableData>
+                </table>
+            </scheduled_gain>
+    </channel>
 
     <channel name="Canopy">
         <kinematic name="Canopy">
@@ -497,7 +629,14 @@
             </traverse>
             <output>fcs/canopy-pos-norm</output>
         </kinematic>
-     </channel>
+
+     <pure_gain name="Canopy Surface">
+        <input>fcs/canopy-pos-norm</input>
+        <gain>1</gain>
+        <output>/surface-positions/canopy-pos-norm</output>
+    </pure_gain>
+
+    </channel>
 
      <channel name="Refuel Probe">
 
@@ -517,14 +656,95 @@
         <output>fcs/refueling-pos-norm</output>
     </kinematic>
 
-     <pure_gain name="Probe Refueling surface">
+     <pure_gain name="Probe Refueling Surface">
         <input>fcs/refueling-pos-norm</input>
         <gain>1</gain>
         <output>/surface-positions/refueling-pos-norm</output>
     </pure_gain>
 
+
+
+
      </channel>
 
+
+     <channel name="Fuel">
+            <summer name="Tank Total Gals">
+                <input>/consumables/fuel/tank[0]level-gal_us</input>
+                <input>/consumables/fuel/tank[1]level-gal_us</input>
+                 <input>/consumables/fuel/tank[2]level-gal_us</input>
+                <clipto>
+                    <min>0</min>
+                    <max>13637</max>
+                </clipto>
+                <output>/consumables/fuel/total-fuel-gals</output>
+            </summer>
+            <summer name="Tank Total Lbs">
+                <input>/consumables/fuel/tank[0]level-lb</input>
+                <input>/consumables/fuel/tank[1]level-lb</input>
+                <input>/consumables/fuel/tank[2]level-lb</input>
+                <clipto>
+                    <min>0</min>
+                    <max>90000</max>
+                </clipto>
+                <output>/consumables/fuel/total-fuel-lbs</output>
+            </summer>
+
+            <!--<pure_gain name="Fuel Tank0">
+                <input>/consumables/fuel/tank[0]/level-gal_us</input>
+                <gain>-1</gain>
+                <output>fcs/fuel-tank0-level-gal_us</output>
+            </pure_gain>
+
+            <summer name="Refuel Qty Tank0">
+                <input>fcs/fuel-tank0-level-gal_us</input>
+                <input>fcs/fuel-tank0-cpty-level-gal_us</input>
+                <clipto>
+                    <min>0</min>
+                    <max>4545</max>
+                </clipto>
+            </summer>
+
+            <summer name="Tank0 Level Gal">
+                <input>fcs/fuel-tank0-level-gal_us-load</input>
+                <input>/consumables/fuel/tank[0]/level-gal_us</input>
+                <clipto>
+                    <min>0</min>
+                    <max>4545</max>
+                </clipto>
+            </summer>
+
+
+
+
+
+        <kinematic name="Refuel Tank0">
+            <input>fcs/refuel-qty-tank0</input>
+            <traverse>
+                <setting>
+                    <position>0</position>
+                    <time>0.0000</time>
+                </setting>
+                <setting>
+                    <position>4545</position>
+                    <time>60</time>
+                </setting>
+            </traverse>
+            <output>fcs/fuel-tank0-level-gal_us-load</output>
+        </kinematic>
+
+        <switch name="Refuel Tank0 sw1-on">
+                    <default value="/consumables/fuel/tank[0]level-gal_us"/>
+                    <test logic="AND" value="4545">
+                       fcs/refueling-pos-norm == 1
+                    </test>
+                    <output>fcs/fuel-tank0-cpty-level-gal_us</output>
+        </switch>-->
+
+
+
+
+    </channel>
      <channel name="Drag Chute">
         <kinematic name="Chute Control">
             <input>fcs/chute-cmd-norm</input>
@@ -540,6 +760,13 @@
             </traverse>
             <output>fcs/chute-pos-norm</output>
         </kinematic>
+
+    <pure_gain name="Drag Chute Surface">
+        <input>fcs/chute-pos-norm</input>
+        <gain>1</gain>
+        <output>/surface-positions/chute-pos-norm</output>
+    </pure_gain>
+
 
         <pure_gain name="Chute Command">
                 <input>/sim/model/controls/chute</input>
@@ -584,28 +811,28 @@
 
     </flight_control>
     <aerodynamics>
-            <function name="aero/function/kCDge">
-                    <description>Change_in_drag_due_to_ground_effect</description>
-                    <product>
-                            <table>
-                                    <independentVar>aero/h_b-mac-ft</independentVar>
-                                    <tableData>
-                                            0.0000    0.8100
-                                            0.1000    0.9900
-                                            0.1500    0.9500
-                                            0.2000    0.9800
-                                            0.3000    0.9900
-                                            0.4000    1.0000
-                                            0.5000    1.0400
-                                            0.6000    1.0100
-                                            0.7000    0.9900
-                                            0.8000    1.0100
-                                            0.9000    1.0000
-                                            1.0000    1.0000
-                                            1.1000    1.0000
-                                    </tableData>
-                            </table>
-                    </product>
+        <function name="aero/function/kCDge">
+            <description>Change_in_drag_due_to_ground_effect</description>
+            <product>
+                <table>
+                    <independentVar>aero/h_b-mac-ft</independentVar>
+                    <tableData>
+                        0.0000    0.8100
+                        0.1000    0.9900
+                        0.1500    0.9500
+                        0.2000    0.9800
+                        0.3000    0.9900
+                        0.4000    1.0000
+                        0.5000    1.0400
+                        0.6000    1.0100
+                        0.7000    0.9900
+                        0.8000    1.0100
+                        0.9000    1.0000
+                        1.0000    1.0000
+                        1.1000    1.0000
+                    </tableData>
+                </table>
+                </product>
             </function>
             <function name="aero/function/kCLge">
             <description>Change_in_lift_due_to_ground_effect</description>
@@ -639,6 +866,16 @@
                     <property>aero/qbar-psf</property>
                     <property>metrics/Sw-sqft</property>
                     <property>aero/function/kCDge</property>
+                    <!--<table>
+                          <independentVar>aero/alpha-rad</independentVar>
+                          <tableData>
+                              -1.5700	1.5000
+                              -0.2600	0.0310
+                              0.0000	0.0050
+                              0.2600	0.0310
+                              1.5700	1.5000
+                          </tableData>
+                      </table>-->
                       <table>
                           <independentVar lookup="row">aero/alpha-rad</independentVar>
                           <independentVar lookup="column">velocities/mach</independentVar>
@@ -784,9 +1021,6 @@
                                 1.2217304  0.858875
                                 1.2915436  0.685334
                                 1.3613568  0.529482
-                                1.4311699  0.378268
-                                1.5009831  0.229349
-                                1.5707963  0.0910933
                           </tableData>
                       </table>
                 </product>

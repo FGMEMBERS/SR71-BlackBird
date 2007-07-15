@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+
+<!--
+    Usable with FlightGear
+    Property of Gerard Robin
+    Copyright License:  GPL
+-->
+<PropertyList>
+
+    <path>Models/mag-compass.ac</path>
+    <texture-path>Models/Textures</texture-path>
+
+        <animation>
+                <type>noshadow</type>
+                <object-name>Mag-Compass</object-name>
+        </animation>
+
+        <animation include="Instrument-Light4.xml">
+                <object-name>Aiguille</object-name>
+        </animation>
+
+        <animation include="Instrument-Light3.xml">
+                <object-name>Cadran</object-name>
+        </animation>
+
+        <animation>
+                <type>rotate</type>
+                <object-name>Cadran</object-name>
+                <property>/instrumentation/magnetic-compass/indicated-heading-deg</property>
+                <axis>
+                        <x>0.0</x>
+                        <y>0.0</y>
+                        <z>1.0</z>
+                </axis>
+        </animation>
+
+</PropertyList>
