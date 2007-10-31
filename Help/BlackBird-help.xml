@@ -5,7 +5,7 @@
     Copyright License:  GPL
 -->
 <PropertyList>
-    <help>
+
         <title>SR71-BackBird</title>
         <key>
                 <name>}</name>
@@ -37,14 +37,14 @@
                 <desc>Toggle Unlock/Lock Autopilot on the current Altitude</desc>
         </key>
         <key>
-                <name>Ctrl-j</name>
+                <name>Ctrl-b</name>
                 <desc>Prepare braking chute deployement, open the doors</desc>
         </key>
         <key>
                 <name>j</name>
                 <desc>Reload Braking Chute, and close the doors</desc>
         </key>
-<text>
+        <text>
           First Contact with Blackbird
           Now you are sitting in the Pilot cockpit
           On the Forward Cockpit if Blackbird   SR71-A
@@ -68,6 +68,18 @@
           Parking brake Off
           then push the throttle to  take off
 
+          ====To get 85000 feets=======
+          This is the procedure for the model, not for the real one (smile)
+          After take Off and Landing gear UP, set the trottle to maximum and
+          set the Autopilot "Pitch Hold" to 10
+          You can notice the Aircraft climbing , and the speed increasing  to 1.1 Mach
+          When you are at 29000 feet altitude stop to climb by
+          setting the Autopilot "Altitude Hold" to 30000
+          The speed will increase to 3.0 Mach
+          Again set the Autopilot "Pitch Hold" to 10
+          The aircraft will climb, when at 83000 feets
+          set the Autopilot "Altitude Hold"  to 85000
+
           ====Refueling============
           With key "F"
           On gound refueling, if Airspeed less than 20 kts
@@ -82,7 +94,7 @@
           the braking chute will be automaticlly deployed
           When the following conditions are all true
 
-          Brake Chute doors are openeded  => key "Ctrl-J"
+          Brake Chute doors are openeded  => key "Ctrl-b"
           Airspeed less than 200 kts
           Agl less than 20 feet
           Throttle position less than 0.1
@@ -106,6 +118,6 @@
            with key => "Ctrl A"  (toggle ON/OF) for the current Altitude
         <!--  with key => "Ctrl H"  (toggle ON/OF) for the choosen bug heading on your HSI instrument    -->
 
-</text>
-    </help>
+        </text>
+
 </PropertyList>

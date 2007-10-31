@@ -3,7 +3,7 @@
 
 <PropertyList>
 
-    <sim include="Help/BlackBird-help.xml" >
+    <sim>
         <systems>
             <autopilot>
                 <path>Aircraft/SR71-BlackBird/System/autopilot.xml</path>
@@ -16,6 +16,12 @@
         <instrumentation>
             <path>Aircraft/SR71-BlackBird/System/instrumentation.xml</path>
         </instrumentation>
+        <model>
+            <controls>
+                <chute>true</chute>
+            </controls>
+        </model>
+        <help include="Help/BlackBird-help.xml"/>
     </sim>
 
     <input include="Inputs/Blackbird-input.xml"/>
@@ -25,9 +31,35 @@
         <gear>
             <brake-parking type="double">1.0</brake-parking>
         </gear>
+
         <switches>
             <landing-light>true</landing-light>
+            <master-avionics>false</master-avionics>
         </switches>
+
+        <lighting>
+            <instruments-norm type="double">0</instruments-norm>
+        </lighting>
+
+        <engines>
+            <engine n="0">
+                <fuel-pump>false</fuel-pump>
+                <cutoff-cmd>true</cutoff-cmd>
+                <master-bat>false</master-bat>
+            </engine>
+            <engine n="1">
+                <fuel-pump>false</fuel-pump>
+                <cutoff-cmd>true</cutoff-cmd>
+                 <master-bat>false</master-bat>
+            </engine>
+        </engines>
+
+        <electric>
+            <master-switch>false</master-switch>
+            <battery-switch>false</battery-switch>
+            <external-power>false</external-power>
+        </electric>
+
     </controls>
 
     <engines>
@@ -46,10 +78,10 @@
             <level-gal_us archive="y">3000</level-gal_us>
             </tank>
             <tank n="1">
-            <level-gal_us archive="y">3000</level-gal_us>
+            <level-gal_us archive="y">7500</level-gal_us>
             </tank>
             <tank n="2">
-            <level-gal_us archive="y">4500</level-gal_us>
+            <level-gal_us archive="y">0</level-gal_us>
             </tank>
         </fuel>
     </consumables>
@@ -57,14 +89,15 @@
     <autopilot>
             <settings>
                     <target-agl-ft type="float">800</target-agl-ft>
-                    <target-altitude-ft type="float">25000</target-altitude-ft>
+                    <target-altitude-ft type="float">30000</target-altitude-ft>
                     <target-aoa-deg type="float">0.3</target-aoa-deg>
-                    <target-pitch-deg type="float">1.5</target-pitch-deg>]
+                    <target-pitch-deg type="float">10</target-pitch-deg>]
                     <take-off-pitch-deg type="float">9</take-off-pitch-deg>
                     <climb-out-pitch-deg type="float">8</climb-out-pitch-deg>
                     <target-speed-kt type="float">800.0</target-speed-kt>
                     <target-mach type="float">0.9</target-mach>
                     <approach-AoA-deg type="float">12.7</approach-AoA-deg>
+                    <true-heading-deg>180</true-heading-deg>
             </settings>
     </autopilot>
 
@@ -86,14 +119,13 @@
             </radar>
     </instrumentation>
 
-    <fdm>
+    <fdm><!-- Start with Canopy open -->
             <jsbsim>
                     <fcs>
                             <canopy-cmd-norm>1</canopy-cmd-norm>
                     </fcs>
             </jsbsim>
     </fdm>
-
 
     <nasal>
             <electrical>
@@ -104,6 +136,7 @@
             </switch>
             <consumable>
                 <file>Aircraft/SR71-BlackBird/System/refuel.nas</file>
+                <file>Aircraft/SR71-BlackBird/System/aar.nas</file>
             </consumable>
             <radar>
                 <file>Aircraft/SR71-BlackBird/System/radar.nas</file>
@@ -111,6 +144,9 @@
             <nav>
                 <file>Aircraft/SR71-BlackBird/System/nav.nas</file>
             </nav>
+	    <terrain>
+			<file>Aircraft/SR71-BlackBird/System/terrain.nas</file>
+		</terrain>
     </nasal>
 
 </PropertyList>

@@ -32,7 +32,7 @@ setprop("/instrumentation/heading-indicator/switch-tacan-acls",0);
 #temporairement tacan est exclusif à TACAN  et acls dédié à MARKER ADF DME NAV
 #*********ŧacan=0              acls=1
 
-setprop("/environment/magnetic-variation-deg",0);
+#setprop("/environment/magnetic-variation-deg",0);
 #zone tampon et fonction de mise en forme======================================
 
 setprop("/preset/input/val-XXn-nn",0);
@@ -384,7 +384,7 @@ setprop("/instrumentation/heading-indicator/switch-tacan-acls",0);
 
 setprop("/instrumentation/heading-indicator/fromto-pointer",0);
 
-setprop("/orientation/heading-magnetic-deg",0);
+#setprop("/orientation/heading-magnetic-deg",0);
 setprop("/instrumentation/nav[0]/heading-deg",0);
 
 cal_fromto_pointer=func{
@@ -591,3 +591,22 @@ Init_BugH=func{
 }
 
 setlistener("/instrumentation/heading-indicator/heading-marker",Init_BugH);
+
+
+
+#Autopilot==vs==Autocoordination=======
+
+
+Autocoordination_status=getprop("/sim/auto-coordination");
+
+Auto_Coord=func{
+        if(getprop("/autopilot/locks/heading")=="true-heading-hold"){
+        setprop("/sim/auto-coordination", "false");
+        }
+        else{
+        setprop("/sim/auto-coordination", Autocoordination_status);
+        }
+    }
+    
+setlistener("/autopilot/locks/heading",Auto_Coord);
+    

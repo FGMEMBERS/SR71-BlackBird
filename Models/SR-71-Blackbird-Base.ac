@@ -31084,7 +31084,7 @@ refs 1
 0 0 0
 kids 0
 OBJECT poly
-name "GGouveron"
+name "GElevon"
 loc 8.12949 0.467283 4.93926
 texture "ailecentre.rgb"
 crease 45.000000
@@ -48107,7 +48107,7 @@ refs 3
 12 0.490174 0.936403
 kids 0
 OBJECT poly
-name "AVTrain-Jambe"
+name "AVTrain-El1"
 loc -1.23621 0.555637 -1.17372
 texture "Aile-Fold.rgb"
 crease 45.000000
@@ -48383,7 +48383,7 @@ refs 4
 0 0.486854 0.922426
 kids 0
 OBJECT poly
-name "GTrain-JambePr"
+name "AVTrain-JambePr"
 loc 2.44108 0.398766 3.51002
 texture "Aile-Fold.rgb"
 crease 45.000000
@@ -49012,7 +49012,7 @@ refs 4
 87 0.487438 0.974643
 kids 0
 OBJECT poly
-name "GTrain-JambePr"
+name "AVTrain-El2"
 loc -1.21335 0.376012 -2.3132
 texture "Aile-Fold.rgb"
 crease 45.000000
@@ -49320,7 +49320,7 @@ refs 4
 38 0.484504 0.946052
 kids 0
 OBJECT poly
-name "GTrain-JambePr"
+name "AVTrain-El3"
 loc -1.19852 -0.44301 2.42325
 texture "Aile-Fold.rgb"
 crease 45.000000
@@ -55454,7 +55454,7 @@ refs 4
 113 0.484181 0.98369
 kids 0
 OBJECT poly
-name "DHGouv"
+name "DInElevon"
 loc 10.0813 0.459134 -1.89381
 texture "ailecentre.rgb"
 crease 45.000000
@@ -57098,7 +57098,7 @@ refs 3
 212 0.308684 0.942317
 kids 0
 OBJECT poly
-name "GHGouv"
+name "GInElevon"
 loc 10.0813 0.459134 -1.89381
 texture "ailecentre.rgb"
 crease 45.000000
@@ -57537,7 +57537,7 @@ refs 24
 48 0.665583 0.938712
 kids 0
 OBJECT poly
-name "DGouveron"
+name "DElevon"
 loc 8.12949 0.467283 4.93926
 texture "ailecentre.rgb"
 crease 45.000000

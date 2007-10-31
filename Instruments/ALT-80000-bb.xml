@@ -12,16 +12,6 @@
 
 
 
-        <!--<model>
-                <name>Bouton</name>
-                <path>Aircraft/F-8E/Instruments/Bouton-f8e.xml</path>
-                <offsets>
-                        <x-m>0.0206361</x-m>
-                        <y-m>-0.039</y-m>
-                        <z-m>-0.039</z-m>
-                        <pitch-deg>0</pitch-deg>
-                </offsets>
-        </model>-->
 
         <animation include="Instrument-Light4.xml">
                 <object-name>Aiguille</object-name>
@@ -63,7 +53,7 @@
         <animation>
                 <type>textranslate</type>
                 <object-name>Ft-m</object-name>
-                <property>/position/altitude-ft</property>
+                <property>/fdm/jsbsim/position/h-sl-ft</property>
                 <factor>0.0001</factor>
                 <step>1000</step>
                 <scroll>1</scroll>
@@ -78,82 +68,35 @@
                 <condition>
                         <not>
                                 <less-than>
-                                        <property>/position/altitude-ft</property>
+                                        <property>/fdm/jsbsim/position/h-sl-ft</property>
                                         <value>0</value>
                                 </less-than>
                         </not>
                 </condition>
                 <type>select</type>
                 <object-name>Ft-dm</object-name>
-                <property>/position/altitude-ft</property>
+                <property>/fdm/jsbsim/position/h-sl-ft</property>
         </animation>
 
         <animation>
                 <condition>
                                 <less-than>
-                                        <property>/position/altitude-ft</property>
+                                        <property>/fdm/jsbsim/position/h-sl-ft</property>
                                         <value>0</value>
                                 </less-than>
                 </condition>
                 <type>select</type>
                 <object-name>Ft-minus</object-name>
-                <property>/position/altitude-ft</property>
+                <property>/fdm/jsbsim/position/h-sl-ft</property>
         </animation>
 
         <animation>
                 <type>textranslate</type>
                 <object-name>Ft-dm</object-name>
-                <property>/position/altitude-ft</property>
+                <property>/fdm/jsbsim/position/h-sl-ft</property>
                 <factor>0.00001</factor>
                 <step>10000</step>
                 <scroll>1</scroll>
-                <axis>
-                        <x>0</x>
-                        <y>-1</y>
-                        <z>0</z>
-                </axis>
-        </animation>
-
-        <!--<animation>
-                <type>rotate</type>
-                <object-name>Bouton</object-name>
-                <property>/instrumentation/altimeter/setting-inhg</property>
-                <factor>1000</factor>
-                <center>
-                        <x-m>0</x-m>
-                        <y-m>-0.039</y-m>
-                        <z-m>-0.039</z-m>
-                </center>
-                <axis>
-                        <x>-1</x>
-                        <y>0</y>
-                        <z>0</z>
-                </axis>
-        </animation>-->
-
-
-
-        <animation>
-                <type>textranslate</type>
-                <object-name>PA-cc</object-name>
-                <property>/instrumentation/altimeter/setting-inhg</property>
-                <factor>10</factor>
-                <step>0.01</step>
-                <scroll>0.000001</scroll>
-                <axis>
-                        <x>0</x>
-                        <y>-1</y>
-                        <z>0</z>
-                </axis>
-        </animation>
-
-        <animation>
-                <type>textranslate</type>
-                <object-name>PA-dc</object-name>
-                <property>/instrumentation/altimeter/setting-inhg</property>
-                <factor>1</factor>
-                <step>0.1</step>
-                <scroll>0.00001</scroll>
                 <axis>
                         <x>0</x>
                         <y>-1</y>
@@ -192,7 +135,7 @@
         <animation>
                 <type>rotate</type>
                 <object-name>Tambour</object-name>
-                <property>/position/altitude-ft</property>
+                <property>/fdm/jsbsim/position/h-sl-ft</property>
                 <factor>0.36</factor>
                 <center>
                         <x-m>-0.00102861</x-m>

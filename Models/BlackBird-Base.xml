@@ -55,20 +55,10 @@
         <type>select</type>
         <object-name>Lumiere</object-name>
         <condition>
-            <and>
                 <equals>
-                    <property>gear/gear/position-norm</property>
+                    <property>fdm/jsbsim/fcs/landing-light</property>
                     <value>1</value>
                 </equals>
-                <greater-than>
-                    <property>systems/electrical/outputs/landing-light</property>
-                    <value>27</value>
-                </greater-than>
-                <equals>
-                    <property>controls/lighting/landing-lights</property>
-                    <value>true</value>
-                </equals>
-            </and>
         </condition>
     </animation>
 
@@ -90,29 +80,16 @@
         </axis>
     </animation>
 
-
-
-
-
-
     <animation>
         <type>select</type>
         <object-name>BrakeChute</object-name>
         <condition>
-            <and>
             <equals>
-                <property>fdm/jsbsim/fcs/brake-chute-deploy</property>
+                <property>sim/model/controls/chute-available</property>
                 <value>1</value>
             </equals>
-            <equals>
-                <property>fdm/jsbsim/fcs/chute-switch-once</property>
-                <value>0</value>
-            </equals>
-            </and>
         </condition>
     </animation>
-
-
 
     <animation>
             <type>rotate</type>
@@ -213,7 +190,7 @@
     <object-name>AVTrain-Biellette</object-name>
     <object-name>AVTrain-Jambe</object-name>
     <object-name>AVTrain-Phares</object-name>
-    <property>gear/gear[0]/position-norm</property>
+    <property>surface-positions/gear-pos-norm</property>
 
     <interpolation>
         <entry>
@@ -252,7 +229,7 @@
             <object-name>AVTrain-ARPorte-Doublage</object-name>
             <object-name>AVTrain-VerinCorps</object-name>
             <object-name>AVTrain-PorteGuide</object-name>
-            <property>gear/gear[0]/position-norm</property>
+            <property>surface-positions/gear-pos-norm</property>
             <interpolation>
                     <entry>
                             <ind>0.0</ind>
@@ -287,7 +264,7 @@
     <type>rotate</type>
     <object-name>AVTrain-GPorte</object-name>
     <object-name>AVTrain-GPorte-Doublage</object-name>
-    <property>gear/gear[0]/position-norm</property>
+    <property>surface-positions/gear-pos-norm</property>
     <interpolation>
         <entry>
         <ind>0.0</ind>
@@ -322,7 +299,7 @@
         <type>rotate</type>
         <object-name>AVTrain-DPorte</object-name>
         <object-name>AVTrain-DPorte-Doublage</object-name>
-        <property>gear/gear[0]/position-norm</property>
+        <property>surface-positions/gear-pos-norm</property>
         <interpolation>
             <entry>
             <ind>0.0</ind>
@@ -374,23 +351,11 @@
     </animation>
 
     <!--            Spin  the Weel              Fonction rotation roue                -->
-
+<!--processed by jsbsim out of any mp animation-->
     <animation>
-            <condition>
-                    <and>
-                            <equals>
-                                    <property>/controls/gear/gear-down</property>
-                                    <value type="double">1.0</value>
-                            </equals>
-                            <less-than>
-                                    <property>/position/altitude-agl-ft</property>
-                                    <value>7.5</value>
-                            </less-than>
-                    </and>
-            </condition>
             <type>spin</type>
             <object-name>AVTrain-Roue</object-name>
-            <property>/velocities/uBody-fps</property>
+            <property>fdm/jsbsim/fcs/wheel-rotation</property>
             <factor>-10.00</factor>
             <center>
                     <x-m>-8.78277</x-m>
@@ -411,7 +376,7 @@
     <type>rotate</type>
     <object-name>GTrain</object-name>
     <object-name>GTrain-Roue</object-name>
-    <property>gear/gear[1]/position-norm</property>
+    <property>surface-positions/gear-pos-norm</property>
     <interpolation>
         <entry>
         <ind>0.0</ind>
@@ -445,7 +410,7 @@
     <animation>
             <type>rotate</type>
             <object-name>GTrain-Verin</object-name>
-            <property>gear/gear[1]/position-norm</property>
+            <property>surface-positions/gear-pos-norm</property>
             <interpolation>
                     <entry>
                             <ind>0.0</ind>
@@ -479,7 +444,7 @@
     <animation>
             <type>rotate</type>
             <object-name>GTrain-Verin</object-name>
-            <property>gear/gear[1]/position-norm</property>
+            <property>surface-positions/gear-pos-norm</property>
             <interpolation>
                     <entry>
                             <ind>0.0</ind>
@@ -510,23 +475,11 @@
             </axis>
     </animation>
 
-
+<!--processed by jsbsim out of any mp animation-->
     <animation>
-            <condition>
-                    <and>
-                            <equals>
-                                    <property>/controls/gear/gear-down</property>
-                                    <value type="double">1.0</value>
-                            </equals>
-                            <less-than>
-                                    <property>/position/altitude-agl-ft</property>
-                                    <value>7.5</value>
-                            </less-than>
-                    </and>
-            </condition>
             <type>spin</type>
             <object-name>GTrain-Roue</object-name>
-            <property>/velocities/uBody-fps</property>
+            <property>fdm/jsbsim/fcs/wheel-rotation</property>
             <factor>-10.00</factor>
             <center>
                     <x-m>1.90324</x-m>
@@ -550,7 +503,7 @@
         <type>rotate</type>
         <object-name>GTrain-PorteExt</object-name>
         <object-name>GTrain-PorteExt-Doublage</object-name>
-        <property>gear/gear[1]/position-norm</property>
+        <property>surface-positions/gear-pos-norm</property>
         <interpolation>
             <entry>
             <ind>0.0</ind>
@@ -585,7 +538,7 @@
         <type>rotate</type>
         <object-name>GTrain-PorteInt</object-name>
         <object-name>GTrain-PorteInt-Doublage</object-name>
-        <property>gear/gear[1]/position-norm</property>
+        <property>surface-positions/gear-pos-norm</property>
         <interpolation>
             <entry>
             <ind>0.0</ind>
@@ -624,7 +577,7 @@
         <type>rotate</type>
         <object-name>DTrain</object-name>
         <object-name>DTrain-Roue</object-name>
-        <property>gear/gear[2]/position-norm</property>
+        <property>surface-positions/gear-pos-norm</property>
         <interpolation>
         <entry>
             <ind>0.0</ind>
@@ -658,7 +611,7 @@
     <animation>
             <type>rotate</type>
             <object-name>DTrain-Verin</object-name>
-            <property>gear/gear[2]/position-norm</property>
+            <property>surface-positions/gear-pos-norm</property>
             <interpolation>
                     <entry>
                             <ind>0.0</ind>
@@ -692,7 +645,7 @@
     <animation>
             <type>rotate</type>
             <object-name>DTrain-Verin</object-name>
-            <property>gear/gear[1]/position-norm</property>
+            <property>surface-positions/gear-pos-norm</property>
             <interpolation>
                     <entry>
                             <ind>0.0</ind>
@@ -723,22 +676,11 @@
             </axis>
     </animation>
 
+<!--processed by jsbsim out of any mp animation-->
     <animation>
-            <condition>
-                    <and>
-                            <equals>
-                                    <property>/controls/gear/gear-down</property>
-                                    <value type="double">1.0</value>
-                            </equals>
-                            <less-than>
-                                    <property>/position/altitude-agl-ft</property>
-                                    <value>7.5</value>
-                            </less-than>
-                    </and>
-            </condition>
             <type>spin</type>
             <object-name>DTrain-Roue</object-name>
-            <property>/velocities/uBody-fps</property>
+            <property>/fdm/jsbsim/fcs/wheel-rotation</property>
             <factor>-10.00</factor>
             <center>
                     <x-m>1.90324</x-m>
@@ -758,7 +700,7 @@
     <type>rotate</type>
     <object-name>DTrain-PorteExt</object-name>
     <object-name>DTrain-PorteExt-Doublage</object-name>
-    <property>gear/gear[2]/position-norm</property>
+    <property>surface-positions/gear-pos-norm</property>
     <interpolation>
         <entry>
         <ind>0.0</ind>
@@ -793,7 +735,7 @@
     <type>rotate</type>
     <object-name>DTrain-PorteInt</object-name>
     <object-name>DTrain-PorteInt-Doublage</object-name>
-    <property>gear/gear[2]/position-norm</property>
+    <property>surface-positions/gear-pos-norm</property>
     <interpolation>
         <entry>
         <ind>0.0</ind>
@@ -826,13 +768,13 @@
 
 
 
-   <!--  ==================================================-->
+   <!--  =====================Elevons=============================-->
 
         <animation>
                 <type>rotate</type>
-                <object-name>GGouveron</object-name>
-                <property>controls/flight/aileron</property>
-                <factor>8.0</factor>
+                <object-name>GElevon</object-name>
+                <property>surface-positions/aileron-pos-norm</property>
+                <factor>20.0</factor>
                 <center>
                     <x-m>7.95541</x-m>
                     <y-m>0</y-m>
@@ -848,7 +790,7 @@
 
         <animation>
                 <type>rotate</type>
-                <object-name>GGouveron</object-name>
+                <object-name>GElevon</object-name>
                <property>surface-positions/elevator-pos-norm</property>
                 <interpolation>
                         <entry>
@@ -878,9 +820,9 @@
 
         <animation>
                 <type>rotate</type>
-                <object-name>DGouveron</object-name>
-                <property>controls/flight/aileron</property>
-                <factor>-8.0</factor>
+                <object-name>DElevon</object-name>
+                <property>surface-positions/aileron-pos-norm</property>
+                <factor>-20.0</factor>
                 <center>
                     <x-m>7.95541</x-m>
                     <y-m>0</y-m>
@@ -894,7 +836,7 @@
         </animation>
         <animation>
                 <type>rotate</type>
-                <object-name>DGouveron</object-name>
+                <object-name>DElevon</object-name>
                <property>surface-positions/elevator-pos-norm</property>
                 <interpolation>
                         <entry>
@@ -925,7 +867,7 @@
         <!--=====================================================-->
         <animation>
                 <type>rotate</type>
-                <object-name>DHGouv</object-name>
+                <object-name>DInElevon</object-name>
                 <property>surface-positions/elevator-pos-norm</property>
                 <interpolation>
                         <entry>
@@ -952,7 +894,21 @@
         </animation>
         <animation>
                 <type>rotate</type>
-                <object-name>GHGouv</object-name>
+                <object-name>DInElevon</object-name>
+                <property>surface-positions/aileron-pos-norm</property>
+                <factor>10.0</factor>
+                    <axis>
+                        <x1-m>8.92526</x1-m>
+                        <y1-m>3.35571</y1-m>
+                        <z1-m>0.459134</z1-m>
+                        <x2-m>9.64374</x2-m>
+                        <y2-m>0.64378</y2-m>
+                        <z2-m>0.459134</z2-m>
+                </axis>
+        </animation>
+        <animation>
+                <type>rotate</type>
+                <object-name>GInElevon</object-name>
                 <property>surface-positions/elevator-pos-norm</property>
                 <interpolation>
                         <entry>
@@ -977,14 +933,28 @@
                         <z2-m>0.459134</z2-m>
                 </axis>
         </animation>
+         <animation>
+                <type>rotate</type>
+                <object-name>GInElevon</object-name>
+                <property>surface-positions/aileron-pos-norm</property>
+                <factor>10.0</factor>
+                    <axis>
+                        <x1-m>8.92526</x1-m>
+                        <y1-m>-3.35571</y1-m>
+                        <z1-m>0.459134</z1-m>
+                        <x2-m>9.64374</x2-m>
+                        <y2-m>-0.64378</y2-m>
+                        <z2-m>0.459134</z2-m>
+                </axis>
+        </animation>
 
         <!--================================================-->
 
         <animation>
                 <type>rotate</type>
                 <object-name>DVGouv</object-name>
-                <property>controls/flight/rudder</property>
-                <factor>5.0</factor>
+                <property>surface-positions/rudder-pos-norm</property>
+                <factor>10</factor>
                 <axis>
                         <x1-m>7.57898</x1-m>
                         <y1-m>4.07659</y1-m>
@@ -998,8 +968,8 @@
            <animation>
                 <type>rotate</type>
                 <object-name>GVGouv</object-name>
-                <property>controls/flight/rudder</property>
-                <factor>5.0</factor>
+                <property>surface-positions/rudder-pos-norm</property>
+                <factor>10</factor>
                 <axis>
                         <x1-m>7.57898</x1-m>
                         <y1-m>-4.07659</y1-m>

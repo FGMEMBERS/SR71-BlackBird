@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!--
     Usable with FlightGear
-    Property of Gerard Robin  gh.robin@laposte.net
+    Property of Gerard Robin
     Copyright License:  GPL
 -->
 <PropertyList>
@@ -41,8 +41,8 @@
                             </script>
                     </binding>
             </key>
-            <key n="10">
-                <name>Ctrl-j</name>
+            <key n="2">
+                <name>Ctrl-b</name>
                 <desc>Braking Chute Deploy</desc>
                 <binding>
                         <property>sim/model/controls/chute</property>
@@ -63,6 +63,11 @@
                         <command>property-assign</command>
                         <value>0</value>
                 </binding>
+                <binding>
+                        <property>/fdm/jsbsim/fcs/chute-switch-count</property>
+                        <command>property-assign</command>
+                        <value>0</value>
+                </binding>
         </key>
         <key n="125">
                 <name>}</name>
@@ -76,8 +81,8 @@
                 <name>{</name>
                 <desc>Cutoff ON/OFF</desc>
                         <binding>
-                                <command>nasal</command>
-                                <script>switch.Cutoff_Cmd();</script>
+                                <command>property-toggle</command>
+                                <property>/fdm/jsbsim/fcs/cutoff-switch</property>
                         </binding>
         </key>
         </keyboard>

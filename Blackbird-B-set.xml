@@ -6,7 +6,7 @@
 
 
  <sim include="Help/BlackBird-help.xml" >
-        <description>SR-71B BlackBird</description>
+        <description>SR-71B_BlackBird</description>
         <author>Gerard ROBIN</author>
         <status>alpha, "GPL Copyright"</status>
         <version>0.2</version>
@@ -52,7 +52,7 @@
         </view>
 
 
-        <view n="100">
+        <view n="7">
                 <name>Cockpit View</name>
                 <type>lookfrom</type>
                 <internal archive="y">true</internal>

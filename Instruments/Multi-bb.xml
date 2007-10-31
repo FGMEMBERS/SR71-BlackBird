@@ -40,11 +40,12 @@
             <object-name>Plus</object-name>
     </animation>
 
+<!--======================Altimeter=========density altitude is used-->
 
     <animation>
             <type>textranslate</type>
             <object-name>Ualt</object-name>
-            <property>/position/altitude-ft</property>
+            <property>/fdm/jsbsim/position/h-sl-ft</property>
             <factor>0.1</factor>
             <step>1</step>
             <scroll>0</scroll>
@@ -58,7 +59,7 @@
     <animation>
             <type>textranslate</type>
             <object-name>Dalt</object-name>
-           <property>/position/altitude-ft</property>
+           <property>/fdm/jsbsim/position/h-sl-ft</property>
             <factor>0.01</factor>
             <step>10</step>
             <scroll>0</scroll>
@@ -72,7 +73,7 @@
     <animation>
             <type>textranslate</type>
             <object-name>Calt</object-name>
-          <property>/position/altitude-ft</property>
+          <property>/fdm/jsbsim/position/h-sl-ft</property>
             <factor>0.001</factor>
             <step>100</step>
             <scroll>0</scroll>
@@ -86,7 +87,7 @@
     <animation>
             <type>textranslate</type>
             <object-name>Malt</object-name>
-          <property>/position/altitude-ft</property>
+          <property>/fdm/jsbsim/position/h-sl-ft</property>
             <factor>0.0001</factor>
             <step>1000</step>
             <scroll>0</scroll>
@@ -100,7 +101,7 @@
     <animation>
             <type>textranslate</type>
             <object-name>DMalt</object-name>
-          <property>/position/altitude-ft</property>
+          <property>/fdm/jsbsim/position/h-sl-ft</property>
             <factor>0.00001</factor>
             <step>10000</step>
             <scroll>0</scroll>

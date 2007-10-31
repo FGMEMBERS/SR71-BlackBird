@@ -53,7 +53,7 @@
     <animation>
             <type>rotate</type>
             <object-name>Eclairage-InstrVol</object-name>
-            <property>/sim/model/blackbird-sr71/lighting/instrument-lights</property>
+            <property>/controls/lighting/instruments-norm</property>
             <factor>-280</factor>
             <center>
                     <x-m>0.00881384</x-m>
