@@ -52,7 +52,7 @@
         </view>
 
 
-        <view n="7">
+        <view n="100">
                 <name>Cockpit View</name>
                 <type>lookfrom</type>
                 <internal archive="y">true</internal>
