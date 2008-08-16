@@ -6,15 +6,15 @@
     <sim>
         <systems>
             <autopilot>
-                <path>Aircraft/SR71-BlackBird/System/autopilot.xml</path>
+                <path>Aircraft/SR71-BlackBird/Systems/autopilot.xml</path>
             </autopilot>
             <autoflight>
                 <serviceable type="bool">true</serviceable>
             </autoflight>
-             <path>Aircraft/SR71-BlackBird/System/systems.xml</path>
+             <path>Aircraft/SR71-BlackBird/Systems/systems.xml</path>
         </systems>
         <instrumentation>
-            <path>Aircraft/SR71-BlackBird/System/instrumentation.xml</path>
+            <path>Aircraft/SR71-BlackBird/Systems/instrumentation.xml</path>
         </instrumentation>
         <model>
             <controls>
@@ -129,23 +129,23 @@
 
     <nasal>
             <electrical>
-                <file>Aircraft/SR71-BlackBird/System/electrical.nas</file>
+                <file>Aircraft/SR71-BlackBird/Systems/electrical.nas</file>
             </electrical>
             <switch>
-                <file>Aircraft/SR71-BlackBird/System/blackbird.nas</file>
+                <file>Aircraft/SR71-BlackBird/Systems/blackbird.nas</file>
             </switch>
             <consumable>
-                <file>Aircraft/SR71-BlackBird/System/refuel.nas</file>
-                <file>Aircraft/SR71-BlackBird/System/aar.nas</file>
+                <file>Aircraft/SR71-BlackBird/Systems/refuel.nas</file>
+                <file>Aircraft/SR71-BlackBird/Systems/aar.nas</file>
             </consumable>
             <radar>
-                <file>Aircraft/SR71-BlackBird/System/radar.nas</file>
+                <file>Aircraft/SR71-BlackBird/Systems/radar.nas</file>
             </radar>
             <nav>
-                <file>Aircraft/SR71-BlackBird/System/nav.nas</file>
+                <file>Aircraft/SR71-BlackBird/Systems/nav.nas</file>
             </nav>
 	    <terrain>
-			<file>Aircraft/SR71-BlackBird/System/terrain.nas</file>
+			<file>Aircraft/SR71-BlackBird/Systems/terrain.nas</file>
 		</terrain>
     </nasal>
 
