@@ -12,21 +12,21 @@
 #"gal_us "    #Main =4500  (tank[0])    #Transfer= 8300  (tank[1])
 sec_qty=14;
 
-tank_mainfirst=4500;
-tank_transferfirst=8300;
-capacity= tank_mainfirst+tank_transferfirst;
+var  tank_mainfirst=4500;
+var  tank_transferfirst=8300;
+var  capacity= tank_mainfirst+tank_transferfirst;
 
-refueling_time=0;
-now_ready=0;
-ref_switch=0;
-now_qty=0;
-orig_qty_tk0=0;
-orig_qty_tk1=0;
-new_qty=0;
-probe_ready = 0;
-pump_ready=0;
-ref_alarm=30;
-true="true";
+var  refueling_time=0;
+var  now_ready=0;
+var  ref_switch=0;
+var  now_qty=0;
+var  orig_qty_tk0=0;
+var  orig_qty_tk1=0;
+var  new_qty=0;
+var  probe_ready = 0;
+var  pump_ready=0;
+var  ref_alarm=30;
+var  true="true";
 
 
 

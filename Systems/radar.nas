@@ -1,17 +1,17 @@
 # ================================== EHSI Stuff ===================================
 
 
-range_control_node = props.globals.getNode("/instrumentation/radar/range-control", 1);
-range_node = props.globals.getNode("/instrumentation/radar/range", 1);
-wx_range_node = props.globals.getNode("/instrumentation/wxradar/range", 1);
-x_shift_node=  props.globals.getNode("instrumentation/tacan/display/x-shift", 1);
-x_shift_scaled_node=  props.globals.getNode("instrumentation/tacan/display/x-shift-scaled",1);
-y_shift_node=  props.globals.getNode("instrumentation/tacan/display/y-shift", 1);
-y_shift_scaled_node=  props.globals.getNode("instrumentation/tacan/display/y-shift-scaled",1);
-display_control_node = props.globals.getNode("/instrumentation/display-unit/control", 1);
-radar_control_node = props.globals.getNode("/instrumentation/radar/mode-control", 1);
-radar_mode_control_node = props.globals.getNode("/instrumentation/radar/mode-control", 1);
-radar_display_node = props.globals.getNode("/instrumentation/radar/display-mode", 1);
+var  range_control_node = props.globals.getNode("/instrumentation/radar/range-control", 1);
+var  range_node = props.globals.getNode("/instrumentation/radar/range", 1);
+var  wx_range_node = props.globals.getNode("/instrumentation/wxradar/range", 1);
+var  x_shift_node=  props.globals.getNode("instrumentation/tacan/display/x-shift", 1);
+var  x_shift_scaled_node=  props.globals.getNode("instrumentation/tacan/display/x-shift-scaled",1);
+var  y_shift_node=  props.globals.getNode("instrumentation/tacan/display/y-shift", 1);
+var  y_shift_scaled_node=  props.globals.getNode("instrumentation/tacan/display/y-shift-scaled",1);
+var  display_control_node = props.globals.getNode("/instrumentation/display-unit/control", 1);
+var  radar_control_node = props.globals.getNode("/instrumentation/radar/mode-control", 1);
+var  radar_mode_control_node = props.globals.getNode("/instrumentation/radar/mode-control", 1);
+var  radar_display_node = props.globals.getNode("/instrumentation/radar/display-mode", 1);
 
 range_control_node.setIntValue(3); 
 range_node.setIntValue(40); 
@@ -30,17 +30,17 @@ pow2 = func(e) { return e ? 2 * pow2(e - 1) : 1 } # calculates 2^e
 
 adjustRange = func{
 
-	range = range_node.getValue();
-	range_control = range_control_node.getValue();
+	var  range = range_node.getValue();
+	var  range_control = range_control_node.getValue();
 	
-	range = 5 * pow2(range_control); 
+	var  range = 5 * pow2(range_control); 
 
 #  	print ("range " , range);
 
 	range_node.setIntValue(range);
 	wx_range_node.setIntValue(range);
-	scale = 1.275 * pow2 (7 - range_control) * 0.1275;
-	scale = sprintf("%2.3f" , scale);
+	var  scale = 1.275 * pow2 (7 - range_control) * 0.1275;
+	var  scale = sprintf("%2.3f" , scale);
 
 #	print ("scale " , scale);
 

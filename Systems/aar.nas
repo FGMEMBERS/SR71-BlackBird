@@ -27,8 +27,8 @@ registerTimer = func {
 
 
 
-    initialized = 0;
-    enabled = 0;
+     var initialized = 0;
+     var enabled = 0;
     
     print ("running aar");
     #print (" enabled " , enabled,  " initialized ", initialized);  
@@ -36,32 +36,32 @@ registerTimer = func {
     updateTanker = func {
     #print ("tanker update running ");
                                 if (!initialized ) {
-                                print("calling initialize");
+                                # print("calling initialize");
                                 initialize();}
         
-                Refueling = props.globals.getNode("/systems/refuel/contact");
-                AllAircraft = props.globals.getNode("ai/models").getChildren("tanker");
-                AllMultiplayer = props.globals.getNode("ai/models").getChildren("multiplayer");
-                Aircraft = props.globals.getNode("ai/models/aircraft");
+                var Refueling = props.globals.getNode("/systems/refuel/contact");
+                var AllAircraft = props.globals.getNode("ai/models").getChildren("tanker");
+                var AllMultiplayer = props.globals.getNode("ai/models").getChildren("multiplayer");
+                var Aircraft = props.globals.getNode("ai/models/aircraft");
                 
     
                 
     #   select all tankers which are in contact. For now we assume that it must be in 
     #		contact	with us.
                                 
-                selectedTankers = [];
+                var selectedTankers = [];
                                 
                         if ( enabled ) { # check that AI Models are enabled, otherwise don't bother
                         foreach(a; AllAircraft) { 
-                                                                id_node = a.getNode("id" , 1 ); 
-                                                                id = id_node.getValue();
+                                                              var  id_node = a.getNode("id" , 1 ); 
+                                                              var  id = id_node.getValue();
                                                                 if ( id != nil ) {
-                                                                                contact_node = a.getNode( "refuel/contact" );
-                                                                                tanker_node = a.getNode( "tanker" );
+                                                                              var  contact_node = a.getNode( "refuel/contact" );
+                                                                               var tanker_node = a.getNode( "tanker" );
                                                                                
                                                                                 
-                                                                                contact = contact_node.getValue();
-                                                                                tanker = tanker_node.getValue();
+                                                                               var contact = contact_node.getValue();
+                                                                               var tanker = tanker_node.getValue();
                                                                                 
                                                                 #print ("contact ", contact , " tanker " , tanker );
                                                                                                                                 
@@ -72,15 +72,15 @@ registerTimer = func {
                         } # end foreach
                                                 
                                                 foreach(m; AllMultiplayer) {
-                                                                id_node = m.getNode("id" , 1 );
-                                                                id = id_node.getValue();
+                                                             var   id_node = m.getNode("id" , 1 );
+                                                              var  id = id_node.getValue();
                                                                 
                                                                 if ( id != nil ) {
-                                                                                contact_node = m.getNode("refuel/contact");
-                                                                                tanker_node = m.getNode("tanker");
+                                                                               var  contact_node = m.getNode("refuel/contact");
+                                                                                var  tanker_node = m.getNode("tanker");
                                                                                 
-                                                                                contact = contact_node.getValue();
-                                                                                tanker = tanker_node.getValue();
+                                                                                var  contact = contact_node.getValue();
+                                                                                var  tanker = tanker_node.getValue();
                                 
                                                                                 #print (" mp contact ", contact , " tanker " , tanker );
                                                         
@@ -106,19 +106,19 @@ registerTimer = func {
     
     initialize = func {
     
-        AI_Enabled = props.globals.getNode("sim/ai/enabled");
-        Refueling = props.globals.getNode("/systems/refuel/contact",1);
+        var  AI_Enabled = props.globals.getNode("sim/ai/enabled");
+        var  Refueling = props.globals.getNode("/systems/refuel/contact",1);
                         
         Refueling.setBoolValue(0);
-        enabled = AI_Enabled.getValue();
+        var  enabled = AI_Enabled.getValue();
                 
-        initialized = 1;
+        var  initialized = 1;
     }
     
     initDoubleProp = func {
         node = arg[0]; prop = arg[1]; val = arg[2];
         if(node.getNode(prop) != nil) {
-                val = num(node.getNode(prop).getValue());
+                var  val = num(node.getNode(prop).getValue());
         }
         node.getNode(prop, 1).setDoubleValue(val);
     }

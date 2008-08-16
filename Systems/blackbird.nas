@@ -16,8 +16,8 @@
 
 #Cutoff géré globalement par =========jsbsim/fcs/cutoff-switch========voir le FDM
 Update_engine=func{ 
-                cutoff0 =0;
-                cutoff1 =0;
+                var  cutoff0 =0;
+                var  cutoff1 =0;
                 if (getprop("/controls/engines/engine[0]/cutoff-cmd")) { cutoff0 =1; }
                 if (getprop("/controls/engines/engine[1]/cutoff-cmd")) { cutoff1=1; }
                 #==place pour d'autres causes de cutoff======
@@ -26,8 +26,8 @@ Update_engine=func{
         }
 #==============================================
 Refuel= func{
-        Refueling = getprop("/systems/refuel/contact");
-        Pump = getprop("instrumentation/annunciator/refuel-pump");
+        var  Refueling = getprop("/systems/refuel/contact");
+        var  Pump = getprop("instrumentation/annunciator/refuel-pump");
         if (Refueling ==1 and Pump ==0) {
             consumable.refuel_air();
         }
