@@ -16,7 +16,7 @@
 			<green>0.2</green>
 			<blue>0.15</blue>
 		</emission>
-		<diffuse>
+		<!--<diffuse>
 			<red>0.3</red>
 			<green>0.4</green>
 			<blue>0.4</blue>
@@ -25,7 +25,7 @@
 			<red>0.3</red>
 			<green>0.4</green>
 			<blue>0.4</blue>
-		</ambient>
+		</ambient>-->
 		<specular>
 			<red>0.7</red>
 			<green>0.7</green>

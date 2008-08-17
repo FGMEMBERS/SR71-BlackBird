@@ -60,6 +60,10 @@
             <external-power>false</external-power>
         </electric>
 
+	<flight>
+		<probe-refuel ype="double">0</probe-refuel>
+	</flight>
+
     </controls>
 
     <engines>
@@ -136,7 +140,7 @@
             </switch>
             <consumable>
                 <file>Aircraft/SR71-BlackBird/Systems/refuel.nas</file>
-                <file>Aircraft/SR71-BlackBird/Systems/aar.nas</file>
+                <!--<file>Aircraft/SR71-BlackBird/Systems/aar.nas</file>--> <!--Removed  will be partly included into FDM-->
             </consumable>
             <radar>
                 <file>Aircraft/SR71-BlackBird/Systems/radar.nas</file>
