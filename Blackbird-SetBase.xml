@@ -23,9 +23,7 @@
         </model>
         <rendering>
                 <redout>
-                        <parameters>
-                                <enabled ype="bool">false</enabled>
-                        </parameters>
+                        <enabled ype="bool">false</enabled>
                 </redout>
         </rendering>
         <help include="Help/BlackBird-help.xml"/>
