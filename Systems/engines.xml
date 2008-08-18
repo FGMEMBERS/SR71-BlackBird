@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+
+
+<system name="engine">
+	<property>fcs/cutoff-switch</property>
+
+	<channel name="Engine">
+
+            <kinematic name="Cutoff Switch Delay">
+                <input>fcs/cutoff-switch</input>
+                <traverse>
+                    <setting>
+                        <position>0.0000</position>
+                        <time>0.0000</time>
+                    </setting>
+                    <setting>
+                        <position>1.0000</position>
+                        <time>1.0000</time>
+                    </setting>
+                </traverse>
+            </kinematic>
+
+            <pure_gain name="Throttle0 Cmd">
+                <input>fcs/throttle-cmd-norm[0]</input>
+                <gain>fcs/cutoff-switch-delay</gain>
+            </pure_gain>
+            <pure_gain name="Throttle1 Cmd">
+                <input>fcs/throttle-cmd-norm[1]</input>
+                <gain>fcs/cutoff-switch-delay</gain>
+            </pure_gain>
+
+            <pure_gain name="Throttle1">
+                <input>fcs/throttle1-cmd</input>
+                <gain>2</gain>
+                <output>fcs/throttle-pos-norm[1]</output>
+            </pure_gain>
+            <pure_gain name="Throttle0">
+                <input>fcs/throttle0-cmd</input>
+                <gain>2</gain>
+                <output>fcs/throttle-pos-norm[0]</output>
+            </pure_gain>
+
+            <!--<pure_gain name="Throttle0 Control">
+                <input>/controls/engines/engine[0]/throttle</input>
+                <gain>fcs/cutoff-switch-delay</gain>
+                <output>/controls/engines/engine[0]/throttle</output>
+            </pure_gain>
+            <pure_gain name="Throttle1 Control">
+                <input>/controls/engines/engine[1]/throttle</input>
+                <gain>fcs/cutoff-switch-delay</gain>
+                <output>/controls/engines/engine[1]/throttle</output>
+            </pure_gain>-->
+
+
+
+            <switch name="Fuel Pump0 Cmd">
+                <default value="0"/>
+                <test  logic="AND" value="1">
+                    fcs/cutoff-switch == 1
+                </test>
+            </switch>
+            <pure_gain name="Fuel Pump0">
+                <input>fcs/fuel-pump0-cmd</input>
+                <gain>1</gain>
+                <output>/controls/engines/engine[0]/fuel-pump</output>
+            </pure_gain>
+
+            <switch name="Fuel Pump1 Cmd">
+                <default value="0"/>
+                <test  logic="AND" value="1">
+                    fcs/cutoff-switch == 1
+                </test>
+            </switch>
+            <pure_gain name="Fuel Pump1">
+                <input>fcs/fuel-pump1-cmd</input>
+                <gain>1</gain>
+                <output>/controls/engines/engine[1]/fuel-pump</output>
+            </pure_gain>
+
+            <switch name="Cutoff0 Cmd">
+                <default value="1"/>
+                <test  logic="AND" value="0">
+                    fcs/cutoff-switch-delay == 1
+                    fcs/fuel-pump0-cmd == 1
+                    /systems/electrical/outputs/fuel-pump gt 27
+                </test>
+                <output>/controls/engines/engine[0]/cutoff-cmd</output>
+            </switch>
+
+            <switch name="Cutoff1 Cmd">
+                <default value="1"/>
+                <test  logic="AND" value="0">
+                    fcs/cutoff-switch-delay == 1
+                    fcs/fuel-pump1-cmd == 1
+                    /systems/electrical/outputs/fuel-pump gt 27
+                </test>
+                <output>/controls/engines/engine[1]/cutoff-cmd</output>
+            </switch>
+
+    </channel>
+
+
+
+</system>

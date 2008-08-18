@@ -153,44 +153,9 @@
         </offsets>
     </model>
 
-    <animation>
-        <type>select</type>
-        <object-name>Altimeter</object-name>
-        <condition>
-            <not>
-                <greater-than>
-                    <property>/position/altitude-ft</property>
-                    <value>60000</value>
-                </greater-than>
-            </not>
-        </condition>
-    </animation>
-
     <model>
         <name>Altimeter</name>
             <path>Aircraft/SR71-BlackBird/Instruments/ALT-bb.xml</path>
-            <offsets>
-                    <x-m>0.000230764</x-m>
-                    <y-m>0.150865</y-m>
-                    <z-m>0.076019</z-m>
-                    <pitch-deg>0</pitch-deg>
-        </offsets>
-    </model>
-
-    <animation>
-        <type>select</type>
-        <object-name>Altimeter-80000</object-name>
-        <condition>
-                <greater-than>
-                    <property>/position/altitude-ft</property>
-                    <value>60000</value>
-                </greater-than>
-        </condition>
-    </animation>
-
-    <model>
-        <name>Altimeter-80000</name>
-            <path>Aircraft/SR71-BlackBird/Instruments/ALT-80000-bb.xml</path>
             <offsets>
                     <x-m>0.000230764</x-m>
                     <y-m>0.150865</y-m>

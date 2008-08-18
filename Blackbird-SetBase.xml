@@ -21,6 +21,13 @@
                 <chute>true</chute>
             </controls>
         </model>
+        <rendering>
+                <redout>
+                        <parameters>
+                                <enabled ype="bool">false</enabled>
+                        </parameters>
+                </redout>
+        </rendering>
         <help include="Help/BlackBird-help.xml"/>
     </sim>
 
@@ -33,8 +40,8 @@
         </gear>
 
         <switches>
-            <landing-light>true</landing-light>
-            <master-avionics>false</master-avionics>
+            <landing-light type="bool">true</landing-light>
+            <master-avionics type="bool">false</master-avionics>
         </switches>
 
         <lighting>
@@ -43,25 +50,25 @@
 
         <engines>
             <engine n="0">
-                <fuel-pump>false</fuel-pump>
-                <cutoff-cmd>true</cutoff-cmd>
-                <master-bat>false</master-bat>
+                <fuel-pump type="bool">false</fuel-pump>
+                <cutoff-cmd type="bool" >true</cutoff-cmd>
+                <master-bat type="bool">false</master-bat>
             </engine>
             <engine n="1">
-                <fuel-pump>false</fuel-pump>
-                <cutoff-cmd>true</cutoff-cmd>
-                 <master-bat>false</master-bat>
+                <fuel-pump type="bool" >false</fuel-pump>
+                <cutoff-cmd type="bool">true</cutoff-cmd>
+                 <master-bat type="bool">false</master-bat>
             </engine>
         </engines>
 
         <electric>
-            <master-switch>false</master-switch>
-            <battery-switch>false</battery-switch>
-            <external-power>false</external-power>
+            <master-switch type="bool">false</master-switch>
+            <battery-switch type="bool">false</battery-switch>
+            <external-power type="bool" >false</external-power>
         </electric>
 
 	<flight>
-		<probe-refuel ype="double">0</probe-refuel>
+		<op-refuel ype="double">0</op-refuel>
 	</flight>
 
     </controls>
@@ -128,6 +135,9 @@
                     <fcs>
                             <canopy-cmd-norm>1</canopy-cmd-norm>
                     </fcs>
+                    <systems>
+                        <lighting-instruments-norm>0</lighting-instruments-norm>
+                    </systems>
             </jsbsim>
     </fdm>
 

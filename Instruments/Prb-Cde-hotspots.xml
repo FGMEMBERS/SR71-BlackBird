@@ -28,7 +28,7 @@ Copyright License:  GPL
                 <h-base>1024</h-base>
                 <actions>
                     <action>
-                        <name>probe fuel activate</name>
+                        <name>refuel activate</name>
                         <button>0</button>
                         <x>-300</x>
                         <y>00</y>

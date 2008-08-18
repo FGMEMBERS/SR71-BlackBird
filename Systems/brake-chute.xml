@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+
+
+<system name="Brake_chute">
+
+
+    <property>fcs/chute-pos-deg</property>
+
+    <channel name="Chute">
+
+        <pure_gain name="Chute Cmd Norm">
+            <input>/sim/model/controls/chute</input>
+            <gain>1</gain>
+        </pure_gain>
+
+        <kinematic name="Chute Pos Norm">
+            <input>fcs/chute-cmd-norm</input>
+            <traverse>
+            <setting>
+                    <position>0.0000</position>
+                    <time>0.0000</time>
+            </setting>
+            <setting>
+                    <position>1.0000</position>
+                    <time>4.7500</time>
+            </setting>
+            </traverse>
+        </kinematic>
+
+        <pure_gain name="Drag Chute Surface">
+            <input>fcs/chute-pos-norm</input>
+            <gain>1</gain>
+            <output>/surface-positions/chute-pos-norm</output>
+        </pure_gain>
+
+
+
+        <switch name="Brake Chute Deploy">
+            <default value="0"/>
+            <test  logic="AND" value="1">
+            fcs/chute-pos-norm == 1
+            velocities/vc-kts lt 200
+            velocities/vc-kts gt 50
+            position/h-agl-ft lt  20
+            fcs/throttle-pos-norm  lt 0.1
+            </test>
+        </switch>
+
+        <!-- temoin ouverture 1 fois du parachute   chute-switch-count= 1  sans retour-->
+
+        <switch name="Chute Switch Count">
+            <default value="0"/>
+            <test  logic="AND" value="1">
+            fcs/brake-chute-deploy == 1
+            fcs/chute-switch-count == 0
+            </test>
+            <test  logic="AND" value="1">
+            fcs/chute-switch-count == 1
+            </test>
+        </switch>
+
+        <!--empeche l'usage une seconde fois  chute-switch-once=1 sans retour -->
+
+        <switch name="Chute Switch Once">
+            <default value="0"/>
+            <test  logic="AND" value="1">
+            fcs/brake-chute-deploy == 0
+            fcs/chute-switch-count == 1
+            fcs/chute-switch-once == 0
+            </test>
+            <test  logic="AND" value="1">
+            fcs/chute-switch-once == 1
+            </test>
+        </switch>
+
+
+
+
+        <switch name="Brake Chute Resource">
+            <default value="0"/>
+            <test  logic="AND" value="1">
+            fcs/brake-chute-deploy == 1
+            fcs/chute-switch-once == 0
+            </test>
+        </switch>
+
+        <kinematic name="Brake Chute Selector">
+            <input>fcs/brake-chute-resource</input>
+            <traverse>
+            <setting>
+            <position>0.0000</position>
+            <time>0.0000</time>
+            </setting>
+            <setting>
+            <position>1.0000</position>
+            <time>2.0000</time>
+            </setting>
+            </traverse>
+            <output>/sim/model/controls/chute-available</output>
+        </kinematic>
+
+
+</channel>
+
+
+</system>

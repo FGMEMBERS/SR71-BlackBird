@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+
+
+<system name="landing-gear">
+	<channel name="Landing Gear">
+
+            <switch name="Gear Switch">
+                <default value="/controls/gear/gear-down"/>
+                <test  logic="AND" value="0">
+                    /environment/terrain  == 0
+                    position/h-agl-ft lt 40
+                    position/h-sl-ft  lt position/h-agl-ft
+                </test>
+                <output>gear/gear-cp-cmd-norm</output>
+            </switch>
+
+            <kinematic name="Gear Control">
+                <input>gear/gear-cp-cmd-norm</input>
+                <traverse>
+                    <setting>
+                        <position>0</position>
+                        <time>0</time>
+                    </setting>
+                    <setting>
+                        <position>1</position>
+                        <time>0.3</time>
+                    </setting>
+                </traverse>
+                <output>gear/gear-pos-norm</output>
+            </kinematic>
+
+            <kinematic name="Gear Surface Position">
+                <input>/controls/gear/gear-down</input>
+                <traverse>
+                    <setting>
+                        <position>0</position>
+                        <time>0</time>
+                    </setting>
+                    <setting>
+                        <position>1</position>
+                        <time>5</time>
+                    </setting>
+                </traverse>
+                <output>/surface-positions/gear-pos-norm</output>
+            </kinematic>
+
+            <switch name="Drag Terrain Factor Switch">
+                <default value="0"/>
+                <test  logic="AND" value="1">
+                    /environment/terrain  == 1
+                    /position/altitude-agl-ft lt 7
+                    fcs/gear-surface-position == 0
+                </test>
+            </switch>
+            <switch name="Drag Gear In Water Switch">
+                <default value="0"/>
+                <test  logic="AND" value="1">
+                    /environment/terrain  == 0
+                    /position/altitude-agl-ft lt 8
+                   fcs/gear-surface-position == 1
+                </test>
+            </switch>
+
+
+	    <switch  name="Wheel Rotation Factor">
+		    <default value="0"/>
+                <test  logic="AND" value="1">
+                    /position/altitude-agl-ft lt 7
+                   fcs/gear-surface-position == 1
+                </test>
+	    </switch>
+
+	    <pure_gain name="Wheel Rotation">
+		<input>velocities/u-fps</input>
+		<gain>fcs/wheel-rotation-factor</gain>
+	    </pure_gain>
+
+    </channel>
+
+
+
+
+</system>

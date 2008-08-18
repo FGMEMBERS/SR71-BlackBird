@@ -24,7 +24,7 @@
 
     <!--******************** Hotspots ******************************-->
     <panel>
-            <name>Cmd-Probe</name>
+            <name>Cmd-Refuel</name>
             <path>Aircraft/SR71-BlackBird/Instruments/Prb-Cde-hotspots.xml</path>
             <bottom-left>
                     <x-m>0.03</x-m>
@@ -45,11 +45,11 @@
 
     <animation>
             <type>noshadow</type>
-            <object-name>Probe</object-name>
+            <object-name>Refuel</object-name>
     </animation>
 
     <animation include="Instrument-Light4.xml">
-            <object-name>Probe-Marquage</object-name>
+            <object-name>Refuel-Marquage</object-name>
     </animation>
 
 
@@ -59,7 +59,7 @@
     <animation>
             <type>rotate</type>
             <object-name>Interrupteur</object-name>
-            <property>/controls/flight/probe-refuel</property>
+            <property>/instrumentation/annunciator/refuel-pump</property>
             <interpolation>
                     <entry>
                             <ind>0</ind>

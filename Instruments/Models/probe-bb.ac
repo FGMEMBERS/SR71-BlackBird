@@ -3,11 +3,11 @@ MATERIAL "ac3dmat1" rgb 1 1 1  amb 0.898 1 1  emis 0 0 0  spec 1 0.929 1  shi 90
 OBJECT world
 kids 1
 OBJECT group
-name "Probe"
+name "Refuel"
 loc -2.42777 -0.163534 0.172898
 kids 1
 OBJECT poly
-name "Probe-Marquage"
+name "Refuel-Marquage"
 loc 2.42851 0.155558 -0.177543
 texture "fuelpump.rgb"
 crease 45.000000
@@ -20,13 +20,13 @@ numsurf 2
 SURF 0x20
 mat 0
 refs 3
-2 0.596081 0.297564
-0 0.911605 0.790767
-1 0.596081 0.790767
+2 -0.0211065 0.531939
+0 0.294418 1.02514
+1 -0.0211065 1.02514
 SURF 0x20
 mat 0
 refs 3
-0 0.911605 0.790767
-2 0.596081 0.297564
-3 0.911605 0.297564
+0 0.294418 1.02514
+2 -0.0211065 0.531939
+3 0.294418 0.531939
 kids 0

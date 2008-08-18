@@ -23,7 +23,7 @@ var  now_qty=0;
 var  orig_qty_tk0=0;
 var  orig_qty_tk1=0;
 var  new_qty=0;
-var  probe_ready = 0;
+var  refuel_ready = 0;
 var  pump_ready=0;
 var  ref_alarm=30;
 var  true="true";
@@ -42,12 +42,12 @@ setprop("instrumentation/annunciator/refuel-pump",0);
 refuel= func {		
 print("START REFUEL");
 		if(getprop("/position/altitude-agl-ft")>300 and getprop("/instrumentation/airspeed-indicator/indicated-speed-kt")>200){
-		probe_ready= getprop("/surface-positions/refueling-pos-norm");
-			if (probe_ready == 0) {	
-			setprop("/controls/flight/probe-refuel",1);
+		refuel_ready= getprop("/surface-positions/refueling-pos-norm");
+			if (refuel_ready == 0) {	
+			setprop("/controls/flight/op-refuel",1);
 			refuel_air();
 			} else {
-			setprop("/controls/flight/probe-refuel",0);
+			setprop("/controls/flight/op-refuel",0);
 			ref_switch=0;
 			delete_f();
 			}
@@ -73,10 +73,10 @@ print("START REFUEL");
 
 
 refuel_air=func {
-		probe_ready= getprop("/surface-positions/refueling-pos-norm");
-		if (probe_ready == 1){
+		refuel_ready= getprop("/surface-positions/refueling-pos-norm");
+		if (refuel_ready == 1){
 			setprop("instrumentation/annunciator/refuel-pump",1);
-			print (probe_ready);
+			print (refuel_ready);
 			now_ready  = getprop("sim/time/elapsed-sec");
 			orig_qty_tk0=getprop("consumables/fuel/tank/level-gal_us");
 			orig_qty_tk1=getprop("consumables/fuel/tank[1]/level-gal_us");
@@ -139,7 +139,7 @@ full_up=func {
 filled=func {
 		setprop("/consumables/fuel/tank/level-gal_us",tank_mainfirst);
 		setprop("/consumables/fuel/tank[1]/level-gal_us",tank_transferfirst);
-                setprop("/controls/flight/probe-refuel",0);
+                setprop("/controls/flight/op-refuel",0);
 		setprop("/instrumentation/annunciator/refuel-overload",0);
 		setprop("/consumables/fuel/transfer/level-gal_us",0);
 		setprop("/instrumentation/annunciator/refuel-pump",0);
