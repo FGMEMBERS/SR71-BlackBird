@@ -144,6 +144,16 @@
                 <output>/sim/rendering/redout/alpha</output>
             </switch>
 
+           <!-- locking  the Nasal Redout script on OFF-->
+            <switch name="systems/redout-nasal-off">
+                <default value="0"/>
+                <test  logic="OR" value="0">
+                    /sim/aircraft != 999
+                </test>
+                <output>/sim/rendering/redout/enabled</output>
+            </switch>
+
+
 
 
     </channel>
