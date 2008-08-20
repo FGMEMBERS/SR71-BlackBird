@@ -31,14 +31,15 @@ setprop("sim/crashed",0);
 
 
 
-delay = 4;
-print ("crash detection ON: ");
+delay = 6;
+print ("crash detection process installed: ");
 crashstart = 0;
 
 # ==========================CRASH MANAGEMENT========================
 crash = func {
-	setprop("controls/engines/engine[0]/magnetos",0);	
-	print ("moteur coupé");
+	setprop("/controls/electric/master-switch",0);	
+        setprop("/fdm/jsbsim/fcs/cutoff-switch",0);   
+	print ("Engines OFF");
 	crashstart = getprop("/sim/time/elapsed-sec");	
 	#======include here ===any_animations_we_want========
 	print ("start", crashstart);
@@ -65,8 +66,8 @@ crashend = func {
 }
 #==another_quick_end_without_delay====		
 crashgr = func {
-	setprop("controls/engines/engine[0]/magnetos",0);
-	print ("moteur coupé");	
+	setprop("/controls/electric/master-switch",0);
+	print ("Engines OFF");	
 	setprop("sim/freeze/clock", 1);	
 }
 
@@ -93,11 +94,11 @@ main_loop = func {
 
 	if (crashed3.getValue()) {
 	print ("sensor3");
-	#crashgr();	
+	crash();	
 	} 
 	elsif (crashed4.getValue()) {
 	print ("sensor4");
-	crashgr();	
+	crash();	
 	} 
 	elsif (crashed5 == 1) {
 	print ("sensor5");
@@ -114,19 +115,7 @@ main_loop = func {
 	elsif (crashed8 == 1) {
 	print ("sensor8");
 	crash();	
-	} 
-	elsif (crashed9 == 1) {
-	print ("sensor9");
-	crash();
 	}
-	elsif (crashed10  == 1) {
-	print ("sensor10");	
-	crash();
-	}
-	elsif (crashed11 == 1) {
-	print ("sensor11");
-	crash();	
-	} 	
 	else {
 	settimer(main_loop,2);
 	}

@@ -30,8 +30,8 @@
               <input>-fcs/n-pilot-z-correction</input>
             </summer>
 
-            <!--=====Specific part    ====300 secondes to blackout at 5g ====transition 4 secondes==================-->
-           <!-- ============1 seconde to redout under -4g ===transition 2 secondes ==========================-->
+            <!--===Blackout ==Specific part    ====300 secondes to blackout at 5g ====transition 4 secondes=============-->
+           <!-- ============1 seconde to redout under -4g ===transition 4 secondes ==========================-->
             <switch name="systems/blackout">
                 <default value="0"/>
                 <test  logic="AND" value="1">
@@ -84,7 +84,7 @@
 
             <switch name="systems/redout-start">
                 <default value="0"/>
-                <test  logic="AND" value="1">
+                <test  logic="AND" value="0.85">
                 systems/redout-cmd == 1
                 </test>
             </switch>
@@ -113,15 +113,17 @@
                     </setting>
                     <setting>
                     <position>1</position>
-                    <time>2</time>
+                    <time>4</time>
                     </setting>
                 </traverse>
             </kinematic>
 
+
+
             <switch name="systems/redout-red">
                 <default value="0"/>
                 <test  logic="AND" value="1">
-                systems/redout-start == 1
+                systems/redout-start gt 0.7
                 </test>
                 <test  logic="AND" value="0">
                 systems/blackout-start == 1

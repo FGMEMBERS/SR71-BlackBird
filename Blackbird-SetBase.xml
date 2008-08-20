@@ -142,6 +142,9 @@
     </fdm>
 
     <nasal>
+            <crash>
+                    <file>Aircraft/SR71-BlackBird/Systems/crash.nas</file>
+            </crash>
             <electrical>
                 <file>Aircraft/SR71-BlackBird/Systems/electrical.nas</file>
             </electrical>
@@ -161,9 +164,6 @@
 	    <terrain>
                     <file>Aircraft/SR71-BlackBird/Systems/terrain.nas</file>
             </terrain>
-            <crash>
-                    <file>Aircraft/SR71-BlackBird/Systems/crash.nas</file>
-            </crash>
     </nasal>
 
 </PropertyList>
