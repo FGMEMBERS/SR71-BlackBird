@@ -2,7 +2,7 @@
 
 
 <system name="g-Load">
-	<channel name="g Load">
+        <channel name="g Load">
             <summer name="constant one">
                 <input>fcs/aileron-cmd-norm</input>
                 <clipto>

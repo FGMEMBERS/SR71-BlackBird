@@ -3,45 +3,45 @@
 
 <system name="Fuel-ReFuel">
 
-	<channel name="Refuel">
-        <kinematic name="Refueling Control">
-            <input>/controls/flight/op-refuel</input>
-            <traverse>
-                <setting>
-                    <position>0.0000</position>
-                    <time>5.0000</time>
-                </setting>
-                <setting>
-                    <position>1.0000</position>
-                    <time>5.0000</time>
-                </setting>
-            </traverse>
-            <output>fcs/refueling-pos-norm</output>
-        </kinematic>
+        <channel name="Refuel">
+            <kinematic name="Refueling Control">
+                <input>/controls/flight/op-refuel</input>
+                <traverse>
+                    <setting>
+                        <position>0.0000</position>
+                        <time>5.0000</time>
+                    </setting>
+                    <setting>
+                        <position>1.0000</position>
+                        <time>5.0000</time>
+                    </setting>
+                </traverse>
+                <output>fcs/refueling-pos-norm</output>
+            </kinematic>
 
-        <pure_gain name="Refueling Surface">
-            <input>fcs/refueling-pos-norm</input>
-            <gain>1</gain>
-            <output>/surface-positions/refueling-pos-norm</output>
-        </pure_gain>
+            <pure_gain name="Refueling Surface">
+                <input>fcs/refueling-pos-norm</input>
+                <gain>1</gain>
+                <output>/surface-positions/refueling-pos-norm</output>
+            </pure_gain>
 
-     </channel>
+            </channel>
 
 
-     <channel name="Fuel">
+            <channel name="Fuel">
 
-        <summer name="Tank Total Gals">
-            <input>/consumables/fuel/tank[0]level-gal_us</input>
-            <input>/consumables/fuel/tank[1]level-gal_us</input>
-            <input>/consumables/fuel/tank[2]level-gal_us</input>
-            <clipto>
-                <min>0</min>
-                <max>13637</max>
-            </clipto>
-            <output>/consumables/fuel/total-fuel-gals</output>
-        </summer>
+            <summer name="Tank Total Gals">
+                <input>/consumables/fuel/tank[0]level-gal_us</input>
+                <input>/consumables/fuel/tank[1]level-gal_us</input>
+                <input>/consumables/fuel/tank[2]level-gal_us</input>
+                <clipto>
+                    <min>0</min>
+                    <max>13637</max>
+                </clipto>
+                <output>/consumables/fuel/total-fuel-gals</output>
+            </summer>
 
-    </channel>
+        </channel>
 
 
 

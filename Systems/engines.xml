@@ -2,9 +2,9 @@
 
 
 <system name="engine">
-	<property>fcs/cutoff-switch</property>
+        <property>fcs/cutoff-switch</property>
 
-	<channel name="Engine">
+        <channel name="Engine">
 
             <kinematic name="Cutoff Switch Delay">
                 <input>fcs/cutoff-switch</input>

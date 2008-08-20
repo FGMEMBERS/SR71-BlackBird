@@ -5,6 +5,9 @@
 
 <channel name="Electric Master">
 
+    <property>fcs/lighting-instruments-norm</property>
+
+
 
         <summer name="Electric Master Switch">
             <input>/controls/electric/master-switch</input>
@@ -21,13 +24,6 @@
                 /systems/electrical/outputs/instrument-lights gt 27
             </test>
         </switch>
-
-        <pure_gain name="Instruments Lighting">
-            <input>fcs/instruments-factor</input>
-            <gain>systems/lighting-instruments-norm</gain>
-            <output>/controls/lighting/instruments-norm</output>
-        </pure_gain>
-
 
         <switch name="Battery Switch">
             <default value="0"/>
@@ -76,6 +72,13 @@
                 /systems/electrical/outputs/instrument-lights gt 27
             </test>
         </switch>
+
+        <pure_gain name="Instruments Lighting">
+            <input>fcs/instruments-factor</input>
+            <gain>systems/lighting-instruments-norm</gain>
+            <output>/controls/lighting/instruments-norm</output>
+        </pure_gain>
+
 
 
 

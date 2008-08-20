@@ -1,0 +1,150 @@
+<?xml version="1.0"?>
+
+
+<system name="Blackout">
+    <channel name="Blackout">
+
+
+
+
+        <!--
+              - accelerations/n-pilot-z-norm has the disadvantage that is
+              - has an offset of 1G when positioned horizontal (and -1G
+              - when upside down). When you want the calculate the difference
+              - between commanded pitch-rate and actual pitch-rate this offset
+              - gets in the way. the following function calculates an offset
+              - to compensate for the earths gravity.
+              -->
+        <!--=====g load corrected============from F16 by Eric Hofman=======================-->
+            <fcs_function name="n pilot z correction">
+             <function>
+                <product>
+                 <cos><property>attitude/pitch-rad</property></cos>
+                 <cos><property>attitude/roll-rad</property></cos>
+                </product>
+             </function>
+            </fcs_function>
+
+            <summer name="g load corrected">
+              <input>accelerations/n-pilot-z-norm</input>
+              <input>-fcs/n-pilot-z-correction</input>
+            </summer>
+
+            <!--=====Specific part    ====300 secondes to blackout at 5g ====transition 4 secondes==================-->
+           <!-- ============1 seconde to redout under -4g ===transition 2 secondes ==========================-->
+            <switch name="systems/blackout">
+                <default value="0"/>
+                <test  logic="AND" value="1">
+                fcs/g-load-corrected lt -5
+                </test>
+            </switch>
+
+            <switch name="systems/redout">
+                <default value="0"/>
+                <test  logic="AND" value="1">
+                fcs/g-load-corrected gt 4
+                </test>
+            </switch>
+
+            <kinematic name="systems/blackout-cmd">
+                <input>systems/blackout</input>
+                <traverse>
+                    <setting>
+                    <position>0.</position>
+                    <time>0</time>
+                    </setting>
+                    <setting>
+                    <position>1</position>
+                    <time>300</time>
+                    </setting>
+                </traverse>
+            </kinematic>
+
+            <switch name="systems/blackout-start">
+                <default value="0"/>
+                <test  logic="AND" value="1">
+                systems/blackout-cmd == 1
+                </test>
+            </switch>
+
+
+            <kinematic name="systems/redout-cmd">
+                <input>systems/redout</input>
+                <traverse>
+                    <setting>
+                    <position>0</position>
+                    <time>0</time>
+                    </setting>
+                    <setting>
+                    <position>1</position>
+                    <time>1</time>
+                    </setting>
+                </traverse>
+            </kinematic>
+
+            <switch name="systems/redout-start">
+                <default value="0"/>
+                <test  logic="AND" value="1">
+                systems/redout-cmd == 1
+                </test>
+            </switch>
+
+
+            <kinematic name="systems/blackout-on">
+                <input>systems/blackout-start</input>
+                <traverse>
+                    <setting>
+                    <position>0</position>
+                    <time>0</time>
+                    </setting>
+                    <setting>
+                    <position>1</position>
+                    <time>4</time>
+                    </setting>
+                </traverse>
+            </kinematic>
+
+            <kinematic name="systems/redout-on">
+                <input>systems/redout-start</input>
+                <traverse>
+                    <setting>
+                    <position>0</position>
+                    <time>0</time>
+                    </setting>
+                    <setting>
+                    <position>1</position>
+                    <time>2</time>
+                    </setting>
+                </traverse>
+            </kinematic>
+
+            <switch name="systems/redout-red">
+                <default value="0"/>
+                <test  logic="AND" value="1">
+                systems/redout-start == 1
+                </test>
+                <test  logic="AND" value="0">
+                systems/blackout-start == 1
+                </test>
+                <output>/sim/rendering/redout/red</output>
+            </switch>
+
+            <summer name="systems/redout-alpha-value">
+              <input>systems/blackout-on</input>
+              <input>systems/redout-on</input>
+            </summer>
+
+            <switch name="systems/redout-alpha">
+                <default value="0"/>
+                <test  logic="AND" value="systems/redout-alpha-value">
+                /sim/current-view/internal == 1
+                </test>
+                <output>/sim/rendering/redout/alpha</output>
+            </switch>
+
+
+
+    </channel>
+
+
+</system>

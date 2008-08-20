@@ -2,7 +2,8 @@
 
 
 <system name="outdoor-lighting">
-	<channel name="Outdoor Lighting">
+
+        <channel name="Outdoor Lighting">
             <switch name="blinker-sw">
                 <default value="/instrumentation/lights/blinker-kinemat-in"/>
                 <test logic="AND" value="1">

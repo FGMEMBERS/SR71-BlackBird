@@ -23,7 +23,9 @@
         </model>
         <rendering>
                 <redout>
-                        <enabled ype="bool">false</enabled>
+                    <red>0</red>
+                    <alpha>0</alpha>
+                    <enabled ype="bool">false</enabled>
                 </redout>
         </rendering>
         <help include="Help/BlackBird-help.xml"/>
@@ -157,8 +159,11 @@
                 <file>Aircraft/SR71-BlackBird/Systems/nav.nas</file>
             </nav>
 	    <terrain>
-			<file>Aircraft/SR71-BlackBird/Systems/terrain.nas</file>
-		</terrain>
+                    <file>Aircraft/SR71-BlackBird/Systems/terrain.nas</file>
+            </terrain>
+            <crash>
+                    <file>Aircraft/SR71-BlackBird/Systems/crash.nas</file>
+            </crash>
     </nasal>
 
 </PropertyList>
