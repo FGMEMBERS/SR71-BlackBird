@@ -79,7 +79,7 @@
     </mass_balance>
 
     <ground_reactions>
-        <contact type="BOGEY" name="NOSE">
+        <contact type="BOGEY" name="NOSE"> <!--gear 0-->
             <location unit="IN">
                 <x> -360.23 </x>
                 <y> 0 </y>
@@ -103,7 +103,7 @@
             </force_lag_filter>
             <wheel_slip_filter> 120.0 </wheel_slip_filter>
         </contact>
-        <contact type="BOGEY" name="MLG_LEFT">
+        <contact type="BOGEY" name="MLG_LEFT"> <!--gear 1-->
             <location unit="IN">
                 <x> 78.34 </x>
                 <y> -54 </y>
@@ -127,7 +127,7 @@
             </force_lag_filter>
             <wheel_slip_filter> 120.0 </wheel_slip_filter>
         </contact>
-        <contact type="BOGEY" name="MLG_RIGHT">
+        <contact type="BOGEY" name="MLG_RIGHT"> <!--gear 2-->
             <location unit="IN">
                 <x> 78.34 </x>
                 <y> 54 </y>
@@ -151,7 +151,7 @@
             </force_lag_filter>
             <wheel_slip_filter> 120.0 </wheel_slip_filter>
         </contact>
-        <contact type="STRUCT" name="WT_LEFT">
+        <contact type="BOGEY" name="WT_LEFT"> <!--gear 3-->
             <location unit="IN">
                 <x> 88.2 </x>
                 <y> -257 </y>
@@ -161,8 +161,9 @@
             <dynamic_friction> 0.2 </dynamic_friction>
             <spring_coeff unit="LBS/FT"> 10000 </spring_coeff>
             <damping_coeff unit="LBS/FT/SEC"> 20000 </damping_coeff>
+            <retractable>0</retractable>
         </contact>
-        <contact type="STRUCT" name="WT_RIGHT">
+        <contact type="BOGEY" name="WT_RIGHT"> <!--gear 4-->
             <location unit="IN">
                 <x> 88.2 </x>
                 <y> 257 </y>
@@ -173,7 +174,7 @@
             <spring_coeff unit="LBS/FT"> 100000 </spring_coeff>
             <damping_coeff unit="LBS/FT/SEC"> 20000 </damping_coeff>
         </contact>
-        <contact type="STRUCT" name="VT_LEFT">
+        <contact type="BOGEY" name="VT_LEFT"> <!--gear 5-->
             <location unit="IN">
                 <x> 227.4 </x>
                 <y> -69.7 </y>
@@ -184,7 +185,7 @@
             <spring_coeff unit="LBS/FT"> 100000 </spring_coeff>
             <damping_coeff unit="LBS/FT/SEC"> 20000 </damping_coeff>
         </contact>
-        <contact type="STRUCT" name="VT_RIGHT">
+        <contact type="BOGEY" name="VT_RIGHT"> <!--gear 6-->
             <location unit="IN">
                 <x> 227.4 </x>
                 <y> 69.7 </y>
@@ -195,7 +196,7 @@
             <spring_coeff unit="LBS/FT"> 100000 </spring_coeff>
             <damping_coeff unit="LBS/FT/SEC"> 20000 </damping_coeff>
         </contact>
-        <contact type="STRUCT" name="RADOME">
+        <contact type="BOGEY" name="RADOME"> <!--gear 7-->
             <location unit="IN">
                 <x> -468.7 </x>
                 <y> 0 </y>
@@ -206,7 +207,7 @@
             <spring_coeff unit="LBS/FT"> 100000 </spring_coeff>
             <damping_coeff unit="LBS/FT/SEC"> 20000 </damping_coeff>
         </contact>
-        <contact type="STRUCT" name="BELLY">
+        <contact type="BOGEY" name="BELLY"> <!--gear 8-->
             <location unit="IN">
                 <x> -7 </x>
                 <y> 0 </y>
@@ -289,7 +290,7 @@
             <capacity unit="LBS"> 55000 </capacity>
             <contents unit="LBS"> 30000 </contents>
         </tank>
-        <tank type="FUEL">    <!-- Tank number 1 -->
+        <tank type="FUEL">    <!-- Tank number 2 not in use -->
             <location unit="IN">
                 <x> 0 </x>
                 <y> 0 </y>
@@ -301,7 +302,6 @@
     </propulsion>
 
     <system file="FCS-Basic"/>
-    <system file="g-Load"/>
     <system file="landing-gear"/>
     <system file="engines"/>
     <system file="fuel-refuel"/>
@@ -309,6 +309,8 @@
     <system file="electrical"/>
     <system file="light-outdoor"/>
     <system file="brake-chute"/>
+     <system file="blackout"/>
+
 
 
 
@@ -781,38 +783,7 @@
                       </table>
                 </product>
             </function>
-            <!--<function name="aero/coefficient/Clb">
-                <description>Roll_moment_due_to_beta</description>
-                <product>
-                    <property>aero/qbar-psf</property>
-                    <property>metrics/Sw-sqft</property>
-                    <property>metrics/bw-ft</property>
-                    <property>aero/beta-rad</property>
-                    <value>-0.1000</value>
-                </product>
-            </function>
-            <function name="aero/coefficient/Clp">
-                <description>Roll_moment_due_to_roll_rate</description>
-                <product>
-                    <property>aero/qbar-psf</property>
-                    <property>metrics/Sw-sqft</property>
-                    <property>metrics/bw-ft</property>
-                    <property>aero/bi2vel</property>
-                    <property>velocities/p-aero-rad_sec</property>
-                    <value>-0.18</value>
-                </product>
-            </function>
-            <function name="aero/coefficient/Clr">
-                <description>Roll_moment_due_to_yaw_rate</description>
-                <product>
-                    <property>aero/qbar-psf</property>
-                    <property>metrics/Sw-sqft</property>
-                    <property>metrics/bw-ft</property>
-                    <property>aero/bi2vel</property>
-                    <property>velocities/r-aero-rad_sec</property>
-                    <value>0.1000</value>
-                </product>
-            </function>-->
+
             <function name="aero/coefficient/Clda">
                 <description>Roll_moment_due_to_aileron</description>
                 <product>
@@ -829,16 +800,7 @@
                       </table>
                 </product>
             </function>
-            <!--<function name="aero/coefficient/Cldr">
-                <description>Roll_moment_due_to_rudder</description>
-                <product>
-                    <property>aero/qbar-psf</property>
-                    <property>metrics/Sw-sqft</property>
-                    <property>metrics/bw-ft</property>
-                    <property>fcs/rudder-pos-rad</property>
-                    <value>0.0100</value>
-                </product>
-            </function>-->
+
         </axis>
 
         <axis name="PITCH">
