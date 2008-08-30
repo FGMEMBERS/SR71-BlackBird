@@ -58,8 +58,7 @@
 
           ====Start Routine==========
           Electric Master Switch On => key "}"
-          Get the external Starter ressources
-          (depress "space" or "s" if you have just updated you CVS data keyboard.xml)
+          Get the external Starter ressources  with "s" key
           The engine will spin up to a maximum of about %25 N2 (%5.2 N1)
           This simulates the action of the external starter.
           After reaching %15 N2,  Cutoff to False  => key "{"
@@ -69,7 +68,6 @@
           then push the throttle to  take off
 
           ====To get 85000 feets=======
-          This is the procedure for the model, not for the real one (smile)
           After take Off and Landing gear UP, set the trottle to maximum and
           set the Autopilot "Pitch Hold" to 10
           You can notice the Aircraft climbing , and the speed increasing  to 1.1 Mach
