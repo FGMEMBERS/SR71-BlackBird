@@ -94,7 +94,7 @@
 		<condition>
 				<less-than>
 					<property>/consumables/fuel/total-fuel-gals</property>
-					<value>500</value>
+					<value>2000</value>
 				</less-than>
 		</condition>
 	</animation>
