@@ -25,17 +25,11 @@ Update_engine=func{
                 setprop("/controls/engines/engine[1]/cutoff",cutoff1);
         }
 #==============================================
-Refuel= func{
-        var  Refueling = getprop("/systems/refuel/contact");
-        var  Pump = getprop("instrumentation/annunciator/refuel-pump");
-        if (Refueling ==1 and Pump ==0) {
-            consumable.refuel_air();
-        }
-    }
+
 #==============================================
 Loop_update_blackbird=func{
                 Update_engine();
-                Refuel();
+
                 settimer ( Loop_update_blackbird, 2 );
                 }
 Loop_update_blackbird();

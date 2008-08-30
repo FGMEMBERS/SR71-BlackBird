@@ -15,7 +15,7 @@
                 <splash-texture>Aircraft/SR71-BlackBird/splash-BB-A.rgb</splash-texture>
         </startup>
         <flight-model>jsb</flight-model>
-        <aero>sr71-new</aero>
+        <aero>sr71-jsbsim</aero>
         <model>
             <path archive="y">Aircraft/SR71-BlackBird/Models/Blackbird-SR71A.xml</path>
             <controls>

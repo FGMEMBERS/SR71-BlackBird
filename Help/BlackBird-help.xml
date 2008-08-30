@@ -12,7 +12,7 @@
                 <desc>toggle Electric Master Switch On/Off</desc>
         </key>
         <key>
-                <name>Space  or "s" (if your keyboard.xml has been updated from CVS) </name>
+                <name> "s"  </name>
                 <desc>Starter</desc>
         </key>
 
@@ -81,12 +81,16 @@
           set the Autopilot "Altitude Hold"  to 85000
 
           ====Refueling============
-          With key "F"
-          On gound refueling, if Airspeed less than 20 kts
-          Air refueling if Airspeed more than 200 kts and Agl more  than 300 feet
-          Door are first automatically opened
-          for your facility it does not need refuel contact with Tanker
-          however, the air refueling function  is automatically activated if you get the contact with the tanker
+          ONLY  On gound refueling, if Airspeed less than 20 kts
+          With Hotspot on Panel => transferswitch LMB => ON or MMB => OFF
+
+          ONLY Air refueling if Airspeed more than 200 kts and Agl more  than 300 feet
+          With Hotspot on Panel => transfer switch LMB => ON or MMB => OFF
+                AND
+          With "F" Key which open the Doors
+          need refuel contact with Tanker
+          (indicated by  the green light "ON" on left top of the radar )
+
 
 
           ====Braking Chute==========

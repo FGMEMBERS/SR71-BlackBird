@@ -25,6 +25,7 @@ setprop("gear/gear[11]/wow",0);
 setprop("gear/gear[12]/wow",0);
 setprop("sim/crashed",0);
 
+setprop("position/altitude-ft",0);
 
 
 #==========================
@@ -91,6 +92,7 @@ main_loop = func {
 	crashed9 = getprop("gear/gear[9]/wow");	
 	crashed10 = getprop("gear/gear[10]/wow");
 	crashed11 = getprop("gear/gear[11]/wow");
+        altitude =  getprop("position/altitude-ft");
 
 	if (crashed3.getValue()) {
 	print ("sensor3");
@@ -116,6 +118,10 @@ main_loop = func {
 	print ("sensor8");
 	crash();	
 	}
+         elsif (altitude < -1000) {
+        print ("altitude", altitude);
+        crash();
+        }
 	else {
 	settimer(main_loop,2);
 	}

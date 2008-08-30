@@ -28,17 +28,29 @@ Copyright License:  GPL
                 <h-base>1024</h-base>
                 <actions>
                     <action>
-                        <name>refuel activate</name>
+                        <name>refuel on</name>
                         <button>0</button>
                         <x>-300</x>
                         <y>00</y>
                         <w>500</w>
                         <h>400</h>
                         <binding>
-                            <command>nasal</command>
-                            <script>
-                                    consumable.refuel();
-                            </script>
+                            <property>/fdm/jsbsim/systems/refuel-pump-cmd</property>
+                            <command>property-assign</command>
+                            <value>1</value>
+                        </binding>
+                    </action>
+                    <action>
+                        <name>refuel off</name>
+                        <button>1</button>
+                        <x>-300</x>
+                        <y>00</y>
+                        <w>500</w>
+                        <h>400</h>
+                        <binding>
+                            <property>/fdm/jsbsim/systems/refuel-pump-cmd</property>
+                            <command>property-assign</command>
+                            <value>0</value>
                         </binding>
                     </action>
                 </actions>

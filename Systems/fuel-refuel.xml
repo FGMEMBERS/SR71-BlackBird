@@ -3,13 +3,31 @@
 
 <system name="Fuel-ReFuel">
 
+    <property>systems/refuel-pump-cmd</property>
+    <property>/consumables/fuel/tank[0]/capacity-gal_us</property>
+    <property>/consumables/fuel/tank[1]/capacity-gal_us</property>
+    <property>/consumables/fuel/total-fuel-gals</property>
+    <property>/instrumentation/annunciator/refuel-pump</property>
+
+
         <channel name="Refuel">
+
+            <summer name="Tank Total To  Fill Gals">
+                <input>-/consumables/fuel/total-fuel-gals</input>
+                <input>/consumables/fuel/tank[0]/capacity-gal_us</input>
+                <input>/consumables/fuel/tank[1]/capacity-gal_us</input>
+                <output>systems/fuel-gals-to-fill</output>
+            </summer>
+
+
+
+
             <kinematic name="Refueling Control">
                 <input>/controls/flight/op-refuel</input>
                 <traverse>
                     <setting>
                         <position>0.0000</position>
-                        <time>5.0000</time>
+                        <time>0.0000</time>
                     </setting>
                     <setting>
                         <position>1.0000</position>
@@ -25,10 +43,30 @@
                 <output>/surface-positions/refueling-pos-norm</output>
             </pure_gain>
 
-            </channel>
+            <kinematic name="Pump Refuel">
+                <input>systems/refuel-pump-cmd</input>
+                <traverse>
+                    <setting>
+                        <position>0.0000</position>
+                        <time>0.0000</time>
+                    </setting>
+                    <setting>
+                        <position>1.0000</position>
+                        <time>0.20</time>
+                    </setting>
+                </traverse>
+                <output>/instrumentation/annunciator/refuel-pump</output>
+            </kinematic>
+
+            <switch name="systems/refuel-pump">
+                <default value="0"/>
+                <test  logic="AND" value="1">
+                   systems/refuel-pump-cmd == 1
+                    /systems/electrical/outputs/refuel-pump  > 27
+                </test>
+            </switch>
 
 
-            <channel name="Fuel">
 
             <summer name="Tank Total Gals">
                 <input>/consumables/fuel/tank[0]level-gal_us</input>
@@ -41,8 +79,44 @@
                 <output>/consumables/fuel/total-fuel-gals</output>
             </summer>
 
+
+            <switch name="Refuel Air">
+                <default value="0"/>
+                <test  logic="AND" value="1">
+                    /systems/refuel/contact == 1
+                    /position/altitude-agl-ft  gt  300
+                    /instrumentation/airspeed-indicator/indicated-speed-kt  gt 200
+                    fcs/refueling-pos-norm == 1
+                    systems/refuel-pump == 1
+                </test>
+                <output>systems/refueling_air</output>
+            </switch>
+
+            <switch name="Refuel Ground">
+                <default value="0"/>
+                <test  logic="AND" value="1">
+                    /position/altitude-agl-ft  lt  7
+                    /instrumentation/airspeed-indicator/indicated-speed-kt  lt 20
+                    fcs/refueling-pos-norm == 0
+                    systems/refuel-pump == 1
+                </test>
+                <output>systems/refueling_ground</output>
+            </switch>
+
+
+            <switch name="systems/refueling_action">
+                <default value="0"/>
+                <test  logic="OR" value="1">
+                    systems/refueling_air == 1
+                    systems/refueling_ground == 1
+                </test>
+                <output>propulsion/refuel</output>
+            </switch>
+
+
+
+
+
         </channel>
-
-
 
 </system>

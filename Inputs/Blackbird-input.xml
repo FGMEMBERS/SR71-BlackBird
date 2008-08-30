@@ -33,12 +33,10 @@
             </key>
             <key n="70">
                 <name>F</name>
-                <desc>Refuel On/Off</desc>
+                <desc>Air Refuel On/Off</desc>
                     <binding>
-                            <command>nasal</command>
-                            <script>
-                                    consumable.refuel();
-                            </script>
+                            <command>property-toggle</command>
+                            <property>/controls/flight/op-refuel</property>
                     </binding>
             </key>
             <key n="2">

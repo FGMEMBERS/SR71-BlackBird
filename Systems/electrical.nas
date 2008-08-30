@@ -305,6 +305,9 @@ electrical_bus_1 = func() {
     } else {
         setprop("/systems/electrical/outputs/fuel-pump", 0.0);
     }
+    
+    #Refuel Pump
+    setprop("/systems/electrical/outputs/refuel-pump", bus_volts);
 
     # Landing Light Power
     if ( getprop("/controls/switches/landing-light") ) {

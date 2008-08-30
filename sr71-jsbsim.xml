@@ -205,7 +205,7 @@
             <static_friction> 0.2 </static_friction>
             <dynamic_friction> 0.2 </dynamic_friction>
             <spring_coeff unit="LBS/FT"> 100000 </spring_coeff>
-            <damping_coeff unit="LBS/FT/SEC"> 20000 </damping_coeff>
+            <damping_coeff unit="LBS/FT/SEC"> 2000 </damping_coeff>
         </contact>
         <contact type="BOGEY" name="BELLY"> <!--gear 8-->
             <location unit="IN">
@@ -304,18 +304,21 @@
     <system file="FCS-Basic"/>
     <system file="landing-gear"/>
     <system file="engines"/>
-    <system file="fuel-refuel"/>
+
     <system file="canopy"/>
     <system file="electrical"/>
     <system file="light-outdoor"/>
     <system file="brake-chute"/>
      <system file="blackout"/>
+     <system file="fuel-refuel"/>
 
 
 
 
-    <flight_control name="FCS: SR-71">
-    </flight_control>
+    <flight_control name="SR-71"/>
+
+
+
 
 
     <aerodynamics>

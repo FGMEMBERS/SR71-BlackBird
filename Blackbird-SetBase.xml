@@ -130,6 +130,13 @@
             </radar>
     </instrumentation>
 
+    <systems>
+        <refuel>
+            <contact type="bool">false</contact>
+            <type>boom</type>
+        </refuel>
+    </systems>
+
     <fdm><!-- Start with Canopy open -->
             <jsbsim>
                     <fcs>
@@ -152,7 +159,6 @@
                 <file>Aircraft/SR71-BlackBird/Systems/blackbird.nas</file>
             </switch>
             <consumable>
-                <file>Aircraft/SR71-BlackBird/Systems/refuel.nas</file>
                 <file>Aircraft/SR71-BlackBird/Systems/tanker.nas</file>
             </consumable>
             <radar>
