@@ -332,7 +332,7 @@
 		<object-name>Post-Combustion1</object-name>
 		<condition>
 			<equals>
-				<property>engines/engine[0]/augmentation</property>
+				<property>engines/engine[1]/augmentation</property>
 				<value>true</value>
 			</equals>
 		</condition>
@@ -367,7 +367,7 @@
 		<object-name>Post-Combustion2</object-name>
 		<condition>
 			<equals>
-				<property>engines/engine[0]/augmentation</property>
+				<property>engines/engine[1]/augmentation</property>
 				<value>true</value>
 			</equals>
 		</condition>
@@ -389,7 +389,7 @@
 		<object-name>Post-Combustion2b</object-name>
 		<condition>
 			<equals>
-				<property>engines/engine[0]/augmentation</property>
+				<property>engines/engine[1]/augmentation</property>
 				<value>true</value>
 			</equals>
 		</condition>

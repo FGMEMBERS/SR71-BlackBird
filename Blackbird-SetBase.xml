@@ -28,6 +28,18 @@
                     <enabled ype="bool">false</enabled>
                 </redout>
         </rendering>
+        <multiplay>
+            <generic>
+                    <float n="0" alias="/surface-positions/gear-pos-norm"/>
+                    <float n="1" alias="/surface-positions/chute-pos-norm"/>
+                    <float n="2" alias="/surface-positions/canopy-pos-norm"/>
+                    <float n="3" alias="gear/gear[0]/steering-norm"/>
+                    <float n="4" alias="fdm/jsbsim/fcs/landing-light"/>
+                    <float n="5" alias="engines/engine[0]/augmentation"/>
+                    <float n="6" alias="engines/engine[1]/augmentation"/>
+                    <string n="0"></string>
+            </generic>
+        </multiplay>
         <help include="Help/BlackBird-help.xml"/>
     </sim>
 
