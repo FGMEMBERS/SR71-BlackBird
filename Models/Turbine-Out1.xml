@@ -7,7 +7,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>T-P1</object-name>
-		<property>controls/engines/engine[1]/throttle</property>
+		<property>sim/multiplay/generic/float[8]</property>
 		<interpolation>
 			<entry><ind>0</ind><dep>10</dep></entry>
 			<entry><ind>1</ind><dep>0</dep></entry>
@@ -27,7 +27,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>T-P12</object-name>
-		<property>controls/engines/engine[1]/throttle</property>
+		<property>sim/multiplay/generic/float[8]</property>
 		<interpolation>
 			<entry><ind>0</ind><dep>10</dep></entry>
 			<entry><ind>1</ind><dep>0</dep></entry>
@@ -47,7 +47,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>T-P11</object-name>
-		<property>controls/engines/engine[1]/throttle</property>
+		<property>sim/multiplay/generic/float[8]</property>
 		<interpolation>
 			<entry><ind>0</ind><dep>10</dep></entry>
 			<entry><ind>1</ind><dep>0</dep></entry>
@@ -67,7 +67,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>T-P10</object-name>
-		<property>controls/engines/engine[1]/throttle</property>
+		<property>sim/multiplay/generic/float[8]</property>
 		<interpolation>
 			<entry><ind>0</ind><dep>10</dep></entry>
 			<entry><ind>1</ind><dep>0</dep></entry>
@@ -87,7 +87,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>T-P9</object-name>
-		<property>controls/engines/engine[1]/throttle</property>
+		<property>sim/multiplay/generic/float[8]</property>
 		<interpolation>
 			<entry><ind>0</ind><dep>10</dep></entry>
 			<entry><ind>1</ind><dep>0</dep></entry>
@@ -107,7 +107,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>T-P8</object-name>
-		<property>controls/engines/engine[1]/throttle</property>
+		<property>sim/multiplay/generic/float[8]</property>
 		<interpolation>
 			<entry><ind>0</ind><dep>10</dep></entry>
 			<entry><ind>1</ind><dep>0</dep></entry>
@@ -127,7 +127,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>T-P7</object-name>
-		<property>controls/engines/engine[1]/throttle</property>
+		<property>sim/multiplay/generic/float[8]</property>
 		<interpolation>
 			<entry><ind>0</ind><dep>10</dep></entry>
 			<entry><ind>1</ind><dep>0</dep></entry>
@@ -147,7 +147,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>T-P6</object-name>
-		<property>controls/engines/engine[1]/throttle</property>
+		<property>sim/multiplay/generic/float[8]</property>
 		<interpolation>
 			<entry><ind>0</ind><dep>10</dep></entry>
 			<entry><ind>1</ind><dep>0</dep></entry>
@@ -167,7 +167,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>T-P5</object-name>
-		<property>controls/engines/engine[1]/throttle</property>
+		<property>sim/multiplay/generic/float[8]</property>
 		<interpolation>
 			<entry><ind>0</ind><dep>10</dep></entry>
 			<entry><ind>1</ind><dep>0</dep></entry>
@@ -187,7 +187,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>T-P4</object-name>
-		<property>controls/engines/engine[1]/throttle</property>
+		<property>sim/multiplay/generic/float[8]</property>
 		<interpolation>
 			<entry><ind>0</ind><dep>10</dep></entry>
 			<entry><ind>1</ind><dep>0</dep></entry>
@@ -207,7 +207,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>T-P3</object-name>
-		<property>controls/engines/engine[1]/throttle</property>
+		<property>sim/multiplay/generic/float[8]</property>
 		<interpolation>
 			<entry><ind>0</ind><dep>10</dep></entry>
 			<entry><ind>1</ind><dep>0</dep></entry>
@@ -227,7 +227,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>T-P2</object-name>
-		<property>controls/engines/engine[1]/throttle</property>
+		<property>sim/multiplay/generic/float[8]</property>
 		<interpolation>
 			<entry><ind>0</ind><dep>10</dep></entry>
 			<entry><ind>1</ind><dep>0</dep></entry>
@@ -249,7 +249,7 @@
 		<object-name>T-Int0</object-name>
 		<condition>
 			<greater-than>
-				<property>controls/engines/engine[1]/throttle</property>
+				<property>sim/multiplay/generic/float[8]</property>
 				<value>0.88</value>
 			</greater-than>
 		</condition>
@@ -257,7 +257,7 @@
 	<animation>
 		<type>translate</type>
 		<object-name>T-Int0</object-name>
-		<property>controls/engines/engine[1]/throttle</property>
+		<property>sim/multiplay/generic/float[8]</property>
 		<interpolation>
 			<entry><ind>0</ind><dep>3</dep></entry>
 			<entry><ind>1</ind><dep>0</dep></entry>
@@ -275,11 +275,11 @@
 		<condition>
 			<and>
 			<greater-than>
-				<property>controls/engines/engine[1]/throttle</property>
+				<property>sim/multiplay/generic/float[8]</property>
 				<value>0.42</value>
 			</greater-than>
 			<less-than>
-				<property>controls/engines/engine[1]/throttle</property>
+				<property>sim/multiplay/generic/float[8]</property>
 				<value>0.97</value>
 			</less-than>
 			</and>
@@ -288,7 +288,7 @@
 	<animation>
 		<type>translate</type>
 		<object-name>T-Int1</object-name>
-		<property>controls/engines/engine[1]/throttle</property>
+		<property>sim/multiplay/generic/float[8]</property>
 		<interpolation>
 			<entry><ind>0</ind><dep>0.7</dep></entry>
 			<entry><ind>1</ind><dep>-0.2</dep></entry>
@@ -305,7 +305,7 @@
 		<object-name>T-Int2</object-name>
 		<condition>
 			<less-than>
-				<property>controls/engines/engine[1]/throttle</property>
+				<property>sim/multiplay/generic/float[8]</property>
 				<value>0.701</value>
 			</less-than>
 		</condition>
@@ -331,10 +331,7 @@
 		<object-name>Post-Combustion3</object-name>
 		<object-name>Post-Combustion1</object-name>
 		<condition>
-			<equals>
-				<property>engines/engine[1]/augmentation</property>
-				<value>true</value>
-			</equals>
+				<property>sim/multiplay/generic/float[6]</property>
 		</condition>
 	</animation>
 
@@ -366,10 +363,7 @@
 		<type>select</type>
 		<object-name>Post-Combustion2</object-name>
 		<condition>
-			<equals>
-				<property>engines/engine[1]/augmentation</property>
-				<value>true</value>
-			</equals>
+				<property>sim/multiplay/generic/float[6]</property>
 		</condition>
 	</animation>
 	<animation>
@@ -388,10 +382,7 @@
 		<type>select</type>
 		<object-name>Post-Combustion2b</object-name>
 		<condition>
-			<equals>
-				<property>engines/engine[1]/augmentation</property>
-				<value>true</value>
-			</equals>
+				<property>sim/multiplay/generic/float[6]</property>
 		</condition>
 	</animation>
 	<animation>

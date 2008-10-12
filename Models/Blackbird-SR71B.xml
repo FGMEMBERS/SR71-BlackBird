@@ -138,7 +138,7 @@
     <animation>
             <type>rotate</type>
             <object-name>Canopy-PiloteStud</object-name>
-            <property>surface-positions/canopy-pos-norm</property>
+           <property>sim/multiplay/generic/float[2]</property>
             <interpolation>
                     <entry>
                             <ind>0.0</ind>
@@ -188,7 +188,7 @@
     <animation>
             <type>rotate</type>
             <object-name>Canopy-PiloteInstr</object-name>
-            <property>surface-positions/canopy-pos-norm</property>
+           <property>sim/multiplay/generic/float[2]</property>
             <interpolation>
                     <entry>
                             <ind>0.0</ind>

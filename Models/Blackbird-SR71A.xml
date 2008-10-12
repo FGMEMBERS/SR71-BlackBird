@@ -125,7 +125,7 @@
     <animation>
             <type>rotate</type>
             <object-name>Canopy</object-name>
-            <property>surface-positions/canopy-pos-norm</property>
+           <property>sim/multiplay/generic/float[2]</property>
             <interpolation>
                     <entry>
                             <ind>0.0</ind>
@@ -175,7 +175,7 @@
     <animation>
             <type>rotate</type>
             <object-name>ARCanopy</object-name>
-            <property>surface-positions/canopy-pos-norm</property>
+           <property>sim/multiplay/generic/float[2]</property>
             <interpolation>
                     <entry>
                             <ind>0.0</ind>
