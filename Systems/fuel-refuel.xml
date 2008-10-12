@@ -5,8 +5,6 @@
 
     <property>systems/refuel-pump-cmd</property>
     <property>/consumables/fuel/total-fuel-gals</property>
-    <property>/instrumentation/annunciator/refuel-pump</property>
-
 
         <channel name="Refuel">
 
