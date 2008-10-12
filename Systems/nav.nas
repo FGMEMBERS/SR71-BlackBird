@@ -1,6 +1,6 @@
-# By G ROBIN  , that nasal code must not be modified
+# By G ROBIN  , 
 #
-#COPIED FROM F8E CRUSADER, some componants are not usables with the F4U CORSAIRE========================
+#COPIED FROM F8E CRUSADER, 
 #
 #========SAISIE=====================================
 

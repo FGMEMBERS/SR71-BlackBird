@@ -4,22 +4,11 @@
 <system name="Fuel-ReFuel">
 
     <property>systems/refuel-pump-cmd</property>
-    <property>/consumables/fuel/tank[0]/capacity-gal_us</property>
-    <property>/consumables/fuel/tank[1]/capacity-gal_us</property>
     <property>/consumables/fuel/total-fuel-gals</property>
     <property>/instrumentation/annunciator/refuel-pump</property>
 
 
         <channel name="Refuel">
-
-            <summer name="Tank Total To  Fill Gals">
-                <input>-/consumables/fuel/total-fuel-gals</input>
-                <input>/consumables/fuel/tank[0]/capacity-gal_us</input>
-                <input>/consumables/fuel/tank[1]/capacity-gal_us</input>
-                <output>systems/fuel-gals-to-fill</output>
-            </summer>
-
-
 
 
             <kinematic name="Refueling Control">
