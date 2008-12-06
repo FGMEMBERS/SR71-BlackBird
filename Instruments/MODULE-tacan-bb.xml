@@ -30,7 +30,7 @@
 	</animation>
 
 <!--******************** Hotspots ******************************-->
-	<panel>
+	<!--<panel>
 		<path>Aircraft/SR71-BlackBird/Instruments/TACAN-hotspots.xml</path>
 		<bottom-left>
 			<x-m>0.03175</x-m>
@@ -47,8 +47,68 @@
 			<y-m>-0.069000</y-m>
 			<z-m>0.005</z-m>
 		</top-left>
-	</panel>
+	</panel>-->
 <!--*************************************************-->
+        <animation>
+            <type>pick</type>
+            <object-name>Tacan-Channel-1</object-name>
+            <action>
+                <button>0</button>
+                <binding>
+                    <command>property-adjust</command>
+                    <property>/instrumentation/tacan/frequencies/valueCh1</property>
+                    <step>1</step>
+                    <min>0</min>
+                    <max>2</max>
+                    <wrap>1</wrap>
+                </binding>
+            </action>
+        </animation>
+        
+        <animation>
+            <type>pick</type>
+            <object-name>Tacan-Bt-Channel-2</object-name>
+            <action>
+                <button>0</button>
+                <binding>
+                    <command>property-adjust</command>
+                    <property>/instrumentation/tacan/frequencies/valueCh2</property>
+                    <step>1</step>
+                    <min>0</min>
+                    <max>10</max>
+                    <wrap>1</wrap>
+                </binding>
+            </action>
+        </animation>
+        
+        <animation>
+            <type>pick</type>
+            <object-name>Tacan-Bt-Channel-3</object-name>
+            <action>
+                <button>0</button>
+                <binding>
+                    <command>property-adjust</command>
+                    <property>/instrumentation/tacan/frequencies/valueCh3</property>
+                    <step>1</step>
+                    <min>0</min>
+                    <max>10</max>
+                    <wrap>1</wrap>
+                </binding>
+            </action>
+        </animation>
+        
+        <animation>
+            <type>pick</type>
+            <object-name>Tacan-Channel-XY</object-name>
+            <action>
+                <button>0</button>
+                <binding>
+                    <command>property-toggle</command>
+                    <property>/instrumentation/tacan/frequencies/valueXY</property>
+                </binding>
+            </action>
+        </animation>
+
 
 
 	<animation>
