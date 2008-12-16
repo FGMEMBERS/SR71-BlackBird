@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 
 
+
 <system name="engine">
         <property>fcs/cutoff-switch</property>
-
         <channel name="Engine">
 
             <kinematic name="Cutoff Switch Delay">
@@ -50,8 +50,32 @@
                 <gain>fcs/cutoff-switch-delay</gain>
                 <output>/controls/engines/engine[1]/throttle</output>
             </pure_gain>-->
+            
+            <switch name="AugThrust0">
+                <default value="1"/>
+                <test  logic="AND" value="0">
+                    fcs/throttle-pos-norm[0] gt 1
+                    velocities/mach gt  1.25
+                    position/h-sl-ft gt 29000
+                </test>
+                <output>fcs/intake-subsonic-pos</output>
+            </switch>
+            
+            <!--<switch name="AugThrust0">
+                <default value="1"/>
+                <test  logic="AND" value="0">
+                    fcs/throttle-pos-norm[0] gt 1
+                </test>
+                <output>propulsion/engine[0]/intake-subsonic-pos</output>
+            </switch>-->
 
-
+            <!--<switch name="AugThrust1">
+                <default value="1"/>
+                <test  logic="AND" value="0">
+                    fcs/throttle-pos-norm[1] gt 1
+                </test>
+                <output>propulsion/engine[1]/intake-subsonic-pos</output>
+            </switch>-->
 
             <switch name="Fuel Pump0 Cmd">
                 <default value="0"/>

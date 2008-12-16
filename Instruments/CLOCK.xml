@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!--
     Usable with FlightGear
-    Property of Gerard Robin
+    Property of Gerard Robin  12-12-2005 
     Copyright License:  GPL
 -->
 <PropertyList>
@@ -9,64 +9,111 @@
  <path>Models/clock.ac</path>
  <texture-path>Models/Textures</texture-path>
 
+	<animation>
+		<type>noshadow</type>
+		<object-name>Clock</object-name>
+	</animation>
+	<model>
+		<name>Bezel</name>
+		<path>Aircraft/F-8E-Crusader/Instruments/Bezel_pt-f8e.xml</path>
+		<offsets>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>0</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
 
-
-        <model>
-                <name>Bouton</name>
-                <path>Aircraft/SR71-BlackBird/Instruments/Bouton_pt-Nord.xml</path>
-                <offsets>
-                        <x-m>0.0161728</x-m>
-                        <y-m>-0.026</y-m>
-                        <z-m>-0.026</z-m>
-                        <pitch-deg>0</pitch-deg>
-                </offsets>
-        </model>
-
-        <animation include="Instrument-Light4.xml">
-                <object-name>SecondHand</object-name>
-                <object-name>MinuteHand</object-name>
-                <object-name>HourHand</object-name>
-        </animation>
-
-        <animation include="Instrument-Light3.xml">
-                <object-name>Cadran</object-name>
-        </animation>
-
+	<model>
+		<name>Bouton</name>
+		<path>Aircraft/F-8E-Crusader/Instruments/Bouton_pt-f8e.xml</path>
+		<offsets>
+			<x-m>0.0161728</x-m>
+			<y-m>-0.0295</y-m>
+			<z-m>-0.0295</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
+        
         <animation>
-                <type>rotate</type>
-                <object-name>SecondHand</object-name>
-                <property>instrumentation/clock/indicated-sec</property>
-                <factor>6</factor>
-                        <axis>
-                        <x>-1</x>
-                        <y>0</y>
-                        <z>0</z>
-                </axis>
+            <type>pick</type>
+            <object-name>Bouton</object-name>
+            <action>
+                <repeatable type="bool">true</repeatable>
+                <button>0</button>
+                <binding>
+                    <command>property-adjust</command>
+                    <property>/instrumentation/clock/offset-sec</property>
+                    <step>60</step>
+                    <min>0</min>
+                    <max>43200</max>
+                    <wrap>1</wrap>
+                </binding>
+            </action>
+        </animation>
+        
+        <animation>
+            <type>pick</type>
+            <object-name>Bouton</object-name>
+            <action>
+                <repeatable type="bool">true</repeatable>
+                <button>1</button>
+                <binding>
+                    <command>property-adjust</command>
+                    <property>/instrumentation/clock/offset-sec</property>
+                    <step>900</step>
+                    <min>0</min>
+                    <max>43200</max>
+                    <wrap>1</wrap>
+                </binding>
+            </action>
         </animation>
 
-        <animation>
-                <type>rotate</type>
-                <object-name>MinuteHand</object-name>
-                <property>instrumentation/clock/indicated-min</property>
-                <factor>6</factor>
-                <axis>
-                        <x>-1</x>
-                        <y>0</y>
-                        <z>0</z>
-                        </axis>
-        </animation>
+	<animation include="Instrument-Light4.xml">
+		<object-name>SecondHand</object-name>
+		<object-name>MinuteHand</object-name>
+		<object-name>HourHand</object-name>
+	</animation>
 
-        <animation>
-                <type>rotate</type>
-                <object-name>HourHand</object-name>
-                <property>instrumentation/clock/indicated-hour</property>
-                <factor>6</factor>
-                <axis>
-                        <x>-1</x>
-                        <y>0</y>
-                        <z>0</z>
-                </axis>
-        </animation>
+	<animation include="Instrument-Light3.xml">
+		<object-name>Cadran</object-name>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>SecondHand</object-name>
+		<property>instrumentation/clock/indicated-sec</property>
+		<factor>6</factor>
+			<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>MinuteHand</object-name>
+		<property>instrumentation/clock/indicated-min</property>
+		<factor>6</factor>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+			</axis>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>HourHand</object-name>
+		<property>instrumentation/clock/indicated-sec</property>
+                <factor>0.008333333333333333333</factor>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
 
 </PropertyList>
 
