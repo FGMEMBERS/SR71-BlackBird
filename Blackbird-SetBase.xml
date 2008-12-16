@@ -37,8 +37,8 @@
                     <float n="4" alias="/fdm/jsbsim/fcs/landing-light"/>
                     <float n="5" alias="/engines/engine[0]/augmentation"/>
                     <float n="6" alias="/engines/engine[1]/augmentation"/>
-                    <float n="7" alias="/controls/engines/engine[0]/throttle"/>
-                    <float n="8" alias="/controls/engines/engine[1]/throttle"/>
+                    <float n="7" alias="/engines/engine[0]/nozzle-pos-norm"/>
+                    <float n="8" alias="/engines/engine[1]/nozzle-pos-norm"/>
                     <string n="0"></string>
             </generic>
         </multiplay>
@@ -113,15 +113,11 @@
 
     <autopilot>
             <settings>
-                    <target-agl-ft type="float">800</target-agl-ft>
-                    <target-altitude-ft type="float">30000</target-altitude-ft>
+                    <target-altitude-ft type="float">33000</target-altitude-ft>
+                    <target-pushover-altitude-ft type="float">30000</target-pushover-altitude-ft>
+                    
                     <target-aoa-deg type="float">0.3</target-aoa-deg>
                     <target-pitch-deg type="float">10</target-pitch-deg>]
-                    <take-off-pitch-deg type="float">9</take-off-pitch-deg>
-                    <climb-out-pitch-deg type="float">8</climb-out-pitch-deg>
-                    <target-speed-kt type="float">800.0</target-speed-kt>
-                    <target-mach type="float">0.9</target-mach>
-                    <approach-AoA-deg type="float">12.7</approach-AoA-deg>
                     <true-heading-deg>180</true-heading-deg>
             </settings>
     </autopilot>

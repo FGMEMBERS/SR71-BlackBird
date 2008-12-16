@@ -70,14 +70,12 @@
           ====To get 85000 feets=======
           After take Off and Landing gear UP, set the trottle to maximum and
           set the Autopilot "Pitch Hold" to 10
-          You can notice the Aircraft climbing , and the speed increasing  to 1.1 Mach
-          When you are at 29000 feet altitude stop to climb by
-          setting the Autopilot "Altitude Hold" to 30000
-          The speed will increase to 3.0 Mach
-          Again set the Autopilot "Pitch Hold" to 10
-          The aircraft will climb, when at 83000 feets
-          set the Autopilot "Altitude Hold"  to 85000
-
+          Climb until 33000 ft , you shoul be at 0.99 mach
+          Then descent at 30,000 ft , you will be at 1.25 Mach
+          Now you can climb at 65000 and getting  2.65 Mach ( not less)
+         Then you may now climb to cruise speed and altitude 
+         3.2 Mach 85000 ft
+         
           ====Refueling============
           ONLY  On gound refueling, if Airspeed less than 20 kts
           With Hotspot on Panel => transferswitch LMB => ON or MMB => OFF
