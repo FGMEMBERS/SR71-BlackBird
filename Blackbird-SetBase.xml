@@ -117,7 +117,7 @@
                     <target-pushover-altitude-ft type="float">30000</target-pushover-altitude-ft>
                     
                     <target-aoa-deg type="float">0.3</target-aoa-deg>
-                    <target-pitch-deg type="float">10</target-pitch-deg>]
+                    <target-pitch-deg type="float">10</target-pitch-deg>
                     <true-heading-deg>180</true-heading-deg>
             </settings>
     </autopilot>
