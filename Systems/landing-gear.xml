@@ -3,32 +3,41 @@
 
 <system name="landing-gear">
         <channel name="Landing Gear">
+            
+            <summer name="Diff hsl agl">
+                <input>-position/h-agl-ft</input>
+                <input>position/h-sl-ft</input>
+            </summer>
 
             <switch name="Gear Switch">
                 <default value="/controls/gear/gear-down"/>
                 <test  logic="AND" value="0">
                     /environment/terrain  == 0
                     position/h-agl-ft lt 40
-                    position/h-sl-ft  lt position/h-agl-ft
+                   fcs/diff-hsl-agl lt 10
+                </test>
+                <test  logic="AND" value="0">
+                    systems/crash/switch_timer  == 1
                 </test>
                 <output>gear/gear-cp-cmd-norm</output>
             </switch>
-
-            <kinematic name="Gear Control">
+            
+            <actuator name="Gear Nose Actuator">
                 <input>gear/gear-cp-cmd-norm</input>
-                <traverse>
-                    <setting>
-                        <position>0</position>
-                        <time>0</time>
-                    </setting>
-                    <setting>
-                        <position>1</position>
-                        <time>0.3</time>
-                    </setting>
-                </traverse>
-                <output>gear/gear-pos-norm</output>
-            </kinematic>
-
+                <rate_limit>0.2</rate_limit>
+                <output>gear/unit[0]/pos-norm</output>
+            </actuator>
+            <actuator name="Gear Left Actuator">
+                <input>gear/gear-cp-cmd-norm</input>
+                <rate_limit>0.17</rate_limit>
+                <output>gear/unit[1]/pos-norm</output>
+            </actuator>
+            <actuator name="Gear Right Actuator">
+                <input>gear/gear-cp-cmd-norm</input>
+                <rate_limit>0.15</rate_limit>
+                <output>gear/unit[2]/pos-norm</output>
+            </actuator>
+            
             <kinematic name="Gear Surface Position">
                 <input>/controls/gear/gear-down</input>
                 <traverse>
@@ -43,15 +52,41 @@
                 </traverse>
                 <output>/surface-positions/gear-pos-norm</output>
             </kinematic>
+            
+            <switch name="Gear Tyre Exploded">
+                <default value="0"/>
+                <test  logic="AND" value="1">
+                    /environment/terrain  == 1
+                   velocities/u-fps gt  360
+                    fcs/gear-surface-position == 1
+                    gear/unit[1]/WOW == 1
+                </test>
+            </switch>
+            
+            <switch name="Gear Damaged">
+                <default value="fcs/gear-tyre-exploded"/>
+                <test  logic="AND" value="1">
+                    fcs/gear-damaged == 1
+                </test>
+            </switch>
+            
+            <switch name="Gear Locked">
+                <default value="/controls/gear/gear-down"/>
+                <test  logic="AND" value="1">
+                    fcs/gear-damaged == 1
+                </test>
+                <output>/controls/gear/gear-down</output>
+            </switch>
 
             <switch name="Drag Terrain Factor Switch">
                 <default value="0"/>
                 <test  logic="AND" value="1">
                     /environment/terrain  == 1
                     /position/altitude-agl-ft lt 7
-                    fcs/gear-surface-position == 0
+                    gear/gear-cp-cmd-norm  == 0
                 </test>
             </switch>
+            
             <switch name="Drag Gear In Water Switch">
                 <default value="0"/>
                 <test  logic="AND" value="1">

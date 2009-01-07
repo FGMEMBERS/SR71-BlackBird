@@ -137,7 +137,7 @@
     <animation>
         <type>rotate</type>
         <object-name>Throttle1-Cde</object-name>
-        <property>/controls/engines/engine[0]/throttle/</property>
+        <property>/fdm/jsbsim/fcs/throttle-pos-norm[0]</property>
         <interpolation>
                 <entry>
                 <ind>0</ind>
@@ -148,7 +148,7 @@
                 <dep>0</dep>
                 </entry>
                 <entry>
-                <ind>1</ind>
+                <ind>2.5</ind>
                 <dep>-65</dep>
                 </entry>
         </interpolation>
@@ -167,7 +167,7 @@
     <animation>
         <type>rotate</type>
         <object-name>Throttle2-Cde</object-name>
-        <property>/controls/engines/engine[1]/throttle/</property>
+        <property>/fdm/jsbsim/fcs/throttle-pos-norm[0]</property>
         <interpolation>
                 <entry>
                 <ind>0</ind>
@@ -178,7 +178,7 @@
                 <dep>0</dep>
                 </entry>
                 <entry>
-                <ind>1</ind>
+                <ind>2.5</ind>
                 <dep>-65</dep>
                 </entry>
         </interpolation>

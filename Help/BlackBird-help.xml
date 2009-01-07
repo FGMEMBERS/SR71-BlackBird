@@ -66,19 +66,26 @@
           Don't forget to close the canopy key => "d"
           Parking brake Off
           then push the throttle to  take off
-
+          
+          Run on ground until 180 kts take off  before 210 kts 
+          ( above you will damage the tyres)
+         
           ====To get 85000 feets=======
           After take Off and Landing gear UP, set the trottle to maximum and
-          set the Autopilot "Pitch Hold" to 10
-          Climb until 33000 ft , you shoul be at 0.99 mach
-          Then descent at 30,000 ft , you will be at 1.25 Mach
-          Now you can climb at 65000 and getting  2.65 Mach ( not less)
-         Then you may now climb to cruise speed and altitude 
+          Step 1  =>set the Autopilot "Pitch Hold" to 10
+                       =>Climb until 33000 ft , you shoul be at 1.09mach
+          Step 2  =>Then descent at 30,000 ft , you will be at 1.15 Mach
+          Step 3  => Now you can climb at 65000 and getting 2.30 Mach ( not less)
+         Step 4   => Then you may now climb to cruise speed and altitude 
          3.2 Mach 85000 ft
          Beware:
-         You will never get the right thrust, if you don't get 1.25  Mach above 29000 ft
+         You will never get the right thrust, if you don't get 1.15  Mach above 28000 ft
          Recommendation:
          these operations will be easier when you are using  the autopilot
+         Step 1  "Pitch Hold" to 10 and then "Altitude Hold 33000"
+         Step 2  Altitude 30000
+         Step 3 Altitude 65000
+         Step 4 Altitude 85000
          
           ====Refueling============
           ONLY  On gound refueling, if Airspeed less than 20 kts
@@ -90,21 +97,22 @@
           With "F" Key which open the Doors
           need refuel contact with Tanker
           (indicated by  the green light "ON" on left top of the radar )
-
-
-
+          
+          ====Landing==============
+          Final approach speed  kias 185,
+          landing speed 165 kias.
+          
           ====Braking Chute==========
           the braking chute will be automaticlly deployed
           When the following conditions are all true
 
           Brake Chute doors are openeded  => key "Ctrl-b"
-          Airspeed less than 200 kts
-          Agl less than 20 feet
-          Throttle position less than 0.1
+          Gear on Runway
+          Throttle position less than 0.3
 
           the braking chute will be released, untied
           When
-          Airspeed less than 50 kts
+          Airspeed less than 60 kts
           REMEMBER       it can be used only once
           If you want it again you must reload it =>  key "j"
 

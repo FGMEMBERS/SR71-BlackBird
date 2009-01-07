@@ -35,7 +35,7 @@
                             <h>180</h>
                             <binding>
                                     <command>property-adjust</command>
-                                    <property>/instrumentation/heading-indicator/setting-manual-hdg</property>
+                                    <property>/instrumentation/heading-indicator/heading-marker</property>
                                     <step>-1</step>
                                     <min>0</min>
                                     <max>360</max>
@@ -52,7 +52,7 @@
                             <h>180</h>
                             <binding>
                                     <command>property-adjust</command>
-                                    <property>/instrumentation/heading-indicator/setting-manual-hdg</property>
+                                    <property>/instrumentation/heading-indicator/heading-marker</property>
                                     <step>-5</step>
                                     <min>0</min>
                                     <max>360</max>
@@ -69,7 +69,7 @@
                             <h>180</h>
                             <binding>
                                     <command>property-adjust</command>
-                                    <property>/instrumentation/heading-indicator/setting-manual-hdg</property>
+                                    <property>/instrumentation/heading-indicator/heading-marker</property>
                                     <step>1</step>
                                     <min>0</min>
                                     <max>360</max>
@@ -86,7 +86,7 @@
                             <h>180</h>
                             <binding>
                                     <command>property-adjust</command>
-                                    <property>/instrumentation/heading-indicator/setting-manual-hdg</property>
+                                    <property>/instrumentation/heading-indicator/heading-marker</property>
                                     <step>5</step>
                                     <min>0</min>
                                     <max>360</max>

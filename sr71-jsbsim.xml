@@ -7,7 +7,7 @@
     <fileheader>
         <author> Aeromatic based  mod Gerard Robin</author>
         <filecreationdate> 2005-24-06</filecreationdate>
-        <version> 0.12 </version>
+        <version> 0.14_01012009</version>
         <description> Models a SR-71 </description>
         <documentation>
             Manufacturer: Lockheed Aircraft Corporation
@@ -35,6 +35,34 @@
             Cruising Speed:Mach 3.2
             Engines:2 Pratt  Whittney J-58 (JT11D-20A) with 34,000 lbs. of thrust.
             Range:3,200 nautical miles without refueling
+            ========================
+            Takeoff weight 120000 lbs
+            Rotation speed 180 Kn
+            Refusal speddw/chute 180 Kn
+            Takeoff speed 210 Kn
+            Ground run 4800 ft
+            distance 3000 ft   litoff 50 feets  and 5500 ft  litoff 200 feets
+            S.E. Speed (Out of GE) gear up 226 Kn
+            ========================
+            Landing w/chute immediately after takeoff
+            weight 116.000 lbs
+            Distance 5250 ft
+            Final speed 221 Kn
+            Land speed 191 Kn
+            =========================
+            Landing 
+            weight 80.000 lbs
+            Distance  9650 ft  (RCR=14) rwy wet
+            Distance 4000 ft W/chute (RCR=23) rwy dry
+            Final speed 175 Kn
+            Land speed 155 Kn
+            =========================
+            other data =>
+            takeoff speed is scheduled according to gross weight  correspond to a lift coef of 0.60.
+            distance 3000  litoff 50 feets  and 5500  litoff 200 
+            landing brakes are applied at 120 kias 
+            Current speed operating limit 500 keas
+            Current speed operating  450 keas
         </documentation>
     </fileheader>
 
@@ -173,6 +201,7 @@
             <dynamic_friction> 0.2 </dynamic_friction>
             <spring_coeff unit="LBS/FT"> 100000 </spring_coeff>
             <damping_coeff unit="LBS/FT/SEC"> 20000 </damping_coeff>
+            <retractable>0</retractable>
         </contact>
         <contact type="BOGEY" name="VT_LEFT"> <!--gear 5-->
             <location unit="IN">
@@ -184,6 +213,7 @@
             <dynamic_friction> 0.2 </dynamic_friction>
             <spring_coeff unit="LBS/FT"> 100000 </spring_coeff>
             <damping_coeff unit="LBS/FT/SEC"> 20000 </damping_coeff>
+            <retractable>1</retractable>
         </contact>
         <contact type="BOGEY" name="VT_RIGHT"> <!--gear 6-->
             <location unit="IN">
@@ -195,6 +225,7 @@
             <dynamic_friction> 0.2 </dynamic_friction>
             <spring_coeff unit="LBS/FT"> 100000 </spring_coeff>
             <damping_coeff unit="LBS/FT/SEC"> 20000 </damping_coeff>
+            <retractable>1</retractable>
         </contact>
         <contact type="BOGEY" name="RADOME"> <!--gear 7-->
             <location unit="IN">
@@ -206,6 +237,7 @@
             <dynamic_friction> 0.2 </dynamic_friction>
             <spring_coeff unit="LBS/FT"> 100000 </spring_coeff>
             <damping_coeff unit="LBS/FT/SEC"> 2000 </damping_coeff>
+            <retractable>1</retractable>
         </contact>
         <contact type="BOGEY" name="BELLY"> <!--gear 8-->
             <location unit="IN">
@@ -217,7 +249,21 @@
             <dynamic_friction> 0.2 </dynamic_friction>
             <spring_coeff unit="LBS/FT"> 100000 </spring_coeff>
             <damping_coeff unit="LBS/FT/SEC"> 20000 </damping_coeff>
+            <retractable>1</retractable>
         </contact>
+        <contact type="BOGEY" name="ARFUSE"> <!--gear 9-->
+            <location unit="IN">
+                <x>200</x>
+                <y> 0 </y>
+                <z> 0 </z>
+            </location>
+            <static_friction> 0.2 </static_friction>
+            <dynamic_friction> 0.2 </dynamic_friction>
+            <spring_coeff unit="LBS/FT"> 1000000 </spring_coeff>
+            <damping_coeff unit="LBS/FT/SEC"> 20000 </damping_coeff>
+            <retractable>0</retractable>
+        </contact>
+        
     </ground_reactions>
     
     <flight_control name="SR-71">
@@ -307,16 +353,17 @@
     </propulsion>
 
     <system file="FCS-Basic"/>
-    <system file="landing-gear"/>
     <system file="engines"/>
-
+    <system file="crash"/>
+    <system file="landing-gear"/>
     <system file="canopy"/>
     <system file="electrical"/>
+    <system file="instruments"/>
     <system file="light-outdoor"/>
     <system file="brake-chute"/>
      <system file="blackout"/>
      <system file="fuel-refuel"/>
-
+     <system file="sinking"/>
 
 
 
@@ -392,9 +439,9 @@
                               -0.0700       0.0400    0.0100    0.0100      1.0
                               0.0000        0.0147    0.0074    0.0074      1.0
                               0.0700        0.0400    0.0100    0.0100      1.0
-                              0.1400        0.0700    0.0180    0.0180      1.0
-                              0.2790        0.2200    0.0250    0.0250      1.0
-                              0.4190        0.3800    0.0970    0.0970      1.0
+                              0.1400        0.0800    0.0180    0.0180      1.0
+                              0.2790        0.2600    0.0250    0.0250      1.0
+                              0.4190        0.4200    0.0970    0.0970      1.0
                               0.5590        0.8000    0.2030    0.2030      1.0
                               0.6980        1.0100    0.2570    0.2570      1.0
                           </tableData>
@@ -416,7 +463,9 @@
                           <tableData>
                               0.0       0.000
                               0.79      0.000
-                              1.10     0.028
+                              0.98       0.010
+                              1.03      0.014
+                              1.10     0.022
                               1.25      0.012
                               1.3       0.014
                               1.7       0.017
@@ -493,7 +542,44 @@
                       </table>
                 </product>
             </function>
-
+            
+            
+            <!--not realistic , only for animation with crash in water , will be nicely replaced by external  reactions features-->
+            <function name="aero/coefficient/CDgear_water">
+                <description>Drag_due_to_crashing_with_gear_in_water</description>
+                <product>
+                    <property>fcs/drag-gear-in-water-switch</property>
+                    <table>
+                        <independentVar>velocities/vc-kts</independentVar>
+                        <tableData>
+                            0     0
+                            30    9000
+                            50    27000
+                            90    100000
+                            110  1000000
+                            220  40000000
+                        </tableData>
+                    </table>
+                </product>
+            </function>
+            <!--not realistic , only for animation with crash on ground, will be nicely replaced by external  reactions features-->
+            <function name="aero/coefficient/CDgear_ground">
+                <description>Drag_due_to_crashing_on_ground</description>
+                <product>
+                    <property>fcs/drag-terrain-factor-switch</property>
+                    <table>
+                        <independentVar>velocities/vc-kts</independentVar>
+                        <tableData>
+                            0     1000
+                            30    27000
+                            50    81000
+                            90    300000
+                            110  3000000
+                            220  120000000
+                        </tableData>
+                    </table>
+                </product>
+            </function>
         </axis>
 
         <axis name="SIDE">
@@ -521,52 +607,14 @@
                         <tableData>
                                          0.0        0.6      0.8            1.0      1.06     1.18     1.65         2.10    2.7         3.2
                             -0.20  -0.227   -0.227   -0.680   -0.680   -0.700   -0.680   -0.780   -0.880   -0.880    -0.880
-                            0.00   0.000    0.067    0.150    0.150    0.130    0.130    0.130    0.100     0.110       0.110
-                            0.23   0.900    0.900    1.200    1.200    1.180    1.200    1.200    1.100     1.100       1.000
+                            0.00   0.032    0.067    0.150    0.130    0.130    0.130    0.130    0.100     0.110       0.110
+                            0.23   0.700    0.700    0.700    0.700    0.700    0.700    1.200    1.100     1.100       1.000
                             0.60   0.200    0.200    0.600    0.600    0.580    0.600    0.500    0.400     0.300       0.200
                         </tableData>
                     </table>
                 </product>
             </function>
-            
-           <!-- <documentation>from F18A of Mathias Froehlich</documentation>
-            <function name="aero/coefficient/CLalpha">
-                <description>Lift_due_to_alpha</description>
-                <product>
-                    <property>aero/qbar-psf</property>
-                    <property>metrics/Sw-sqft</property>
-                    <property>aero/function/kCLge</property>
-                      <table>
-                          <independentVar>aero/alpha-rad</independentVar>
-                          <tableData>
-                                -0.2443460 -1.03860
-                                -0.1745329 -0.880907
-                                -0.1047197 -0.551318
-                                -0.0349065 -0.216206
-                                0.0349065  0.154461
-                                0.1047197  0.560857
-                                0.1745329  0.951575
-                                0.2443460  1.24168
-                                0.3141592  1.39786
-                                0.3839724  1.53103
-                                0.4537856  1.64110
-                                0.5235987  1.77724
-                                0.5934119  1.88652
-                                0.6632251  1.88940
-                                0.7330382  1.80975
-                                0.8028514  1.68556
-                                0.8726646  1.57524
-                                0.9424777  1.46011
-                                1.0122909  1.31884
-                                1.0821041  1.17117
-                                1.1519173  1.02151
-                                1.2217304  0.858875
-                                1.2915436  0.685334
-                                1.3613568  0.529482
-                          </tableData>
-                      </table>
-                </product>
-            </function>-->
+           
             <documentation>from F18A of Mathias Froehlich</documentation>
             <function name="aero/coefficient/CLqalpha">
                 <description>Lift_due_to_alpha_and_pitch_rate</description>

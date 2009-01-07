@@ -3,7 +3,7 @@
 
 <system name="Fuel-ReFuel">
 
-    <property>systems/refuel-pump-cmd</property>
+    
     <property>/consumables/fuel/total-fuel-gals</property>
 
         <channel name="Refuel">
@@ -29,6 +29,13 @@
                 <gain>1</gain>
                 <output>/surface-positions/refueling-pos-norm</output>
             </pure_gain>
+            
+            <switch name="systems/refuel-pump-cmd">
+                <default value="0"/>
+                <test  logic="AND" value="1">
+                    fcs/refueling-pos-norm == 1
+                </test>
+            </switch>
 
             <kinematic name="Pump Refuel">
                 <input>systems/refuel-pump-cmd</input>
@@ -84,7 +91,6 @@
                 <test  logic="AND" value="1">
                     /position/altitude-agl-ft  lt  7
                     /instrumentation/airspeed-indicator/indicated-speed-kt  lt 20
-                    fcs/refueling-pos-norm == 0
                     systems/refuel-pump == 1
                 </test>
                 <output>systems/refueling_ground</output>

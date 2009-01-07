@@ -65,12 +65,10 @@
         <engines>
             <engine n="0">
                 <fuel-pump type="bool">false</fuel-pump>
-                <cutoff-cmd type="bool" >true</cutoff-cmd>
                 <master-bat type="bool">false</master-bat>
             </engine>
             <engine n="1">
                 <fuel-pump type="bool" >false</fuel-pump>
-                <cutoff-cmd type="bool">true</cutoff-cmd>
                  <master-bat type="bool">false</master-bat>
             </engine>
         </engines>
@@ -80,11 +78,15 @@
             <battery-switch type="bool">false</battery-switch>
             <external-power type="bool" >false</external-power>
         </electric>
-
-	<flight>
-		<op-refuel ype="double">0</op-refuel>
-	</flight>
-
+	
+        <flight>
+            <canopy type="bool">true</canopy>
+            <op-refuel ype="double">0</op-refuel>
+        </flight>
+        <jettison>
+            <canopy type="float">0</canopy>
+        </jettison>
+        
     </controls>
 
     <engines>
@@ -98,6 +100,7 @@
 
 
     <consumables>
+       <!-- payload of av 70100 lbs   density 0.8-->
         <fuel>
             <tank n="0">
             <level-gal_us archive="y">3000</level-gal_us>
@@ -115,7 +118,6 @@
             <settings>
                     <target-altitude-ft type="float">33000</target-altitude-ft>
                     <target-pushover-altitude-ft type="float">30000</target-pushover-altitude-ft>
-                    
                     <target-aoa-deg type="float">0.3</target-aoa-deg>
                     <target-pitch-deg type="float">10</target-pitch-deg>
                     <true-heading-deg>180</true-heading-deg>
@@ -159,24 +161,18 @@
     </fdm>
 
     <nasal>
-            <crash>
-                    <file>Aircraft/SR71-BlackBird/Systems/crash.nas</file>
-            </crash>
             <electrical>
                 <file>Aircraft/SR71-BlackBird/Systems/electrical.nas</file>
             </electrical>
-            <switch>
-                <file>Aircraft/SR71-BlackBird/Systems/blackbird.nas</file>
-            </switch>
             <consumable>
                 <file>Aircraft/SR71-BlackBird/Systems/tanker.nas</file>
             </consumable>
             <radar>
                 <file>Aircraft/SR71-BlackBird/Systems/radar.nas</file>
             </radar>
-            <nav>
+           <!-- <nav>
                 <file>Aircraft/SR71-BlackBird/Systems/nav.nas</file>
-            </nav>
+            </nav>-->
 	    <terrain>
                     <file>Aircraft/SR71-BlackBird/Systems/terrain.nas</file>
             </terrain>

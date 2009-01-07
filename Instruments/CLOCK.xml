@@ -15,7 +15,7 @@
 	</animation>
 	<model>
 		<name>Bezel</name>
-		<path>Aircraft/F-8E-Crusader/Instruments/Bezel_pt-f8e.xml</path>
+		<path>Aircraft/SR71-BlackBird/Instruments/Bezel_tpt-f8e.xml</path>
 		<offsets>
 			<x-m>0</x-m>
 			<y-m>0</y-m>
@@ -26,7 +26,7 @@
 
 	<model>
 		<name>Bouton</name>
-		<path>Aircraft/F-8E-Crusader/Instruments/Bouton_pt-f8e.xml</path>
+		<path>Aircraft/SR71-BlackBird/Instruments/Bouton_pt-Nord.xml</path>
 		<offsets>
 			<x-m>0.0161728</x-m>
 			<y-m>-0.0295</y-m>

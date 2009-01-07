@@ -28,7 +28,7 @@
                 <desc>Toggle Canopy</desc>
                     <binding>
                             <command>property-toggle</command>
-                            <property>/fdm/jsbsim/fcs/canopy-cmd-norm</property>
+                            <property>/controls/flight/canopy</property>
                     </binding>
             </key>
             <key n="70">

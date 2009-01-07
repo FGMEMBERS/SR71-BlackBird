@@ -56,7 +56,7 @@
                 <button>0</button>
                 <binding>
                     <command>property-adjust</command>
-                    <property>/instrumentation/tacan/frequencies/valueCh1</property>
+                    <property>/instrumentation/tacan/frequencies/selected-channel[1]</property>
                     <step>1</step>
                     <min>0</min>
                     <max>2</max>
@@ -72,7 +72,7 @@
                 <button>0</button>
                 <binding>
                     <command>property-adjust</command>
-                    <property>/instrumentation/tacan/frequencies/valueCh2</property>
+                    <property>/instrumentation/tacan/frequencies/selected-channel[2]</property>
                     <step>1</step>
                     <min>0</min>
                     <max>10</max>
@@ -88,7 +88,7 @@
                 <button>0</button>
                 <binding>
                     <command>property-adjust</command>
-                    <property>/instrumentation/tacan/frequencies/valueCh3</property>
+                    <property>/instrumentation/tacan/frequencies/selected-channel[3]</property>
                     <step>1</step>
                     <min>0</min>
                     <max>10</max>
@@ -103,7 +103,26 @@
             <action>
                 <button>0</button>
                 <binding>
-                    <command>property-toggle</command>
+                    <command>property-assign</command>
+                    <value>Y</value>
+                    <property>/instrumentation/tacan/frequencies/selected-channel[4]</property>
+                </binding>
+                <binding>
+                    <command>property-assign</command>
+                    <value>-1</value>
+                    <property>/instrumentation/tacan/frequencies/valueXY</property>
+                </binding>
+            </action>
+            <action>
+                <button>1</button>
+                <binding>
+                    <command>property-assign</command>
+                    <value>X</value>
+                    <property>/instrumentation/tacan/frequencies/selected-channel[4]</property>
+                </binding>
+                <binding>
+                    <command>property-assign</command>
+                    <value>1</value>
                     <property>/instrumentation/tacan/frequencies/valueXY</property>
                 </binding>
             </action>
@@ -156,17 +175,8 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>Tacan-Channel-XY</object-name>
-		<property>/instrumentation/tacan/frequencies/valueXY</property>
-		<interpolation>
-			<entry>
-				<ind>0</ind>
-				<dep>30</dep>
-			</entry>
-			<entry>
-				<ind>1</ind>
-				<dep>-30</dep>
-			</entry>
-		</interpolation>
+                <property>/instrumentation/tacan/frequencies/valueXY</property>
+                <factor>30</factor>
 		<center>
 			<x-m>0</x-m>
 			<y-m>-0.0551955</y-m>

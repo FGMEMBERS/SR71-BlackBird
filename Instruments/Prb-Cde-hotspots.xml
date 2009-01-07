@@ -35,7 +35,7 @@ Copyright License:  GPL
                         <w>500</w>
                         <h>400</h>
                         <binding>
-                            <property>/fdm/jsbsim/systems/refuel-pump-cmd</property>
+                            <property>/controls/flight/op-refuel</property>
                             <command>property-assign</command>
                             <value>1</value>
                         </binding>
@@ -48,7 +48,7 @@ Copyright License:  GPL
                         <w>500</w>
                         <h>400</h>
                         <binding>
-                            <property>/fdm/jsbsim/systems/refuel-pump-cmd</property>
+                            <property>/controls/flight/op-refuel</property>
                             <command>property-assign</command>
                             <value>0</value>
                         </binding>

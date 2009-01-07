@@ -22,7 +22,7 @@
             </setting>
             <setting>
                     <position>1.0000</position>
-                    <time>4.7500</time>
+                    <time>5.00</time>
             </setting>
             </traverse>
         </kinematic>
@@ -39,10 +39,9 @@
             <default value="0"/>
             <test  logic="AND" value="1">
             fcs/chute-pos-norm == 1
-            velocities/vc-kts lt 200
-            velocities/vc-kts gt 50
+            velocities/vc-kts gt 60
             position/h-agl-ft lt  20
-            fcs/throttle-pos-norm  lt 0.1
+            fcs/throttle-pos-norm  lt 0.3
             </test>
         </switch>
 
@@ -81,23 +80,51 @@
             <test  logic="AND" value="1">
             fcs/brake-chute-deploy == 1
             fcs/chute-switch-once == 0
+            gear/unit[1]/WOW == 1
             </test>
         </switch>
 
         <kinematic name="Brake Chute Selector">
             <input>fcs/brake-chute-resource</input>
             <traverse>
-            <setting>
-            <position>0.0000</position>
-            <time>0.0000</time>
-            </setting>
-            <setting>
-            <position>1.0000</position>
-            <time>2.0000</time>
-            </setting>
+                <setting>
+                    <position>0.0000</position>
+                    <time>0.0000</time>
+                </setting>
+                <setting>
+                    <position>1.0000</position>
+                    <time>6.0000</time>
+                </setting>
             </traverse>
             <output>/sim/model/controls/chute-available</output>
         </kinematic>
+        
+        <switch name="Brake Left">
+            <default value="0"/>
+            <test  logic="AND" value="/controls/gear/brake-left">
+                velocities/vc-kts lt 120
+                /controls/gear/brake-parking != 1
+            </test>
+            <test  logic="AND" value="/controls/gear/brake-parking">
+                velocities/u-fps lt 10
+                /controls/gear/brake-left == 0
+            </test>
+            <output>fcs/left-brake-cmd-norm</output>
+        </switch>
+        
+        <switch name="Brake Right">
+            <default value="0"/>
+            <test  logic="AND" value="/controls/gear/brake-right">
+                velocities/vc-kts lt 120
+                /controls/gear/brake-parking != 1
+            </test>
+            <test  logic="AND" value="/controls/gear/brake-parking">
+                velocities/u-fps lt 10
+                /controls/gear/brake-right == 0
+            </test>
+            <output>fcs/right-brake-cmd-norm</output>
+        </switch>
+
 
 
 </channel>
