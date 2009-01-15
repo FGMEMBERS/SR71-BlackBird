@@ -46,6 +46,13 @@
     </sim>
 
     <input include="Inputs/Blackbird-input.xml"/>
+    
+   
+    <environment>
+        <params>
+            <control-fdm-atmosphere type="bool">false</control-fdm-atmosphere>
+        </params>
+    </environment>
 
     <controls>
         <!-- Start with the Parking Brake on -->
