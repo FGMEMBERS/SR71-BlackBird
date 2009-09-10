@@ -266,11 +266,8 @@
         
     </ground_reactions>
     
-    <flight_control name="SR-71">
-        <property>fcs/intake-subsonic-pos</property>
-    </flight_control>
-
     <propulsion>
+            <property>fcs/intake-subsonic-pos</property>
             <engine file="J58_engine">
             <location unit="IN">
                 <x> 0 </x>

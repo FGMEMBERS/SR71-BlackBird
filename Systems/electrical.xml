@@ -17,14 +17,6 @@
             </clipto>
         </summer>
 
-        <switch name="Instruments Factor">
-            <default value="0"/>
-            <test  logic="AND" value="1">
-                /controls/electric/master-switch == 1
-                /systems/electrical/outputs/instrument-lights gt 27
-            </test>
-        </switch>
-
         <switch name="Battery Switch">
             <default value="0"/>
             <test  logic="AND" value="1">

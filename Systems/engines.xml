@@ -23,15 +23,6 @@
                 </traverse>
             </kinematic>
 
-            <pure_gain name="Throttle0 Cmd">
-                <input>fcs/throttle-cmd-norm[0]</input>
-                <gain>fcs/cutoff-switch-delay</gain>
-            </pure_gain>
-            <pure_gain name="Throttle1 Cmd">
-                <input>fcs/throttle-cmd-norm[1]</input>
-                <gain>fcs/cutoff-switch-delay</gain>
-            </pure_gain>
-            
             <!--la puissance maxi n'est disonible que sous condition-->
             <switch name="AugThrust">
                 <default value="1"/>
