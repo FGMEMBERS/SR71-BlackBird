@@ -1,13 +1,12 @@
 <?xml version="1.0"?>
 
-
 <system name="Fuel-ReFuel">
 
-    
     <property>/consumables/fuel/total-fuel-gals</property>
+	<property>/systems/electrical/outputs/fuel-pump</property>
+	<property>/systems/electrical/outputs/refuel-pump</property>
 
         <channel name="Refuel">
-
 
             <kinematic name="Refueling Control">
                 <input>/controls/flight/op-refuel</input>
@@ -60,8 +59,6 @@
                 </test>
             </switch>
 
-
-
             <summer name="Tank Total Gals">
                 <input>/consumables/fuel/tank[0]level-gal_us</input>
                 <input>/consumables/fuel/tank[1]level-gal_us</input>
@@ -72,7 +69,6 @@
                 </clipto>
                 <output>/consumables/fuel/total-fuel-gals</output>
             </summer>
-
 
             <switch name="Refuel Air">
                 <default value="0"/>
@@ -105,10 +101,6 @@
                 </test>
                 <output>propulsion/refuel</output>
             </switch>
-
-
-
-
 
         </channel>
 

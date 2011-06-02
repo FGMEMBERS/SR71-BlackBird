@@ -3,6 +3,8 @@
 
 <system name="outdoor-lighting">
 
+		<property>/systems/electrical/outputs/landing-light</property>
+		
         <channel name="Outdoor Lighting">
             <switch name="blinker-sw">
                 <default value="/instrumentation/lights/blinker-kinemat-in"/>

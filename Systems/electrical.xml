@@ -3,11 +3,12 @@
 
 <system name="electrical">
 
+<property>/systems/electrical/outputs/instrument-lights</property>
+
 <channel name="Electric Master">
 
     <property>fcs/lighting-instruments-norm</property>
-
-
+	
 
         <summer name="Electric Master Switch">
             <input>/controls/electric/master-switch</input>
