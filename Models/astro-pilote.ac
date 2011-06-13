@@ -5,7 +5,7 @@ kids 5
 OBJECT poly
 name "sphere"
 loc 0.287503 0.378497 0.00768322
-texture "textuastrpilote.rgb"
+texture "textuastrpilote.png"
 crease 45.000000
 numvert 397
 0.0182128 -0.00338873 -0.106042
@@ -2879,7 +2879,7 @@ kids 0
 OBJECT poly
 name "cylinder"
 loc 0.309766 0.261185 0.00768322
-texture "textuastrpilote.rgb"
+texture "textuastrpilote.png"
 crease 45.000000
 numvert 74
 0.00193667 -0.0109831 0
@@ -3645,7 +3645,7 @@ kids 0
 OBJECT poly
 name "sphere"
 loc 0.287503 0.378497 0.00768322
-texture "textuastrpilote.rgb"
+texture "textuastrpilote.png"
 crease 45.000000
 numvert 877
 -0.0719264 -0.0990762 0.030899
@@ -10517,7 +10517,7 @@ kids 8
 OBJECT poly
 name "Main-Gauche"
 loc -0.879899 -1.39881 0.404318
-texture "textuastrpilote.rgb"
+texture "textuastrpilote.png"
 crease 45.000000
 numvert 82
 -0.445255 1.35713 -0.105926
@@ -11267,7 +11267,7 @@ kids 0
 OBJECT poly
 name "Main-Droite"
 loc -1.43339 0.166359 -0.0726597
-texture "textuastrpilote.rgb"
+texture "textuastrpilote.png"
 crease 45.000000
 numvert 82
 -0.00408 0.0338905 -0.0128055
@@ -12017,7 +12017,7 @@ kids 0
 OBJECT poly
 name "Tete"
 loc -1.02184 0.0621893 -0.00162994
-texture "face.rgb"
+texture "face.png"
 crease 45.000000
 numvert 438
 -0.10608 0.655261 0.0179625
@@ -17168,7 +17168,7 @@ kids 0
 OBJECT poly
 name "Jambes"
 loc -1.36932 0.0490547 -0.12465
-texture "textuastrpilote.rgb"
+texture "textuastrpilote.png"
 crease 45.000000
 numvert 76
 -0.417092 -0.176145 -0.0397265
@@ -18116,7 +18116,7 @@ kids 0
 OBJECT poly
 name "Bras-Gauche"
 loc -0.999422 0.0971125 0.32006
-texture "textuastrpilote.rgb"
+texture "textuastrpilote.png"
 crease 45.000000
 numvert 44
 0.0572175 0.162276 -0.00847226
@@ -18672,7 +18672,7 @@ kids 0
 OBJECT poly
 name "Bras-Droit"
 loc -1.01849 0.08066 -0.292072
-texture "textuastrpilote.rgb"
+texture "textuastrpilote.png"
 crease 45.000000
 numvert 56
 -0.357926 0.130275 0.188165
@@ -19576,7 +19576,7 @@ kids 0
 OBJECT poly
 name "Corps"
 loc -1.00078 0.344964 -0.00177193
-texture "textuastrpilote.rgb"
+texture "textuastrpilote.png"
 crease 45.000000
 numvert 135
 0.114288 -0.367607 -0.0885962
@@ -21063,7 +21063,7 @@ kids 0
 OBJECT poly
 name "Ceinture"
 loc -1.06559 0.489177 -0.116241
-texture "textuastrpilote.rgb"
+texture "textuastrpilote.png"
 crease 45.000000
 numvert 28
 0.223406 0.143601 0.185784
@@ -21183,7 +21183,7 @@ kids 0
 OBJECT poly
 name "Visiere"
 loc 0.263774 0.421221 0.00810476
-texture "textuastrpilote.rgb"
+texture "textuastrpilote.png"
 crease 45.000000
 numvert 398
 -0.0804279 0.0355006 -0.0566679

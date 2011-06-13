@@ -6,26 +6,20 @@
     <sim>
         <systems>
             <autopilot>
-                <path>Aircraft/SR71-BlackBird/Systems/autopilot.xml</path>
+                <path>Aircraft/SR71-BlackBird/Systems/SR71autopilot.xml</path>
             </autopilot>
+            <electrical>
+                <path>Aircraft/SR71-BlackBird/Systems/dummy-electrical.xml</path>
+            </electrical>
             <autoflight>
                 <serviceable type="bool">true</serviceable>
             </autoflight>
-             <path>Aircraft/SR71-BlackBird/Systems/systems.xml</path>
         </systems>
-        <instrumentation>
-            <path>Aircraft/SR71-BlackBird/Systems/instrumentation.xml</path>
-        </instrumentation>
-        <model>
-            <controls>
-                <chute>true</chute>
-            </controls>
-        </model>
         <rendering>
                 <redout>
                     <red>0</red>
                     <alpha>0</alpha>
-                    <enabled ype="bool">false</enabled>
+                    <enabled type="bool">false</enabled>
                 </redout>
         </rendering>
         <multiplay>
@@ -35,8 +29,8 @@
                     <float n="2" alias="/surface-positions/canopy-pos-norm"/>
                     <float n="3" alias="/gear/gear[0]/steering-norm"/>
                     <float n="4" alias="/fdm/jsbsim/fcs/landing-light"/>
-                    <float n="5" alias="/engines/engine[0]/augmentation"/>
-                    <float n="6" alias="/engines/engine[1]/augmentation"/>
+                    <float n="5" alias="/fdm/jsbsim/propulsion/engine[0]/set-thrust"/>
+                    <float n="6" alias="/fdm/jsbsim/propulsion/engine[1]/set-thrust"/>
                     <float n="7" alias="/engines/engine[0]/nozzle-pos-norm"/>
                     <float n="8" alias="/engines/engine[1]/nozzle-pos-norm"/>
                     <string n="0"></string>
@@ -46,8 +40,8 @@
     </sim>
 
     <input include="Inputs/Blackbird-input.xml"/>
-    
-   
+
+
     <environment>
         <params>
             <control-fdm-atmosphere type="bool">false</control-fdm-atmosphere>
@@ -85,7 +79,7 @@
             <battery-switch type="bool">false</battery-switch>
             <external-power type="bool" >false</external-power>
         </electric>
-	
+
         <flight>
             <canopy type="bool">true</canopy>
             <op-refuel ype="double">0</op-refuel>
@@ -93,15 +87,15 @@
         <jettison>
             <canopy type="float">0</canopy>
         </jettison>
-        
+
     </controls>
 
     <engines>
         <engine n="0">
-                    <running>false</running>
+                    <running>true</running>
         </engine>
         <engine n="1">
-                    <running>false</running>
+                    <running>true</running>
         </engine>
     </engines>
 
@@ -132,13 +126,16 @@
     </autopilot>
 
     <instrumentation>
-            <radar>
+            <wxradar>
                 <switch type="string" archive="y">ON</switch>
                 <mode-control type="int" archive="y">1</mode-control>
                 <display-controls>
-                        <WX type="bool" archive="y">false</WX>
+                        <WX type="bool" archive="y">true</WX>
+                        <centre type="bool"  archive="y">true</centre>
                         <data type="bool"  archive="y">false</data>
-                        <pos type="bool" archive="y">true</pos>
+                        <pos type="bool" archive="y">false</pos>
+                        <rotate type="bool" archive="y">true</rotate>
+                        <symbol type="bool" archive="y">true</symbol>
                 </display-controls>
                 <serviceable type="bool">true</serviceable>
                 <range type="int"  archive="y">40</range>
@@ -146,15 +143,8 @@
                 <lightning type="bool"  archive="y">false</lightning>
                 <display-mode type="string"  archive="y">plan</display-mode>
                 <minimized type="bool" archive="y">false</minimized>
-            </radar>
+            </wxradar>
     </instrumentation>
-
-    <systems>
-        <refuel>
-            <contact type="bool">false</contact>
-            <type>boom</type>
-        </refuel>
-    </systems>
 
     <fdm><!-- Start with Canopy open -->
             <jsbsim>
@@ -162,15 +152,12 @@
                             <canopy-cmd-norm>1</canopy-cmd-norm>
                     </fcs>
                     <systems>
-                        <lighting-instruments-norm>0</lighting-instruments-norm>
+                        <lighting-instruments-norm>0.3</lighting-instruments-norm>
                     </systems>
             </jsbsim>
     </fdm>
 
     <nasal>
-            <electrical>
-                <file>Aircraft/SR71-BlackBird/Systems/electrical.nas</file>
-            </electrical>
             <consumable>
                 <file>Aircraft/SR71-BlackBird/Systems/tanker.nas</file>
             </consumable>

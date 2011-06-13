@@ -2834,7 +2834,7 @@ kids 0
 OBJECT poly
 name "T-P1"
 loc 0.540487 0.749999 9.99868e-06
-texture "fusedessus.rgb"
+texture "fusedessus.png"
 crease 45.000000
 numvert 28
 -0.532243 0.0625 -0.0849697
@@ -3052,7 +3052,7 @@ kids 0
 OBJECT poly
 name "T-P2"
 loc 0.540487 0.653808 0.39503
-texture "fusedessus.rgb"
+texture "fusedessus.png"
 crease 45.000000
 numvert 29
 0.516543 -0.0268555 -0.03662
@@ -3272,7 +3272,7 @@ kids 0
 OBJECT poly
 name "T-P3"
 loc 0.540487 0.39453 0.654792
-texture "fusedessus.rgb"
+texture "fusedessus.png"
 crease 45.000000
 numvert 29
 0.516543 -0.166015 0.0278275
@@ -3492,7 +3492,7 @@ kids 0
 OBJECT poly
 name "T-P4"
 loc 0.540487 0.000487253 0.75098
-texture "fusedessus.rgb"
+texture "fusedessus.png"
 crease 45.000000
 numvert 29
 -0.532243 -0.0844721 0.06251
@@ -3712,7 +3712,7 @@ kids 0
 OBJECT poly
 name "T-P5"
 loc 0.540487 -0.394045 0.654792
-texture "fusedessus.rgb"
+texture "fusedessus.png"
 crease 45.000000
 numvert 29
 0.516543 0.1792 0.0278275
@@ -3932,7 +3932,7 @@ kids 0
 OBJECT poly
 name "T-P6"
 loc 0.540487 -0.652833 0.39503
-texture "fusedessus.rgb"
+texture "fusedessus.png"
 crease 45.000000
 numvert 29
 0.516543 0.0375955 -0.03662
@@ -4152,7 +4152,7 @@ kids 0
 OBJECT poly
 name "T-P7"
 loc 0.540487 -0.750001 9.99868e-06
-texture "fusedessus.rgb"
+texture "fusedessus.png"
 crease 45.000000
 numvert 29
 0.516543 0.054685 0.1494
@@ -4372,7 +4372,7 @@ kids 0
 OBJECT poly
 name "T-P8"
 loc 0.540487 -0.652833 -0.39501
-texture "fusedessus.rgb"
+texture "fusedessus.png"
 crease 45.000000
 numvert 29
 -0.532243 -0.0073235 -0.08643
@@ -4592,7 +4592,7 @@ kids 0
 OBJECT poly
 name "T-P9"
 loc 0.540487 -0.394045 -0.654778
-texture "fusedessus.rgb"
+texture "fusedessus.png"
 crease 45.000000
 numvert 29
 -0.532243 -0.0141592 -0.0532225
@@ -4812,7 +4812,7 @@ kids 0
 OBJECT poly
 name "T-P10"
 loc 0.540487 0.000487253 -0.75097
-texture "fusedessus.rgb"
+texture "fusedessus.png"
 crease 45.000000
 numvert 26
 -0.532243 -0.17041 -0.04883
@@ -5026,7 +5026,7 @@ kids 0
 OBJECT poly
 name "T-P11"
 loc 0.540487 0.39453 -0.654778
-texture "fusedessus.rgb"
+texture "fusedessus.png"
 crease 45.000000
 numvert 26
 0.516543 0.0351558 0.0737275
@@ -5240,7 +5240,7 @@ kids 0
 OBJECT poly
 name "T-P12"
 loc 0.540487 0.653808 -0.39501
-texture "fusedessus.rgb"
+texture "fusedessus.png"
 crease 45.000000
 numvert 26
 -0.532243 -0.134278 -0.07275

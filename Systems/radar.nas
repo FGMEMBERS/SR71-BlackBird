@@ -1,76 +1,44 @@
 # ================================== EHSI Stuff ===================================
 
+props.globals.initNode("/instrumentation/display-unit/control", 1, "INT");
+props.globals.initNode("/instrumentation/radar/mode-control", 1, "INT");
 
-var  range_control_node = props.globals.getNode("/instrumentation/radar/range-control", 1);
-var  range_node = props.globals.getNode("/instrumentation/radar/range", 1);
-var  wx_range_node = props.globals.getNode("/instrumentation/wxradar/range", 1);
-var  x_shift_node=  props.globals.getNode("instrumentation/tacan/display/x-shift", 1);
-var  x_shift_scaled_node=  props.globals.getNode("instrumentation/tacan/display/x-shift-scaled",1);
-var  y_shift_node=  props.globals.getNode("instrumentation/tacan/display/y-shift", 1);
-var  y_shift_scaled_node=  props.globals.getNode("instrumentation/tacan/display/y-shift-scaled",1);
-var  display_control_node = props.globals.getNode("/instrumentation/display-unit/control", 1);
-var  radar_control_node = props.globals.getNode("/instrumentation/radar/mode-control", 1);
-var  radar_mode_control_node = props.globals.getNode("/instrumentation/radar/mode-control", 1);
-var  radar_display_node = props.globals.getNode("/instrumentation/radar/display-mode", 1);
+var range_control_node = props.globals.initNode("/instrumentation/radar/range-control", 3, "INT");
+var range_node = props.globals.initNode("/instrumentation/radar/range", 40, "INT");
+var wx_range_node = props.globals.initNode("/instrumentation/wxradar/range", 40, "INT");
+var x_shift_node = props.globals.initNode("instrumentation/tacan/display/x-shift");
+var x_shift_scaled_node = props.globals.initNode("instrumentation/tacan/display/x-shift-scaled");
+var y_shift_node = props.globals.initNode("instrumentation/tacan/display/y-shift");
+var y_shift_scaled_node = props.globals.initNode("instrumentation/tacan/display/y-shift-scaled");
 
-range_control_node.setIntValue(3); 
-range_node.setIntValue(40); 
-wx_range_node.setIntValue(40); 
-x_shift_node.setDoubleValue(0);
-x_shift_scaled_node.setDoubleValue(0);
-y_shift_node.setDoubleValue(0);
-y_shift_scaled_node.setDoubleValue(0);
-display_control_node.setIntValue(1);
-radar_control_node.setIntValue(1);
-var scale = 2.55;	
-
-# Lib functions
-pow2 = func(e) { return e ? 2 * pow2(e - 1) : 1 } # calculates 2^e
+var pow2 = func(e) bits.bit[e];  # 2^e
+var scale = 2.00;
 
 
-adjustRange = func{
-
-	var  range = range_node.getValue();
-	var  range_control = range_control_node.getValue();
-	
-	var  range = 5 * pow2(range_control); 
-
-#  	print ("range " , range);
+setlistener(range_control_node, func(n) {
+	var range_control = n.getValue();
+	var range = 5 * pow2(range_control);
+setprop("/instrumentation/wxradar/reference-range-nm", range);
 
 	range_node.setIntValue(range);
 	wx_range_node.setIntValue(range);
-	var  scale = 1.275 * pow2 (7 - range_control) * 0.1275;
-	var  scale = sprintf("%2.3f" , scale);
+	scale = sprintf("%2.3f", 1.275 * pow2(7 - range_control) * 0.1275) ~ "";
+	# printf("scale=%s  range=%d", scale, range);
+}, 1);
 
-#	print ("scale " , scale);
 
-} # end function adjustRange
-
-scaleShift = func {
-
-	x_shift_scaled_node.setDoubleValue(x_shift_node.getValue() * scale);
-	y_shift_scaled_node.setDoubleValue(y_shift_node.getValue() * scale);
-#	print ("x-shift-scaled " , x_shift_scaled_node.getValue());
-#	print ("y-shift-scaled " , y_shift_scaled_node.getValue());
+var scaleShift = func {
+	x_shift_scaled_node.setDoubleValue(var x = x_shift_node.getValue() * scale);
+	y_shift_scaled_node.setDoubleValue(var y = y_shift_node.getValue() * scale);
+	# printf("(x,y)-shift-scaled=(%.3f, %.3f)", x, y);
 	settimer(scaleShift, 0.3);
-
-} # end func scaleshift
+}
 
 
 scaleShift();
 
-setlistener(range_control_node , adjustRange);
 
-updateRadarMode = func{
-	radar_mode_control = radar_mode_control_node.getValue();
-		if ( radar_mode_control == 2 ) {
-				radar_display_node.setValue("map");
-		} else {
-				radar_display_node.setValue("plan");
-		}
-} # end func
+setlistener("/instrumentation/radar/mode-control", func(n) {
+	setprop("/instrumentation/radar/display-mode", n.getValue() == 2 ? "map" : "plan");
+}, 1);
 
-setlistener( radar_mode_control_node , updateRadarMode );
-
-
-#end

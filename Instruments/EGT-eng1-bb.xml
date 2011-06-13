@@ -41,7 +41,7 @@
         <animation>
                 <type>rotate</type>
                 <object-name>Aiguille</object-name>
-                <property>engines/engine[1]/egt_degf</property>
+                <property>engines/engine[1]/egt-degf</property>
                 <interpolation>
                         <entry>
                                 <ind>0</ind>

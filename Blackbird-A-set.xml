@@ -6,13 +6,13 @@
 
 
     <sim include="Help/BlackBird-help.xml" >
-        <description>SR-71A_BlackBird</description>
-        <author>Gerard ROBIN</author>
+        <description>SR-71A BlackBird</description>
+        <author>was Gerard ROBIN, updated by grtux hangar team https://sites.google.com/site/grtuxhangar/</author>
         <status>alpha, "GPL Copyright"</status>
-        <version>0.2</version>
+        <version>0.5  2011-06-013</version>
         <flight-model>jsb</flight-model>
         <startup>
-                <splash-texture>Aircraft/SR71-BlackBird/splash-BB-A.rgb</splash-texture>
+                <splash-texture>Aircraft/SR71-BlackBird/splash-BB-A.png</splash-texture>
         </startup>
         <flight-model>jsb</flight-model>
         <aero>sr71-jsbsim</aero>
@@ -24,7 +24,7 @@
         </model>
         <sound>
                     <audible>true</audible>
-                    <path>Aircraft/SR71-BlackBird/Sounds/f16-sound.xml</path>
+                    <path>Aircraft/SR71-BlackBird/Sounds/SR71-BlackBird-sound.xml</path>
         </sound>
         <virtual-cockpit archive="y">true</virtual-cockpit>
 
@@ -42,7 +42,7 @@
                             <y-offset-m archive="y">1.44</y-offset-m>
                             <z-offset-m archive="y">-13.4</z-offset-m>
                             <pitch-offset-deg archive="y">-19.5</pitch-offset-deg>
-                            <default-field-of-view-deg type="double">64.0</default-field-of-view-deg>
+                            <default-field-of-view-deg type="double">74.0</default-field-of-view-deg>
                     </config>
         </view>
         <view n="1">
@@ -85,6 +85,7 @@
         </current-view>
             <chase-distance-m>-35</chase-distance-m>
     </sim>
+    <fdm><jsbsim><variant>0</variant></jsbsim></fdm><!--SR71 A normal drag-->
 
 </PropertyList>
 

@@ -83,5 +83,20 @@
                                 <property>/fdm/jsbsim/fcs/cutoff-switch</property>
                         </binding>
         </key>
+        <key n="115">
+            <name>s</name>
+            <desc>Fire Starter on Selected Engine(s)</desc>
+            <binding>
+                <command>nasal</command>
+                <script>controls.startEngine(1)</script>
+            </binding>
+            <mod-up>
+                <binding>
+                    <command>nasal</command>
+                    <script>controls.startEngine(1)</script>
+                </binding>
+            </mod-up>
+        </key>
+
         </keyboard>
 </PropertyList>

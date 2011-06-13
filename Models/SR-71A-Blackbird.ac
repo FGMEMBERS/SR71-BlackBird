@@ -1,27 +1,27 @@
 AC3Db
-MATERIAL "ac3dmat5" rgb 0 0 0  amb 0.2 0.2 0.2  emis 0 0 0  spec 0 0 0  shi 10  trans 0
-MATERIAL "ac3dmat1" rgb 1 1 1  amb 0.2 0.2 0.2  emis 0 0 0  spec 0 0 0  shi 10  trans 0
-MATERIAL "ac3dmat3" rgb 1 0 0  amb 0.2 0.2 0.2  emis 0 0 0  spec 0 0 0  shi 10  trans 0
-MATERIAL "ac3dmat4" rgb 1 0.466667 0  amb 0.2 0.2 0.2  emis 0 0 0  spec 0 0 0  shi 10  trans 0
-MATERIAL "ac3dmat5" rgb 1 1 0  amb 0.2 0.2 0.2  emis 0 0 0  spec 0 0 0  shi 10  trans 0
-MATERIAL "ac3dmat12" rgb 0.266667 0.266667 0.266667  amb 0.2 0.2 0.2  emis 0 0 0  spec 0 0 0  shi 10  trans 0
-MATERIAL "ac3dmat14" rgb 0.8 0.8 0.8  amb 0.2 0.2 0.2  emis 0 0 0  spec 0 0 0  shi 10  trans 0
-MATERIAL "ac3dmat8" rgb 0.286 0.345 0.361  amb 0 0 0  emis 0 0 0  spec 0 0 0  shi 10  trans 0
-MATERIAL "NoName.1026" rgb 0.22 0.22 0.22  amb 0.502 0.502 0.502  emis 0 0 0  spec 0.075 0.075 0.063  shi 32  trans 0
-MATERIAL "NoName.1021" rgb 0 0 0  amb 0.502 0.502 0.502  emis 0 0 0  spec 0 0 0  shi 32  trans 0
-MATERIAL "NoName.1040" rgb 0.776471 0 0  amb 0.5 0.5 0.5  emis 0 0 0  spec 0.106 0.11 0.129  shi 7  trans 0
-MATERIAL "NoName.1053" rgb 0.22 0.22 0.22  amb 0.502 0.502 0.502  emis 0 0 0  spec 1 1 1  shi 32  trans 0.8
-MATERIAL "ac3dmat13" rgb 0.427 0.463 0.533  amb 0.2 0.2 0.2  emis 0 0 0  spec 0 0 0  shi 56  trans 0
-MATERIAL "ac3dmat1" rgb 1 1 1  amb 0 0 0  emis 0 0 0  spec 0 0 0  shi 10  trans 0
-MATERIAL "ac3dmat2" rgb 0.224 0.275 0.373  amb 1 1 1  emis 0 0 0  spec 1 1 1  shi 24  trans 0
-MATERIAL "ac3dmat8" rgb 0.439 0.525 0.663  amb 0 0 0  emis 0 0 0  spec 0 0 0  shi 10  trans 0
-MATERIAL "ac3dmat8" rgb 0.22 0.263 0.31  amb 0 0 0  emis 0 0 0  spec 0 0 0  shi 10  trans 0
+MATERIAL "ac3dmat5" rgb 0 0 0  amb 0 0 0  emis 0 0 0  spec 0 0 0  shi 10  trans 0
+MATERIAL "ac3dmat1" rgb 1 1 1  amb 1 1 1  emis 0 0 0  spec 0 0 0  shi 10  trans 0
+MATERIAL "ac3dmat3" rgb 1 0 0  amb 1 0 0  emis 0 0 0  spec 0 0 0  shi 10  trans 0
+MATERIAL "ac3dmat4" rgb 1 0.466667 0  amb 1 0.466667 0  emis 0 0 0  spec 0 0 0  shi 10  trans 0
+MATERIAL "ac3dmat5" rgb 1 1 0  amb 1 1 0  emis 0 0 0  spec 0 0 0  shi 10  trans 0
+MATERIAL "ac3dmat12" rgb 0.266667 0.266667 0.266667  amb 0.266667 0.266667 0.266667  emis 0 0 0  spec 0 0 0  shi 10  trans 0
+MATERIAL "ac3dmat14" rgb 0.8 0.8 0.8  amb 0.8 0.8 0.8  emis 0 0 0  spec 0 0 0  shi 10  trans 0
+MATERIAL "ac3dmat8" rgb 0.286 0.345 0.361  amb 0.286 0.345 0.361  emis 0 0 0  spec 0 0 0  shi 10  trans 0
+MATERIAL "NoName.1026" rgb 0.22 0.22 0.22  amb 0.22 0.22 0.22  emis 0 0 0  spec 0.075 0.075 0.063  shi 32  trans 0
+MATERIAL "NoName.1021" rgb 0 0 0  amb 0 0 0  emis 0 0 0  spec 0 0 0  shi 32  trans 0
+MATERIAL "NoName.1040" rgb 0.776471 0 0  amb 0.776471 0 0  emis 0 0 0  spec 0.106 0.11 0.129  shi 7  trans 0
+MATERIAL "NoName.1053" rgb 0.22 0.22 0.22  amb 0.22 0.22 0.22  emis 0 0 0  spec 1 1 1  shi 32  trans 0.8
+MATERIAL "ac3dmat13" rgb 0.427 0.463 0.533  amb 0.427 0.463 0.533  emis 0 0 0  spec 0 0 0  shi 56  trans 0
+MATERIAL "ac3dmat1" rgb 1 1 1  amb 1 1 1  emis 0 0 0  spec 0 0 0  shi 10  trans 0
+MATERIAL "ac3dmat2" rgb 0.224 0.275 0.373  amb 0.224 0.275 0.373  emis 0 0 0  spec 1 1 1  shi 24  trans 0
+MATERIAL "ac3dmat8" rgb 0.439 0.525 0.663  amb 0.439 0.525 0.663  emis 0 0 0  spec 0 0 0  shi 10  trans 0
+MATERIAL "ac3dmat8" rgb 0.22 0.263 0.31  amb 0.22 0.263 0.31  emis 0 0 0  spec 0 0 0  shi 10  trans 0
 OBJECT world
 kids 20
 OBJECT poly
 name "object"
 loc -12.8361 0.97352 0
-texture "fusedessus.rgb"
+texture "fusedessus.png"
 crease 45.000000
 numvert 215
 -1.35809 0.0723107 -0.473277
@@ -2996,7 +2996,7 @@ kids 0
 OBJECT poly
 name "Probe-GPorte"
 loc -3.31758 1.11303 0
-texture "fusedessus.rgb"
+texture "fusedessus.png"
 crease 45.000000
 numvert 9
 -5.47544 0.432515 0
@@ -3050,7 +3050,7 @@ kids 0
 OBJECT poly
 name "Probe-DPorte"
 loc -3.31758 1.11303 0
-texture "fusedessus.rgb"
+texture "fusedessus.png"
 crease 45.000000
 numvert 9
 -5.47544 0.432515 0
@@ -3104,7 +3104,7 @@ kids 0
 OBJECT poly
 name "Probe-GPorte-Doublage"
 loc -3.31758 1.11303 0
-texture "fusedessus.rgb"
+texture "fusedessus.png"
 crease 45.000000
 numvert 13
 -5.9789 0.422982 0.025224
@@ -3215,7 +3215,7 @@ kids 0
 OBJECT poly
 name "Probe-DPorte-Doublage"
 loc -3.31758 1.11303 0
-texture "fusedessus.rgb"
+texture "fusedessus.png"
 crease 45.000000
 numvert 13
 -5.308 0.343184 -0.19464
@@ -5317,7 +5317,7 @@ kids 0
 OBJECT poly
 name "FuseSup"
 loc -10.6591 1.42642 0.000581384
-texture "fusedessus.rgb"
+texture "fusedessus.png"
 crease 45.000000
 numvert 30
 -0.357717 -0.11912 0.462371
@@ -5822,7 +5822,7 @@ kids 1
 OBJECT poly
 name "disk.noshadow"
 loc -7.0743 0.249944 0.180113
-texture "Instruments/Jaune-noir.rgb"
+texture "Instruments/Jaune-noir.png"
 crease 45.000000
 numvert 171
 -0.00474358 0.0641931 0
@@ -8330,7 +8330,7 @@ kids 0
 OBJECT poly
 name "disk.noshadow"
 loc -7.07985 0.235388 0.180113
-texture "Instruments/Jaune-noir.rgb"
+texture "Instruments/Jaune-noir.png"
 crease 45.000000
 numvert 171
 -0.000270844 -0.0155311 0.011649
@@ -17090,7 +17090,7 @@ kids 0
 OBJECT poly
 name "ARCanopy-Ext"
 loc 0.258975 0.0203341 0.000325501
-texture "fusedessus.rgb"
+texture "fusedessus.png"
 crease 45.000000
 numvert 28
 -0.622811 -0.234499 -0.658914
@@ -17303,7 +17303,7 @@ kids 2
 OBJECT poly
 name "Canopy-Face"
 loc -1.12295 -0.00575089 -0.000960157
-texture "fusedessus.rgb"
+texture "fusedessus.png"
 crease 45.000000
 numvert 19
 0.349693 0.258331 0.00331837
@@ -17567,7 +17567,7 @@ kids 3
 OBJECT poly
 name "Canopy-Pilote-Ext"
 loc -0.00976753 0.00542665 1.16627e-05
-texture "fusedessus.rgb"
+texture "fusedessus.png"
 crease 45.000000
 numvert 75
 0.761296 0.20312 -0.242404
@@ -18890,7 +18890,7 @@ kids 0
 OBJECT poly
 name "Vitrage-Pilote"
 loc -0.00976753 0.00542665 1.16627e-05
-texture "fusedessus.rgb"
+texture "fusedessus.png"
 crease 45.000000
 numvert 16
 -0.440329 -0.226603 -0.498673

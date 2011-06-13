@@ -5,7 +5,7 @@ kids 3
 OBJECT poly
 name "phare-faisceau-tache"
 loc -12.3846 -0.50954 0
-texture "phare.rgb"
+texture "phare.png"
 crease 45.000000
 numvert 16
 -8.4321 -0.513501 1.74438
@@ -48,7 +48,7 @@ kids 0
 OBJECT poly
 name "phare"
 loc -12.3846 -0.50954 0
-texture "phare.rgb"
+texture "phare.png"
 crease 45.000000
 numvert 17
 12.467 0.50954 1.19209e-07
@@ -169,7 +169,7 @@ kids 0
 OBJECT poly
 name "phare-faisceau"
 loc -12.3846 -0.50954 0
-texture "phare.rgb"
+texture "phare.png"
 crease 45.000000
 numvert 32
 -10.9354 -0.475947 1.8881

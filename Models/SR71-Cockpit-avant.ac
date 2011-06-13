@@ -1,12 +1,12 @@
 AC3Db
-MATERIAL "NoName.1026" rgb 0 0 0  amb 0.2 0.2 0.2  emis 0 0 0  spec 0 0 0  shi 10  trans 0
-MATERIAL "ac3dmat1" rgb 1 1 1  amb 0.2 0.2 0.2  emis 0 0 0  spec 0 0 0  shi 10  trans 0
-MATERIAL "ac3dmat3" rgb 1 0 0  amb 0.2 0.2 0.2  emis 0 0 0  spec 0 0 0  shi 10  trans 0
-MATERIAL "ac3dmat8" rgb 0.286 0.345 0.361  amb 0 0 0  emis 0 0 0  spec 0 0 0  shi 10  trans 0
-MATERIAL "NoName.1026" rgb 0.22 0.22 0.22  amb 0.502 0.502 0.502  emis 0 0 0  spec 0.075 0.075 0.063  shi 32  trans 0
-MATERIAL "NoName.1021" rgb 0 0 0  amb 0.502 0.502 0.502  emis 0 0 0  spec 0 0 0  shi 32  trans 0
-MATERIAL "NoName.1040" rgb 0.776471 0 0  amb 0.5 0.5 0.5  emis 0 0 0  spec 0.106 0.11 0.129  shi 7  trans 0
-MATERIAL "ac3dmat0" rgb 0 0 0  amb 0.502 0.502 0.502  emis 0 0 0  spec 0.502 0.502 0.502  shi 72  trans 0
+MATERIAL "NoName.1026" rgb 0 0 0  amb 0 0 0  emis 0 0 0  spec 0 0 0  shi 10  trans 0
+MATERIAL "ac3dmat1" rgb 1 1 1  amb 1 1 1  emis 0 0 0  spec 0 0 0  shi 10  trans 0
+MATERIAL "ac3dmat3" rgb 1 0 0  amb 1 0 0  emis 0 0 0  spec 0 0 0  shi 10  trans 0
+MATERIAL "ac3dmat8" rgb 0.286 0.345 0.361  amb 0.286 0.345 0.361  emis 0 0 0  spec 0 0 0  shi 10  trans 0
+MATERIAL "NoName.1026" rgb 0.22 0.22 0.22  amb 0.22 0.22 0.22  emis 0 0 0  spec 0.075 0.075 0.063  shi 32  trans 0
+MATERIAL "NoName.1021" rgb 0 0 0  amb 0 0 0  emis 0 0 0  spec 0 0 0  shi 32  trans 0
+MATERIAL "NoName.1040" rgb 0.776471 0 0  amb 0.776471 0 0  emis 0 0 0  spec 0.106 0.11 0.129  shi 7  trans 0
+MATERIAL "ac3dmat0" rgb 0 0 0  amb 0 0 0  emis 0 0 0  spec 0.502 0.502 0.502  shi 72  trans 0
 OBJECT world
 kids 7
 OBJECT group
@@ -4977,7 +4977,7 @@ kids 0
 OBJECT poly
 name "disk.noshadow"
 loc -8.67524 0.235388 0.180113
-texture "Instruments/Jaune-noir.rgb"
+texture "Instruments/Jaune-noir.png"
 crease 45.000000
 numvert 171
 0.000809669 0.0463629 0
@@ -7224,7 +7224,7 @@ kids 1
 OBJECT poly
 name "disk.noshadow"
 loc -8.66969 0.249944 0.180113
-texture "Instruments/Jaune-noir.rgb"
+texture "Instruments/Jaune-noir.png"
 crease 45.000000
 numvert 171
 -0.00582409 -0.0278457 0.0193239

@@ -1,13 +1,12 @@
 <?xml version="1.0"?>
 
-<system name="Fuel-ReFuel">
 
-    <property>/consumables/fuel/total-fuel-gals</property>
-	<property>/systems/electrical/outputs/fuel-pump</property>
-	<property>/systems/electrical/outputs/refuel-pump</property>
+<system name="Fuel-ReFuel">
+    <!--<property>/consumables/fuel/total-fuel-gals</property>-->
+    <property>/systems/refuel/type</property>
+    <property>/systems/refuel/contact</property>
 
         <channel name="Refuel">
-
             <kinematic name="Refueling Control">
                 <input>/controls/flight/op-refuel</input>
                 <traverse>
@@ -28,7 +27,7 @@
                 <gain>1</gain>
                 <output>/surface-positions/refueling-pos-norm</output>
             </pure_gain>
-            
+
             <switch name="systems/refuel-pump-cmd">
                 <default value="0"/>
                 <test  logic="AND" value="1">
@@ -58,8 +57,7 @@
                     /systems/electrical/outputs/refuel-pump  > 27
                 </test>
             </switch>
-
-            <summer name="Tank Total Gals">
+            <!--<summer name="Tank Total Gals">
                 <input>/consumables/fuel/tank[0]level-gal_us</input>
                 <input>/consumables/fuel/tank[1]level-gal_us</input>
                 <input>/consumables/fuel/tank[2]level-gal_us</input>
@@ -68,8 +66,7 @@
                     <max>13637</max>
                 </clipto>
                 <output>/consumables/fuel/total-fuel-gals</output>
-            </summer>
-
+            </summer>-->
             <switch name="Refuel Air">
                 <default value="0"/>
                 <test  logic="AND" value="1">
@@ -81,7 +78,6 @@
                 </test>
                 <output>systems/refueling_air</output>
             </switch>
-
             <switch name="Refuel Ground">
                 <default value="0"/>
                 <test  logic="AND" value="1">
@@ -91,8 +87,6 @@
                 </test>
                 <output>systems/refueling_ground</output>
             </switch>
-
-
             <switch name="systems/refueling_action">
                 <default value="0"/>
                 <test  logic="OR" value="1">
@@ -101,7 +95,6 @@
                 </test>
                 <output>propulsion/refuel</output>
             </switch>
-
         </channel>
 
 </system>

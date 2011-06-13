@@ -93,8 +93,8 @@
 		<object-name>Temoin-Low</object-name>
 		<condition>
 				<less-than>
-					<property>/consumables/fuel/total-fuel-gals</property>
-					<value>2000</value>
+                                        <property>/fdm/jsbsim/propulsion/total-fuel-lbs</property>
+					<value>12000</value>
 				</less-than>
 		</condition>
 	</animation>

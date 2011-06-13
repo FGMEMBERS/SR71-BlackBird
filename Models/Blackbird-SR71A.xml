@@ -116,7 +116,7 @@
             <not>
                 <equals>
                     <property>sim/current-view/view-number</property>
-                    <value>7</value>
+                    <value>8</value>
                 </equals>
             </not>
         </condition>

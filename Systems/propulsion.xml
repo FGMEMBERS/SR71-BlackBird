@@ -1,0 +1,227 @@
+<?xml version="1.0"?>
+
+
+
+<system name="engine">
+
+        <property value="2.5">fcs/throttle-gain</property>
+        <!--<property value="0">fcs/intake-subsonic-pos</property>-->
+        <property value="0">fcs/cutoff-switch0</property>
+        <property value="0">fcs/cutoff-switch1</property>
+        <channel name="Engine">
+
+            <switch name="Cutoff0">
+                <default value="fcs/cutoff-switch0"/>
+                <test  logic="AND" value="1">
+                    propulsion/engine[0]/n2 gt 0.15
+                    /controls/engines/engine[0]/starter == 1
+                    propulsion/engine[0]/set-running == 0
+                </test>
+                <output>fcs/cutoff-switch0</output>
+            </switch>
+
+            <switch name="Cutoff1">
+                <default value="fcs/cutoff-switch1"/>
+                <test  logic="AND" value="1">
+                    propulsion/engine[1]/n2 gt 0.15
+                    /controls/engines/engine[1]/starter == 1
+                    propulsion/engine[1]/set-running == 0
+                </test>
+                <output>fcs/cutoff-switch1</output>
+            </switch>
+
+            <kinematic name="Cutoff Switch0 Delay">
+                <input>fcs/cutoff-switch0</input>
+                <traverse>
+                    <setting>
+                        <position>0.0000</position>
+                        <time>0.0000</time>
+                    </setting>
+                    <setting>
+                        <position>1.0000</position>
+                        <time>1.0000</time>
+                    </setting>
+                </traverse>
+            </kinematic>
+
+            <kinematic name="Cutoff Switch1 Delay">
+                <input>fcs/cutoff-switch1</input>
+                <traverse>
+                    <setting>
+                        <position>0.0000</position>
+                        <time>0.0000</time>
+                    </setting>
+                    <setting>
+                        <position>1.0000</position>
+                        <time>1.0000</time>
+                    </setting>
+                </traverse>
+            </kinematic>
+
+            <!--la puissance maxi n'est disponible que sous condition-->
+            <switch name="AugThrust">
+                <default value="1"/>
+                <test  logic="AND" value="0">
+                    velocities/mach gt  1.13
+                    position/h-sl-ft gt 28000
+                </test>
+                <output>fcs/intake-subsonic-pos</output>
+            </switch>
+
+
+            <fcs_function name="Throttle0">
+                <function>
+                    <product>
+                        <property>fcs/throttle-cmd-norm[0]</property>
+                        <property>fcs/cutoff-switch0-delay</property>
+                        <difference>
+                            <property>fcs/throttle-gain</property>
+                            <property>fcs/intake-subsonic-pos</property>
+                        </difference>
+                    </product>
+                </function>
+            </fcs_function>
+
+            <scheduled_gain name="propulsion/engine[0]/trim-throttle">
+                <input>propulsion/engine[1]/set-running</input>
+                <table>
+                    <independentVar lookup="row">velocities/vc-kts</independentVar>
+                    <independentVar lookup="column">fcs/intake-subsonic-pos</independentVar>
+                    <tableData>
+                                    0      1
+                        0           0      0
+                        450       0      0
+                        470       4      2
+                        1000     4      2
+                    </tableData>
+                </table>
+            </scheduled_gain>
+
+            <!--on reduit les gaz pour ne pas dépasser 450 kts-->
+            <fcs_function name="Throttle0 Pos Norm">
+                <function>
+                        <difference>
+                            <property>fcs/throttle0</property>
+                            <property>propulsion/engine[0]/trim-throttle</property>
+                        </difference>
+                </function>
+            </fcs_function>
+
+            <summer name="Throttle0 Pos Limited">
+                <input>fcs/throttle0-pos-norm</input>
+                <clipto>
+                    <min>0.1</min>
+                    <max>2.5</max>
+                </clipto>
+                <output>fcs/throttle-pos-norm[0]</output>
+             </summer>
+
+
+            <fcs_function name="Throttle1">
+                <function>
+                    <product>
+                        <property>fcs/throttle-cmd-norm[1]</property>
+                        <property>fcs/cutoff-switch1-delay</property>
+                        <difference>
+                            <property>fcs/throttle-gain</property>
+                            <property>fcs/intake-subsonic-pos</property>
+                        </difference>
+                    </product>
+                </function>
+            </fcs_function>
+
+            <scheduled_gain name="propulsion/engine[1]/trim-throttle">
+                <input>propulsion/engine[1]/set-running</input>
+                <table>
+                    <independentVar lookup="row">velocities/vc-kts</independentVar>
+                    <independentVar lookup="column">fcs/intake-subsonic-pos</independentVar>
+                    <tableData>
+                                     0      1
+                        0           0      0
+                        450       0      0
+                        470       4      2
+                        1000     4      2
+                    </tableData>
+                </table>
+            </scheduled_gain>
+
+
+            <!--on reduit les gaz pour ne pas dépasser 450 kts-->
+            <fcs_function name="Throttle1 Pos Norm">
+                <function>
+                    <difference>
+                        <property>fcs/throttle1</property>
+                        <property>propulsion/engine[1]/trim-throttle</property>
+                    </difference>
+                </function>
+            </fcs_function>
+
+            <summer name="Throttle1 Pos Limited">
+                <input>fcs/throttle1-pos-norm</input>
+                <clipto>
+                    <min>0.1</min>
+                    <max>2.5</max>
+                </clipto>
+                <output>fcs/throttle-pos-norm[1]</output>
+             </summer>
+
+
+
+            <switch name="Fuel Pump0 Cmd">
+                <default value="0"/>
+                <test  logic="AND" value="1">
+                    fcs/cutoff-switch0 == 1
+                </test>
+            </switch>
+            <pure_gain name="Fuel Pump0">
+                <input>fcs/fuel-pump0-cmd</input>
+                <gain>1</gain>
+                <output>/controls/engines/engine[0]/fuel-pump</output>
+            </pure_gain>
+
+            <switch name="Fuel Pump1 Cmd">
+                <default value="0"/>
+                <test  logic="AND" value="1">
+                    fcs/cutoff-switch1 == 1
+                </test>
+            </switch>
+            <pure_gain name="Fuel Pump1">
+                <input>fcs/fuel-pump1-cmd</input>
+                <gain>1</gain>
+                <output>/controls/engines/engine[1]/fuel-pump</output>
+            </pure_gain>
+
+            <switch name="Cutoff Cmd">
+                <default value="1"/>
+                <test  logic="AND" value="0">
+                    fcs/cutoff-switch0-delay == 1
+                    fcs/cutoff-switch1-delay == 1
+                    fcs/fuel-pump0-cmd == 1
+                    fcs/fuel-pump1-cmd == 1
+                    /systems/electrical/outputs/fuel-pump gt 27
+                </test>
+                <output>propulsion/cutoff_cmd</output>
+            </switch>
+
+
+           <!-- animation for  an afterbuner effect -->
+            <switch name="propulsion/engine[0]/set-thrust">
+                <default value="0"/>
+                <test  logic="AND" value="1">
+                    propulsion/engine[0]/thrust-lbs gt 2000
+                </test>
+            </switch>
+
+            <switch name="propulsion/engine[1]/set-thrust">
+                <default value="0"/>
+                <test  logic="AND" value="1">
+                    propulsion/engine[1]/thrust-lbs gt 2000
+                </test>
+            </switch>
+
+
+    </channel>
+
+
+
+</system>

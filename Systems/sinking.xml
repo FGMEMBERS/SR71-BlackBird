@@ -12,7 +12,7 @@
            <switch name="systems/sinking/switch">
                <default value="0"/>
                <test logic="AND" value="1">
-                   /environment/terrain  == 0
+                   /environment[0]/terrain  == 0
                    position/h-agl-ft lt 7
                    velocities/vc-fps lt 50
                    position/h-sl-ft  lt position/h-agl-ft
@@ -34,7 +34,7 @@
                <output>systems/sinking/timer</output>
            </kinematic>
            
-           <!--<switch name="Belly">
+           <switch name="Belly">
                <default value="1"/>
                <test  value="0">
                    systems/sinking/timer gt 0.10
@@ -46,7 +46,7 @@
                 <input>systems/sinking/cpbelly</input>
                 <rate_limit>0.1</rate_limit>
                 <output>gear/unit[8]/pos-norm</output>
-            </actuator>-->
+            </actuator>
             
             <switch name="Radom">
                 <default value="1"/>

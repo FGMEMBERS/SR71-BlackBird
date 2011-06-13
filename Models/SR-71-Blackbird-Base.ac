@@ -1,18 +1,18 @@
 AC3Db
-MATERIAL "ac3dmat0" rgb 0 0 0  amb 0.2 0.2 0.2  emis 0 0 0  spec 0 0 0  shi 10  trans 0
-MATERIAL "ac3dmat1" rgb 1 1 1  amb 0.2 0.2 0.2  emis 0 0 0  spec 0 0 0  shi 10  trans 0
-MATERIAL "ac3dmat4" rgb 1 0.466667 0  amb 0.2 0.2 0.2  emis 0 0 0  spec 0 0 0  shi 10  trans 0
-MATERIAL "ac3dmat12" rgb 0.266667 0.266667 0.266667  amb 0.2 0.2 0.2  emis 0 0 0  spec 0 0 0  shi 10  trans 0
-MATERIAL "ac3dmat13" rgb 0.533333 0.533333 0.533333  amb 0.2 0.2 0.2  emis 0 0 0  spec 0 0 0  shi 10  trans 0
-MATERIAL "ac3dmat14" rgb 0.8 0.8 0.8  amb 0.2 0.2 0.2  emis 0 0 0  spec 0 0 0  shi 10  trans 0
-MATERIAL "NoName.1039" rgb 1 1 1  amb 0 0 0  emis 0 0 0  spec 0 0 0  shi 0  trans 0
-MATERIAL "ac3dmat8" rgb 0.286 0.345 0.361  amb 0 0 0  emis 0 0 0  spec 0 0 0  shi 10  trans 0
-MATERIAL "NoName.1026" rgb 0.22 0.22 0.22  amb 0.502 0.502 0.502  emis 0 0 0  spec 0.075 0.075 0.063  shi 32  trans 0
-MATERIAL "NoName.1021" rgb 0 0 0  amb 0.502 0.502 0.502  emis 0 0 0  spec 0 0 0  shi 32  trans 0
-MATERIAL "ac3dmat0" rgb 0 0 0  amb 0.502 0.502 0.502  emis 0 0 0  spec 0.502 0.502 0.502  shi 72  trans 0
-MATERIAL "ac3dmat0" rgb 0.145 0.129 0.18  amb 0.2 0.2 0.2  emis 0 0 0  spec 0 0 0  shi 0  trans 0
+MATERIAL "ac3dmat0" rgb 0 0 0  amb 0 0 0  emis 0 0 0  spec 0 0 0  shi 10  trans 0
+MATERIAL "ac3dmat1" rgb 1 1 1  amb 1 1 1  emis 0 0 0  spec 0 0 0  shi 10  trans 0
+MATERIAL "ac3dmat4" rgb 1 0.466667 0  amb 1 0.466667 0  emis 0 0 0  spec 0 0 0  shi 10  trans 0
+MATERIAL "ac3dmat12" rgb 0.266667 0.266667 0.266667  amb 0.266667 0.266667 0.266667  emis 0 0 0  spec 0 0 0  shi 10  trans 0
+MATERIAL "ac3dmat13" rgb 0.533333 0.533333 0.533333  amb 0.533333 0.533333 0.533333  emis 0 0 0  spec 0 0 0  shi 10  trans 0
+MATERIAL "ac3dmat14" rgb 0.8 0.8 0.8  amb 0.8 0.8 0.8  emis 0 0 0  spec 0 0 0  shi 10  trans 0
+MATERIAL "NoName.1039" rgb 1 1 1  amb 1 1 1  emis 0 0 0  spec 0 0 0  shi 0  trans 0
+MATERIAL "ac3dmat8" rgb 0.286 0.345 0.361  amb 0.286 0.345 0.361  emis 0 0 0  spec 0 0 0  shi 10  trans 0
+MATERIAL "NoName.1026" rgb 0.22 0.22 0.22  amb 0.22 0.22 0.22  emis 0 0 0  spec 0.075 0.075 0.063  shi 32  trans 0
+MATERIAL "NoName.1021" rgb 0 0 0  amb 0 0 0  emis 0 0 0  spec 0 0 0  shi 32  trans 0
+MATERIAL "ac3dmat0" rgb 0 0 0  amb 0 0 0  emis 0 0 0  spec 0.502 0.502 0.502  shi 72  trans 0
+MATERIAL "ac3dmat0" rgb 0.145 0.129 0.18  amb 0.145 0.129 0.18  emis 0 0 0  spec 0 0 0  shi 0  trans 0
 MATERIAL "ac3dmat13" rgb 0 0 0  amb 0 0 0  emis 0 0 0  spec 0 0 0  shi 0  trans 0
-MATERIAL "ac3dmat1" rgb 1 1 1  amb 0 0 0  emis 0 0 0  spec 0 0 0  shi 10  trans 0
+MATERIAL "ac3dmat1" rgb 1 1 1  amb 1 1 1  emis 0 0 0  spec 0 0 0  shi 10  trans 0
 OBJECT world
 kids 68
 OBJECT poly
@@ -300,7 +300,7 @@ kids 0
 OBJECT poly
 name "Chute-GPorte-Doublage"
 loc -3.00466 0.961915 0
-texture "fusedessus.rgb"
+texture "fusedessus.png"
 crease 45.000000
 numvert 14
 8.22277 0.513884 0
@@ -392,7 +392,7 @@ kids 0
 OBJECT poly
 name "Chute-DPorte-Doublage"
 loc -3.00466 0.961915 0
-texture "fusedessus.rgb"
+texture "fusedessus.png"
 crease 45.000000
 numvert 14
 6.9954 0.439043 -0.322582
@@ -12118,7 +12118,7 @@ name "AVTrain-ARPorte-Doublage"
 loc -7.33422 -0.365948 -0.001953
 data 9
 Mesh.6801
-texture "fusedessus.rgb"
+texture "fusedessus.png"
 crease 30.000000
 numvert 14
 -1.45496 0.149763 0.000822612
@@ -12212,7 +12212,7 @@ name "AVTrain-DPorte-Doublage"
 loc -9.36987 0.264284 0.183598
 data 9
 Mesh.4040
-texture "fusedessus.rgb"
+texture "fusedessus.png"
 crease 30.000000
 numvert 14
 0.580718 -0.365233 -0.551766
@@ -12306,7 +12306,7 @@ name "AVTrain-GPorte-Doublage"
 loc -9.36987 0.264284 0.183598
 data 9
 Mesh.4040
-texture "fusedessus.rgb"
+texture "fusedessus.png"
 crease 30.000000
 numvert 14
 0.580686 -0.480469 -0.184728
@@ -15334,7 +15334,7 @@ kids 0
 OBJECT poly
 name "box"
 loc 6.88517 0.589947 -4.13332
-texture "ailecentre.rgb"
+texture "ailecentre.png"
 crease 45.000000
 numvert 352
 -0.277089 0.619661 8.07673
@@ -17150,7 +17150,7 @@ kids 0
 OBJECT poly
 name "cylinder"
 loc 2.65019 0.49147 -4.12803
-texture "ailecentre.rgb"
+texture "ailecentre.png"
 crease 45.000000
 numvert 488
 -2.55075 0.817248 0.338387
@@ -20076,7 +20076,7 @@ kids 0
 OBJECT poly
 name "cylinder"
 loc 7.70203 0.60086 -4.13176
-texture "ailecentre.rgb"
+texture "ailecentre.png"
 crease 45.000000
 numvert 512
 -0.511923 -0.703634 8.55498
@@ -27417,7 +27417,7 @@ kids 0
 OBJECT poly
 name "cylinder"
 loc -1.04855 0.441512 -4.12918
-texture "ailecentre.rgb"
+texture "ailecentre.png"
 crease 45.000000
 numvert 130
 -3.12584 -0.290507 8.25836
@@ -28387,7 +28387,7 @@ kids 0
 OBJECT poly
 name "cylinder"
 loc 7.19495 1.5223 -3.9881
-texture "fusedessus.rgb"
+texture "fusedessus.png"
 crease 45.000000
 numvert 146
 1.28542 0.376413 7.80303
@@ -29501,7 +29501,7 @@ kids 0
 OBJECT poly
 name "GVGouv"
 loc 7.3615 2.83895 -3.68412
-texture "fusedessus.rgb"
+texture "fusedessus.png"
 crease 45.000000
 numvert 72
 -0.701195 0.921334 7.15554
@@ -29778,7 +29778,7 @@ name "AVTrain-GPorte"
 loc -9.36987 0.264284 0.183598
 data 9
 Mesh.4040
-texture "fusedessus.rgb"
+texture "fusedessus.png"
 crease 30.000000
 numvert 6
 0.580718 -0.365233 0.18457
@@ -29808,7 +29808,7 @@ name "AVTrain-DPorte"
 loc -9.36987 0.264284 0.183598
 data 9
 Mesh.4040
-texture "fusedessus.rgb"
+texture "fusedessus.png"
 crease 30.000000
 numvert 6
 0.580686 -0.480469 -0.182468
@@ -29838,7 +29838,7 @@ name "GTrain-PorteInt"
 loc -3.01083 0.206669 0
 data 8
 Mesh.007
-texture "fusedessus.rgb"
+texture "fusedessus.png"
 crease 50.000000
 numvert 6
 4.50294 -0.391596 0.147459
@@ -29868,7 +29868,7 @@ name "DTrain-PorteInt"
 loc -3.01083 0.206669 0
 data 8
 Mesh.007
-texture "fusedessus.rgb"
+texture "fusedessus.png"
 crease 50.000000
 numvert 6
 5.3838 -0.403316 -0.147459
@@ -29898,7 +29898,7 @@ name "DTrain-PorteExt"
 loc 1.93224 0.221243 1.89896
 data 9
 Mesh.5752
-texture "fusedessus.rgb"
+texture "fusedessus.png"
 crease 30.000000
 numvert 9
 -0.440134 -0.115159 -2.90384
@@ -29932,7 +29932,7 @@ name "GTrain-PorteExt"
 loc 1.93224 0.221243 1.89896
 data 9
 Mesh.5752
-texture "fusedessus.rgb"
+texture "fusedessus.png"
 crease 30.000000
 numvert 9
 -0.441419 0.115159 0.889827
@@ -30367,7 +30367,7 @@ kids 0
 OBJECT poly
 name "GTrain-Verin"
 loc 5.24277 -0.0213055 -2.08622
-texture "Aile-Fold.rgb"
+texture "Aile-Fold.png"
 crease 45.000000
 numvert 36
 -3.38763 -0.0780538 4.4108
@@ -31046,7 +31046,7 @@ name "AVTrain-ARPorte"
 loc -7.33422 -0.365948 -0.001953
 data 9
 Mesh.6801
-texture "fusedessus.rgb"
+texture "fusedessus.png"
 crease 30.000000
 numvert 6
 -0.322107 0.157581 0.10791
@@ -31086,7 +31086,7 @@ kids 0
 OBJECT poly
 name "GElevon"
 loc 8.12949 0.467283 4.93926
-texture "ailecentre.rgb"
+texture "ailecentre.png"
 crease 45.000000
 numvert 71
 1.73553 -0.00529599 0.412291
@@ -31668,7 +31668,7 @@ kids 0
 OBJECT poly
 name "cylinder"
 loc 1.12212 0.434846 -5.4297
-texture "ailecentre.rgb"
+texture "ailecentre.png"
 crease 45.000000
 numvert 502
 3.42715 -0.10288 -0.6144
@@ -43923,7 +43923,7 @@ kids 2
 OBJECT poly
 name "cylinder"
 loc -0.00367451 -0.0840795 0
-texture "Aile-Fold.rgb"
+texture "Aile-Fold.png"
 crease 45.000000
 numvert 122
 -0.163209 -0.0691154 4.89825
@@ -44994,7 +44994,7 @@ kids 0
 OBJECT poly
 name "cylinder"
 loc 0.00367451 0.0840795 0
-texture "Aile-Fold.rgb"
+texture "Aile-Fold.png"
 crease 45.000000
 numvert 148
 0.165647 -0.0783803 4.92709
@@ -47847,7 +47847,7 @@ kids 6
 OBJECT poly
 name "cylinder"
 loc -1.23044 -0.538459 -1.22194
-texture "Aile-Fold.rgb"
+texture "Aile-Fold.png"
 crease 45.000000
 numvert 26
 0.17581 0.0282968 -0.0957785
@@ -48109,7 +48109,7 @@ kids 0
 OBJECT poly
 name "AVTrain-El1"
 loc -1.23621 0.555637 -1.17372
-texture "Aile-Fold.rgb"
+texture "Aile-Fold.png"
 crease 45.000000
 numvert 28
 0.109917 -0.374109 0.110147
@@ -48385,7 +48385,7 @@ kids 0
 OBJECT poly
 name "AVTrain-JambePr"
 loc 2.44108 0.398766 3.51002
-texture "Aile-Fold.rgb"
+texture "Aile-Fold.png"
 crease 45.000000
 numvert 88
 -3.70563 -0.524424 -4.76557
@@ -49014,7 +49014,7 @@ kids 0
 OBJECT poly
 name "AVTrain-El2"
 loc -1.21335 0.376012 -2.3132
-texture "Aile-Fold.rgb"
+texture "Aile-Fold.png"
 crease 45.000000
 numvert 48
 -0.0500269 -0.430627 1.05618
@@ -49322,7 +49322,7 @@ kids 0
 OBJECT poly
 name "AVTrain-El3"
 loc -1.19852 -0.44301 2.42325
-texture "Aile-Fold.rgb"
+texture "Aile-Fold.png"
 crease 45.000000
 numvert 124
 0.0316906 -0.0555534 -3.62178
@@ -50239,7 +50239,7 @@ kids 0
 OBJECT poly
 name "cylinder"
 loc 2.43746 -0.348944 -1.22442
-texture "Aile-Fold.rgb"
+texture "Aile-Fold.png"
 crease 45.000000
 numvert 33
 -3.62628 0.311632 0.0504825
@@ -50492,7 +50492,7 @@ kids 7
 OBJECT poly
 name "cylinder"
 loc 0.0789721 -0.0627995 0.00461626
-texture "Aile-Fold.rgb"
+texture "Aile-Fold.png"
 crease 45.000000
 numvert 33
 0 -0.203878 4.76837e-06
@@ -50741,7 +50741,7 @@ kids 0
 OBJECT poly
 name "block"
 loc 0.0778762 -0.595437 0.00608468
-texture "Aile-Fold.rgb"
+texture "Aile-Fold.png"
 crease 45.000000
 numvert 66
 0.0731328 0.270901 0
@@ -51206,7 +51206,7 @@ kids 0
 OBJECT poly
 name "GTrain-JambePr"
 loc 0.0796162 0.658015 -0.0178564
-texture "Aile-Fold.rgb"
+texture "Aile-Fold.png"
 crease 45.000000
 numvert 88
 -0.10074 -0.069134 -0.0869365
@@ -51835,7 +51835,7 @@ kids 0
 OBJECT poly
 name "GTrain-JambePr"
 loc 0.07978 0.168082 0.0027647
-texture "Aile-Fold.rgb"
+texture "Aile-Fold.png"
 crease 45.000000
 numvert 48
 0.0432105 -0.0489555 0.0746899
@@ -52143,7 +52143,7 @@ kids 0
 OBJECT poly
 name "cylinder"
 loc -0.193194 -0.0720921 -0.000112295
-texture "Aile-Fold.rgb"
+texture "Aile-Fold.png"
 crease 45.000000
 numvert 148
 0.16897 -0.0786474 -0.0953
@@ -53468,7 +53468,7 @@ kids 0
 OBJECT poly
 name "cylinder"
 loc -0.185844 0.0960665 -0.000112295
-texture "Aile-Fold.rgb"
+texture "Aile-Fold.png"
 crease 45.000000
 numvert 122
 0.0939621 0.0218085 -0.0414898
@@ -54539,7 +54539,7 @@ kids 0
 OBJECT poly
 name "GTrain-JambePr"
 loc 0.0627933 -0.191834 0.00461578
-texture "Aile-Fold.rgb"
+texture "Aile-Fold.png"
 crease 45.000000
 numvert 124
 -0.0900767 0.0585383 0.0815949
@@ -55456,7 +55456,7 @@ kids 0
 OBJECT poly
 name "DInElevon"
 loc 10.0813 0.459134 -1.89381
-texture "ailecentre.rgb"
+texture "ailecentre.png"
 crease 45.000000
 numvert 26
 -0.980966 -0.0635308 -0.811459
@@ -55620,7 +55620,7 @@ kids 0
 OBJECT poly
 name "cylinder"
 loc 3.25841 0.459134 -0.807112
-texture "ailecentre.rgb"
+texture "ailecentre.png"
 crease 45.000000
 numvert 228
 -1.76758 -0.123614 2.11665
@@ -57100,7 +57100,7 @@ kids 0
 OBJECT poly
 name "GInElevon"
 loc 10.0813 0.459134 -1.89381
-texture "ailecentre.rgb"
+texture "ailecentre.png"
 crease 45.000000
 numvert 26
 0.569304 1.19209e-07 4.59908
@@ -57264,7 +57264,7 @@ kids 0
 OBJECT poly
 name "DVGouv"
 loc 7.3615 2.83895 -3.68412
-texture "fusedessus.rgb"
+texture "fusedessus.png"
 crease 45.000000
 numvert 72
 1.58232 -0.905896 -0.279577
@@ -57539,7 +57539,7 @@ kids 0
 OBJECT poly
 name "DElevon"
 loc 8.12949 0.467283 4.93926
-texture "ailecentre.rgb"
+texture "ailecentre.png"
 crease 45.000000
 numvert 71
 -0.174083 0 -9.87852
@@ -58121,7 +58121,7 @@ kids 0
 OBJECT poly
 name "DTrain-Verin"
 loc 5.24277 -0.0213056 -2.13549
-texture "Aile-Fold.rgb"
+texture "Aile-Fold.png"
 crease 45.000000
 numvert 36
 -3.38763 -0.0780538 -0.189084
@@ -58453,7 +58453,7 @@ kids 7
 OBJECT poly
 name "cylinder"
 loc 0.0789721 -0.0627992 -0.00461769
-texture "Aile-Fold.rgb"
+texture "Aile-Fold.png"
 crease 45.000000
 numvert 33
 0 -0.203878 0
@@ -58702,7 +58702,7 @@ kids 0
 OBJECT poly
 name "block"
 loc 0.0778762 -0.595437 -0.0060842
-texture "Aile-Fold.rgb"
+texture "Aile-Fold.png"
 crease 45.000000
 numvert 66
 0.0731328 0.270901 0
@@ -59167,7 +59167,7 @@ kids 0
 OBJECT poly
 name "GTrain-JambePr"
 loc 0.0627933 -0.191835 -0.00461721
-texture "Aile-Fold.rgb"
+texture "Aile-Fold.png"
 crease 45.000000
 numvert 124
 -0.0900767 0.0585382 -0.081599
@@ -60084,7 +60084,7 @@ kids 0
 OBJECT poly
 name "cylinder"
 loc -0.185844 0.096067 0.000108719
-texture "Aile-Fold.rgb"
+texture "Aile-Fold.png"
 crease 45.000000
 numvert 122
 0.0939621 0.0218084 0.041491
@@ -61155,7 +61155,7 @@ kids 0
 OBJECT poly
 name "cylinder"
 loc -0.193194 -0.0720918 0.000108719
-texture "Aile-Fold.rgb"
+texture "Aile-Fold.png"
 crease 45.000000
 numvert 148
 0.16897 -0.0786474 0.0952988
@@ -62480,7 +62480,7 @@ kids 0
 OBJECT poly
 name "GTrain-JambePr"
 loc 0.07978 0.168082 -0.00275421
-texture "Aile-Fold.rgb"
+texture "Aile-Fold.png"
 crease 45.000000
 numvert 48
 0.0432105 -0.0489554 -0.0746999
@@ -62788,7 +62788,7 @@ kids 0
 OBJECT poly
 name "GTrain-JambePr"
 loc 0.0796162 0.658014 0.0178552
-texture "Aile-Fold.rgb"
+texture "Aile-Fold.png"
 crease 45.000000
 numvert 88
 -0.10074 -0.069134 0.0859003
@@ -75282,7 +75282,7 @@ kids 0
 OBJECT poly
 name "cylinder"
 loc -18.65 0.330803 9.31323e-10
-texture "fusedessus.rgb"
+texture "fusedessus.png"
 crease 45.000000
 numvert 34
 -1.60567 -0.0310281 -1.86265e-09
@@ -75630,7 +75630,7 @@ name "FuseInf"
 loc -3.00464 0.206669 0
 data 8
 Mesh.007
-texture "fusedessus.rgb"
+texture "fusedessus.png"
 crease 50.000000
 numvert 177
 -5.7845 -0.405276 -0.0996091
@@ -77117,7 +77117,7 @@ kids 0
 OBJECT poly
 name "Chute-DPorte"
 loc -3.00466 0.962915 0
-texture "fusedessus.rgb"
+texture "fusedessus.png"
 crease 45.000000
 numvert 6
 8.22277 0.513884 0
@@ -77145,7 +77145,7 @@ kids 0
 OBJECT poly
 name "Chute-GPorte"
 loc -3.00466 0.962915 0
-texture "fusedessus.rgb"
+texture "fusedessus.png"
 crease 45.000000
 numvert 6
 8.37334 0.505332 3.22225e-16
@@ -77639,7 +77639,7 @@ kids 0
 OBJECT poly
 name "object"
 loc 3.13958 0.50253 -2.38419e-06
-texture "ailecentre.rgb"
+texture "ailecentre.png"
 crease 45.000000
 numvert 510
 -2.71687 0.819953 4.47122
@@ -81192,7 +81192,7 @@ kids 0
 OBJECT poly
 name "box"
 loc -3.31758 0.962915 0
-texture "fusedessus.rgb"
+texture "fusedessus.png"
 crease 45.000000
 numvert 100
 8.13189 0.119934 0

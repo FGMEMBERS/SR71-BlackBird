@@ -3,11 +3,11 @@
 
 <system name="canopy">
 
-        <property>fcs/canopy-cmd-norm</property>
+        <!--<property>fcs/canopy-cmd-norm</property>-->
         <property>fcs/canopy-pos-norm</property>
 
         <channel name="Canopy">
-            
+
             <switch name="Canopy Control">
                 <default value="/controls/flight/canopy"/>
                 <test  logic="OR" value="0">
@@ -16,7 +16,7 @@
                 </test>
                 <output>fcs/canopy-cmd-norm</output>
             </switch>
-        
+
             <kinematic name="Canopy">
             <input>fcs/canopy-cmd-norm</input>
             <traverse>
@@ -39,5 +39,5 @@
             </pure_gain>
 
         </channel>
-        
+
 </system>

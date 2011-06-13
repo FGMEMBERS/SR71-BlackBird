@@ -2,58 +2,75 @@
 
 
 <system name="Crash">
-
+    <property>/gear/gear[3]/wow</property>
+    <property>/gear/gear[4]/wow</property>
+    <property>/gear/gear[5]/wow</property>
+    <property>/gear/gear[6]/wow</property>
+    <property>/gear/gear[7]/wow</property>
+    <property>/gear/gear[8]/wow</property>
+    <property>/gear/gear[3]/compression-norm</property>
+    <property>/gear/gear[4]/compression-norm</property>
+    <property>/gear/gear[5]/compression-norm</property>
+    <property>/gear/gear[6]/compression-norm</property>
+    <property>/gear/gear[7]/compression-norm</property>
+    <property>/gear/gear[8]/compression-norm</property>
     <channel name="crash">
-           
+
            <switch name="systems/crash/switch_belly">
                <default value="0"/>
                <test  logic="AND" value="1">
-                   /gear/gear[8]/compression-norm gt 0.05 
-                   gear/unit[8]/WOW == 1
+                   /gear/gear[8]/compression-norm gt 0.05
+                   /gear/gear[8]/wow == 1
+                   position/h-agl-ft lt 3.5
                </test>
                <output>systems/crash/cpbelly</output>
             </switch>
             <switch name="systems/crash/switch_radome">
                 <default value="0"/>
                 <test  logic="AND" value="1">
-                    /gear/gear[7]/compression-norm gt 0.05 
-                    gear/unit[7]/WOW == 1
+                    /gear/gear[7]/compression-norm gt 0.05
+                    /gear/gear[7]/wow == 1
+                    position/h-agl-ft lt 3.5
                 </test>
                 <output>systems/crash/cpbelly</output>
             </switch>
             <switch name="systems/crash/switch_w-left">
                 <default value="0"/>
                 <test  logic="AND" value="1">
-                    /gear/gear[3]/compression-norm gt 0.05 
-                    gear/unit[3]/WOW == 1
+                    /gear/gear[3]/compression-norm gt 0.05
+                    /gear/gear[3]/wow == 1
+                    position/h-agl-ft lt 3.5
                 </test>
                 <output>systems/crash/cpw-left</output>
             </switch>
             <switch name="systems/crash/switch_w-right">
                 <default value="0"/>
                 <test  logic="AND" value="1">
-                    /gear/gear[4]/compression-norm gt 0.05 
-                    gear/unit[4]/WOW == 1
+                    /gear/gear[4]/compression-norm gt 0.05
+                    /gear/gear[4]/wow == 1
+                    position/h-agl-ft lt 3.5
                 </test>
                 <output>systems/crash/cpw-right</output>
             </switch>
             <switch name="systems/crash/switch_nozzle0">
                 <default value="0"/>
                 <test  logic="AND" value="1">
-                    /gear/gear[5]/compression-norm gt 0.05 
-                    gear/unit[5]/WOW == 1
+                    /gear/gear[5]/compression-norm gt 0.05
+                    /gear/gear[5]/wow == 1
+                    position/h-agl-ft lt 3.5
                 </test>
                 <output>systems/crash/cpnozzle0</output>
             </switch>
             <switch name="systems/crash/switch_nozzle1">
                 <default value="0"/>
                 <test  logic="AND" value="1">
-                    /gear/gear[6]/compression-norm gt 0.05 
-                    gear/unit[6]/WOW == 1
+                    /gear/gear[6]/compression-norm gt 0.05
+                    /gear/gear[6]/wow == 1
+                    position/h-agl-ft lt 3.5
                 </test>
                 <output>systems/crash/cpnozzle1</output>
             </switch>
-            
+
             <switch name="systems/crash/switch">
                 <default value="0"/>
                 <test  logic="OR" value="1">
@@ -65,7 +82,7 @@
                     systems/crash/switch_nozzle1 == 1
                 </test>
             </switch>
-            
+
             <kinematic name="Crash Control">
                 <input>systems/crash/switch</input>
                 <traverse>
@@ -80,15 +97,23 @@
                 </traverse>
                 <output>systems/crash/switch_timer</output>
             </kinematic>
-            
-            <switch name="systems/crash/switch_propulsion">
-                <default value="fcs/cutoff-switch"/>
+
+            <switch name="systems/crash/switch_propulsion0">
+                <default value="fcs/cutoff-switch0"/>
                 <test  logic="AND" value="0">
                     systems/crash/switch_timer  == 1
                 </test>
-                <output>fcs/cutoff-switch</output>
+                <output>fcs/cutoff-switch0</output>
             </switch>
-            
+            <switch name="systems/crash/switch_propulsion1">
+                <default value="fcs/cutoff-switch1"/>
+                <test  logic="AND" value="0">
+                    systems/crash/switch_timer  == 1
+                </test>
+                <output>fcs/cutoff-switch1</output>
+            </switch>
+
+
             <switch name="systems/crash/switch_electric">
                 <default value="/controls/electric/master-switch"/>
                 <test  logic="AND" value="0">
@@ -103,7 +128,7 @@
                 </test>
                 <output>gear/gear-cp-cmd-norm</output>
             </switch>
-            
+
 
     </channel>
 
