@@ -1,71 +1,91 @@
-git add Aircraft/SR71-BlackBird/Blackbird-A-set.xml
-git add Aircraft/SR71-BlackBird/Blackbird-B-set.xml
-git add Aircraft/SR71-BlackBird/Blackbird-SetBase.xml
-git add Aircraft/SR71-BlackBird/Inputs/Blackbird-input.xml
-git add Aircraft/SR71-BlackBird/Instruments/EGT-eng0-bb.xml
-git add Aircraft/SR71-BlackBird/Instruments/EGT-eng1-bb.xml
-git add Aircraft/SR71-BlackBird/Instruments/Radar2d-bb.xml
-git add Aircraft/SR71-BlackBird/Instruments/Radar2d-dummy-bb.xml
-git add Aircraft/SR71-BlackBird/Instruments/Temoin-FuelLowEng.xml
-git rm Aircraft/SR71-BlackBird/Instruments/alt3d-cadran.rgb
-git add Aircraft/SR71-BlackBird/Models/Blackbird-SR71A.xml
-git add Aircraft/SR71-BlackBird/Models/Blackbird-SR71B.xml
-git add Aircraft/SR71-BlackBird/Models/SR-71-Blackbird-Base.ac
-git add Aircraft/SR71-BlackBird/Models/SR-71A-Blackbird.ac
-git add Aircraft/SR71-BlackBird/Models/SR-71B-Blackbird.ac
-git add Aircraft/SR71-BlackBird/Models/SR71-Cockpit-avant.ac
-git add Aircraft/SR71-BlackBird/Models/SR71-Cockpit-controles.ac
-git rm Aircraft/SR71-BlackBird/Models/Texture-USAF/Aile-Fold.rgb
-git rm Aircraft/SR71-BlackBird/Models/Texture-USAF/Jaune-noir.rgb
-git rm Aircraft/SR71-BlackBird/Models/Texture-USAF/ailecentre.rgb
-git rm Aircraft/SR71-BlackBird/Models/Texture-USAF/face.rgb
-git rm Aircraft/SR71-BlackBird/Models/Texture-USAF/fusedessus.rgb
-git rm Aircraft/SR71-BlackBird/Models/Texture-USAF/module-Base-typeD6.rgb
-git rm Aircraft/SR71-BlackBird/Models/Texture-USAF/panel-fond.rgb
-git rm Aircraft/SR71-BlackBird/Models/Texture-USAF/phare.rgb
-git rm Aircraft/SR71-BlackBird/Models/Texture-USAF/textuastrpilote.rgb
-git rm Aircraft/SR71-BlackBird/Models/Texture-USAF/textupilote.rgb
-git add Aircraft/SR71-BlackBird/Models/Turbine-Outv2.ac
-git add Aircraft/SR71-BlackBird/Models/astro-pilote.ac
-git add Aircraft/SR71-BlackBird/Models/lumiere.ac
-git add Aircraft/SR71-BlackBird/Models/pilote.ac
-git add Aircraft/SR71-BlackBird/README-FIRST
-git rm Aircraft/SR71-BlackBird/Sounds/f16-sound.xml
-git rm Aircraft/SR71-BlackBird/Systems/FCS-Basic.xml
-git add Aircraft/SR71-BlackBird/Systems/canopy.xml
-git add Aircraft/SR71-BlackBird/Systems/crash.xml
-git rm Aircraft/SR71-BlackBird/Systems/electrical.nas
-git rm Aircraft/SR71-BlackBird/Systems/electrical.xml
-git rm Aircraft/SR71-BlackBird/Systems/engines.xml
-git add Aircraft/SR71-BlackBird/Systems/fuel-refuel.xml
-git add Aircraft/SR71-BlackBird/Systems/instruments.xml
-git add Aircraft/SR71-BlackBird/Systems/landing-gear.xml
-git rm Aircraft/SR71-BlackBird/Systems/light-outdoor.xml
-git add Aircraft/SR71-BlackBird/Systems/radar.nas
-git add Aircraft/SR71-BlackBird/Systems/sinking.xml
-git add Aircraft/SR71-BlackBird/Systems/terrain.nas
-git rm Aircraft/SR71-BlackBird/splash-BB-A.rgb
-git rm Aircraft/SR71-BlackBird/splash-BB-B.rgb
-git add Aircraft/SR71-BlackBird/sr71-jsbsim.xml
-git add Aircraft/SR71-BlackBird/Models/Texture-USAF/Aile-Fold.png
-git add Aircraft/SR71-BlackBird/Models/Texture-USAF/Jaune-noir.png
-git add Aircraft/SR71-BlackBird/Models/Texture-USAF/ailecentre.png
-git add Aircraft/SR71-BlackBird/Models/Texture-USAF/face.png
-git add Aircraft/SR71-BlackBird/Models/Texture-USAF/fusedessus.png
-git add Aircraft/SR71-BlackBird/Models/Texture-USAF/module-Base-typeD6.png
-git add Aircraft/SR71-BlackBird/Models/Texture-USAF/panel-fond.png
-git add Aircraft/SR71-BlackBird/Models/Texture-USAF/phare.png
-git add Aircraft/SR71-BlackBird/Models/Texture-USAF/textuastrpilote.png
-git add Aircraft/SR71-BlackBird/Models/Texture-USAF/textupilote.png
-git add Aircraft/SR71-BlackBird/Panels/Textures/transparent-bg.png
-git add Aircraft/SR71-BlackBird/Sounds/SR71-BlackBird-sound.xml
-git add Aircraft/SR71-BlackBird/Systems/SR71autopilot.xml
-git add Aircraft/SR71-BlackBird/Systems/braking.xml
-git add Aircraft/SR71-BlackBird/Systems/cpdrag.xml
-git add Aircraft/SR71-BlackBird/Systems/dummy-electrical.xml
-git add Aircraft/SR71-BlackBird/Systems/electrical-fdm-custom.xml
-git add Aircraft/SR71-BlackBird/Systems/electrical-fdm.xml
-git add Aircraft/SR71-BlackBird/Systems/electrical-lights.xml
-git add Aircraft/SR71-BlackBird/Systems/propulsion.xml
-git add Aircraft/SR71-BlackBird/splash-BB-A.png
-git add Aircraft/SR71-BlackBird/splash-BB-B.png
+<?xml version="1.0"?>
+
+
+<PropertyList include="Blackbird-SetBase.xml" >
+
+
+
+ <sim include="Help/BlackBird-help.xml" >
+        <description>SR-71B BlackBird</description>
+        <author>was Gerard ROBIN, updated by grtux hangar team https://sites.google.com/site/grtuxhangar/</author>
+        <status>alpha, "GPL Copyright"</status>
+        <version>0.5 2011-06-013</version>
+        <flight-model>jsb</flight-model>
+        <startup>
+                <splash-texture>Aircraft/SR71-BlackBird/splash-BB-B.png</splash-texture>
+        </startup>
+        <flight-model>jsb</flight-model>
+        <aero>sr71-jsbsim</aero>
+        <model>
+            <path archive="y">Aircraft/SR71-BlackBird/Models/Blackbird-SR71B.xml</path>
+            <controls>
+                <chute>0</chute>
+            </controls>
+        </model>
+        <sound>
+                    <audible>true</audible>
+                    <path>Aircraft/SR71-BlackBird/Sounds/SR71-BlackBird-sound.xml</path>
+        </sound>
+        <virtual-cockpit archive="y">true</virtual-cockpit>
+
+
+
+
+        <!--<number-views type="int" archive="y">7</number-views>-->
+            <!--  z position long. val-faible=avance val-forte=recule -->
+            <!--  y position haut. val-faible=descent val-forte=monte -->
+        <view>
+                    <internal archive="y">true</internal>
+                    <config>
+                            <!-- x/y/z == right/up/back -->
+                            <x-offset-m archive="y">0.0</x-offset-m>
+                            <y-offset-m archive="y">1.78</y-offset-m>
+                            <z-offset-m archive="y">-11.5</z-offset-m>
+                            <pitch-offset-deg archive="y">-18.0</pitch-offset-deg>
+                            <default-field-of-view-deg type="double">74.0</default-field-of-view-deg>
+                    </config>
+        </view>
+        <view n="1">
+        <config>
+            <z-offset-m type="double" archive="y">-40.0</z-offset-m>
+        </config>
+        </view>
+
+
+        <view n="100">
+                <name>Cockpit View</name>
+                <type>lookfrom</type>
+                <internal archive="y">true</internal>
+                <config>
+                        <from-model type="bool">true</from-model>
+                        <from-model-idx type="int">0</from-model-idx>
+                        <ground-level-nearplane-m type="double">0.05f</ground-level-nearplane-m>
+                        <default-heading-deg type="double">0</default-heading-deg>
+                        <front-direction-deg type="double">0</front-direction-deg>
+                        <front-left-direction-deg type="double">45</front-left-direction-deg>
+                        <left-direction-deg type="double">90</left-direction-deg>
+                        <back-left-direction-deg type="double">135</back-left-direction-deg>
+                        <back-direction-deg type="double">180</back-direction-deg>
+                        <back-right-direction-deg type="double">225</back-right-direction-deg>
+                        <right-direction-deg type="double">270</right-direction-deg>
+                        <front-right-direction-deg type="double">315</front-right-direction-deg>
+                        <x-offset-m archive="y">0</x-offset-m>
+                        <y-offset-m archive="y">1.44</y-offset-m>
+                        <z-offset-m archive="y">-13.40</z-offset-m>
+                        <pitch-offset-deg>-18</pitch-offset-deg>
+                        <default-field-of-view-deg>73</default-field-of-view-deg>
+                </config>
+        </view>
+
+
+        <current-view>
+                <field-of-view type="double">70.0</field-of-view>
+        </current-view>
+            <chase-distance-m>-35</chase-distance-m>
+    </sim>
+    <fdm><jsbsim><variant>1</variant></jsbsim></fdm><!--SR71 B variant training with more drag-->
+
+
+</PropertyList>
+
+
