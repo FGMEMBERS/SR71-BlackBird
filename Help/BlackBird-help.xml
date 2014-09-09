@@ -1,0 +1,134 @@
+<?xml version="1.0"?>
+<!--
+    Usable with FlightGear
+    Property of Gerard Robin
+    Copyright License:  GPL
+-->
+<PropertyList>
+
+        <title>SR71-BackBird</title>
+        <key>
+                <name>}</name>
+                <desc>toggle Electric Master Switch On/Off</desc>
+        </key>
+        <key>
+                <name> "s"  </name>
+                <desc>Starter</desc>
+        </key>
+
+        <key>
+                <name>{</name>
+                <desc>toggle Cutoff ON/OFF</desc>
+        </key>
+        <key>
+                <name>d</name>
+                <desc>Toggle canopy</desc>
+        </key>
+        <key>
+                <name>F</name>
+                <desc>Toggle refuel  on/off</desc>
+        </key>
+        <!--<key>
+                <name>Ctrl-H</name>
+                <desc>Toggle Unlock/Lock Autopilot </desc>
+        </key>-->
+        <key>
+                <name>Ctrl-A</name>
+                <desc>Toggle Unlock/Lock Autopilot on the current Altitude</desc>
+        </key>
+        <key>
+                <name>Ctrl-b</name>
+                <desc>Prepare braking chute deployement, open the doors</desc>
+        </key>
+        <key>
+                <name>j</name>
+                <desc>Reload Braking Chute, and close the doors</desc>
+        </key>
+        <text>
+          First Contact with Blackbird
+          Now you are sitting in the Pilot cockpit
+          On the Forward Cockpit if Blackbird   SR71-A
+          With view "7" you can see the RSO cockpit (not yet with equipemnts)
+          On the Rear Cockpit if Blackbird   SR71-B  training
+          With view "7" you can see the Pilot Student cockpit
+          The Electric Master is OFF
+          The Engines is "cut off" ON
+          The canopy are "open"
+          The Parking Brake is ON
+
+          ====Start Routine==========
+          Electric Master Switch On => key "}"
+          Get the external Starter ressources  with "s" key
+          The engine will spin up to a maximum of about %25 N2 (%5.2 N1)
+          This simulates the action of the external starter.
+          After reaching %15 N2,  Cutoff to False  => key "{"
+            wait for the EP Ratio needle close to 1.1
+          Don't forget to close the canopy key => "d"
+          Parking brake Off
+          then push the throttle to  take off
+          
+          Run on ground until 180 kts take off  before 210 kts 
+          ( above you will damage the tyres)
+         
+          ====To get 85000 feets=======
+          After take Off and Landing gear UP, set the trottle to maximum and
+          Step 1  =>set the Autopilot "Pitch Hold" to 10
+                       =>Climb until 33000 ft , you shoul be at 1.09mach
+          Step 2  =>Then descent at 30,000 ft , you will be at 1.15 Mach
+          Step 3  => Now you can climb at 65000 and getting 2.30 Mach ( not less)
+         Step 4   => Then you may now climb to cruise speed and altitude 
+         3.2 Mach 85000 ft
+         Beware:
+         You will never get the right thrust, if you don't get 1.15  Mach above 28000 ft
+         Recommendation:
+         these operations will be easier when you are using  the autopilot
+         Step 1  "Pitch Hold" to 10 and then "Altitude Hold 33000"
+         Step 2  Altitude 30000
+         Step 3 Altitude 65000
+         Step 4 Altitude 85000
+         
+          ====Refueling============
+          ONLY  On gound refueling, if Airspeed less than 20 kts
+          With Hotspot on Panel => transferswitch LMB => ON or MMB => OFF
+
+          ONLY Air refueling if Airspeed more than 200 kts and Agl more  than 300 feet
+          With Hotspot on Panel => transfer switch LMB => ON or MMB => OFF
+                AND
+          With "F" Key which open the Doors
+          need refuel contact with Tanker
+          (indicated by  the green light "ON" on left top of the radar )
+          
+          ====Landing==============
+          Final approach speed  kias 185,
+          landing speed 165 kias.
+          
+          ====Braking Chute==========
+          the braking chute will be automaticlly deployed
+          When the following conditions are all true
+
+          Brake Chute doors are openeded  => key "Ctrl-b"
+          Gear on Runway
+          Throttle position less than 0.3
+
+          the braking chute will be released, untied
+          When
+          Airspeed less than 60 kts
+          REMEMBER       it can be used only once
+          If you want it again you must reload it =>  key "j"
+
+          ====Radar================
+          That Radar is the last version ("Vivian" Radar )
+           you can choose the range by clicking on the switch
+           =>mouse button 1 to decrease =>mouse button 0 to increase
+
+          ====Tacan================
+          The Tacan instrument is situated or the left side of the cockpit
+          That instrument is fully operationnal, look at the hotspot to enter the right values
+          ====Autopilot==============
+          The autopilot can be ON/OFF with Altitude and Heading
+           with key => "Ctrl A"  (toggle ON/OF) for the current Altitude
+        <!--  with key => "Ctrl H"  (toggle ON/OF) for the choosen bug heading on your HSI instrument    -->
+
+        </text>
+
+</PropertyList>

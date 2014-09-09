@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<!--
+    Usable with FlightGear
+    Property of Gerard Robin
+    Copyright License:  GPL
+-->
+<PropertyList>
+
+<path>Models/panel-RSO.ac</path>
+<texture-path>Models/Textures/</texture-path>
+
+
+<!--===================GABARIT DE CENTRAGE====ne pas enlever========-->
+    <animation>
+        <type>select</type>
+        <object-name>Gabarit-Position-RSOPanel</object-name>
+        <condition>
+                <equals>
+                    <property>sim/current-view/view-number</property>
+                    <value>999</value>
+                </equals>
+        </condition>
+    </animation>
+    <!--==================================================-->
+
+    <model>
+            <path>Aircraft/SR71-BlackBird/Instruments/Bezel-bb.xml</path>
+            <offsets>
+                <x-m>-0.03807</x-m>
+                <y-m>0.192459</y-m>
+                <z-m>0.12157</z-m>
+                <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+            <path>Aircraft/SR71-BlackBird/Instruments/Dummy-bb.xml</path>
+            <offsets>
+                <x-m>-0.03807</x-m>
+                <y-m>0.192459</y-m>
+                <z-m>0.12157</z-m>
+                <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+            <path>Aircraft/SR71-BlackBird/Instruments/Multi-bb.xml</path>
+            <offsets>
+                    <x-m>-0.03807</x-m>
+                    <y-m>0.192459</y-m>
+                    <z-m>9.67979e-05</z-m>
+                    <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+            <path>Aircraft/SR71-BlackBird/Instruments/Bezel-bb.xml</path>
+            <offsets>
+                    <x-m>-0.03807</x-m>
+                    <y-m>0.311652</y-m>
+                    <z-m>9.67979e-05</z-m>
+                    <heading-deg>0</heading-deg>
+        </offsets>
+    </model>
+
+    <model>
+            <path>Aircraft/SR71-BlackBird/Instruments/FUEL-bb.xml</path>
+            <offsets>
+                    <x-m>-0.03807</x-m>
+                    <y-m>0.311652</y-m>
+                    <z-m>9.67979e-05</z-m>
+                    <heading-deg>0</heading-deg>
+        </offsets>
+    </model>
+
+</PropertyList>

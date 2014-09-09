@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!--
+    Usable with FlightGear
+    Property of Gerard Robin
+    Copyright License:  GPL
+-->
+<PropertyList>
+
+ <path>astro-pilote.ac</path>
+ <texture-path>Texture-USAF/</texture-path>
+
+
+
+    <animation>
+            <type>rotate</type>
+            <object-name>Visiere</object-name>
+            <property>/fdm/jsbsim/fcs/canopy-pos-norm</property>
+            <interpolation>
+                    <entry>
+                            <ind>0.0</ind>
+                            <dep>-90</dep>
+                    </entry>
+                    <entry>
+                            <ind>0.3</ind>
+                            <dep>0</dep>
+                    </entry>
+                    <entry>
+                            <ind>1</ind>
+                            <dep>0</dep>
+                    </entry>
+            </interpolation>
+            <center>
+                    <x-m>0.287104</x-m>
+                    <y-m>0</y-m>
+                    <z-m>0.379313</z-m>
+            </center>
+            <axis>
+                    <x>0</x>
+                    <y>1</y>
+                    <z>0</z>
+            </axis>
+    </animation>
+
+</PropertyList>

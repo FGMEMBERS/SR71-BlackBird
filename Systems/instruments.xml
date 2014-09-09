@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+
+
+<system name="">
+
+    <property value="0">instrument/autopilot/hd-bug</property>
+    <property value="0">instrument/autopilot/hd-tacan</property>
+    <property value="0">instrument/autopilot/hd-true</property>
+    <property>/instrumentation/heading-indicator/heading-marker</property>
+
+    <property>/instrumentation/tacan/indicated-bearing-true-deg</property>
+   <!-- <property>/environment/magnetic-variation-deg</property>-->
+
+    <channel name="HI">
+
+        <!--calcul pour tacan -->
+        <summer name="instrument/hi/ap-tacan-true_heading">
+            <input>/instrumentation/tacan/indicated-bearing-true-deg</input>
+            <input>-/environment/magnetic-variation-deg</input>
+        </summer>
+       <!-- init ap heading avec tacan ou ap true avec heading marker-->
+        <!--<switch name="instrument/hi/ap-true_heading">
+            <default value="0"/>
+            <test  logic="AND" value="instrument/hi/ap-tacan-true_heading">
+                instrument/autopilot/hd-tacan == 1
+                instrument/autopilot/hd-bug == 0
+                instrument/autopilot/hd-true == 0
+            </test>
+            <test  logic="AND" value="/instrumentation/heading-indicator/heading-marker">
+                instrument/autopilot/hd-tacan == 0
+                instrument/autopilot/hd-bug == 0
+                instrument/autopilot/hd-true == 1
+            </test>
+            <output>/autopilot/settings/true-heading-deg</output>
+        </switch>-->
+
+        <!-- init ap_bug avec heading marker -->
+        <switch name="instrument/hi/ap-heading_bug">
+            <default value="0"/>
+            <test  logic="AND" value="/instrumentation/heading-indicator/heading-marker">
+                instrument/autopilot/hd-bug == 1
+                instrument/autopilot/hd-tacan == 0
+                instrument/autopilot/hd-true == 0
+            </test>
+            <output>/autopilot/settings/heading-bug-deg</output>
+        </switch>
+
+    </channel>
+
+
+
+</system>

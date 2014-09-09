@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+
+<!--
+    Usable with FlightGear
+    Property of Gerard Robin
+    Copyright License:  GPL
+-->
+<PropertyList>
+
+ <path>Models/Temoin-Refuel.ac</path>
+ <texture-path>Models/Textures</texture-path>
+
+ 	<animation>
+		<type>noshadow</type>
+		<object-name>Temoin</object-name>
+	</animation>
+
+
+
+	<model>
+		<name>Bezel</name>
+		<path>Aircraft/SR71-BlackBird/Instruments/Temoin-BasePt.xml</path>
+		<offsets>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>0</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
+
+
+        <animation>
+		<type>select</type>
+		<object-name>Temoin-Marquage</object-name>
+		<!--<object-name>Temoin-Probe</object-name>-->
+		<condition>
+			<and>
+				<greater-than>
+					<property>/surface-positions/refueling-pos-norm</property>
+					<value>0</value>
+				</greater-than>
+			</and>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<!--<object-name>Temoin1MActif</object-name>-->
+		<object-name>Temoin-Probe</object-name>
+		<condition>
+			<and>
+				<greater-than>
+					<property>/surface-positions/refueling-pos-norm</property>
+					<value>0</value>
+				</greater-than>
+			</and>
+		</condition>
+	</animation>
+
+</PropertyList>

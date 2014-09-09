@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!--
+    Usable with FlightGear
+    Property of Gerard Robin
+    Copyright License:  GPL
+-->
+<PropertyList>
+
+ <path>SR71-Cockpit-avant.ac</path>
+ <texture-path>Texture-USAF/</texture-path>
+
+
+    <model>
+        <name>PanelV</name>
+        <path>Aircraft/SR71-BlackBird/Panels/SR71_FPanel.xml</path>
+        <offsets>
+                <x-m>-14.2228</x-m>
+                <y-m>0</y-m>
+                <z-m>0.91011</z-m>
+                <pitch-deg>-15</pitch-deg>
+        </offsets>
+    </model>
+
+
+
+    <model>
+        <name>Controles</name>
+        <path>Aircraft/SR71-BlackBird/Models/SR71-Cockpit-controles.xml</path>
+        <offsets>
+                <x-m>-13.7113</x-m>
+                <y-m>0</y-m>
+                <z-m>0.496273</z-m>
+                <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+
+
+
+
+
+
+
+
+
+
+</PropertyList>

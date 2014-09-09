@@ -1,0 +1,23 @@
+AC3Db
+MATERIAL "ac3dmat1" rgb 1 1 1  amb 0.2 0.2 0.2  emis 0.765 0.765 0.765  spec 0 0 0  shi 10  trans 0
+OBJECT world
+kids 1
+OBJECT poly
+name "object"
+loc -0.00703572 0.24973 -3.72529e-09
+texture "radar_background.rgb"
+crease 45.000000
+numvert 4
+0.0070357 -0.32714 -0.07741
+0.00703572 -0.32714 0.07741
+0.00703573 -0.17232 0.07741
+0.00703572 -0.172321 -0.07741
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+2 1 1
+1 1 0
+0 0 0
+3 0 0.999993
+kids 0

@@ -1,0 +1,229 @@
+<?xml version="1.0"?>
+<!--
+    Usable with FlightGear
+    Property of Gerard Robin
+    Copyright License:  GPL
+-->
+<PropertyList>
+<!--Module TACAN-->
+ <path>Models/module-tacan-bb.ac</path>
+ <texture-path>Models/Textures</texture-path>
+
+
+
+
+	<animation include="Instrument-Light2.xml">
+		<object-name>Base-Module</object-name>
+		<object-name>Tacan-Corps</object-name>
+	</animation>
+
+
+
+	<animation include="Instrument-Light3.xml">
+		<object-name>Tacan-Channel-1</object-name>
+		<object-name>Tacan-Channel-2</object-name>
+		<object-name>Tacan-Channel-3</object-name>
+	</animation>
+
+	<animation include="Instrument-Light6.xml">
+		<object-name>Couronne</object-name>
+	</animation>
+
+<!--******************** Hotspots ******************************-->
+	<!--<panel>
+		<path>Aircraft/SR71-BlackBird/Instruments/TACAN-hotspots.xml</path>
+		<bottom-left>
+			<x-m>0.03175</x-m>
+			<y-m>-0.069000</y-m>
+			<z-m>0.005</z-m>
+		</bottom-left>
+		<bottom-right>
+			<x-m>0.03175</x-m>
+			<y-m>0.0690004</y-m>
+			<z-m>0.005</z-m>
+		</bottom-right>
+		<top-left>
+			<x-m>-0.03175</x-m>
+			<y-m>-0.069000</y-m>
+			<z-m>0.005</z-m>
+		</top-left>
+	</panel>-->
+<!--*************************************************-->
+        <animation>
+            <type>pick</type>
+            <object-name>Tacan-Channel-1</object-name>
+            <action>
+                <button>0</button>
+                <binding>
+                    <command>property-adjust</command>
+                    <property>/instrumentation/tacan/frequencies/selected-channel[1]</property>
+                    <step>1</step>
+                    <min>0</min>
+                    <max>2</max>
+                    <wrap>1</wrap>
+                </binding>
+            </action>
+        </animation>
+        
+        <animation>
+            <type>pick</type>
+            <object-name>Tacan-Bt-Channel-2</object-name>
+            <action>
+                <button>0</button>
+                <binding>
+                    <command>property-adjust</command>
+                    <property>/instrumentation/tacan/frequencies/selected-channel[2]</property>
+                    <step>1</step>
+                    <min>0</min>
+                    <max>10</max>
+                    <wrap>1</wrap>
+                </binding>
+            </action>
+        </animation>
+        
+        <animation>
+            <type>pick</type>
+            <object-name>Tacan-Bt-Channel-3</object-name>
+            <action>
+                <button>0</button>
+                <binding>
+                    <command>property-adjust</command>
+                    <property>/instrumentation/tacan/frequencies/selected-channel[3]</property>
+                    <step>1</step>
+                    <min>0</min>
+                    <max>10</max>
+                    <wrap>1</wrap>
+                </binding>
+            </action>
+        </animation>
+        
+        <animation>
+            <type>pick</type>
+            <object-name>Tacan-Channel-XY</object-name>
+            <action>
+                <button>0</button>
+                <binding>
+                    <command>property-assign</command>
+                    <value>Y</value>
+                    <property>/instrumentation/tacan/frequencies/selected-channel[4]</property>
+                </binding>
+                <binding>
+                    <command>property-assign</command>
+                    <value>-1</value>
+                    <property>/instrumentation/tacan/frequencies/valueXY</property>
+                </binding>
+            </action>
+            <action>
+                <button>1</button>
+                <binding>
+                    <command>property-assign</command>
+                    <value>X</value>
+                    <property>/instrumentation/tacan/frequencies/selected-channel[4]</property>
+                </binding>
+                <binding>
+                    <command>property-assign</command>
+                    <value>1</value>
+                    <property>/instrumentation/tacan/frequencies/valueXY</property>
+                </binding>
+            </action>
+        </animation>
+
+
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>Tacan-Channel-1</object-name>
+		<property>/instrumentation/tacan/frequencies/selected-channel[1]</property>
+		<factor>0.1</factor>
+		<step>1</step>
+		<scroll>0</scroll>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>Tacan-Channel-2</object-name>
+		<property>/instrumentation/tacan/frequencies/selected-channel[2]</property>
+		<factor>0.1</factor>
+		<step>1</step>
+		<scroll>0</scroll>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>Tacan-Channel-3</object-name>
+		<property>/instrumentation/tacan/frequencies/selected-channel[3]</property>
+		<factor>0.1</factor>
+		<step>1</step>
+		<scroll>0</scroll>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+ 	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>Tacan-Channel-XY</object-name>
+                <property>/instrumentation/tacan/frequencies/valueXY</property>
+                <factor>30</factor>
+		<center>
+			<x-m>0</x-m>
+			<y-m>-0.0551955</y-m>
+			<z-m>0.00159195</z-m>
+		</center>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>Tacan-Bt-Channel-3</object-name>
+		<property>/instrumentation/tacan/frequencies/selected-channel[3]</property>
+		<factor>-10</factor>
+		<center>
+			<x-m>0.00245592</x-m>
+			<y-m>-0.0175034</y-m>
+			<z-m>0</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>Tacan-Bt-Channel-2</object-name>
+		<property>/instrumentation/tacan/frequencies/selected-channel[2]</property>
+		<factor>-10</factor>
+		<center>
+			<x-m>0.00243986</x-m>
+			<y-m>-0.0174696</y-m>
+			<z-m>0</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+	</animation>
+
+
+
+
+</PropertyList>

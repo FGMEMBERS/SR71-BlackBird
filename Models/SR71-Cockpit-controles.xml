@@ -1,0 +1,201 @@
+<?xml version="1.0"?>
+<!--
+    Usable with FlightGear
+    Property of Gerard Robin
+    Copyright License:  GPL
+-->
+<PropertyList>
+
+ <path>SR71-Cockpit-controles.ac</path>
+ <texture-path>Texture-USAF/</texture-path>
+
+
+    <!--===================GABARIT DE CENTRAGE====ne pas enlever========-->
+    <animation>
+        <type>select</type>
+        <object-name>Gabarit-Position</object-name>
+        <condition>
+                <equals>
+                    <property>sim/current-view/view-number</property>
+                    <value>999</value>
+                </equals>
+        </condition>
+    </animation>
+
+    <!--====================Droite==============================-->
+    <model>
+        <name>Dimmer</name>
+        <path>Aircraft/SR71-BlackBird/Instruments/MODULE-dimmer.xml</path>
+        <offsets>
+                <x-m>-0.360847</x-m>
+                <y-m>0.448601</y-m>
+                <z-m>0.0671514</z-m>
+                <pitch-deg>0</pitch-deg>
+                <heading-deg>0</heading-deg>
+                <roll-deg>15</roll-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <name>Autopilote</name>
+        <path>Aircraft/SR71-BlackBird/Instruments/MODULE-autopilote-bb.xml</path>
+        <offsets>
+                <x-m>-0.157367</x-m>
+                <y-m>0.448601</y-m>
+                <z-m>0.0671514</z-m>
+                <pitch-deg>0</pitch-deg>
+                <heading-deg>0</heading-deg>
+                <roll-deg>15</roll-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <name>Tacan</name>
+        <path>Aircraft/SR71-BlackBird/Instruments/MODULE-tacan-bb.xml</path>
+        <offsets>
+                <x-m>-0.085731</x-m>
+                <y-m>0.448601</y-m>
+                <z-m>0.0671514</z-m>
+                <pitch-deg>0</pitch-deg>
+                <heading-deg>0</heading-deg>
+                <roll-deg>15</roll-deg>
+        </offsets>
+    </model>
+
+    <!--====================Gauche==============================-->
+
+    <model>
+            <path>Aircraft/SR71-BlackBird/Instruments/Poignee-Urg-bb.xml</path>
+            <offsets>
+                    <x-m>-0.0671244</x-m>
+                    <y-m>-0.356382</y-m>
+                    <z-m>0.0126966</z-m>
+                    <pitch-deg>-90</pitch-deg>
+                    <heading-deg>90</heading-deg>
+        </offsets>
+    </model>
+
+
+    <animation>
+            <type>rotate</type>
+            <object-name>Manche</object-name>
+            <property>/controls/flight/elevator</property>
+            <factor>-10</factor>
+            <center>
+                    <x-m>-0.195624</x-m>
+                    <y-m>0.0169111</y-m>
+                    <z-m>0.006028</z-m>
+            </center>
+            <axis>
+                    <x>0.0</x>
+                    <y>1.0</y>
+                    <z>0.0</z>
+            </axis>
+    </animation>
+
+    <animation>
+            <type>rotate</type>
+            <object-name>Manche</object-name>
+            <property>/controls/flight/aileron</property>
+            <factor>-10</factor>
+            <center>
+                    <x-m>-0.195624</x-m>
+                    <y-m>0.0169111</y-m>
+                    <z-m>0.006028</z-m>
+            </center>
+            <axis>
+                    <x>1.0</x>
+                    <y>0.0</y>
+                    <z>0.0</z>
+            </axis>
+    </animation>
+
+    <animation>
+            <type>translate</type>
+            <object-name>GPalon</object-name>
+            <property>/controls/flight/rudder</property>
+            <factor>0.100</factor>
+            <axis>
+                    <x>1</x>
+                    <y>0</y>
+                    <z>0</z>
+            </axis>
+    </animation>
+
+    <animation>
+            <type>translate</type>
+            <object-name>DPalon</object-name>
+            <property>/controls/flight/rudder</property>
+            <factor>-0.100</factor>
+            <axis>
+                    <x>1</x>
+                    <y>0</y>
+                    <z>0</z>
+            </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>Throttle1-Cde</object-name>
+        <property>/fdm/jsbsim/fcs/throttle-pos-norm[0]</property>
+        <interpolation>
+                <entry>
+                <ind>0</ind>
+                <dep>5</dep>
+                </entry>
+                <entry>
+                <ind>0.1</ind>
+                <dep>0</dep>
+                </entry>
+                <entry>
+                <ind>2.5</ind>
+                <dep>-65</dep>
+                </entry>
+        </interpolation>
+        <center>
+                <x-m>-0.172948</x-m>
+                <y-m>0</y-m>
+                <z-m>0.042163</z-m>
+        </center>
+        <axis>
+                <x>0</x>
+                <y>1</y>
+                <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>Throttle2-Cde</object-name>
+        <property>/fdm/jsbsim/fcs/throttle-pos-norm[0]</property>
+        <interpolation>
+                <entry>
+                <ind>0</ind>
+                <dep>5</dep>
+                </entry>
+                <entry>
+                <ind>0.1</ind>
+                <dep>0</dep>
+                </entry>
+                <entry>
+                <ind>2.5</ind>
+                <dep>-65</dep>
+                </entry>
+        </interpolation>
+        <center>
+                <x-m>-0.172948</x-m>
+                <y-m>0</y-m>
+                <z-m>0.042163</z-m>
+        </center>
+        <axis>
+                <x>0</x>
+                <y>1</y>
+                <z>0</z>
+        </axis>
+    </animation>
+
+
+
+
+
+</PropertyList>

@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+
+<!--
+    Usable with FlightGear
+    Property of Gerard Robin
+    Copyright License:  GPL
+-->
+<PropertyList>
+
+ <path>Models/Temoin-FuelLowEng.ac</path>
+ <texture-path>Models/Textures</texture-path>
+
+ 	<animation>
+		<type>noshadow</type>
+		<object-name>Temoin</object-name>
+	</animation>
+
+
+
+
+
+	<model>
+		<name>Bezel</name>
+		<path>Aircraft/SR71-BlackBird/Instruments/Temoin-2Base.xml</path>
+		<offsets>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>0</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
+
+        <animation>
+		<type>select</type>
+		<object-name>Temoin-Eng</object-name>
+		<condition>
+			<not-equals>
+				<property>/instrumentation/annunciator/refuel-pump</property>
+				<value>0</value>
+			</not-equals>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>Temoin2MActif</object-name>
+		<condition>
+			<equals>
+				<property><!----></property>
+				<value>999</value>
+			</equals>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>Temoin2-Actif</object-name>
+		<condition>
+			<equals>
+				<property></property>
+				<value>999</value>
+			</equals>
+		</condition>
+	</animation>
+
+
+
+	<animation>
+		<type>select</type>
+		<object-name>Temoin1-Actif</object-name>
+		<condition>
+			<equals>
+				<property><!----></property>
+				<value>999</value>
+			</equals>
+		</condition>
+	</animation>
+
+
+	<animation>
+		<type>select</type>
+		<object-name>Temoin1MActif</object-name>
+		<condition>
+				<equals>
+					<property></property>
+					<value>999</value>
+				</equals>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>Temoin-Low</object-name>
+		<condition>
+				<less-than>
+                                        <property>/fdm/jsbsim/propulsion/total-fuel-lbs</property>
+					<value>12000</value>
+				</less-than>
+		</condition>
+	</animation>
+
+
+
+</PropertyList>

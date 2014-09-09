@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+
+<!--
+    Usable with FlightGear
+    Property of Gerard Robin
+    Copyright License:  GPL
+-->
+<PropertyList>
+
+ <path>Models/probe-bb.ac</path>
+ <texture-path>Models/Textures</texture-path>
+
+
+    <model>
+            <name>Bipolaire</name>
+            <path>Aircraft/SR71-BlackBird/Instruments/Bipolaire-f8e.xml</path>
+            <offsets>
+                    <x-m>0.021342</x-m>
+                    <y-m>0.018</y-m>
+                    <z-m>-0.016</z-m>
+                    <roll-deg>-90</roll-deg>
+            </offsets>
+    </model>
+
+    <!--******************** Hotspots ******************************-->
+    <panel>
+            <name>Cmd-Refuel</name>
+            <path>Aircraft/SR71-BlackBird/Instruments/Prb-Cde-hotspots.xml</path>
+            <bottom-left>
+                    <x-m>0.03</x-m>
+                    <y-m>0</y-m>
+                    <z-m>-0.05</z-m>
+            </bottom-left>
+            <bottom-right>
+                    <x-m>0.03</x-m>
+                    <y-m>0.05</y-m>
+                    <z-m>-0.05</z-m>
+            </bottom-right>
+            <top-left>
+                    <x-m>0.03</x-m>
+                    <y-m>0</y-m>
+                    <z-m>0</z-m>
+            </top-left>
+    </panel>
+
+    <animation>
+            <type>noshadow</type>
+            <object-name>Refuel</object-name>
+    </animation>
+
+    <animation include="Instrument-Light4.xml">
+            <object-name>Refuel-Marquage</object-name>
+    </animation>
+
+
+
+
+
+    <animation>
+            <type>rotate</type>
+            <object-name>Interrupteur</object-name>
+            <property>/instrumentation/annunciator/refuel-pump</property>
+            <interpolation>
+                    <entry>
+                            <ind>0</ind>
+                            <dep>-30</dep>
+                    </entry>
+                    <entry>
+                            <ind>1</ind>
+                            <dep>30</dep>
+                    </entry>
+            </interpolation>
+            <center>
+                    <x-m>0.0</x-m>
+                    <y-m>0.0</y-m>
+                    <z-m>0.0</z-m>
+            </center>
+            <axis>
+                    <x>0</x>
+                    <y>1</y>
+                    <z>0</z>
+            </axis>
+    </animation>
+
+
+
+</PropertyList>

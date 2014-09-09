@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+
+
+<PropertyList include="Blackbird-SetBase.xml" >
+
+
+
+    <sim include="Help/BlackBird-help.xml" >
+        <description>SR-71A BlackBird</description>
+        <author>was Gerard ROBIN, updated by grtux hangar team https://sites.google.com/site/grtuxhangar/</author>
+        <status>alpha, "GPL Copyright"</status>
+        <version>0.5  2011-06-013</version>
+        <flight-model>jsb</flight-model>
+        <startup>
+                <splash-texture>Aircraft/SR71-BlackBird/splash-BB-A.png</splash-texture>
+        </startup>
+        <flight-model>jsb</flight-model>
+        <aero>sr71-jsbsim</aero>
+        <model>
+            <path archive="y">Aircraft/SR71-BlackBird/Models/Blackbird-SR71A.xml</path>
+            <controls>
+                <chute>0</chute>
+            </controls>
+        </model>
+        <sound>
+                    <audible>true</audible>
+                    <path>Aircraft/SR71-BlackBird/Sounds/SR71-BlackBird-sound.xml</path>
+        </sound>
+        <virtual-cockpit archive="y">true</virtual-cockpit>
+
+
+
+
+        <!--<number-views type="int" archive="y">7</number-views>-->
+            <!--  z position long. val-faible=avance val-forte=recule -->
+            <!--  y position haut. val-faible=descent val-forte=monte -->
+        <view>
+                    <internal archive="y">true</internal>
+                    <config>
+                            <!-- x/y/z == right/up/back -->
+                            <x-offset-m archive="y">0</x-offset-m>
+                            <y-offset-m archive="y">1.44</y-offset-m>
+                            <z-offset-m archive="y">-13.4</z-offset-m>
+                            <pitch-offset-deg archive="y">-19.5</pitch-offset-deg>
+                            <default-field-of-view-deg type="double">74.0</default-field-of-view-deg>
+                    </config>
+        </view>
+        <view n="1">
+        <config>
+            <z-offset-m type="double" archive="y">-40.0</z-offset-m>
+        </config>
+        </view>
+
+
+        <view n="100">
+                <name>Cockpit View</name>
+                <type>lookfrom</type>
+                <internal archive="y">true</internal>
+                <config>
+                        <from-model type="bool">true</from-model>
+                        <from-model-idx type="int">0</from-model-idx>
+                        <ground-level-nearplane-m type="double">0.05f</ground-level-nearplane-m>
+                        <default-field-of-view-deg type="double">68.0</default-field-of-view-deg>
+                        <default-pitch-deg type="double">0</default-pitch-deg>
+                        <default-heading-deg type="double">0</default-heading-deg>
+                        <front-direction-deg type="double">0</front-direction-deg>
+                        <front-left-direction-deg type="double">45</front-left-direction-deg>
+                        <left-direction-deg type="double">90</left-direction-deg>
+                        <back-left-direction-deg type="double">135</back-left-direction-deg>
+                        <back-direction-deg type="double">180</back-direction-deg>
+                        <back-right-direction-deg type="double">225</back-right-direction-deg>
+                        <right-direction-deg type="double">270</right-direction-deg>
+                        <front-right-direction-deg type="double">315</front-right-direction-deg>
+                        <x-offset-m archive="y">0.0</x-offset-m>
+                        <y-offset-m archive="y">1.43</y-offset-m>
+                        <z-offset-m archive="y">-11.80</z-offset-m>
+                        <pitch-offset-deg>0</pitch-offset-deg>
+                        <default-field-of-view-deg>68</default-field-of-view-deg>
+                </config>
+        </view>
+
+
+        <current-view>
+                <field-of-view type="double">70.0</field-of-view>
+        </current-view>
+            <chase-distance-m>-35</chase-distance-m>
+    </sim>
+    <fdm><jsbsim><variant>0</variant></jsbsim></fdm><!--SR71 A normal drag-->
+
+</PropertyList>
+
+

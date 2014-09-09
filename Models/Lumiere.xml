@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<!--
+    Usable with FlightGear
+    Property of Gerard Robin
+    Copyright License:  GPL
+-->
+<PropertyList>
+
+ <path>lumiere.ac</path>
+ <texture-path>Texture-USAF/</texture-path>
+
+	<animation>
+            <type>select</type>
+           <object-name>phare-faisceau-tache</object-name>
+            <condition>
+                <less-than>
+                    <property>position/altitude-agl-ft</property>
+                    <value>3.90</value>
+                </less-than>
+            </condition>
+        </animation>
+
+        <animation>
+            <type>noshadow</type>
+            <object-name>phare-faisceau-tache</object-name>
+        </animation>
+
+        <animation>
+            <type>noshadow</type>
+            <object-name>phare</object-name>
+        </animation>
+
+        <animation>
+            <type>noshadow</type>
+            <object-name>phare-faisceau</object-name>
+        </animation>
+
+        <animation>
+            <type>flash</type>
+            <object-name>phare-faisceau-tache</object-name>
+            <center>
+                <x-m>0</x-m>
+                <y-m>0</y-m>
+                <z-m>-0</z-m>
+            </center>
+            <axis>
+                <x>-1</x>
+                <y>0</y>
+                <z>-0.15</z>
+            </axis>
+            <power>5</power>
+            <factor>1</factor>
+            <offset>0</offset>
+            <two-sides type="bool">true</two-sides>
+            <min>0.7</min>
+            <max>1</max>
+        </animation>
+
+        <animation>
+            <type>flash</type>
+            <object-name>phare</object-name>
+            <center>
+                <x-m>0</x-m>
+                <y-m>0</y-m>
+                <z-m>-0</z-m>
+            </center>
+            <axis>
+                <x>-1</x>
+                <y>0</y>
+                <z>-0.15</z>
+            </axis>
+            <power>5</power>
+            <factor>1</factor>
+            <offset>0</offset>
+            <two-sides type="bool">false</two-sides>
+            <min>0.01</min>
+            <max>1</max>
+        </animation>
+
+        <animation>
+            <type>flash</type>
+            <object-name>phare-faisceau</object-name>
+            <center>
+                <x-m>0</x-m>
+                <y-m>0</y-m>
+                <z-m>-0</z-m>
+            </center>
+            <axis>
+                <x>-1</x>
+                <y>0</y>
+                <z>-0.15</z>
+            </axis>
+            <power>5</power>
+            <factor>1</factor>
+            <offset>0</offset>
+            <two-sides type="bool">true</two-sides>
+            <min>0.7</min>
+            <max>1</max>
+        </animation>
+
+</PropertyList>

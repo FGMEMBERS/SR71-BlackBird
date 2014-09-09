@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<!--
+    Usable with FlightGear
+    Property of Gerard Robin
+    Copyright License:  GPL
+-->
+<PropertyList>
+
+ <path>Models/module-dimmer.ac</path>
+ <texture-path>Models/Textures</texture-path>
+
+
+
+    <animation include="Instrument-Light2.xml">
+            <object-name>Module-Base</object-name>
+    </animation>
+
+    <animation include="Instrument-Light4.xml">
+            <object-name>InstrVol-Fleche</object-name>
+    </animation>
+    <animation include="Instrument-Light4.xml">
+            <object-name>InstrNVol-Fleche</object-name>
+    </animation>
+    <animation include="Instrument-Light4.xml">
+            <object-name>Console-Fleche</object-name>
+    </animation>
+
+    <!--******************** Hotspots ******************************-->
+    <panel>
+            <path>Aircraft/SR71-BlackBird/Instruments/LIGHT-hotspots.xml</path>
+            <bottom-left>
+                    <x-m>0.03175</x-m>
+                    <y-m>-0.069000</y-m>
+                    <z-m>0.005</z-m>
+            </bottom-left>
+            <bottom-right>
+                    <x-m>0.03175</x-m>
+                    <y-m>0.0690004</y-m>
+                    <z-m>0.005</z-m>
+            </bottom-right>
+            <top-left>
+                    <x-m>-0.03175</x-m>
+                    <y-m>-0.069000</y-m>
+                    <z-m>0.005</z-m>
+            </top-left>
+    </panel>
+
+    <!--*************************************************-->
+
+
+
+
+    <animation>
+            <type>rotate</type>
+            <object-name>Eclairage-InstrVol</object-name>
+            <property>/controls/lighting/instruments-norm</property>
+            <factor>-280</factor>
+            <center>
+                    <x-m>0.00881384</x-m>
+                    <y-m>-0.0284904</y-m>
+                    <z-m>0</z-m>
+            </center>
+            <axis>
+                    <x>0</x>
+                    <y>0</y>
+                    <z>1</z>
+            </axis>
+    </animation>
+
+    <animation>
+            <type>rotate</type>
+            <object-name>Eclairage-InstrAutre</object-name>
+            <property></property>
+            <factor>-280</factor>
+            <center>
+                    <x-m>-0.0166851</x-m>
+                    <y-m>0.000291971</y-m>
+                    <z-m>0</z-m>
+            </center>
+            <axis>
+                    <x>0</x>
+                    <y>0</y>
+                    <z>1</z>
+            </axis>
+    </animation>
+
+    <animation>
+            <type>rotate</type>
+            <object-name>Eclairage-Console</object-name>
+            <property></property>
+            <factor>-280</factor>
+            <center>
+                    <x-m>0.00881357</x-m>
+                    <y-m>0.029293</y-m>
+                    <z-m>0</z-m>
+            </center>
+            <axis>
+                    <x>0</x>
+                    <y>0</y>
+                    <z>1</z>
+            </axis>
+    </animation>
+
+
+
+</PropertyList>

@@ -1,0 +1,141 @@
+<?xml version="1.0"?>
+
+
+<system name="Blackout">
+    <channel name="Blackout">
+
+
+            <summer name="g load">
+              <input>accelerations/n-pilot-z-norm</input>
+            </summer>
+
+            <!--===Blackout ==Specific part    ====300 secondes to blackout at 5g ====transition 4 secondes=============-->
+           <!-- ============1 seconde to redout under -4g ===transition 4 secondes ==========================-->
+            <switch name="systems/blackout">
+                <default value="0"/>
+                <test  logic="AND" value="1">
+                fcs/g-load lt -5
+                </test>
+            </switch>
+
+            <switch name="systems/redout">
+                <default value="0"/>
+                <test  logic="AND" value="1">
+                fcs/g-load gt 4
+                </test>
+            </switch>
+
+            <kinematic name="systems/blackout-cmd">
+                <input>systems/blackout</input>
+                <traverse>
+                    <setting>
+                    <position>0.</position>
+                    <time>0</time>
+                    </setting>
+                    <setting>
+                    <position>1</position>
+                    <time>300</time>
+                    </setting>
+                </traverse>
+            </kinematic>
+
+            <switch name="systems/blackout-start">
+                <default value="0"/>
+                <test  logic="AND" value="1">
+                systems/blackout-cmd == 1
+                </test>
+            </switch>
+
+
+            <kinematic name="systems/redout-cmd">
+                <input>systems/redout</input>
+                <traverse>
+                    <setting>
+                    <position>0</position>
+                    <time>0</time>
+                    </setting>
+                    <setting>
+                    <position>1</position>
+                    <time>1</time>
+                    </setting>
+                </traverse>
+            </kinematic>
+
+            <switch name="systems/redout-start">
+                <default value="0"/>
+                <test  logic="AND" value="0.85">
+                systems/redout-cmd == 1
+                </test>
+            </switch>
+
+
+            <kinematic name="systems/blackout-on">
+                <input>systems/blackout-start</input>
+                <traverse>
+                    <setting>
+                    <position>0</position>
+                    <time>0</time>
+                    </setting>
+                    <setting>
+                    <position>1</position>
+                    <time>4</time>
+                    </setting>
+                </traverse>
+            </kinematic>
+
+            <kinematic name="systems/redout-on">
+                <input>systems/redout-start</input>
+                <traverse>
+                    <setting>
+                    <position>0</position>
+                    <time>0</time>
+                    </setting>
+                    <setting>
+                    <position>1</position>
+                    <time>4</time>
+                    </setting>
+                </traverse>
+            </kinematic>
+
+
+
+            <switch name="systems/redout-red">
+                <default value="0"/>
+                <test  logic="AND" value="1">
+                systems/redout-start gt 0.7
+                </test>
+                <test  logic="AND" value="0">
+                systems/blackout-start == 1
+                </test>
+                <output>/sim/rendering/redout/red</output>
+            </switch>
+
+            <summer name="systems/redout-alpha-value">
+              <input>systems/blackout-on</input>
+              <input>systems/redout-on</input>
+            </summer>
+
+            <switch name="systems/redout-alpha">
+                <default value="0"/>
+                <test  logic="AND" value="systems/redout-alpha-value">
+                /sim/current-view/internal == 1
+                </test>
+                <output>/sim/rendering/redout/alpha</output>
+            </switch>
+
+           <!-- locking  the Nasal Redout script on OFF-->
+            <switch name="systems/redout-nasal-off">
+                <default value="0"/>
+                <test  logic="OR" value="0">
+                    /sim/aircraft != 999
+                </test>
+                <output>/sim/rendering/redout/enabled</output>
+            </switch>
+
+
+
+
+    </channel>
+
+
+</system>

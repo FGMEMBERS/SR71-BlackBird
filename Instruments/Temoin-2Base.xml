@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+
+<!--
+    Usable with FlightGear
+    Property of Gerard Robin
+    Copyright License:  GPL
+-->
+<PropertyList>
+
+ <path>Models/Temoin-2Base.ac</path>
+ <texture-path>Models/Textures</texture-path>
+
+ 	<animation>
+		<type>noshadow</type>
+		<object-name>Temoin</object-name>
+	</animation>
+
+	<animation include="Instrument-Light0.xml">
+		<object-name>Temoin-Passif</object-name>
+	</animation>
+
+
+
+
+</PropertyList>

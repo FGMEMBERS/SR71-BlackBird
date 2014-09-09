@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+
+<!--
+    Usable with FlightGear
+    Property of Gerard Robin
+    Copyright License:  GPL
+-->
+<PropertyList>
+
+ <path>Models/egt-bb.ac</path>
+ <texture-path>Models/Textures</texture-path>
+
+        <animation>
+                <type>noshadow</type>
+                <object-name>EGT</object-name>
+        </animation>
+
+
+
+
+
+        <animation include="Instrument-Light4.xml">
+                <object-name>Aiguille</object-name>
+        </animation>
+
+        <animation include="Instrument-Light3.xml">
+                <object-name>Cadran</object-name>
+        </animation>
+
+        <animation>
+                <type>select</type>
+                <object-name>OFF</object-name>
+                <condition>
+                        <less-than>
+                                <property>/systems/electrical/outputs/instr-ignition-switch</property>
+                                <value>27</value>
+                        </less-than>
+                </condition>
+        </animation>
+
+        <animation>
+                <type>rotate</type>
+                <object-name>Aiguille</object-name>
+                <property>engines/engine[0]/egt-degf</property>
+                <interpolation>
+                        <entry>
+                                <ind>0</ind>
+                                <dep>0</dep>
+                        </entry>
+                        <entry>
+                                <ind>32</ind>              <!--0 deg C-->
+                                <dep>0</dep>
+                        </entry>
+                        <entry>
+                                <ind>572</ind>            <!--300 deg C-->
+                                <dep>63</dep>
+                        </entry>
+                        <entry>
+                                <ind>932</ind>              <!-- 500 deg C-->
+                                <dep>105</dep>
+                        </entry>
+                        <entry>
+                                <ind>1292</ind>                 <!--700 deg C-->
+                                <dep>147</dep>
+                        </entry>
+                        <entry>
+                                <ind>1832</ind>                 <!-- 1000 deg C-->
+                                <dep>210</dep>
+                        </entry>
+                </interpolation>
+                <axis>
+                        <x>-1</x>
+                        <y>0</y>
+                        <z>0</z>
+                </axis>
+        </animation>
+
+</PropertyList>

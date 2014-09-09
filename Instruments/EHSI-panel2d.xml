@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!--
+    Usable with FlightGear
+    Property of Gerard Robin
+    Copyright License:  GPL
+-->
+
+
+
+<PropertyList>
+    <name>EHSI Panel</name>
+            <background>Aircraft/SR71-BlackBird/Panels/Textures/transparent-bg.rgb</background>
+                    <w>128</w>
+                    <h>128</h>
+                    <y-offset>0</y-offset>
+                    <view-height>128</view-height>
+
+    <instruments>
+
+            <instrument include="EHSI.xml">
+                    <name>Radar</name>
+                    <x>63</x>
+                    <y>63</y>
+                    <w>146</w>
+                    <h>146</h>
+            </instrument>
+
+    </instruments>
+
+</PropertyList>

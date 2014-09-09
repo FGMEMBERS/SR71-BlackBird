@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+
+<!--
+    Usable with FlightGear
+    Property of Gerard Robin
+    Copyright License:  GPL
+-->
+<PropertyList>
+ <path>Models/ai_pt-f8e.ac</path>
+ <texture-path>Models/Textures</texture-path>
+
+	<animation>
+		<type>noshadow</type>
+		<object-name>AI</object-name>
+	</animation>
+<!--
+	<model>
+		<name>Bezel</name>
+		<path>Aircraft/F-8E/Instruments/Bezel_pt-f8e.xml</path>
+		<offsets>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>0</z-m>
+			<pitch-deg>0</pitch-deg>
+		</offsets>
+	</model>
+-->
+	<animation include="Instrument-Light4.xml">
+		<object-name>Couronne</object-name>
+	</animation>
+
+	<animation include="Instrument-Light4.xml">
+		<object-name>Fleche-I</object-name>
+	</animation>
+
+	<animation include="Instrument-Light1.xml">
+		<object-name>Boule</object-name>
+	</animation>
+
+	<animation include="Instrument-Light4.xml">
+		<object-name>Avion</object-name>
+	</animation>
+
+	<animation include="Instrument-Light4.xml">
+		<object-name>Fleche</object-name>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>Boule</object-name>
+		<property>orientation/roll-deg</property>
+		<center>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>0</z-m>
+		</center>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>Boule</object-name>
+		<property>orientation/pitch-deg</property>
+		<center>
+			<x-m>-0.0237667</x-m>
+			<y-m>0</y-m>
+			<z-m>0</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>Fleche</object-name>
+		<object-name>Fleche-Fond</object-name>
+		<property>orientation/roll-deg</property>
+		<center>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>0</z-m>
+		</center>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+
+
+</PropertyList>
+

@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+
+<!--
+    Usable with FlightGear
+    Property of Gerard Robin
+    Copyright License:  GPL
+-->
+<PropertyList>
+
+ <path>Models/Temoin-Gears.ac</path>
+ <texture-path>Models/Textures</texture-path>
+
+    <animation>
+            <type>noshadow</type>
+            <object-name>Train</object-name>
+    </animation>
+
+    <!--<animation include="Instrument-Light4.xml">
+            <object-name>Train-Marquage</object-name>
+    </animation>-->
+
+    <animation>
+            <type>select</type>
+            <object-name>Temoin-Train</object-name>
+            <object-name>TemoinMTrain</object-name>
+            <condition>
+                    <greater-than>
+                            <property>/systems/electrical/outputs/instr-ignition-switch</property>
+                            <value>27</value>
+                    </greater-than>
+            </condition>
+    </animation>
+
+    <animation>
+            <type>select</type>
+            <object-name>Temoin-Train</object-name>
+            <condition>
+                    <equals>
+                            <property>/gear/gear/position-norm</property>
+                            <value>1.0</value>
+                    </equals>
+            </condition>
+    </animation>
+
+    <animation>
+            <type>select</type>
+            <object-name>TemoinMTrain</object-name>
+            <condition>
+                    <and>
+                            <not-equals>
+                                    <property>/gear/gear/position-norm</property>
+                                    <value>1.0</value>
+                            </not-equals>
+                            <not-equals>
+                                    <property>/gear/gear/position-norm</property>
+                                    <value>0</value>
+                            </not-equals>
+                    </and>
+            </condition>
+    </animation>
+
+    <animation>
+            <type>select</type>
+            <object-name>Temoin-Actif</object-name>
+            <condition>
+                    <greater-than>
+                            <property>/controls/gear/brake-parking</property>
+                            <value>0.99</value>
+                    </greater-than>
+            </condition>
+    </animation>
+
+</PropertyList>

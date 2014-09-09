@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+
+<!--
+    Usable with FlightGear
+    Property of Gerard Robin
+    Copyright License:  GPL
+-->
+
+<PropertyList>
+
+    <path>Models/aoa-bb.ac</path>
+    <texture-path>Models/Textures</texture-path>
+
+
+
+    <animation include="Instrument-Light4.xml">
+            <object-name>Aiguille</object-name>
+    </animation>
+
+    <animation include="Instrument-Light3.xml">
+            <object-name>Cadran</object-name>
+            <object-name>Index</object-name>
+    </animation>
+
+    <animation>
+            <type>select</type>
+            <object-name>OFF</object-name>
+            <condition>
+                            <less-than>
+                                    <property>/systems/electrical/outputs/instr-ignition-switch</property>
+                                    <value>27</value>
+                            </less-than>
+            </condition>
+    </animation>
+
+    <animation>
+            <type>rotate</type>
+            <object-name>Aiguille</object-name>
+            <property>/fdm/jsbsim/aero/alpha-deg</property>
+            <interpolation>
+                    <entry>
+                            <ind>-100</ind>
+                            <dep>18</dep>
+                    </entry>
+                    <entry>
+                            <ind>-5</ind>
+                            <dep>18</dep>
+                    </entry>
+                    <entry>
+                            <ind>20</ind>
+                            <dep>-72</dep>
+                    </entry>
+                    <entry>
+                            <ind>100</ind>
+                            <dep>-72</dep>
+                    </entry>
+            </interpolation>
+            <center>
+                    <x-m>0</x-m>
+                    <y-m>0.0145585</y-m>
+                    <z-m>-0.00748891</z-m>
+            </center>
+            <axis>
+                    <x>1</x>
+                    <y>0</y>
+                    <z>0</z>
+            </axis>
+    </animation>
+
+</PropertyList>

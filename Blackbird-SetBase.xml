@@ -1,0 +1,177 @@
+<?xml version="1.0"?>
+
+
+<PropertyList>
+
+    <sim>
+        <systems>
+            <autopilot>
+                <path>Aircraft/SR71-BlackBird/Systems/SR71autopilot.xml</path>
+            </autopilot>
+            <electrical>
+                <path>Aircraft/SR71-BlackBird/Systems/dummy-electrical.xml</path>
+            </electrical>
+            <autoflight>
+                <serviceable type="bool">true</serviceable>
+            </autoflight>
+        </systems>
+        <rendering>
+                <redout>
+                    <red>0</red>
+                    <alpha>0</alpha>
+                    <enabled type="bool">false</enabled>
+                </redout>
+        </rendering>
+        <multiplay>
+            <generic>
+                    <float n="0" alias="/surface-positions/gear-pos-norm"/>
+                    <float n="1" alias="/surface-positions/chute-pos-norm"/>
+                    <float n="2" alias="/surface-positions/canopy-pos-norm"/>
+                    <float n="3" alias="/gear/gear[0]/steering-norm"/>
+                    <float n="4" alias="/fdm/jsbsim/fcs/landing-light"/>
+                    <float n="5" alias="/fdm/jsbsim/propulsion/engine[0]/set-thrust"/>
+                    <float n="6" alias="/fdm/jsbsim/propulsion/engine[1]/set-thrust"/>
+                    <float n="7" alias="/engines/engine[0]/nozzle-pos-norm"/>
+                    <float n="8" alias="/engines/engine[1]/nozzle-pos-norm"/>
+                    <string n="0"></string>
+            </generic>
+        </multiplay>
+        <help include="Help/BlackBird-help.xml"/>
+    </sim>
+
+    <input include="Inputs/Blackbird-input.xml"/>
+
+
+    <environment>
+        <params>
+            <control-fdm-atmosphere type="bool">false</control-fdm-atmosphere>
+        </params>
+    </environment>
+
+    <controls>
+        <!-- Start with the Parking Brake on -->
+        <gear>
+            <brake-parking type="double">1.0</brake-parking>
+        </gear>
+
+        <switches>
+            <landing-light type="bool">true</landing-light>
+            <master-avionics type="bool">false</master-avionics>
+        </switches>
+
+        <lighting>
+            <instruments-norm type="double">0</instruments-norm>
+        </lighting>
+
+        <engines>
+            <engine n="0">
+                <fuel-pump type="bool">false</fuel-pump>
+                <master-bat type="bool">false</master-bat>
+            </engine>
+            <engine n="1">
+                <fuel-pump type="bool" >false</fuel-pump>
+                 <master-bat type="bool">false</master-bat>
+            </engine>
+        </engines>
+
+        <electric>
+            <master-switch type="bool">false</master-switch>
+            <battery-switch type="bool">false</battery-switch>
+            <external-power type="bool" >false</external-power>
+        </electric>
+
+        <flight>
+            <canopy type="bool">true</canopy>
+            <op-refuel ype="double">0</op-refuel>
+        </flight>
+        <jettison>
+            <canopy type="float">0</canopy>
+        </jettison>
+
+    </controls>
+
+    <engines>
+        <engine n="0">
+                    <running>true</running>
+        </engine>
+        <engine n="1">
+                    <running>true</running>
+        </engine>
+    </engines>
+
+
+    <consumables>
+       <!-- payload of av 70100 lbs   density 0.8-->
+        <fuel>
+            <tank n="0">
+            <level-gal_us archive="y">3000</level-gal_us>
+            </tank>
+            <tank n="1">
+            <level-gal_us archive="y">7500</level-gal_us>
+            </tank>
+            <tank n="2">
+            <level-gal_us archive="y">0</level-gal_us>
+            </tank>
+        </fuel>
+    </consumables>
+
+    <autopilot>
+            <settings>
+                    <target-altitude-ft type="float">33000</target-altitude-ft>
+                    <target-pushover-altitude-ft type="float">30000</target-pushover-altitude-ft>
+                    <target-aoa-deg type="float">0.3</target-aoa-deg>
+                    <target-pitch-deg type="float">10</target-pitch-deg>
+                    <true-heading-deg>180</true-heading-deg>
+            </settings>
+    </autopilot>
+
+    <instrumentation>
+            <wxradar>
+                <switch type="string" archive="y">ON</switch>
+                <mode-control type="int" archive="y">1</mode-control>
+                <display-controls>
+                        <WX type="bool" archive="y">true</WX>
+                        <centre type="bool"  archive="y">true</centre>
+                        <data type="bool"  archive="y">false</data>
+                        <pos type="bool" archive="y">false</pos>
+                        <rotate type="bool" archive="y">true</rotate>
+                        <symbol type="bool" archive="y">true</symbol>
+                </display-controls>
+                <serviceable type="bool">true</serviceable>
+                <range type="int"  archive="y">40</range>
+                <mode type="string" archive="y">WX</mode>
+                <lightning type="bool"  archive="y">false</lightning>
+                <display-mode type="string"  archive="y">plan</display-mode>
+                <minimized type="bool" archive="y">false</minimized>
+            </wxradar>
+    </instrumentation>
+
+    <fdm><!-- Start with Canopy open -->
+            <jsbsim>
+                    <fcs>
+                            <canopy-cmd-norm>1</canopy-cmd-norm>
+                    </fcs>
+                    <systems>
+                        <lighting-instruments-norm>0.3</lighting-instruments-norm>
+                    </systems>
+            </jsbsim>
+    </fdm>
+
+    <nasal>
+            <consumable>
+                <file>Aircraft/SR71-BlackBird/Systems/tanker.nas</file>
+            </consumable>
+            <radar>
+                <file>Aircraft/SR71-BlackBird/Systems/radar.nas</file>
+            </radar>
+           <!-- <nav>
+                <file>Aircraft/SR71-BlackBird/Systems/nav.nas</file>
+            </nav>-->
+	    <terrain>
+                    <file>Aircraft/SR71-BlackBird/Systems/terrain.nas</file>
+            </terrain>
+    </nasal>
+
+</PropertyList>
+
+

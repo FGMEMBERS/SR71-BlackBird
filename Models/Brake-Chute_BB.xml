@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+
+<!--
+    Usable with FlightGear
+    Property of Gerard Robin -France
+    Copyright License:  GPL
+-->
+<!--                    Auteur :      Gerard ROBIN                       COPYRIGHT-->
+<PropertyList>
+
+    <path>brake_chute-bb.ac</path>
+
+    <animation>
+            <type>rotate</type>
+            <object-name>DragChute</object-name>
+            <!--<property>/fdm/jsbsim/fcs/chute-pos-deg</property>-->
+            <property>orientation/pitch-deg</property>
+            <factor>-1</factor>
+                <center>
+                    <x-m>4.41763</x-m>
+                    <y-m>0</y-m>
+                    <z-m>1.57554</z-m>
+            </center>
+            <axis>
+                    <x>0</x>
+                    <y>1</y>
+                    <z>0</z>
+            </axis>
+    </animation>
+
+
+
+
+
+
+</PropertyList>

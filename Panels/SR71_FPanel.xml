@@ -1,0 +1,826 @@
+<?xml version="1.0"?>
+
+<!--
+    Usable with FlightGear
+    Property of Gerard Robin -France
+    Copyright License:  GPL
+-->
+<!--                    Auteur :      Gerard ROBIN                       COPYRIGHT-->
+<PropertyList>
+
+    <path>Models/Panel-SR71.ac</path>
+<texture-path>Models/Textures/</texture-path>
+
+
+ <!--===================GABARIT DE CENTRAGE====ne pas enlever========-->
+    <animation>
+        <type>select</type>
+        <object-name>Gabarit-Position-Panel</object-name>
+        <condition>
+                <equals>
+                    <property>sim/current-view/view-number</property>
+                    <value>999</value>
+                </equals>
+        </condition>
+    </animation>
+    <!--==================================================-->
+
+<!--==============Centre=======================-->
+    <model>
+        <name>Radar</name>
+            <path>Aircraft/SR71-BlackBird/Instruments/Radar2d-bb.xml</path>
+            <offsets>
+                    <x-m>-0.0238927</x-m>
+                    <y-m>0</y-m>
+                    <z-m>-0.289447</z-m>
+                    <pitch-deg>-40</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <name>RadarDummy</name>
+            <path>Aircraft/SR71-BlackBird/Instruments/Radar2d-dummy-bb.xml</path>
+            <offsets>
+                    <x-m>-0.0238927</x-m>
+                    <y-m>0</y-m>
+                    <z-m>-0.289447</z-m>
+                    <pitch-deg>-40</pitch-deg>
+        </offsets>
+    </model>
+
+    <animation>
+            <type>select</type>
+            <object-name>Radar</object-name>
+            <condition>
+                    <greater-than>
+                            <property>/systems/electrical/outputs/radar</property>
+                            <value>27</value>
+                    </greater-than>
+            </condition>
+    </animation>
+
+    <animation>
+            <type>select</type>
+            <object-name>RadarDummy</object-name>
+            <condition>
+                    <less-than>
+                            <property>/systems/electrical/outputs/radar</property>
+                            <value>26.9999</value>
+                    </less-than>
+            </condition>
+    </animation>
+
+    <model>
+            <path>Aircraft/SR71-BlackBird/Instruments/AOA-bb.xml</path>
+            <offsets>
+                    <x-m>0.03</x-m>
+                    <y-m>-0.082651</y-m>
+                    <z-m>0.24</z-m>
+                    <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+            <path>Aircraft/SR71-BlackBird/Instruments/AI-pt-bb.xml</path>
+            <offsets>
+                    <x-m>0.045</x-m>
+                    <y-m>0</y-m>
+                    <z-m>0.251251</z-m>
+                    <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+            <path>Aircraft/SR71-BlackBird/Instruments/AI-bb.xml</path>
+            <offsets>
+                    <x-m>-0.0601229</x-m>
+                    <y-m>0</y-m>
+                    <z-m>0.108208</z-m>
+                    <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+            <path>Aircraft/SR71-BlackBird/Instruments/Bezel-HI-bb.xml</path>
+            <offsets>
+                    <x-m>0.0099833</x-m>
+                    <y-m>0</y-m>
+                    <z-m>-0.071838</z-m>
+                    <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+            <path>Aircraft/SR71-BlackBird/Instruments/HI-bb.xml</path>
+            <offsets>
+                    <x-m>0.0127804</x-m>
+                    <y-m>0</y-m>
+                    <z-m>-0.0615216</z-m>
+                    <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+<!--===========Droite================-->
+
+    <model>
+            <path>Aircraft/SR71-BlackBird/Instruments/Bezel_tpt-f8e.xml</path>
+            <offsets>
+                    <x-m>0.00943661</x-m>
+                    <y-m>0.12176</y-m>
+                    <z-m>0.17000</z-m>
+                    <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+            <path>Aircraft/SR71-BlackBird/Instruments/CLOCK.xml</path>
+            <offsets>
+                    <x-m>0.00943661</x-m>
+                    <y-m>0.12176</y-m>
+                    <z-m>0.17000</z-m>
+                    <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+
+    <model>
+            <path>Aircraft/SR71-BlackBird/Instruments/Bezel-bb.xml</path>
+            <offsets>
+                    <x-m>0.00951505</x-m>
+                    <y-m>0.150865</y-m>
+                    <z-m>0.076019</z-m>
+                    <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <name>Altimeter</name>
+            <path>Aircraft/SR71-BlackBird/Instruments/ALT-bb.xml</path>
+            <offsets>
+                    <x-m>0.000230764</x-m>
+                    <y-m>0.150865</y-m>
+                    <z-m>0.076019</z-m>
+                    <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+            <path>Aircraft/SR71-BlackBird/Instruments/Bezel-bb.xml</path>
+            <offsets>
+                    <x-m>0.00951505</x-m>
+                    <y-m>0.150865</y-m>
+                    <z-m>-0.0481001</z-m>
+                    <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+            <path>Aircraft/SR71-BlackBird/Instruments/IVSI-bb.xml</path>
+            <offsets>
+                    <x-m>0.0131421</x-m>
+                    <y-m>0.150865</y-m>
+                    <z-m>-0.0481001</z-m>
+                    <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+            <path>Aircraft/SR71-BlackBird/Instruments/Bezel-bb.xml</path>
+            <offsets>
+                    <x-m>0.01451505</x-m>
+                    <y-m>0.41483</y-m>
+                    <z-m>-0.0836361</z-m>
+                    <heading-deg>-5</heading-deg>
+        </offsets>
+    </model>
+
+    <model>
+            <path>Aircraft/SR71-BlackBird/Instruments/FUEL-bb.xml</path>
+            <offsets>
+                    <x-m>0.01451505</x-m>
+                    <y-m>0.41483</y-m>
+                    <z-m>-0.0836361</z-m>
+                    <heading-deg>-5</heading-deg>
+        </offsets>
+    </model>
+
+    <model>
+            <path>Aircraft/SR71-BlackBird/Instruments/Disjoncteur-bb.xml</path>
+            <offsets>
+                    <x-m>0.0312345</x-m>
+                    <y-m>0.531517</y-m>
+                    <z-m>-0.211023</z-m>
+                    <pitch-deg>90</pitch-deg>
+                    <heading-deg>-5</heading-deg>
+        </offsets>
+    </model>
+
+    <model>
+            <path>Aircraft/SR71-BlackBird/Instruments/Disjoncteur-bb.xml</path>
+            <offsets>
+                    <x-m>0.0285333</x-m>
+                    <y-m>0.505054</y-m>
+                    <z-m>-0.211023</z-m>
+                    <pitch-deg>90</pitch-deg>
+                    <heading-deg>-5</heading-deg>
+        </offsets>
+    </model>
+
+
+
+    <!--======================================================-->
+    <!--========================Gauche==============================-->
+
+
+    <model>
+            <path>Aircraft/SR71-BlackBird/Instruments/PRBCDE-bb.xml</path>
+            <offsets>
+                    <x-m>0.00872922</x-m>
+                    <y-m>-0.117341</y-m>
+                    <z-m>0.205386</z-m>
+                    <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+            <path>Aircraft/SR71-BlackBird/Instruments/Temoin-PrbSpdbk.xml</path>
+            <offsets>
+                    <x-m>0.00872922</x-m>
+                    <y-m>-0.11412</y-m>
+                    <z-m>0.155862</z-m>
+                    <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+            <path>Aircraft/SR71-BlackBird/Instruments/Temoin-FuelLowEng.xml</path>
+            <offsets>
+                    <x-m>0.00872922</x-m>
+                    <y-m>-0.169424</y-m>
+                    <z-m>0.155862</z-m>
+                    <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+
+    <model>
+            <path>Aircraft/SR71-BlackBird/Instruments/Multi-bb.xml</path>
+            <offsets>
+                    <x-m>0.00951505</x-m>
+                    <y-m>-0.150865</y-m>
+                    <z-m>-0.0481001</z-m>
+                    <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+
+
+
+
+
+
+
+
+
+    <model>
+            <path>Aircraft/SR71-BlackBird/Instruments/Bezel-bb.xml</path>
+            <offsets>
+                    <x-m>0.00951505</x-m>
+                    <y-m>-0.150865</y-m>
+                    <z-m>0.076019</z-m>
+                    <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+            <path>Aircraft/SR71-BlackBird/Instruments/ASI-bb.xml</path>
+            <offsets>
+                    <x-m>0.00951505</x-m>
+                    <y-m>-0.150865</y-m>
+                    <z-m>0.076019</z-m>
+                    <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+
+    <!--================Droite======L0======================-->
+
+
+    <model>
+            <path>Aircraft/SR71-BlackBird/Instruments/Bezel_tpt-f8e.xml</path>
+            <offsets>
+                    <x-m>0.00943661</x-m>
+                    <y-m>0.246859</y-m>
+                    <z-m>0.0238281</z-m>
+                    <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+    <model>
+            <path>Aircraft/SR71-BlackBird/Instruments/N1_Eng0-bb.xml</path>
+            <offsets>
+                    <x-m>0.00971762</x-m>
+                    <y-m>0.246859</y-m>
+                    <z-m>0.0238281</z-m>
+                    <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+            <path>Aircraft/SR71-BlackBird/Instruments/Bezel_tpt-f8e.xml</path>
+            <offsets>
+                    <x-m>0.00943661</x-m>
+                    <y-m>0.313747</y-m>
+                    <z-m>0.0238281</z-m>
+                    <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+    <model>
+            <path>Aircraft/SR71-BlackBird/Instruments/N1_Eng1-bb.xml</path>
+            <offsets>
+                    <x-m>0.00971762</x-m>
+                    <y-m>0.313747</y-m>
+                    <z-m>0.0238281</z-m>
+                    <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+
+    <!--=============Droite========L1==bis============================-->
+
+    <model>
+            <path>Aircraft/SR71-BlackBird/Instruments/Temoin-Feu.xml</path>
+            <offsets>
+                    <x-m>0.00888371</x-m>
+                    <y-m>0.246859</y-m>
+                    <z-m>-0.02902</z-m>
+                    <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+            <path>Aircraft/SR71-BlackBird/Instruments/Temoin-Feu.xml</path>
+            <offsets>
+                    <x-m>0.00888371</x-m>
+                    <y-m>0.313747</y-m>
+                    <z-m>-0.02902</z-m>
+                    <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+   <!-- ==============Droite============L1 ===================================-->
+
+
+    <model>
+            <path>Aircraft/SR71-BlackBird/Instruments/Bezel_tpt-f8e.xml</path>
+            <offsets>
+                    <x-m>0.00943661</x-m>
+                    <y-m>0.246859</y-m>
+                    <z-m>-0.082392</z-m>
+                    <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+    <model>
+            <path>Aircraft/SR71-BlackBird/Instruments/EGT-eng0-bb.xml</path>
+            <offsets>
+                    <x-m>0.00943661</x-m>
+                    <y-m>0.246859</y-m>
+                    <z-m>-0.082392</z-m>
+                    <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+
+
+    <model>
+            <path>Aircraft/SR71-BlackBird/Instruments/Bezel_tpt-f8e.xml</path>
+            <offsets>
+                    <x-m>0.00943661</x-m>
+                    <y-m>0.313747</y-m>
+                    <z-m>-0.082392</z-m>
+                    <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+    <model>
+            <path>Aircraft/SR71-BlackBird/Instruments/EGT-eng1-bb.xml</path>
+            <offsets>
+                    <x-m>0.00943661</x-m>
+                    <y-m>0.313747</y-m>
+                    <z-m>-0.082392</z-m>
+                    <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+    <!-- ===============Droite==============L2==============================-->
+
+    <model>
+            <path>Aircraft/SR71-BlackBird/Instruments/Bezel_tpt-f8e.xml</path>
+            <offsets>
+                    <x-m>0.00943661</x-m>
+                    <y-m>0.246859</y-m>
+                    <z-m>-0.147845</z-m>
+                    <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+    <model>
+            <path>Aircraft/SR71-BlackBird/Instruments/EPR-eng0-bb.xml</path>
+            <offsets>
+                    <x-m>0.00943661</x-m>
+                    <y-m>0.246859</y-m>
+                    <z-m>-0.147845</z-m>
+                    <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+
+
+    <model>
+            <path>Aircraft/SR71-BlackBird/Instruments/Bezel_tpt-f8e.xml</path>
+            <offsets>
+                    <x-m>0.00943661</x-m>
+                    <y-m>0.313747</y-m>
+                    <z-m>-0.147845</z-m>
+                    <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+    <model>
+            <path>Aircraft/SR71-BlackBird/Instruments/EPR-eng1-bb.xml</path>
+            <offsets>
+                    <x-m>0.00943661</x-m>
+                    <y-m>0.313747</y-m>
+                    <z-m>-0.147845</z-m>
+                    <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+    <!--================Droite===========L3===============================-->
+
+    <model>
+            <path>Aircraft/SR71-BlackBird/Instruments/Bezel_tpt-f8e.xml</path>
+            <offsets>
+                    <x-m>0.00943661</x-m>
+                    <y-m>0.180361</y-m>
+                    <z-m>-0.213062</z-m>
+                    <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+    <model>
+            <path>Aircraft/SR71-BlackBird/Instruments/Dummy-tpt-bb.xml</path>
+            <offsets>
+                    <x-m>0.00943661</x-m>
+                    <y-m>0.180361</y-m>
+                    <z-m>-0.213062</z-m>
+                    <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+            <path>Aircraft/SR71-BlackBird/Instruments/Bezel_tpt-f8e.xml</path>
+            <offsets>
+                    <x-m>0.00943661</x-m>
+                    <y-m>0.246859</y-m>
+                    <z-m>-0.213062</z-m>
+                    <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+    <model>
+            <path>Aircraft/SR71-BlackBird/Instruments/Dummy-tpt-bb.xml</path>
+            <offsets>
+                    <x-m>0.00943661</x-m>
+                    <y-m>0.246859</y-m>
+                    <z-m>-0.213062</z-m>
+                    <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+            <path>Aircraft/SR71-BlackBird/Instruments/Bezel_tpt-f8e.xml</path>
+            <offsets>
+                    <x-m>0.00943661</x-m>
+                    <y-m>0.313747</y-m>
+                    <z-m>-0.213062</z-m>
+                    <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+    <model>
+            <path>Aircraft/SR71-BlackBird/Instruments/Dummy-tpt-bb.xml</path>
+            <offsets>
+                    <x-m>0.00943661</x-m>
+                    <y-m>0.313747</y-m>
+                    <z-m>-0.213062</z-m>
+                    <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+
+   <!-- =================Droite========L4==============================-->
+
+
+    <model>
+            <path>Aircraft/SR71-BlackBird/Instruments/Bezel_tpt-f8e.xml</path>
+            <offsets>
+                    <x-m>0.00943661</x-m>
+                    <y-m>0.180361</y-m>
+                    <z-m>-0.277644</z-m>
+                    <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+    <model>
+            <path>Aircraft/SR71-BlackBird/Instruments/Dummy-tpt-bb.xml</path>
+            <offsets>
+                    <x-m>0.00943661</x-m>
+                    <y-m>0.180361</y-m>
+                    <z-m>-0.277644</z-m>
+                    <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+            <path>Aircraft/SR71-BlackBird/Instruments/Bezel_tpt-f8e.xml</path>
+            <offsets>
+                    <x-m>0.00943661</x-m>
+                    <y-m>0.246859</y-m>
+                    <z-m>-0.277644</z-m>
+                    <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+    <model>
+            <path>Aircraft/SR71-BlackBird/Instruments/Dummy-tpt-bb.xml</path>
+            <offsets>
+                    <x-m>0.00943661</x-m>
+                    <y-m>0.246859</y-m>
+                    <z-m>-0.277644</z-m>
+                    <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+            <path>Aircraft/SR71-BlackBird/Instruments/Bezel_tpt-f8e.xml</path>
+            <offsets>
+                    <x-m>0.00943661</x-m>
+                    <y-m>0.313747</y-m>
+                    <z-m>-0.277644</z-m>
+                    <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+    <model>
+            <path>Aircraft/SR71-BlackBird/Instruments/Dummy-tpt-bb.xml</path>
+            <offsets>
+                    <x-m>0.00943661</x-m>
+                    <y-m>0.313747</y-m>
+                    <z-m>-0.277644</z-m>
+                    <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+    <!--=======================================================-->
+    <!--=======================================================-->
+
+    <model>
+            <path>Aircraft/SR71-BlackBird/Instruments/Poignee-Urg-bb.xml</path>
+            <offsets>
+                    <x-m>0.0196814</x-m>
+                    <y-m>-0.297795</y-m>
+                    <z-m>0.030319</z-m>
+                    <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+            <path>Aircraft/SR71-BlackBird/Instruments/Bezel_tpt-f8e.xml</path>
+            <offsets>
+                    <x-m>0.00943661</x-m>
+                    <y-m>-0.246859</y-m>
+                    <z-m>0.023828</z-m>
+                    <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+    <model>
+            <path>Aircraft/SR71-BlackBird/Instruments/Dummy-tpt-bb.xml</path>
+            <offsets>
+                    <x-m>0.00943661</x-m>
+                    <y-m>-0.246859</y-m>
+                    <z-m>0.023828</z-m>
+                    <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+
+    <model>
+            <path>Aircraft/SR71-BlackBird/Instruments/Bezel_tpt-f8e.xml</path>
+            <offsets>
+                    <x-m>0.00943661</x-m>
+                    <y-m>-0.246859</y-m>
+                    <z-m>-0.08239</z-m>
+                    <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+    <model>
+            <path>Aircraft/SR71-BlackBird/Instruments/Dummy-tpt-bb.xml</path>
+            <offsets>
+                    <x-m>0.00943661</x-m>
+                    <y-m>-0.246859</y-m>
+                    <z-m>-0.08239</z-m>
+                    <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+   <!-- ====================Gauche L=====================-->
+    <model>
+            <path>Aircraft/SR71-BlackBird/Instruments/Bezel_tpt-f8e.xml</path>
+            <offsets>
+                    <x-m>0.00943661</x-m>
+                    <y-m>-0.258103</y-m>
+                    <z-m>-0.158161</z-m>
+                    <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+    <model>
+            <path>Aircraft/SR71-BlackBird/Instruments/Dummy-tpt-bb.xml</path>
+            <offsets>
+                    <x-m>0.00943661</x-m>
+                    <y-m>-0.258103</y-m>
+                    <z-m>-0.158161</z-m>
+                    <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+            <path>Aircraft/SR71-BlackBird/Instruments/Bezel_tpt-f8e.xml</path>
+            <offsets>
+                    <x-m>0.00943661</x-m>
+                    <y-m>-0.191605</y-m>
+                    <z-m>-0.158161</z-m>
+                    <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+    <model>
+            <path>Aircraft/SR71-BlackBird/Instruments/Dummy-tpt-bb.xml</path>
+            <offsets>
+                    <x-m>0.00943661</x-m>
+                    <y-m>-0.191605</y-m>
+                    <z-m>-0.158161</z-m>
+                    <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+            <path>Aircraft/SR71-BlackBird/Instruments/Bezel_tpt-f8e.xml</path>
+            <offsets>
+                    <x-m>0.00943661</x-m>
+                    <y-m>-0.124185</y-m>
+                    <z-m>-0.158161</z-m>
+                    <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+    <model>
+            <path>Aircraft/SR71-BlackBird/Instruments/GMTR-bb.xml</path>
+            <offsets>
+                    <x-m>0.00943661</x-m>
+                    <y-m>-0.124185</y-m>
+                    <z-m>-0.158161</z-m>
+                    <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+
+    <!--=================================================-->
+
+    <model>
+            <path>Aircraft/SR71-BlackBird/Instruments/Cde-Switch-bb.xml</path>
+            <offsets>
+                    <x-m>0.0133408</x-m>
+                    <y-m>-0.282488</y-m>
+                    <z-m>-0.244455</z-m>
+                    <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+            <path>Aircraft/SR71-BlackBird/Instruments/Cde-Switch-bb.xml</path>
+            <offsets>
+                    <x-m>0.0133408</x-m>
+                    <y-m>-0.228756</y-m>
+                    <z-m>-0.244455</z-m>
+                    <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+            <path>Aircraft/SR71-BlackBird/Instruments/Cde-Switch-bb.xml</path>
+            <offsets>
+                    <x-m>0.0133408</x-m>
+                    <y-m>-0.175161</y-m>
+                    <z-m>-0.244455</z-m>
+                    <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+            <path>Aircraft/SR71-BlackBird/Instruments/Cde-Switch-bb.xml</path>
+            <offsets>
+                    <x-m>0.0133408</x-m>
+                    <y-m>-0.121528</y-m>
+                    <z-m>-0.244455</z-m>
+                    <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+
+
+<!--==================================================-->
+
+    <model>
+            <path>Aircraft/SR71-BlackBird/Instruments/Bezel-ttpt-bb.xml</path>
+            <offsets>
+                    <x-m>0.00618915</x-m>
+                    <y-m>-0.211977</y-m>
+                    <z-m>-0.295293</z-m>
+                    <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+            <path>Aircraft/SR71-BlackBird/Instruments/Bezel-ttpt-bb.xml</path>
+            <offsets>
+                    <x-m>0.00618915</x-m>
+                    <y-m>-0.165134</y-m>
+                    <z-m>-0.295293</z-m>
+                    <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+            <path>Aircraft/SR71-BlackBird/Instruments/Bezel-ttpt-bb.xml</path>
+            <offsets>
+                    <x-m>0.00618915</x-m>
+                    <y-m>-0.118025</y-m>
+                    <z-m>-0.295293</z-m>
+                    <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+    <!--=====================================================-->
+
+    <model>
+            <path>Aircraft/SR71-BlackBird/Instruments/Temoin-train.xml</path>
+            <offsets>
+                    <x-m>0.0172568</x-m>
+                    <y-m>-0.43</y-m>
+                    <z-m>-0.210883</z-m>
+                    <heading-deg>5</heading-deg>
+        </offsets>
+    </model>
+
+    <model>
+            <path>Aircraft/SR71-BlackBird/Instruments/Train-Cde.xml</path>
+            <offsets>
+                    <x-m>0.0403744</x-m>
+                    <y-m>-0.403498</y-m>
+                    <z-m>-0.315687</z-m>
+                    <heading-deg>5</heading-deg>
+        </offsets>
+    </model>
+
+
+    <model>
+            <path>Aircraft/SR71-BlackBird/Instruments/Bezel_tpt-f8e.xml</path>
+            <offsets>
+                    <x-m>0.020</x-m>
+                    <y-m>-0.463802</y-m>
+                    <z-m>-0.258123</z-m>
+                    <heading-deg>5</heading-deg>
+        </offsets>
+    </model>
+
+    <model>
+            <path>Aircraft/SR71-BlackBird/Instruments/Dummy-tpt-bb.xml</path>
+            <offsets>
+                    <x-m>0.020</x-m>
+                    <y-m>-0.463802</y-m>
+                    <z-m>-0.258123</z-m>
+                    <heading-deg>5</heading-deg>
+        </offsets>
+    </model>
+
+    <model>
+            <path>Aircraft/SR71-BlackBird/Instruments/Bezel_tpt-f8e.xml</path>
+            <offsets>
+                    <x-m>0.020</x-m>
+                    <y-m>-0.463771</y-m>
+                    <z-m>-0.322456</z-m>
+                    <heading-deg>5</heading-deg>
+        </offsets>
+    </model>
+
+    <model>
+            <path>Aircraft/SR71-BlackBird/Instruments/Dummy-tpt-bb.xml</path>
+            <offsets>
+                    <x-m>0.020</x-m>
+                    <y-m>-0.463771</y-m>
+                    <z-m>-0.322456</z-m>
+                    <heading-deg>5</heading-deg>
+        </offsets>
+    </model>
+
+
+</PropertyList>
