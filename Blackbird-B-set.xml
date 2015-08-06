@@ -11,6 +11,7 @@
         <status>alpha, "GPL Copyright"</status>
         <version>0.5 2011-06-013</version>
         <flight-model>jsb</flight-model>
+        <variant-of>Blackbird-A</variant-of>
         <startup>
                 <splash-texture>Aircraft/SR71-BlackBird/splash-BB-B.png</splash-texture>
         </startup>
@@ -87,5 +88,3 @@
 
 
 </PropertyList>
-
-
