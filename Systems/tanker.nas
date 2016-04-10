@@ -6,7 +6,7 @@
      enabled = 0;
      Contact = 0;
     
-    print ("permanent loop:  update  /systems/refuel/contact");
+    #print ("permanent loop:  update  /systems/refuel/contact");
     updateTanker = func {
                                 if (initialized  != 1 ) {
                                 init_contact();}
