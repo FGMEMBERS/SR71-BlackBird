@@ -144,7 +144,13 @@
                 <display-mode type="string"  archive="y">plan</display-mode>
                 <minimized type="bool" archive="y">false</minimized>
             </wxradar>
+			<radar>
+				<range type="int" archive="y">20</range>
+				<minimized type="bool" archive="y">false</minimized>
+			</radar>
     </instrumentation>
+	
+	
 
     <fdm><!-- Start with Canopy open -->
             <jsbsim>
@@ -157,6 +163,17 @@
             </jsbsim>
     </fdm>
 
+	<systems>
+		<refuel>
+			<type>probe</type>
+			<serviceable type="bool">true</serviceable>
+			<max-fuel-transfer-lbs-min>9000</max-fuel-transfer-lbs-min>
+			<offset-x-m>0</offset-x-m>
+			<offset-y-m>0</offset-y-m>
+			<offset-z-m>0</offset-z-m>
+		</refuel>
+	</systems>
+	
     <nasal>
             <consumable>
                 <file>Aircraft/SR71-BlackBird/Systems/tanker.nas</file>
@@ -167,9 +184,12 @@
            <!-- <nav>
                 <file>Aircraft/SR71-BlackBird/Systems/nav.nas</file>
             </nav>-->
-	    <terrain>
-                    <file>Aircraft/SR71-BlackBird/Systems/terrain.nas</file>
-            </terrain>
+			<terrain>
+				<file>Aircraft/SR71-BlackBird/Systems/terrain.nas</file>
+			</terrain>
+			<aar>
+				<file>Aircraft/Generic/aar.nas</file>
+			</aar>
     </nasal>
 
 </PropertyList>
