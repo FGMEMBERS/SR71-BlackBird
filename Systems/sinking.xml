@@ -12,7 +12,7 @@
            <switch name="systems/sinking/switch">
                <default value="0"/>
                <test logic="AND" value="1">
-                   /environment[0]/terrain  == 0
+                   <!-- /environment[0]/terrain  == 0 --> <!-- commenting out as it will never == 0 -->
                    position/h-agl-ft lt 7
                    velocities/vc-fps lt 50
                    position/h-sl-ft  lt position/h-agl-ft
