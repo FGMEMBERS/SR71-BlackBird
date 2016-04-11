@@ -176,16 +176,16 @@
 	
     <nasal>
             <consumable>
-                <file>Aircraft/SR71-BlackBird/Systems/tanker.nas</file>
+                <file>Aircraft/SR71-BlackBird/Nasal/tanker.nas</file>
             </consumable>
             <radar>
-                <file>Aircraft/SR71-BlackBird/Systems/radar.nas</file>
+                <file>Aircraft/SR71-BlackBird/Nasal/radar.nas</file>
             </radar>
            <!-- <nav>
                 <file>Aircraft/SR71-BlackBird/Systems/nav.nas</file>
             </nav>-->
 			<terrain>
-				<file>Aircraft/SR71-BlackBird/Systems/terrain.nas</file>
+				<file>Aircraft/SR71-BlackBird/Nasal/terrain.nas</file>
 			</terrain>
 			<aar>
 				<file>Aircraft/Generic/aar.nas</file>
