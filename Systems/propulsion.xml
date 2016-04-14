@@ -62,8 +62,8 @@
             <switch name="AugThrust">
                 <default value="1"/>
                 <test  logic="AND" value="0">
-                    velocities/mach gt  1.13
-                    position/h-sl-ft gt 28000
+                    velocities/mach gt  0
+                    position/h-sl-ft gt 0
                 </test>
                 <output>fcs/intake-subsonic-pos</output>
             </switch>
@@ -100,10 +100,7 @@
             <!--on reduit les gaz pour ne pas dépasser 450 kts-->
             <fcs_function name="Throttle0 Pos Norm">
                 <function>
-                        <difference>
                             <property>fcs/throttle0</property>
-                            <property>propulsion/engine[0]/trim-throttle</property>
-                        </difference>
                 </function>
             </fcs_function>
 
@@ -149,10 +146,7 @@
             <!--on reduit les gaz pour ne pas dépasser 450 kts-->
             <fcs_function name="Throttle1 Pos Norm">
                 <function>
-                    <difference>
                         <property>fcs/throttle1</property>
-                        <property>propulsion/engine[1]/trim-throttle</property>
-                    </difference>
                 </function>
             </fcs_function>
 
