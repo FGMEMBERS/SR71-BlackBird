@@ -181,9 +181,6 @@
             <radar>
                 <file>Aircraft/SR71-BlackBird/Nasal/radar.nas</file>
             </radar>
-           <!-- <nav>
-                <file>Aircraft/SR71-BlackBird/Systems/nav.nas</file>
-            </nav>-->
 			<terrain>
 				<file>Aircraft/SR71-BlackBird/Nasal/terrain.nas</file>
 			</terrain>
