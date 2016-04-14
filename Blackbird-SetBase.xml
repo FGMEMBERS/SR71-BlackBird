@@ -197,6 +197,9 @@
 			<aar>
 				<file>Aircraft/Generic/aar.nas</file>
 			</aar>
+			<damage>
+				<file>Aircraft/SR71-BlackBird/Nasal/damage.nas</file>
+			</damage>
     </nasal>
 
 </PropertyList>
