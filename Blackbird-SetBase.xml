@@ -36,6 +36,16 @@
                     <string n="0"></string>
             </generic>
         </multiplay>
+		<failure-manager>
+			<engines>
+				<engine n="0">
+					<serviceable type="bool">true</serviceable>
+				</engine>
+				<engine n="1">
+					<serviceable type="bool">true</serviceable>
+				</engine>
+			</engines>
+		</failure-manager>
         <help include="Help/BlackBird-help.xml"/>
     </sim>
 
