@@ -231,6 +231,28 @@
                     fcs/throttle-pos-norm[1] gt 1
                 </test>
             </switch>
+			
+			<fcs_function name="propulsion/cit">
+                <function>
+					<description>The compressor inlet temprature values, from the SR-71 manual, page A1-12</description>
+					<table>
+						<independentVar lookup="row">/environment/temperature-degc</independentVar>
+						<independentVar lookup="column">velocities/mach</independentVar>
+						<tableData>
+							   0  0.5  1.0  1.5  2.0  2.5  3.0  3.5
+						-80  -80  -70  -40   -2  75   161  265  383
+						-60  -60  -50  -18   35  110  205  320  450
+						-40  -40  -28    8   64  143  245  347  500
+						-20  -20   -6   32   80  179  280  400  500
+						 0     0   15   55   99  205  320  460  500
+						 20   20   33   78  130  238  360  500  500
+						 40   40   50   98  155  261  415  500  500
+						 60   60   67  120  180  300  460  500  500
+						 70   70   77  137  190  320  485  500  500
+						</tableData>
+					</table>
+                </function>
+            </fcs_function>
 
 
     </channel>
