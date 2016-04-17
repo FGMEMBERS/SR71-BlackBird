@@ -221,14 +221,16 @@
             <switch name="propulsion/engine[0]/set-thrust">
                 <default value="0"/>
                 <test  logic="AND" value="1">
-                    propulsion/engine[0]/set-thrust == 1
+                    fcs/throttle-pos-norm[0] gt 1
+					propulsion/engine[0]/thrust-lbs gt 2000
                 </test>
             </switch>
 
             <switch name="propulsion/engine[1]/set-thrust">
                 <default value="0"/>
                 <test  logic="AND" value="1">
-                    propulsion/engine[1]/set-thrust == 1
+                    fcs/throttle-pos-norm[1] gt 1
+					propulsion/engine[1]/thrust-lbs gt 2000
                 </test>
             </switch>
 			
