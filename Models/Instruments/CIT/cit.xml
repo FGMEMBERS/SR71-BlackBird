@@ -84,6 +84,7 @@
 		</condition>
 	</animation>
 
+<!-- lots of interpolated values, but i wanted the needle to line up exactly with the texture, as CIT is very important. -->
 	<animation>
 		<type>rotate</type>
 		<object-name>Needle_L</object-name>
@@ -94,12 +95,112 @@
 				<dep>0</dep>
 			</entry>
 			<entry>
+				<ind>50</ind>
+				<dep>15</dep>
+			</entry>
+			<entry>
+				<ind>100</ind>
+				<dep>27.5</dep>
+			</entry>
+			<entry>
+				<ind>150</ind>
+				<dep>40</dep>
+			</entry>
+			<entry>
+				<ind>200</ind>
+				<dep>51.5</dep>
+			</entry>
+			<entry>
+				<ind>250</ind>
+				<dep>64</dep>
+			</entry>
+			<entry>
 				<ind>300</ind>
 				<dep>75</dep>
+			</entry>			
+			<entry>
+				<ind>310</ind>
+				<dep>87.5</dep>
+			</entry>
+			<entry>
+				<ind>320</ind>
+				<dep>100</dep>
+			</entry>
+			<entry>
+				<ind>330</ind>
+				<dep>113</dep>
+			</entry>
+			<entry>
+				<ind>340</ind>
+				<dep>125</dep>
+			</entry>
+			<entry>
+				<ind>350</ind>
+				<dep>137.5</dep>
+			</entry>
+			<entry>
+				<ind>360</ind>
+				<dep>149.5</dep>
+			</entry>
+			<entry>
+				<ind>370</ind>
+				<dep>162</dep>
+			</entry>
+			<entry>
+				<ind>380</ind>
+				<dep>173</dep>
+			</entry>
+			<entry>
+				<ind>390</ind>
+				<dep>185</dep>
+			</entry>
+			<entry>
+				<ind>400</ind>
+				<dep>196</dep>
+			</entry>
+			<entry>
+				<ind>410</ind>
+				<dep>208</dep>
+			</entry>
+			<entry>
+				<ind>420</ind>
+				<dep>218</dep>
+			</entry>
+			<entry>
+				<ind>427</ind>
+				<dep>225</dep>
+			</entry>
+			<entry>
+				<ind>430</ind>
+				<dep>230</dep>
+			</entry>
+			<entry>
+				<ind>440</ind>
+				<dep>241.5</dep>
+			</entry>
+			<entry>
+				<ind>450</ind>
+				<dep>252</dep>
+			</entry>
+			<entry>
+				<ind>460</ind>
+				<dep>263</dep>
+			</entry>
+			<entry>
+				<ind>470</ind>
+				<dep>273</dep>
+			</entry>
+			<entry>
+				<ind>480</ind>
+				<dep>284.5</dep>
+			</entry>
+			<entry>
+				<ind>490</ind>
+				<dep>294</dep>
 			</entry>
 			<entry>
 				<ind>500</ind>
-				<dep>304</dep>
+				<dep>303.5</dep>
 			</entry>
 		</interpolation>
 		<axis>
@@ -119,12 +220,112 @@
 				<dep>0</dep>
 			</entry>
 			<entry>
+				<ind>50</ind>
+				<dep>15</dep>
+			</entry>
+			<entry>
+				<ind>100</ind>
+				<dep>27.5</dep>
+			</entry>
+			<entry>
+				<ind>150</ind>
+				<dep>40</dep>
+			</entry>
+			<entry>
+				<ind>200</ind>
+				<dep>51.5</dep>
+			</entry>
+			<entry>
+				<ind>250</ind>
+				<dep>64</dep>
+			</entry>
+			<entry>
 				<ind>300</ind>
 				<dep>75</dep>
+			</entry>			
+			<entry>
+				<ind>310</ind>
+				<dep>87.5</dep>
+			</entry>
+			<entry>
+				<ind>320</ind>
+				<dep>100</dep>
+			</entry>
+			<entry>
+				<ind>330</ind>
+				<dep>113</dep>
+			</entry>
+			<entry>
+				<ind>340</ind>
+				<dep>125</dep>
+			</entry>
+			<entry>
+				<ind>350</ind>
+				<dep>137.5</dep>
+			</entry>
+			<entry>
+				<ind>360</ind>
+				<dep>149.5</dep>
+			</entry>
+			<entry>
+				<ind>370</ind>
+				<dep>162</dep>
+			</entry>
+			<entry>
+				<ind>380</ind>
+				<dep>173</dep>
+			</entry>
+			<entry>
+				<ind>390</ind>
+				<dep>185</dep>
+			</entry>
+			<entry>
+				<ind>400</ind>
+				<dep>196</dep>
+			</entry>
+			<entry>
+				<ind>410</ind>
+				<dep>208</dep>
+			</entry>
+			<entry>
+				<ind>420</ind>
+				<dep>218</dep>
+			</entry>
+			<entry>
+				<ind>427</ind>
+				<dep>225</dep>
+			</entry>
+			<entry>
+				<ind>430</ind>
+				<dep>230</dep>
+			</entry>
+			<entry>
+				<ind>440</ind>
+				<dep>241.5</dep>
+			</entry>
+			<entry>
+				<ind>450</ind>
+				<dep>252</dep>
+			</entry>
+			<entry>
+				<ind>460</ind>
+				<dep>263</dep>
+			</entry>
+			<entry>
+				<ind>470</ind>
+				<dep>273</dep>
+			</entry>
+			<entry>
+				<ind>480</ind>
+				<dep>284.5</dep>
+			</entry>
+			<entry>
+				<ind>490</ind>
+				<dep>294</dep>
 			</entry>
 			<entry>
 				<ind>500</ind>
-				<dep>304</dep>
+				<dep>303.5</dep>
 			</entry>
 		</interpolation>
 		<axis>
