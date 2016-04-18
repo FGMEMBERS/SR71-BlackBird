@@ -31072,18 +31072,6 @@ refs 4
 5 0.644404 0.899383
 kids 0
 OBJECT poly
-name "line"
-loc 7.93822 0.415133 6.45776
-crease 45.000000
-numvert 1
-0 0.134422 -1.56463
-numsurf 1
-SURF 0x32
-mat 1
-refs 1
-0 0 0
-kids 0
-OBJECT poly
 name "GElevon"
 loc 8.12949 0.467283 4.93926
 texture "ailecentre.png"
