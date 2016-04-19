@@ -36,6 +36,16 @@
                     <string n="0"></string>
             </generic>
         </multiplay>
+		<failure-manager>
+			<engines>
+				<engine n="0">
+					<serviceable type="bool">true</serviceable>
+				</engine>
+				<engine n="1">
+					<serviceable type="bool">true</serviceable>
+				</engine>
+			</engines>
+		</failure-manager>
         <help include="Help/BlackBird-help.xml"/>
     </sim>
 
@@ -144,7 +154,13 @@
                 <display-mode type="string"  archive="y">plan</display-mode>
                 <minimized type="bool" archive="y">false</minimized>
             </wxradar>
+			<radar>
+				<range type="int" archive="y">20</range>
+				<minimized type="bool" archive="y">false</minimized>
+			</radar>
     </instrumentation>
+	
+	
 
     <fdm><!-- Start with Canopy open -->
             <jsbsim>
@@ -157,19 +173,36 @@
             </jsbsim>
     </fdm>
 
+	<systems>
+		<refuel>
+			<type>boom</type>
+			<serviceable type="bool">true</serviceable>
+			<max-fuel-transfer-lbs-min>7500</max-fuel-transfer-lbs-min>
+			<offset-x-m>0</offset-x-m>
+			<offset-y-m>0</offset-y-m>
+			<offset-z-m>0</offset-z-m>
+		</refuel>
+	</systems>
+	
     <nasal>
+			<sr71>
+				<file>Aircraft/SR71-BlackBird/Nasal/sr71.nas</file>
+			</sr71>
             <consumable>
-                <file>Aircraft/SR71-BlackBird/Systems/tanker.nas</file>
+                <file>Aircraft/SR71-BlackBird/Nasal/tanker.nas</file>
             </consumable>
             <radar>
-                <file>Aircraft/SR71-BlackBird/Systems/radar.nas</file>
+                <file>Aircraft/SR71-BlackBird/Nasal/radar.nas</file>
             </radar>
-           <!-- <nav>
-                <file>Aircraft/SR71-BlackBird/Systems/nav.nas</file>
-            </nav>-->
-	    <terrain>
-                    <file>Aircraft/SR71-BlackBird/Systems/terrain.nas</file>
-            </terrain>
+			<terrain>
+				<file>Aircraft/SR71-BlackBird/Nasal/terrain.nas</file>
+			</terrain>
+			<aar>
+				<file>Aircraft/Generic/aar.nas</file>
+			</aar>
+			<damage>
+				<file>Aircraft/SR71-BlackBird/Nasal/damage.nas</file>
+			</damage>
     </nasal>
 
 </PropertyList>

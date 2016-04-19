@@ -1,11 +1,5 @@
 <?xml version="1.0"?>
 
-<!--
-    Usable with FlightGear
-    Property of Gerard Robin -France
-    Copyright License:  GPL
--->
-<!--                    Auteur :      Gerard ROBIN                       COPYRIGHT-->
 <PropertyList>
 
     <path>Models/Panel-SR71.ac</path>
@@ -25,7 +19,7 @@
     </animation>
     <!--==================================================-->
 
-<!--==============Centre=======================-->
+<!--==============Center=======================-->
     <model>
         <name>Radar</name>
             <path>Aircraft/SR71-BlackBird/Instruments/Radar2d-bb.xml</path>
@@ -120,7 +114,7 @@
         </offsets>
     </model>
 
-<!--===========Droite================-->
+<!--===========Right================-->
 
     <model>
             <path>Aircraft/SR71-BlackBird/Instruments/Bezel_tpt-f8e.xml</path>
@@ -229,7 +223,7 @@
 
 
     <!--======================================================-->
-    <!--========================Gauche==============================-->
+    <!--========================Left==============================-->
 
 
     <model>
@@ -303,7 +297,7 @@
     </model>
 
 
-    <!--================Droite======L0======================-->
+    <!--================Right======L0======================-->
 
 
     <model>
@@ -345,7 +339,7 @@
     </model>
 
 
-    <!--=============Droite========L1==bis============================-->
+    <!--=============Right========L1==bis============================-->
 
     <model>
             <path>Aircraft/SR71-BlackBird/Instruments/Temoin-Feu.xml</path>
@@ -367,7 +361,7 @@
         </offsets>
     </model>
 
-   <!-- ==============Droite============L1 ===================================-->
+   <!-- ==============Right============L1 ===================================-->
 
 
     <model>
@@ -410,7 +404,7 @@
         </offsets>
     </model>
 
-    <!-- ===============Droite==============L2==============================-->
+    <!-- ===============Right==============L2==============================-->
 
     <model>
             <path>Aircraft/SR71-BlackBird/Instruments/Bezel_tpt-f8e.xml</path>
@@ -452,7 +446,7 @@
         </offsets>
     </model>
 
-    <!--================Droite===========L3===============================-->
+    <!--================Right===========L3===============================-->
 
     <model>
             <path>Aircraft/SR71-BlackBird/Instruments/Bezel_tpt-f8e.xml</path>
@@ -512,7 +506,7 @@
     </model>
 
 
-   <!-- =================Droite========L4==============================-->
+   <!-- =================Right========L4==============================-->
 
 
     <model>
@@ -594,8 +588,10 @@
                     <pitch-deg>0</pitch-deg>
         </offsets>
     </model>
+	
+	<!-- CIT GOES FUCKIN HERE -->
     <model>
-            <path>Aircraft/SR71-BlackBird/Instruments/Dummy-tpt-bb.xml</path>
+            <path>Aircraft/SR71-BlackBird/Models/Instruments/CIT/cit.xml</path>
             <offsets>
                     <x-m>0.00943661</x-m>
                     <y-m>-0.246859</y-m>
@@ -624,7 +620,7 @@
         </offsets>
     </model>
 
-   <!-- ====================Gauche L=====================-->
+   <!-- ====================Left L=====================-->
     <model>
             <path>Aircraft/SR71-BlackBird/Instruments/Bezel_tpt-f8e.xml</path>
             <offsets>

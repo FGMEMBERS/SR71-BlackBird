@@ -62,8 +62,8 @@
             <switch name="AugThrust">
                 <default value="1"/>
                 <test  logic="AND" value="0">
-                    velocities/mach gt  1.13
-                    position/h-sl-ft gt 28000
+                    velocities/mach gt  0
+                    position/h-sl-ft gt 0
                 </test>
                 <output>fcs/intake-subsonic-pos</output>
             </switch>
@@ -100,10 +100,7 @@
             <!--on reduit les gaz pour ne pas dépasser 450 kts-->
             <fcs_function name="Throttle0 Pos Norm">
                 <function>
-                        <difference>
                             <property>fcs/throttle0</property>
-                            <property>propulsion/engine[0]/trim-throttle</property>
-                        </difference>
                 </function>
             </fcs_function>
 
@@ -149,10 +146,7 @@
             <!--on reduit les gaz pour ne pas dépasser 450 kts-->
             <fcs_function name="Throttle1 Pos Norm">
                 <function>
-                    <difference>
                         <property>fcs/throttle1</property>
-                        <property>propulsion/engine[1]/trim-throttle</property>
-                    </difference>
                 </function>
             </fcs_function>
 
@@ -203,21 +197,65 @@
                 <output>propulsion/cutoff_cmd</output>
             </switch>
 
+			<fcs_function name="Engine 0 Failure">
+                <function>
+                    <product>
+                        <property>/sim/failure-manager/engines/engine[0]/serviceable</property>
+                        <property>fcs/cutoff-switch0</property>
+                    </product>
+                </function>
+				<output>fcs/cutoff-switch0</output>
+            </fcs_function>
+			
+			<fcs_function name="Engine 0 Failure">
+                <function>
+                    <product>
+                        <property>/sim/failure-manager/engines/engine[1]/serviceable</property>
+                        <property>fcs/cutoff-switch1</property>
+                    </product>
+                </function>
+				<output>fcs/cutoff-switch1</output>
+            </fcs_function>
 
            <!-- animation for  an afterbuner effect -->
             <switch name="propulsion/engine[0]/set-thrust">
                 <default value="0"/>
                 <test  logic="AND" value="1">
-                    propulsion/engine[0]/thrust-lbs gt 2000
+                    fcs/throttle-pos-norm[0] gt 1
+					propulsion/engine[0]/thrust-lbs gt 2000
                 </test>
             </switch>
 
             <switch name="propulsion/engine[1]/set-thrust">
                 <default value="0"/>
                 <test  logic="AND" value="1">
-                    propulsion/engine[1]/thrust-lbs gt 2000
+                    fcs/throttle-pos-norm[1] gt 1
+					propulsion/engine[1]/thrust-lbs gt 2000
                 </test>
             </switch>
+			
+			<!-- CIT temprature -->
+			<fcs_function name="propulsion/cit">
+                <function>
+					<description>The compressor inlet temprature values, from the SR-71 manual, page A1-12</description>
+					<table>
+						<independentVar lookup="row">/environment/temperature-degc</independentVar>
+						<independentVar lookup="column">velocities/mach</independentVar>
+						<tableData>
+							   0  0.5  1.0  1.5  2.0  2.5  3.0  3.5
+						-80  -80  -70  -40   -2  75   161  265  383
+						-60  -60  -50  -18   35  110  205  320  450
+						-40  -40  -28    8   64  143  245  347  500
+						-20  -20   -6   32   80  179  280  400  500
+						 0     0   15   55   99  205  320  460  500
+						 20   20   33   78  130  238  360  500  500
+						 40   40   50   98  155  261  415  500  500
+						 60   60   67  120  180  300  460  500  500
+						 70   70   77  137  190  320  485  500  500
+						</tableData>
+					</table>
+                </function>
+            </fcs_function>
 
 
     </channel>

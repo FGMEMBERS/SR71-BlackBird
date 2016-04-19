@@ -3,7 +3,7 @@
 
 <system name="Fuel-ReFuel">
     <!--<property>/consumables/fuel/total-fuel-gals</property>-->
-    <property>/systems/refuel/type</property>
+    <!--<property>/systems/refuel/type</property>-->
     <property>/systems/refuel/contact</property>
 
         <channel name="Refuel">
@@ -72,7 +72,6 @@
                 <test  logic="AND" value="1">
                     /systems/refuel/contact == 1
                     /position/altitude-agl-ft  gt  300
-                    /instrumentation/airspeed-indicator/indicated-speed-kt  gt 200
                     fcs/refueling-pos-norm == 1
                     systems/refuel-pump == 1
                 </test>
@@ -82,7 +81,6 @@
                 <default value="0"/>
                 <test  logic="AND" value="1">
                     /position/altitude-agl-ft  lt  7
-                    /instrumentation/airspeed-indicator/indicated-speed-kt  lt 20
                     systems/refuel-pump == 1
                 </test>
                 <output>systems/refueling_ground</output>
