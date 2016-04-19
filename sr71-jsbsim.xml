@@ -375,7 +375,13 @@
                 <yaw> 0 </yaw>
             </orient>
             <feed>0</feed>
-            <feed>1</feed>
+			<feed>1</feed>
+			<feed>2</feed>
+			<feed>3</feed>
+			<feed>4</feed>
+			<feed>5</feed>
+			<feed>6</feed>
+			<feed>7</feed>
             <thruster file="direct-new">
                 <location unit="IN">
                     <x> 282 </x>
@@ -401,7 +407,13 @@
                 <yaw> 0 </yaw>
             </orient>
             <feed>0</feed>
-            <feed>1</feed>
+			<feed>1</feed>
+			<feed>2</feed>
+			<feed>3</feed>
+			<feed>4</feed>
+			<feed>5</feed>
+			<feed>6</feed>
+			<feed>7</feed>
             <thruster file="direct-new">
                 <location unit="IN">
                     <x> 282 </x>
@@ -415,7 +427,7 @@
                 </orient>
             </thruster>
         </engine>
-        <tank type="FUEL">    <!-- Tank number 0 -->
+ <!--       <tank type="FUEL">
             <location unit="IN">
                 <x> 0 </x>
                 <y> 0 </y>
@@ -424,7 +436,7 @@
             <capacity unit="LBS"> 30000 </capacity>
             <contents unit="LBS"> 15000 </contents>
         </tank>
-        <tank type="FUEL">    <!-- Tank number 1 -->
+        <tank type="FUEL">
             <location unit="IN">
                 <x> 0 </x>
                 <y> 0 </y>
@@ -433,7 +445,7 @@
             <capacity unit="LBS"> 55000 </capacity>
             <contents unit="LBS"> 30000 </contents>
         </tank>
-        <tank type="FUEL">    <!-- Tank number 2 not in use -->
+        <tank type="FUEL">
             <location unit="IN">
                 <x> 0 </x>
                 <y> 0 </y>
@@ -441,7 +453,168 @@
             </location>
             <capacity unit="LBS"> 1 </capacity>
             <contents unit="LBS"> 0 </contents>
-        </tank>
+        </tank>-->
+		
+	<!-- 1A -->
+	<tank type="FUEL">
+		<location unit="M">
+		<x> -8.25 </x>
+		<y> 0 </y>
+		<z> 1.0 </z>
+		</location>
+		<!--<drain_location unit="{FT | M | IN}">
+		<x> {number} </x>
+		<y> {number} </y>
+		<z> {number} </z>
+		</drain_location>-->
+		<radius unit="M"> 0.5 </radius>
+		<capacity unit="LBS"> 1650 </capacity>
+		<contents unit="LBS"> 200 </contents>
+		<!-- <temperature> {number} </temperature>  must be degrees fahrenheit -->
+		<!--<standpipe unit="{LBS | KG"}> {number} </standpipe>-->
+		<priority> 1 </priority>
+		<type> JP-7 </type> <!-- will override previous density setting -->
+	</tank>
+	<!-- 1 -->
+	<tank type="FUEL">
+		<location unit="M">
+		<x> -7.80 </x>
+		<y> 0 </y>
+		<z> 0.6	</z>
+		</location>
+		<!--<drain_location unit="{FT | M | IN}">
+		<x> {number} </x>
+		<y> {number} </y>
+		<z> {number} </z>
+		</drain_location>-->
+		<radius unit="M"> 1.5 </radius>
+		<capacity unit="LBS"> 13770 </capacity>
+		<contents unit="LBS"> 5000 </contents>
+		<!-- <temperature> {number} </temperature>  must be degrees fahrenheit -->
+		<!--<standpipe unit="{LBS | KG"}> {number} </standpipe>-->
+		<priority> 2 </priority>
+		<type> JP-7 </type> <!-- will override previous density setting -->
+	</tank>
+	<!-- 2 -->
+	<tank type="FUEL">
+		<location unit="M">
+		<x> -3.7 </x>
+		<y> 0 </y>
+		<z> 0.6 </z>
+		</location>
+		<!--<drain_location unit="{FT | M | IN}">
+		<x> {number} </x>
+		<y> {number} </y>
+		<z> {number} </z>
+		</drain_location>-->
+		<radius unit="M"> 1.5 </radius>
+		<capacity unit="LBS"> 12970 </capacity>
+		<contents unit="LBS"> 5000 </contents>
+		<!-- <temperature> {number} </temperature>  must be degrees fahrenheit -->
+		<!--<standpipe unit="{LBS | KG"}> {number} </standpipe>-->
+		<priority> 3 </priority>
+		<type> JP-7 </type> <!-- will override previous density setting -->
+	</tank>
+	<!-- 3 -->
+	<tank type="FUEL">
+		<location unit="M">
+		<x> 0.5 </x>
+		<y> 0 </y>
+		<z> 0.6 </z>
+		</location>
+		<!--<drain_location unit="{FT | M | IN}">
+		<x> {number} </x>
+		<y> {number} </y>
+		<z> {number} </z>
+		</drain_location>-->
+		<radius unit="M"> 2.5 </radius>
+		<capacity unit="LBS"> 16160 </capacity>
+		<contents unit="LBS"> 4000 </contents>
+		<!-- <temperature> {number} </temperature>  must be degrees fahrenheit -->
+		<!--<standpipe unit="{LBS | KG"}> {number} </standpipe>-->
+		<priority> 4 </priority>
+		<type> JP-7 </type> <!-- will override previous density setting -->
+	</tank>
+	<!-- 4 -->
+	<tank type="FUEL">
+		<location unit="M">
+		<x> 4 </x>
+		<y> 0 </y>
+		<z> 0.6 </z>
+		</location>
+		<!--<drain_location unit="{FT | M | IN}">
+		<x> {number} </x>
+		<y> {number} </y>
+		<z> {number} </z>
+		</drain_location>-->
+		<radius unit="M"> 1.5 </radius>
+		<capacity unit="LBS"> 9550 </capacity>
+		<contents unit="LBS"> 4000 </contents>
+		<!-- <temperature> {number} </temperature>  must be degrees fahrenheit -->
+		<!--<standpipe unit="{LBS | KG"}> {number} </standpipe>-->
+		<priority> 5 </priority>
+		<type> JP-7 </type> <!-- will override previous density setting -->
+	</tank>
+	<!-- 5 -->
+	<tank type="FUEL">
+		<location unit="M">
+		<x> 7.5 </x>
+		<y> 0 </y>
+		<z> 0.6 </z>
+		</location>
+		<!--<drain_location unit="{FT | M | IN}">
+		<x> {number} </x>
+		<y> {number} </y>
+		<z> {number} </z>
+		</drain_location>-->
+		<radius unit="M"> 1.5 </radius>
+		<capacity unit="LBS"> 11550 </capacity>
+		<contents unit="LBS"> 5000 </contents>
+		<!-- <temperature> {number} </temperature>  must be degrees fahrenheit -->
+		<!--<standpipe unit="{LBS | KG"}> {number} </standpipe>-->
+		<priority> 6 </priority>
+		<type> JP-7 </type> <!-- will override previous density setting -->
+	</tank>
+	<!-- 6A -->
+	<tank type="FUEL">
+		<location unit="M">
+		<x> 4 </x>
+		<y> 0 </y>
+		<z> 0.4 </z>
+		</location>
+		<!--<drain_location unit="{FT | M | IN}">
+		<x> {number} </x>
+		<y> {number} </y>
+		<z> {number} </z>
+		</drain_location>-->
+		<radius unit="M"> 3 </radius>
+		<capacity unit="LBS"> 7610 </capacity>
+		<contents unit="LBS"> 3000 </contents>
+		<!-- <temperature> {number} </temperature>  must be degrees fahrenheit -->
+		<!--<standpipe unit="{LBS | KG"}> {number} </standpipe>-->
+		<priority> 7 </priority>
+		<type> JP-7 </type> <!-- will override previous density setting -->
+	</tank>
+	<!-- 6B -->
+	<tank type="FUEL">
+		<location unit="M">
+		<x> 6.5 </x>
+		<y> 0 </y>
+		<z> 0.4 </z>
+		</location>
+		<!--<drain_location unit="{FT | M | IN}">
+		<x> {number} </x>
+		<y> {number} </y>
+		<z> {number} </z>
+		</drain_location>-->
+		<radius unit="M"> 3 </radius>
+		<capacity unit="LBS"> 7020 </capacity>
+		<contents unit="LBS"> 3000 </contents>
+		<!-- <temperature> {number} </temperature>  must be degrees fahrenheit -->
+		<!--<standpipe unit="{LBS | KG"}> {number} </standpipe>-->
+		<priority> 8 </priority>
+		<type> JP-7 </type> <!-- will override previous density setting -->
+	</tank>
     </propulsion>
 
     <system file="electrical-fdm-custom"/>
