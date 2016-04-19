@@ -112,7 +112,7 @@
 
     <consumables>
        <!-- payload of av 70100 lbs   density 0.8-->
-        <fuel>
+        <!--<fuel>
             <tank n="0">
             <level-gal_us archive="y">3000</level-gal_us>
             </tank>
@@ -122,7 +122,7 @@
             <tank n="2">
             <level-gal_us archive="y">0</level-gal_us>
             </tank>
-        </fuel>
+        </fuel>-->
     </consumables>
 
     <autopilot>
