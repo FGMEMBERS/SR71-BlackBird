@@ -207,7 +207,7 @@
 				<output>fcs/cutoff-switch0</output>
             </fcs_function>
 			
-			<fcs_function name="Engine 0 Failure">
+			<fcs_function name="Engine 1 Failure">
                 <function>
                     <product>
                         <property>/sim/failure-manager/engines/engine[1]/serviceable</property>
