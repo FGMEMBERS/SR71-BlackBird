@@ -374,14 +374,7 @@
                 <pitch> 0 </pitch>
                 <yaw> 0 </yaw>
             </orient>
-            <feed>0</feed>
-			<feed>1</feed>
-			<feed>2</feed>
-			<feed>3</feed>
-			<feed>4</feed>
-			<feed>5</feed>
-			<feed>6</feed>
-			<feed>7</feed>
+			<feed>0</feed>
             <thruster file="direct-new">
                 <location unit="IN">
                     <x> 282 </x>
@@ -406,14 +399,7 @@
                 <pitch> 0 </pitch>
                 <yaw> 0 </yaw>
             </orient>
-            <feed>0</feed>
 			<feed>1</feed>
-			<feed>2</feed>
-			<feed>3</feed>
-			<feed>4</feed>
-			<feed>5</feed>
-			<feed>6</feed>
-			<feed>7</feed>
             <thruster file="direct-new">
                 <location unit="IN">
                     <x> 282 </x>
@@ -454,7 +440,48 @@
             <capacity unit="LBS"> 1 </capacity>
             <contents unit="LBS"> 0 </contents>
         </tank>-->
-		
+	
+	<!-- Right Fuel Manifold -->
+	
+	<tank type="FUEL">
+		<location unit="M">
+		<x> 0.5 </x>
+		<y> 1 </y>
+		<z> 0.6 </z>
+		</location>
+		<!--<drain_location unit="{FT | M | IN}">
+		<x> {number} </x>
+		<y> {number} </y>
+		<z> {number} </z>
+		</drain_location>-->
+		<radius unit="M"> 0.5 </radius>
+		<capacity unit="LBS"> 200 </capacity>
+		<contents unit="LBS"> 200 </contents>
+		<!-- <temperature> {number} </temperature>  must be degrees fahrenheit -->
+		<!--<standpipe unit="{LBS | KG"}> {number} </standpipe>-->
+		<type> JP-7 </type> <!-- will override previous density setting -->
+	</tank>
+
+	<!-- Left Fuel Manifold-->
+	<tank type="FUEL">
+		<location unit="M">
+		<x> 0.5 </x>
+		<y> -1 </y>
+		<z> 0.6 </z>
+		</location>
+		<!--<drain_location unit="{FT | M | IN}">
+		<x> {number} </x>
+		<y> {number} </y>
+		<z> {number} </z>
+		</drain_location>-->
+		<radius unit="M"> 0.5 </radius>
+		<capacity unit="LBS"> 200 </capacity>
+		<contents unit="LBS"> 200 </contents>
+		<!-- <temperature> {number} </temperature>  must be degrees fahrenheit -->
+		<!--<standpipe unit="{LBS | KG"}> {number} </standpipe>-->
+		<type> JP-7 </type> <!-- will override previous density setting -->
+	</tank>
+	
 	<!-- 1A -->
 	<tank type="FUEL">
 		<location unit="M">
@@ -469,10 +496,9 @@
 		</drain_location>-->
 		<radius unit="M"> 0.5 </radius>
 		<capacity unit="LBS"> 1650 </capacity>
-		<contents unit="LBS"> 200 </contents>
+		<contents unit="LBS"> 0 </contents>
 		<!-- <temperature> {number} </temperature>  must be degrees fahrenheit -->
 		<!--<standpipe unit="{LBS | KG"}> {number} </standpipe>-->
-		<priority> 1 </priority>
 		<type> JP-7 </type> <!-- will override previous density setting -->
 	</tank>
 	<!-- 1 -->
@@ -489,10 +515,9 @@
 		</drain_location>-->
 		<radius unit="M"> 1.5 </radius>
 		<capacity unit="LBS"> 13770 </capacity>
-		<contents unit="LBS"> 5000 </contents>
+		<contents unit="LBS"> 500 </contents>
 		<!-- <temperature> {number} </temperature>  must be degrees fahrenheit -->
 		<!--<standpipe unit="{LBS | KG"}> {number} </standpipe>-->
-		<priority> 2 </priority>
 		<type> JP-7 </type> <!-- will override previous density setting -->
 	</tank>
 	<!-- 2 -->
@@ -509,10 +534,9 @@
 		</drain_location>-->
 		<radius unit="M"> 1.5 </radius>
 		<capacity unit="LBS"> 12970 </capacity>
-		<contents unit="LBS"> 5000 </contents>
+		<contents unit="LBS"> 0 </contents>
 		<!-- <temperature> {number} </temperature>  must be degrees fahrenheit -->
 		<!--<standpipe unit="{LBS | KG"}> {number} </standpipe>-->
-		<priority> 3 </priority>
 		<type> JP-7 </type> <!-- will override previous density setting -->
 	</tank>
 	<!-- 3 -->
@@ -529,10 +553,9 @@
 		</drain_location>-->
 		<radius unit="M"> 2.5 </radius>
 		<capacity unit="LBS"> 16160 </capacity>
-		<contents unit="LBS"> 4000 </contents>
+		<contents unit="LBS"> 400 </contents>
 		<!-- <temperature> {number} </temperature>  must be degrees fahrenheit -->
 		<!--<standpipe unit="{LBS | KG"}> {number} </standpipe>-->
-		<priority> 4 </priority>
 		<type> JP-7 </type> <!-- will override previous density setting -->
 	</tank>
 	<!-- 4 -->
@@ -549,10 +572,9 @@
 		</drain_location>-->
 		<radius unit="M"> 1.5 </radius>
 		<capacity unit="LBS"> 9550 </capacity>
-		<contents unit="LBS"> 4000 </contents>
+		<contents unit="LBS"> 400 </contents>
 		<!-- <temperature> {number} </temperature>  must be degrees fahrenheit -->
 		<!--<standpipe unit="{LBS | KG"}> {number} </standpipe>-->
-		<priority> 5 </priority>
 		<type> JP-7 </type> <!-- will override previous density setting -->
 	</tank>
 	<!-- 5 -->
@@ -569,10 +591,9 @@
 		</drain_location>-->
 		<radius unit="M"> 1.5 </radius>
 		<capacity unit="LBS"> 11550 </capacity>
-		<contents unit="LBS"> 5000 </contents>
+		<contents unit="LBS"> 0 </contents>
 		<!-- <temperature> {number} </temperature>  must be degrees fahrenheit -->
 		<!--<standpipe unit="{LBS | KG"}> {number} </standpipe>-->
-		<priority> 6 </priority>
 		<type> JP-7 </type> <!-- will override previous density setting -->
 	</tank>
 	<!-- 6A -->
@@ -589,10 +610,9 @@
 		</drain_location>-->
 		<radius unit="M"> 3 </radius>
 		<capacity unit="LBS"> 7610 </capacity>
-		<contents unit="LBS"> 3000 </contents>
+		<contents unit="LBS"> 0 </contents>
 		<!-- <temperature> {number} </temperature>  must be degrees fahrenheit -->
 		<!--<standpipe unit="{LBS | KG"}> {number} </standpipe>-->
-		<priority> 7 </priority>
 		<type> JP-7 </type> <!-- will override previous density setting -->
 	</tank>
 	<!-- 6B -->
@@ -609,10 +629,9 @@
 		</drain_location>-->
 		<radius unit="M"> 3 </radius>
 		<capacity unit="LBS"> 7020 </capacity>
-		<contents unit="LBS"> 3000 </contents>
+		<contents unit="LBS"> 0 </contents>
 		<!-- <temperature> {number} </temperature>  must be degrees fahrenheit -->
 		<!--<standpipe unit="{LBS | KG"}> {number} </standpipe>-->
-		<priority> 8 </priority>
 		<type> JP-7 </type> <!-- will override previous density setting -->
 	</tank>
     </propulsion>
@@ -1435,4 +1454,21 @@
         </direction>
         </force>
     </external_reactions>
+	
+	
+<!--<output name="C:/Users/soweli/Documents/target_datalog.csv" type="CSV" rate="120">
+<property>propulsion/tank[8]/external-flow-rate-pps</property>
+<simulation> OFF </simulation>
+<rates> OFF </rates>
+<velocities> OFF </velocities>
+<forces> OFF </forces>
+<moments> OFF </moments>
+<position> OFF </position>
+<coefficients> OFF </coefficients>
+<fcs> OFF </fcs>
+<propulsion> OFF </propulsion>
+<aerosurfaces> OFF </aerosurfaces>
+<ground_reactions> OFF </ground_reactions>
+</output>-->
+	
 </fdm_config>
