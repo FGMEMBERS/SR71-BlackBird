@@ -515,7 +515,7 @@
 		</drain_location>-->
 		<radius unit="M"> 1.5 </radius>
 		<capacity unit="LBS"> 13770 </capacity>
-		<contents unit="LBS"> 500 </contents>
+		<contents unit="LBS"> 5000 </contents>
 		<!-- <temperature> {number} </temperature>  must be degrees fahrenheit -->
 		<!--<standpipe unit="{LBS | KG"}> {number} </standpipe>-->
 		<type> JP-7 </type> <!-- will override previous density setting -->
@@ -534,7 +534,7 @@
 		</drain_location>-->
 		<radius unit="M"> 1.5 </radius>
 		<capacity unit="LBS"> 12970 </capacity>
-		<contents unit="LBS"> 0 </contents>
+		<contents unit="LBS"> 4000 </contents>
 		<!-- <temperature> {number} </temperature>  must be degrees fahrenheit -->
 		<!--<standpipe unit="{LBS | KG"}> {number} </standpipe>-->
 		<type> JP-7 </type> <!-- will override previous density setting -->
@@ -553,7 +553,7 @@
 		</drain_location>-->
 		<radius unit="M"> 2.5 </radius>
 		<capacity unit="LBS"> 16160 </capacity>
-		<contents unit="LBS"> 400 </contents>
+		<contents unit="LBS"> 4000 </contents>
 		<!-- <temperature> {number} </temperature>  must be degrees fahrenheit -->
 		<!--<standpipe unit="{LBS | KG"}> {number} </standpipe>-->
 		<type> JP-7 </type> <!-- will override previous density setting -->
@@ -572,7 +572,7 @@
 		</drain_location>-->
 		<radius unit="M"> 1.5 </radius>
 		<capacity unit="LBS"> 9550 </capacity>
-		<contents unit="LBS"> 400 </contents>
+		<contents unit="LBS"> 3000 </contents>
 		<!-- <temperature> {number} </temperature>  must be degrees fahrenheit -->
 		<!--<standpipe unit="{LBS | KG"}> {number} </standpipe>-->
 		<type> JP-7 </type> <!-- will override previous density setting -->
@@ -591,7 +591,7 @@
 		</drain_location>-->
 		<radius unit="M"> 1.5 </radius>
 		<capacity unit="LBS"> 11550 </capacity>
-		<contents unit="LBS"> 0 </contents>
+		<contents unit="LBS"> 4200 </contents>
 		<!-- <temperature> {number} </temperature>  must be degrees fahrenheit -->
 		<!--<standpipe unit="{LBS | KG"}> {number} </standpipe>-->
 		<type> JP-7 </type> <!-- will override previous density setting -->
@@ -610,7 +610,7 @@
 		</drain_location>-->
 		<radius unit="M"> 3 </radius>
 		<capacity unit="LBS"> 7610 </capacity>
-		<contents unit="LBS"> 0 </contents>
+		<contents unit="LBS"> 3000 </contents>
 		<!-- <temperature> {number} </temperature>  must be degrees fahrenheit -->
 		<!--<standpipe unit="{LBS | KG"}> {number} </standpipe>-->
 		<type> JP-7 </type> <!-- will override previous density setting -->
@@ -629,7 +629,7 @@
 		</drain_location>-->
 		<radius unit="M"> 3 </radius>
 		<capacity unit="LBS"> 7020 </capacity>
-		<contents unit="LBS"> 0 </contents>
+		<contents unit="LBS"> 3000 </contents>
 		<!-- <temperature> {number} </temperature>  must be degrees fahrenheit -->
 		<!--<standpipe unit="{LBS | KG"}> {number} </standpipe>-->
 		<type> JP-7 </type> <!-- will override previous density setting -->
