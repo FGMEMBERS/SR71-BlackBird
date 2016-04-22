@@ -1,0 +1,23 @@
+Changelog
+
+v 0.2
+------
++Original version number when modifications began.
+
+v 0.2.1
+------
++Added AI refuelling capabilities
++Throttle animation based on throttle position
++Higher-res livery
++damage.nas installed (currently always-on, will be switchable in later versions)
++Nasal file restructure
+
+v 0.2.2
+------
++Removed speed and thrust restrictions.
++Implemented engine failure support
++CIT guage and overheating damage
++Power increased - interpolated up to mach 3.6 instead of mach 3.4.
++Max mach of 3.53 enforced - this is due to the pressure wave from the nose of the aircraft hitting the inlets, causing an unstart.
++BigTail variant introduced
++Custom sounds by @swampmo
