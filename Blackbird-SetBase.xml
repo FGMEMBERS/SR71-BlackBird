@@ -112,7 +112,7 @@
 
     <consumables>
        <!-- payload of av 70100 lbs   density 0.8-->
-        <fuel>
+        <!--<fuel>
             <tank n="0">
             <level-gal_us archive="y">3000</level-gal_us>
             </tank>
@@ -122,7 +122,7 @@
             <tank n="2">
             <level-gal_us archive="y">0</level-gal_us>
             </tank>
-        </fuel>
+        </fuel>-->
     </consumables>
 
     <autopilot>
@@ -177,7 +177,7 @@
 		<refuel>
 			<type>boom</type>
 			<serviceable type="bool">true</serviceable>
-			<max-fuel-transfer-lbs-min>7500</max-fuel-transfer-lbs-min>
+			<max-fuel-transfer-lbs-min>6000</max-fuel-transfer-lbs-min>
 			<offset-x-m>0</offset-x-m>
 			<offset-y-m>0</offset-y-m>
 			<offset-z-m>0</offset-z-m>
