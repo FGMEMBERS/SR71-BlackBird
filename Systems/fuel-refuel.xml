@@ -128,14 +128,14 @@
 			<output>propulsion/tank[2]/external-flow-rate-pps</output>
 		</switch>
 
-		<summer name="trash/fuelrefuel24">
-			<input>-propulsion/tank[2]/external-flow-rate-pps</input>
+		<!--<summer name="trash/fuelrefuel1">
+			
 			<output>propulsion/tank[3]/external-flow-rate-pps</output>
-		</summer>
+		</summer>-->
 		
 		<!-- Tank 1 into Left and Right Manifold-->
 	
-		<switch name="trash/fuelrefuel1">
+		<switch name="trash/fuelrefuel2">
 			<default value="0"/>
 			<test logic="AND" value="-100">
 				propulsion/tank[0]/contents-lbs lt 200
@@ -145,7 +145,7 @@
 			<output>propulsion/tank[3]/external-flow-rate-pps-right</output>
 		</switch>
 		
-		<switch name="trash/fuelrefuel2">
+		<switch name="trash/fuelrefuel3">
 			<default value="0"/>
 			<test logic="AND" value="-100">
 				propulsion/tank[1]/contents-lbs lt 200
@@ -155,7 +155,8 @@
 			<output>propulsion/tank[3]/external-flow-rate-pps-left</output>
 		</switch>
 		
-		<summer name="trash/fuelrefuel3">
+		<summer name="trash/fuelrefuel4">
+			<input>-propulsion/tank[2]/external-flow-rate-pps</input>
 			<input>propulsion/tank[3]/external-flow-rate-pps-right</input>
 			<input>propulsion/tank[3]/external-flow-rate-pps-left</input>
 			<output>propulsion/tank[3]/external-flow-rate-pps</output>
@@ -163,7 +164,7 @@
 		
 		<!-- Tank 2 into left manifold -->
 			
-		<switch name="trash/fuelrefuel4">
+		<switch name="trash/fuelrefuel5">
 			<default value="0"/>
 			<test logic="AND" value="-100">
 				propulsion/tank[1]/contents-lbs lt 200
@@ -175,7 +176,7 @@
 		
 		<!-- Tank 3 into left manifold -->
 		
-		<switch name="trash/fuelrefuel4">
+		<switch name="trash/fuelrefuel6">
 			<default value="0"/>
 			<test logic="AND" value="-100">
 				propulsion/tank[1]/contents-lbs lt 200
@@ -187,7 +188,7 @@
 		
 		<!-- Tank 4 into left and right manifold -->
 		
-		<switch name="trash/fuelrefuel1">
+		<switch name="trash/fuelrefuel7">
 			<default value="0"/>
 			<test logic="AND" value="-100">
 				propulsion/tank[0]/contents-lbs lt 200
@@ -204,7 +205,7 @@
 			<output>propulsion/tank[6]/external-flow-rate-pps-right</output>
 		</switch>
 		
-		<switch name="trash/fuelrefuel2">
+		<switch name="trash/fuelrefuel8">
 			<default value="0"/>
 			<test logic="AND" value="-100">
 				propulsion/tank[1]/contents-lbs lt 200
@@ -221,7 +222,7 @@
 			<output>propulsion/tank[6]/external-flow-rate-pps-left</output>
 		</switch>
 		
-		<summer name="trash/fuelrefuel3">
+		<summer name="trash/fuelrefuel9">
 			<input>propulsion/tank[6]/external-flow-rate-pps-right</input>
 			<input>propulsion/tank[6]/external-flow-rate-pps-left</input>
 			<output>propulsion/tank[6]/external-flow-rate-pps</output>
@@ -229,7 +230,7 @@
 		
 		<!-- tank 5 into right manifold -->
 		
-		<switch name="trash/fuelrefuel12">
+		<switch name="trash/fuelrefuel10">
 			<default value="0"/>
 			<test logic="AND" value="-20">
 				propulsion/tank[0]/contents-lbs lt 200
@@ -243,7 +244,7 @@
 		
 		<!-- tank 6a into right manifold -->
 		
-		<switch name="trash/fuelrefuel12">
+		<switch name="trash/fuelrefuel11">
 			<default value="0"/>
 			<test logic="AND" value="-20">
 				propulsion/tank[0]/contents-lbs lt 200
@@ -269,7 +270,7 @@
 		
 		<!-- right manifold -->
 		
-		<summer name="trash/fuelrefuel23">
+		<summer name="trash/fuelrefuel13">
 			<input>-propulsion/tank[3]/external-flow-rate-pps-right</input> <!-- tank 1 right output -->
 			<input>-propulsion/tank[6]/external-flow-rate-pps-right</input> <!-- tank 4 right output -->
 			<input>-propulsion/tank[7]/external-flow-rate-pps</input> <!-- tank 5 output -->
@@ -280,7 +281,7 @@
 		
 		<!-- left manifold -->
 		
-		<summer name="trash/fuelrefuel22">
+		<summer name="trash/fuelrefuel14">
 			<input>-propulsion/tank[3]/external-flow-rate-pps-left</input> <!-- tank 1 left output -->
 			<input>-propulsion/tank[6]/external-flow-rate-pps-left</input> <!-- tank 4 left output -->
 			<input>-propulsion/tank[4]/external-flow-rate-pps</input> <!-- tank 2 output -->
