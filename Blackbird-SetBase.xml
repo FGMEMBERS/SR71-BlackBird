@@ -228,14 +228,6 @@
 	<!-- setting up properties for later -->
 	<fdm n="0">
 		<jsbsim>
-			<propulsion>
-				<tank n="3">
-					<external-flow-rate-pps-half>0</external-flow-rate-pps-half>
-				</tank>
-				<tank n="6">
-					<external-flow-rate-pps-half>0</external-flow-rate-pps-half>
-				</tank>
-			</propulsion>
 			<fcs>
 				<fuel-pump0>0</fuel-pump0>
 				<fuel-pump1>0</fuel-pump1>
