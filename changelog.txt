@@ -21,3 +21,4 @@ v 0.2.2
 +Max mach of 3.53 enforced - this is due to the pressure wave from the nose of the aircraft hitting the inlets, causing an unstart.
 +BigTail variant introduced
 +Custom sounds by @swampmo
++Fuel system now sequences as described in the manual.
