@@ -108,22 +108,42 @@
                     <running>false</running>
         </engine>
     </engines>
-
-
-    <consumables>
-       <!-- payload of av 70100 lbs   density 0.8-->
-        <!--<fuel>
-            <tank n="0">
-            <level-gal_us archive="y">3000</level-gal_us>
-            </tank>
-            <tank n="1">
-            <level-gal_us archive="y">7500</level-gal_us>
-            </tank>
-            <tank n="2">
-            <level-gal_us archive="y">0</level-gal_us>
-            </tank>
-        </fuel>-->
-    </consumables>
+	
+		<consumables n="0">
+		<fuel>
+			<tank n="0">
+				<name>Right Fuel Manifold</name>
+			</tank>
+			<tank n="1">
+				<name>Left Fuel Manifold</name>
+			</tank>
+			<tank n="2">
+				<name>Tank 1A</name>
+			</tank>
+			<tank n="3">
+				<name>Tank 1</name>
+			</tank>
+			<tank n="4">
+				<name>Tank 2</name>
+			</tank>
+			<tank n="5">
+				<name>Tank 3</name>
+			</tank>
+			<tank n="6">
+				<name>Tank 4</name>
+			</tank>
+			<tank n="7">
+				<name>Tank 5</name>
+			</tank>
+			<tank n="8">
+				<name>Tank 6A</name>
+			</tank>
+			<tank n="9">
+				<name>Tank 6B</name>
+			</tank>
+		</fuel>
+	</consumables>
+	
 
     <autopilot>
             <settings>
@@ -204,6 +224,16 @@
 				<file>Aircraft/SR71-BlackBird/Nasal/damage.nas</file>
 			</damage>
     </nasal>
+	
+	<!-- setting up properties for later -->
+	<fdm n="0">
+		<jsbsim>
+			<fcs>
+				<fuel-pump0>0</fuel-pump0>
+				<fuel-pump1>0</fuel-pump1>
+			</fcs>
+		</jsbsim>
+	</fdm>
 
 </PropertyList>
 
