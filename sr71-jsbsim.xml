@@ -94,8 +94,8 @@
             <y> 0 </y>
             <z> 38 </z>
         </location>
-        <location name="VRP" unit="IN">
-            <x> -430 </x>
+        <location name="VRP" unit="M">
+            <x> 0 </x>
             <y> 0 </y>
             <z> 0 </z>
         </location>
@@ -155,7 +155,7 @@
             <max_steer unit="DEG"> 0.0 </max_steer>
             <brake_group> LEFT </brake_group>
             <retractable>1</retractable>
-            <relaxation_velocity>
+<!--            <relaxation_velocity>
               <rolling unit="FT/SEC">0.7</rolling>
               <side unit="FT/SEC">0.7</side>
             </relaxation_velocity>
@@ -163,7 +163,7 @@
               <rolling> 120.0 </rolling>
               <side> 120.0 </side>
             </force_lag_filter>
-            <wheel_slip_filter> 120.0 </wheel_slip_filter>
+            <wheel_slip_filter> 120.0 </wheel_slip_filter>-->
         </contact>
         <contact type="BOGEY" name="MLG_RIGHT"> <!--gear 2-->
             <location unit="M">
@@ -179,7 +179,7 @@
             <max_steer unit="DEG"> 0.0 </max_steer>
             <brake_group> RIGHT </brake_group>
             <retractable>1</retractable>
-            <relaxation_velocity>
+ <!--           <relaxation_velocity>
               <rolling unit="FT/SEC">0.7</rolling>
               <side unit="FT/SEC">0.7</side>
             </relaxation_velocity>
@@ -187,7 +187,7 @@
               <rolling> 120.0 </rolling>
               <side> 120.0 </side>
             </force_lag_filter>
-            <wheel_slip_filter> 120.0 </wheel_slip_filter>
+            <wheel_slip_filter> 120.0 </wheel_slip_filter>-->
         </contact>
 
 
@@ -640,7 +640,7 @@
     <system file="electrical-fdm"/>
     <system file="propulsion"/>
     <system file="crash"/>
-    <!--<system file="landing-gear"/>-->
+    <system file="landing-gear"/>
     <system file="instruments"/>
     <system file="canopy"/>
     <system file="blackout"/>
