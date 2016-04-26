@@ -118,10 +118,10 @@
 
     <ground_reactions>
         <contact type="BOGEY" name="NOSE"> <!--gear 0-->
-            <location unit="IN">
-                <x> -360.23 </x>
+            <location unit="M">
+                <x> -8.79931 </x>
                 <y> 0 </y>
-                <z> -75.98 </z>
+                <z> -1.929892 </z>
             </location>
             <static_friction> 0.8 </static_friction>
             <dynamic_friction> 0.5 </dynamic_friction>
@@ -142,10 +142,10 @@
             <wheel_slip_filter> 120.0 </wheel_slip_filter>
         </contact>
         <contact type="BOGEY" name="MLG_LEFT"> <!--gear 1-->
-            <location unit="IN">
-                <x> 78.34 </x>
-                <y> -54 </y>
-                <z> -75.98 </z>
+            <location unit="M">
+                <x> 1.88699 </x>
+                <y> -2.50010 </y>
+                <z> -1.929892 </z>
             </location>
             <static_friction> 0.8 </static_friction>
             <dynamic_friction> 0.5 </dynamic_friction>
@@ -166,10 +166,10 @@
             <wheel_slip_filter> 120.0 </wheel_slip_filter>
         </contact>
         <contact type="BOGEY" name="MLG_RIGHT"> <!--gear 2-->
-            <location unit="IN">
-                <x> 78.34 </x>
-                <y> 54 </y>
-                <z> -75.98 </z>
+            <location unit="M">
+                <x> 1.88699 </x>
+                <y> 2.50010 </y>
+                <z> -1.929892 </z>
             </location>
             <static_friction> 0.8 </static_friction>
             <dynamic_friction> 0.5 </dynamic_friction>
