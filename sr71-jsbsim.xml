@@ -197,10 +197,10 @@
 
         <!--gear 3-->
         <contact type="STRUCTURE" name="WT_LEFT">
-            <location unit="IN">
-                <x> 88.2 </x>
-                <y> -257 </y>
-                <z> -27 </z>
+            <location unit="M">
+                <x> 2.24028 </x>
+                <y> -6.5278 </y>
+                <z> -0.6858 </z>
             </location>
             <static_friction> 0.2 </static_friction>
             <dynamic_friction> 0.2 </dynamic_friction>
@@ -210,10 +210,10 @@
         </contact>
         <!--gear 4-->
         <contact type="STRUCTURE" name="WT_RIGHT">
-            <location unit="IN">
-                <x> 88.2 </x>
-                <y> 257 </y>
-                <z> -27 </z>
+            <location unit="M">
+                <x> 2.24028 </x>
+                <y> 6.5278 </y>
+                <z> -0.6858 </z>
             </location>
             <static_friction> 0.2 </static_friction>
             <dynamic_friction> 0.2 </dynamic_friction>
@@ -223,9 +223,9 @@
         </contact>
         <!--gear 5-->
         <contact type="STRUCTURE" name="VT_LEFT">
-            <location unit="IN">
-                <x> 227.4 </x>
-                <y> -69.7 </y>
+            <location unit="M">
+                <x> 5.77596 </x>
+                <y> -1.77038 </y>
                 <z> 140.8 </z>
             </location>
             <static_friction> 0.2 </static_friction>
@@ -236,10 +236,10 @@
         </contact>
         <!--gear 6-->
         <contact type="STRUCTURE" name="VT_RIGHT">
-            <location unit="IN">
-                <x> 227.4 </x>
-                <y> 69.7 </y>
-                <z> 140.8 </z>
+            <location unit="M">
+                <x> 5.77596 </x>
+                <y> 1.77038 </y>
+                <z> 3.57632 </z>
             </location>
             <static_friction> 0.2 </static_friction>
             <dynamic_friction> 0.2 </dynamic_friction>
@@ -249,8 +249,8 @@
         </contact>
         <!--gear 7-->
         <contact type="STRUCTURE" name="RADOME">
-            <location unit="IN">
-                <x> -468.7 </x>
+            <location unit="M">
+                <x> -11.90498 </x>
                 <y> 0 </y>
                 <z> 0 </z>
             </location>
@@ -262,10 +262,10 @@
         </contact>
         <!--gear 8-->
         <contact type="STRUCTURE" name="BELLY">
-            <location unit="IN">
-                <x> -7 </x>
+            <location unit="M">
+                <x> -0.1778 </x>
                 <y> 0 </y>
-                <z> -20 </z>
+                <z> -0.508 </z>
             </location>
             <static_friction> 0.2 </static_friction>
             <dynamic_friction> 0.2 </dynamic_friction>
@@ -275,8 +275,8 @@
         </contact>
         <!--gear 9-->
         <contact type="STRUCTURE" name="ARFUSE">
-            <location unit="IN">
-                <x>200</x>
+            <location unit="M">
+                <x> 5.08 </x>
                 <y> 0 </y>
                 <z> 0 </z>
             </location>
