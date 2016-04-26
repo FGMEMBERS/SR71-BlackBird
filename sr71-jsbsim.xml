@@ -640,7 +640,7 @@
     <system file="electrical-fdm"/>
     <system file="propulsion"/>
     <system file="crash"/>
-    <system file="landing-gear"/>
+    <!--<system file="landing-gear"/>-->
     <system file="instruments"/>
     <system file="canopy"/>
     <system file="blackout"/>
@@ -974,7 +974,7 @@
                 <product>
                     <property>aero/qbar-psf</property>
                     <property>metrics/Sw-sqft</property>
-                    <property>fcs/gear-surface-position</property>
+                    <property>/controls/gear/gear-down</property>
                     <value>0.0200</value>
                 </product>
             </function>
