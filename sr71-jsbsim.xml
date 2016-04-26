@@ -84,7 +84,7 @@
         <htailarm unit="FT"> 0 </htailarm>
         <vtailarea unit="FT2"> 323.1 </vtailarea>
         <vtailarm unit="FT"> 0 </vtailarm>
-        <location name="AERORP" unit="IN">
+        <location name="AERORP" unit="M">
             <x> 0 </x>
             <y> 0 </y>
             <z> 0 </z>
@@ -109,10 +109,10 @@
         <ixz unit="SLUG*FT2"> 0 </ixz>
         <iyz unit="SLUG*FT2"> 0 </iyz>
         <emptywt unit="LBS"> 59000</emptywt>
-        <location name="CG" unit="IN">
-            <x> 10 </x>
+        <location name="CG" unit="M">
+            <x> 0.254 </x>
             <y> 0 </y>
-            <z> -32.3 </z>
+            <z> -0.82042 </z>
         </location>
     </mass_balance>
 
