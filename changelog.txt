@@ -22,3 +22,4 @@ v 0.2.2
 +BigTail variant introduced
 +Custom sounds by @swampmo
 +Fuel system now sequences as described in the manual.
++Landing gear now is on the ground when it appears to be, instead of floating in the air when taking off. (@NikolaiVChr helped immensely in this.)
