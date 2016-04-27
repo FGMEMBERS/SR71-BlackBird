@@ -5,20 +5,6 @@
     <path>Models/Panel-SR71.ac</path>
 <texture-path>Models/Textures/</texture-path>
 
-
- <!--===================GABARIT DE CENTRAGE====ne pas enlever========-->
-    <animation>
-        <type>select</type>
-        <object-name>Gabarit-Position-Panel</object-name>
-        <condition>
-                <equals>
-                    <property>sim/current-view/view-number</property>
-                    <value>999</value>
-                </equals>
-        </condition>
-    </animation>
-    <!--==================================================-->
-
 <!--==============Center=======================-->
     <model>
         <name>Radar</name>
@@ -191,7 +177,7 @@
     <model>
             <path>Aircraft/SR71-BlackBird/Instruments/FUEL-bb.xml</path>
             <offsets>
-                    <x-m>0.01451505</x-m>
+                    <x-m>0.01601505</x-m>
                     <y-m>0.41483</y-m>
                     <z-m>-0.0836361</z-m>
                     <heading-deg>-5</heading-deg>
