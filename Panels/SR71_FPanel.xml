@@ -262,7 +262,7 @@
 
 
 
-    <model>
+    <!--<model>
             <path>Aircraft/SR71-BlackBird/Instruments/Bezel-bb.xml</path>
             <offsets>
                     <x-m>0.00951505</x-m>
@@ -270,14 +270,14 @@
                     <z-m>0.076019</z-m>
                     <pitch-deg>0</pitch-deg>
         </offsets>
-    </model>
+    </model>-->
 
     <model>
             <path>Aircraft/SR71-BlackBird/Instruments/ASI-bb.xml</path>
             <offsets>
                     <x-m>0.00951505</x-m>
-                    <y-m>-0.150865</y-m>
-                    <z-m>0.076019</z-m>
+                    <y-m>-0.140865</y-m>
+                    <z-m>0.068019</z-m>
                     <pitch-deg>0</pitch-deg>
         </offsets>
     </model>
