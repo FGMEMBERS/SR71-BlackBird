@@ -123,7 +123,7 @@
     </model>
 
 
-    <model>
+<!--    <model>
             <path>Aircraft/SR71-BlackBird/Instruments/Bezel-bb.xml</path>
             <offsets>
                     <x-m>0.00951505</x-m>
@@ -131,15 +131,15 @@
                     <z-m>0.076019</z-m>
                     <pitch-deg>0</pitch-deg>
         </offsets>
-    </model>
+    </model> -->
 
     <model>
         <name>Altimeter</name>
-            <path>Aircraft/SR71-BlackBird/Instruments/ALT-bb.xml</path>
+            <path>Aircraft/SR71-BlackBird/Models/Instruments/ALT/ALT-bb.xml</path>
             <offsets>
-                    <x-m>0.000230764</x-m>
-                    <y-m>0.150865</y-m>
-                    <z-m>0.076019</z-m>
+                    <x-m>0.00951505</x-m>
+                    <y-m>0.143865</y-m>
+                    <z-m>0.068019</z-m>
                     <pitch-deg>0</pitch-deg>
         </offsets>
     </model>
