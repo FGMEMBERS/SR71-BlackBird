@@ -273,7 +273,7 @@
     </model>-->
 
     <model>
-            <path>Aircraft/SR71-BlackBird/Instruments/ASI-bb.xml</path>
+            <path>Aircraft/SR71-BlackBird/Models/Instruments/ASI/ASI-bb.xml</path>
             <offsets>
                     <x-m>0.00951505</x-m>
                     <y-m>-0.140865</y-m>
