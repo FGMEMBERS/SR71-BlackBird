@@ -800,13 +800,6 @@
     </flight_control>
 
     <aerodynamics>
-<!--        <alphalimits>
-            <documentation>
-
-            </documentation>
-            <min unit="DEG">-7</min>
-            <max unit="DEG">15</max>
-        </alphalimits> -->
         <function name="aero/function/kCDge">
             <description>Change_in_drag_due_to_ground_effect</description>
             <product>
@@ -845,32 +838,6 @@
                   </table>
             </product>
         </function>
-
-        <!--L'avion deviendra incontrolabe au delà de 460 kts -->
-        <function name="aero/function/kOSctl">
-            <description>Change_in_control_due_to overspeed</description>
-            <product>
-                <table>
-                    <independentVar>velocities/vc-kts</independentVar>
-                    <tableData>
-                        460  	1.000
-                        465	        0.990
-                        470	        0.6000
-                        500	        0.2000
-                        700	        0.0100
-                    </tableData>
-                </table>
-            </product>
-            </function>
-
-            <function name="aero/function/kOSctli">
-                <description>Change_in_control_due_to overspeed_i</description>
-                <difference>
-                   <value>1</value>
-                   <property>aero/function/kOSctl</property>
-                </difference>
-            </function>
-
 
         <axis name="DRAG">
 
@@ -1065,7 +1032,6 @@
                     <property>aero/qbar-psf</property>
                     <property>metrics/Sw-sqft</property>
                     <property>aero/function/kCLge</property>
-                    <!--<property>aero/function/kOSctl</property>-->
                     <table>
                         <independentVar lookup="row">aero/alpha-rad</independentVar>
                         <independentVar lookup="column">velocities/mach</independentVar>
@@ -1088,7 +1054,6 @@
                     <property>metrics/Sw-sqft</property>
                     <property>aero/ci2vel</property>
                     <property>velocities/q-aero-rad_sec</property>
-                    <!--<property>aero/function/kOSctl</property>-->
                       <table>
                           <independentVar>aero/alpha-rad</independentVar>
                           <tableData>
@@ -1130,7 +1095,6 @@
                     <property>aero/qbar-psf</property>
                     <property>metrics/Sw-sqft</property>
                     <property>fcs/elevator-pos-rad</property>
-                    <!--<property>aero/function/kOSctl</property>-->
                     <value>0.2000</value>
                 </product>
             </function>
@@ -1319,7 +1283,6 @@
                     <property>metrics/Sw-sqft</property>
                     <property>metrics/bw-ft</property>
                     <property>fcs/left-aileron-pos-rad</property>
-                    <!--<property>aero/function/kOSctl</property>-->
                       <table>
                           <independentVar>velocities/mach</independentVar>
                           <tableData>
@@ -1333,17 +1296,6 @@
         </axis>
 
         <axis name="PITCH">
-            <function name="aero/coefficient/Cmov">
-                <description>Pitch_moment_due_to_overspeed</description>
-                <!--<product>
-                    <property>aero/qbar-psf</property>
-                    <property>metrics/Sw-sqft</property>
-                    <property>metrics/cbarw-ft</property>
-                    <property>aero/function/kOSctli</property>
-                    <value>-0.1000</value>
-                </product>-->
-				<value>0</value>
-            </function>
             <function name="aero/coefficient/Cmalpha">
                 <description>Pitch_moment_due_to_alpha</description>
                 <product>
