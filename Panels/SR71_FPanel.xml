@@ -143,7 +143,7 @@
         </offsets>
     </model>
 
-    <model>
+<!--    <model>
             <path>Aircraft/SR71-BlackBird/Instruments/Bezel-bb.xml</path>
             <offsets>
                     <x-m>0.01451505</x-m>
@@ -151,13 +151,13 @@
                     <z-m>-0.0836361</z-m>
                     <heading-deg>-5</heading-deg>
         </offsets>
-    </model>
+    </model> -->
 
     <model>
-            <path>Aircraft/SR71-BlackBird/Instruments/FUEL-bb.xml</path>
+            <path>Aircraft/SR71-BlackBird/Models/Instruments/FuelGuage/fuelguage.xml</path>
             <offsets>
                     <x-m>0.01601505</x-m>
-                    <y-m>0.41483</y-m>
+                    <y-m>0.40983</y-m>
                     <z-m>-0.0836361</z-m>
                     <heading-deg>-5</heading-deg>
         </offsets>
