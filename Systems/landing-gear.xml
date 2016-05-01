@@ -90,7 +90,7 @@
                 <default value="0"/>
                 <test  logic="AND" value="1">
                     /environment/terrain-solid == 1
-                   velocities/u-fps gt  360
+                   velocities/u-fps gt  403
                     fcs/gear-surface-position == 1
                     gear/unit[1]/WOW == 1
                 </test>
