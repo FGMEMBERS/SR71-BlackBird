@@ -7,8 +7,7 @@
 -->
 <PropertyList>
 
- <path>Models/asi-bb.ac</path>
- <texture-path>Models/Textures</texture-path>
+ <path>asi-bb.ac</path>
 
     <animation>
             <type>noshadow</type>
@@ -36,17 +35,63 @@
             </offsets>
     </model>-->
 
-    <animation include="Instrument-Light4.xml">
+    <animation>
             <object-name>Aiguille</object-name>
             <object-name>Index</object-name>
+					<type>material</type>
+		<emission>
+			<factor-prop>controls/lighting/instruments-norm</factor-prop>
+			<red>0.80</red>
+			<green>0.40</green>
+			<blue>0.30</blue>
+		</emission>
+		<diffuse>
+			<red>1</red>
+			<green>1</green>
+			<blue>1</blue>
+		</diffuse>
+		<ambient>
+			<red>01</red>
+			<green>1</green>
+			<blue>1</blue>
+		</ambient>
+		<specular>
+			<red>1</red>
+			<green>1</green>
+			<blue>1</blue>
+		</specular>
+		<shininess> 20</shininess>
     </animation>
 
 
 
-    <animation include="Instrument-Light3.xml">
+    <animation>
             <object-name>Mach</object-name>
             <object-name>Knot-Ext</object-name>
             <object-name>Knot-Int</object-name>
+		<type>material</type>
+		<emission>
+			<factor-prop>controls/lighting/instruments-norm</factor-prop>
+			<red>0.60</red>
+			<green>0.30</green>
+			<blue>0.20</blue>
+		</emission>
+		<diffuse>
+			<red>1</red>
+			<green>1</green>
+			<blue>1</blue>
+		</diffuse>
+		<ambient>
+			<red>1</red>
+			<green>1</green>
+			<blue>1</blue>
+		</ambient>
+		<specular>
+			<red>1</red>
+			<green>1</green>
+			<blue>1</blue>
+		</specular>
+		<shininess> 32</shininess>
     </animation>
 
     <animation>

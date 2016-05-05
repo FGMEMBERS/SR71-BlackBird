@@ -5,20 +5,6 @@
     <path>Models/Panel-SR71.ac</path>
 <texture-path>Models/Textures/</texture-path>
 
-
- <!--===================GABARIT DE CENTRAGE====ne pas enlever========-->
-    <animation>
-        <type>select</type>
-        <object-name>Gabarit-Position-Panel</object-name>
-        <condition>
-                <equals>
-                    <property>sim/current-view/view-number</property>
-                    <value>999</value>
-                </equals>
-        </condition>
-    </animation>
-    <!--==================================================-->
-
 <!--==============Center=======================-->
     <model>
         <name>Radar</name>
@@ -136,49 +122,28 @@
         </offsets>
     </model>
 
-
-    <model>
-            <path>Aircraft/SR71-BlackBird/Instruments/Bezel-bb.xml</path>
-            <offsets>
-                    <x-m>0.00951505</x-m>
-                    <y-m>0.150865</y-m>
-                    <z-m>0.076019</z-m>
-                    <pitch-deg>0</pitch-deg>
-        </offsets>
-    </model>
-
     <model>
         <name>Altimeter</name>
-            <path>Aircraft/SR71-BlackBird/Instruments/ALT-bb.xml</path>
-            <offsets>
-                    <x-m>0.000230764</x-m>
-                    <y-m>0.150865</y-m>
-                    <z-m>0.076019</z-m>
-                    <pitch-deg>0</pitch-deg>
-        </offsets>
-    </model>
-
-    <model>
-            <path>Aircraft/SR71-BlackBird/Instruments/Bezel-bb.xml</path>
+            <path>Aircraft/SR71-BlackBird/Models/Instruments/ALT/ALT-bb.xml</path>
             <offsets>
                     <x-m>0.00951505</x-m>
-                    <y-m>0.150865</y-m>
-                    <z-m>-0.0481001</z-m>
+                    <y-m>0.143865</y-m>
+                    <z-m>0.068019</z-m>
                     <pitch-deg>0</pitch-deg>
         </offsets>
     </model>
 
     <model>
-            <path>Aircraft/SR71-BlackBird/Instruments/IVSI-bb.xml</path>
+            <path>Aircraft/SR71-BlackBird/Models/Instruments/IVSI/IVSI-bb.xml</path>
             <offsets>
-                    <x-m>0.0131421</x-m>
-                    <y-m>0.150865</y-m>
-                    <z-m>-0.0481001</z-m>
+                    <x-m>0.0086421</x-m>
+                    <y-m>0.143865</y-m>
+                    <z-m>-0.0401001</z-m>
                     <pitch-deg>0</pitch-deg>
         </offsets>
     </model>
 
-    <model>
+<!--    <model>
             <path>Aircraft/SR71-BlackBird/Instruments/Bezel-bb.xml</path>
             <offsets>
                     <x-m>0.01451505</x-m>
@@ -186,13 +151,13 @@
                     <z-m>-0.0836361</z-m>
                     <heading-deg>-5</heading-deg>
         </offsets>
-    </model>
+    </model> -->
 
     <model>
-            <path>Aircraft/SR71-BlackBird/Instruments/FUEL-bb.xml</path>
+            <path>Aircraft/SR71-BlackBird/Models/Instruments/FuelGuage/fuelguage.xml</path>
             <offsets>
-                    <x-m>0.01451505</x-m>
-                    <y-m>0.41483</y-m>
+                    <x-m>0.01601505</x-m>
+                    <y-m>0.40983</y-m>
                     <z-m>-0.0836361</z-m>
                     <heading-deg>-5</heading-deg>
         </offsets>
@@ -276,7 +241,7 @@
 
 
 
-    <model>
+    <!--<model>
             <path>Aircraft/SR71-BlackBird/Instruments/Bezel-bb.xml</path>
             <offsets>
                     <x-m>0.00951505</x-m>
@@ -284,14 +249,14 @@
                     <z-m>0.076019</z-m>
                     <pitch-deg>0</pitch-deg>
         </offsets>
-    </model>
+    </model>-->
 
     <model>
-            <path>Aircraft/SR71-BlackBird/Instruments/ASI-bb.xml</path>
+            <path>Aircraft/SR71-BlackBird/Models/Instruments/ASI/ASI-bb.xml</path>
             <offsets>
                     <x-m>0.00951505</x-m>
-                    <y-m>-0.150865</y-m>
-                    <z-m>0.076019</z-m>
+                    <y-m>-0.140865</y-m>
+                    <z-m>0.068019</z-m>
                     <pitch-deg>0</pitch-deg>
         </offsets>
     </model>

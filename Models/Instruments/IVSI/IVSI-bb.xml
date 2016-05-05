@@ -1,0 +1,143 @@
+<?xml version="1.0"?>
+
+<!--
+    Usable with FlightGear
+    Property of Gerard Robin
+    Copyright License:  GPL
+-->
+
+<PropertyList>
+
+ <path>ivsi-bb.ac</path>
+
+ 	<animation>
+		<type>noshadow</type>
+		<object-name>IVSI</object-name>
+	</animation>
+
+
+
+	<animation>
+		<object-name>Aiguille</object-name>
+		<type>material</type>
+		<emission>
+			<factor-prop>controls/lighting/instruments-norm</factor-prop>
+			<red>0.80</red>
+			<green>0.40</green>
+			<blue>0.30</blue>
+		</emission>
+		<diffuse>
+			<red>1</red>
+			<green>1</green>
+			<blue>1</blue>
+		</diffuse>
+		<ambient>
+			<red>01</red>
+			<green>1</green>
+			<blue>1</blue>
+		</ambient>
+		<specular>
+			<red>1</red>
+			<green>1</green>
+			<blue>1</blue>
+		</specular>
+		<shininess> 20</shininess>
+	</animation>
+
+	<animation>
+		<object-name>Cadran</object-name>
+		<type>material</type>
+		<emission>
+			<factor-prop>controls/lighting/instruments-norm</factor-prop>
+			<red>0.60</red>
+			<green>0.30</green>
+			<blue>0.20</blue>
+		</emission>
+		<diffuse>
+			<red>1</red>
+			<green>1</green>
+			<blue>1</blue>
+		</diffuse>
+		<ambient>
+			<red>1</red>
+			<green>1</green>
+			<blue>1</blue>
+		</ambient>
+		<specular>
+			<red>1</red>
+			<green>1</green>
+			<blue>1</blue>
+		</specular>
+		<shininess> 32</shininess>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>Aiguille</object-name>
+		<property>/instrumentation/vertical-speed-indicator/indicated-speed-fpm</property>
+		<interpolation>
+			<entry>
+				<ind>-6000</ind>
+				<dep>-165</dep>
+			</entry>
+			<entry>
+				<ind>-5000</ind>
+				<dep>-145</dep>
+			</entry>
+			<entry>
+				<ind>-4000</ind>
+				<dep>-125</dep>
+			</entry>
+			<entry>
+				<ind>-3000</ind>
+				<dep>-105</dep>
+			</entry>
+			<entry>
+				<ind>-2000</ind>
+				<dep>-80</dep>
+			</entry>
+			<entry>
+				<ind>-1000</ind>
+				<dep>-45</dep>
+			</entry>
+			<entry>
+				<ind>-500</ind>
+				<dep>-22.5</dep>
+			</entry>
+			<entry>
+				<ind>500</ind>
+				<dep>22.5</dep>
+			</entry>
+			<entry>
+				<ind>1000</ind>
+				<dep>45</dep>
+			</entry>
+			<entry>
+				<ind>2000</ind>
+				<dep>80</dep>
+			</entry>
+			<entry>
+				<ind>3000</ind>
+				<dep>105</dep>
+			</entry>
+			<entry>
+				<ind>4000</ind>
+				<dep>125</dep>
+			</entry>
+			<entry>
+				<ind>5000</ind>
+				<dep>145</dep>
+			</entry>
+			<entry>
+				<ind>6000</ind>
+				<dep>165</dep>
+			</entry>
+		</interpolation>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+</PropertyList>

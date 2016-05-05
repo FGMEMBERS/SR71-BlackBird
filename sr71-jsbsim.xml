@@ -84,7 +84,7 @@
         <htailarm unit="FT"> 0 </htailarm>
         <vtailarea unit="FT2"> 323.1 </vtailarea>
         <vtailarm unit="FT"> 0 </vtailarm>
-        <location name="AERORP" unit="IN">
+        <location name="AERORP" unit="M">
             <x> 0 </x>
             <y> 0 </y>
             <z> 0 </z>
@@ -94,8 +94,8 @@
             <y> 0 </y>
             <z> 38 </z>
         </location>
-        <location name="VRP" unit="IN">
-            <x> -430 </x>
+        <location name="VRP" unit="M">
+            <x> 0 </x>
             <y> 0 </y>
             <z> 0 </z>
         </location>
@@ -109,19 +109,19 @@
         <ixz unit="SLUG*FT2"> 0 </ixz>
         <iyz unit="SLUG*FT2"> 0 </iyz>
         <emptywt unit="LBS"> 59000</emptywt>
-        <location name="CG" unit="IN">
-            <x> 10 </x>
+        <location name="CG" unit="M">
+            <x> 0.254 </x>
             <y> 0 </y>
-            <z> -32.3 </z>
+            <z> -0.82042 </z>
         </location>
     </mass_balance>
 
     <ground_reactions>
         <contact type="BOGEY" name="NOSE"> <!--gear 0-->
-            <location unit="IN">
-                <x> -360.23 </x>
+            <location unit="M">
+                <x> -8.79931 </x>
                 <y> 0 </y>
-                <z> -75.98 </z>
+                <z> -1.929892 </z>
             </location>
             <static_friction> 0.8 </static_friction>
             <dynamic_friction> 0.5 </dynamic_friction>
@@ -142,10 +142,10 @@
             <wheel_slip_filter> 120.0 </wheel_slip_filter>
         </contact>
         <contact type="BOGEY" name="MLG_LEFT"> <!--gear 1-->
-            <location unit="IN">
-                <x> 78.34 </x>
-                <y> -54 </y>
-                <z> -75.98 </z>
+            <location unit="M">
+                <x> 1.88699 </x>
+                <y> -2.50010 </y>
+                <z> -1.929892 </z>
             </location>
             <static_friction> 0.8 </static_friction>
             <dynamic_friction> 0.5 </dynamic_friction>
@@ -155,7 +155,7 @@
             <max_steer unit="DEG"> 0.0 </max_steer>
             <brake_group> LEFT </brake_group>
             <retractable>1</retractable>
-            <relaxation_velocity>
+<!--            <relaxation_velocity>
               <rolling unit="FT/SEC">0.7</rolling>
               <side unit="FT/SEC">0.7</side>
             </relaxation_velocity>
@@ -163,13 +163,13 @@
               <rolling> 120.0 </rolling>
               <side> 120.0 </side>
             </force_lag_filter>
-            <wheel_slip_filter> 120.0 </wheel_slip_filter>
+            <wheel_slip_filter> 120.0 </wheel_slip_filter>-->
         </contact>
         <contact type="BOGEY" name="MLG_RIGHT"> <!--gear 2-->
-            <location unit="IN">
-                <x> 78.34 </x>
-                <y> 54 </y>
-                <z> -75.98 </z>
+            <location unit="M">
+                <x> 1.88699 </x>
+                <y> 2.50010 </y>
+                <z> -1.929892 </z>
             </location>
             <static_friction> 0.8 </static_friction>
             <dynamic_friction> 0.5 </dynamic_friction>
@@ -179,7 +179,7 @@
             <max_steer unit="DEG"> 0.0 </max_steer>
             <brake_group> RIGHT </brake_group>
             <retractable>1</retractable>
-            <relaxation_velocity>
+ <!--           <relaxation_velocity>
               <rolling unit="FT/SEC">0.7</rolling>
               <side unit="FT/SEC">0.7</side>
             </relaxation_velocity>
@@ -187,7 +187,7 @@
               <rolling> 120.0 </rolling>
               <side> 120.0 </side>
             </force_lag_filter>
-            <wheel_slip_filter> 120.0 </wheel_slip_filter>
+            <wheel_slip_filter> 120.0 </wheel_slip_filter>-->
         </contact>
 
 
@@ -197,10 +197,10 @@
 
         <!--gear 3-->
         <contact type="STRUCTURE" name="WT_LEFT">
-            <location unit="IN">
-                <x> 88.2 </x>
-                <y> -257 </y>
-                <z> -27 </z>
+            <location unit="M">
+                <x> 2.24028 </x>
+                <y> -6.5278 </y>
+                <z> -0.6858 </z>
             </location>
             <static_friction> 0.2 </static_friction>
             <dynamic_friction> 0.2 </dynamic_friction>
@@ -210,10 +210,10 @@
         </contact>
         <!--gear 4-->
         <contact type="STRUCTURE" name="WT_RIGHT">
-            <location unit="IN">
-                <x> 88.2 </x>
-                <y> 257 </y>
-                <z> -27 </z>
+            <location unit="M">
+                <x> 2.24028 </x>
+                <y> 6.5278 </y>
+                <z> -0.6858 </z>
             </location>
             <static_friction> 0.2 </static_friction>
             <dynamic_friction> 0.2 </dynamic_friction>
@@ -223,9 +223,9 @@
         </contact>
         <!--gear 5-->
         <contact type="STRUCTURE" name="VT_LEFT">
-            <location unit="IN">
-                <x> 227.4 </x>
-                <y> -69.7 </y>
+            <location unit="M">
+                <x> 5.77596 </x>
+                <y> -1.77038 </y>
                 <z> 140.8 </z>
             </location>
             <static_friction> 0.2 </static_friction>
@@ -236,10 +236,10 @@
         </contact>
         <!--gear 6-->
         <contact type="STRUCTURE" name="VT_RIGHT">
-            <location unit="IN">
-                <x> 227.4 </x>
-                <y> 69.7 </y>
-                <z> 140.8 </z>
+            <location unit="M">
+                <x> 5.77596 </x>
+                <y> 1.77038 </y>
+                <z> 3.57632 </z>
             </location>
             <static_friction> 0.2 </static_friction>
             <dynamic_friction> 0.2 </dynamic_friction>
@@ -249,8 +249,8 @@
         </contact>
         <!--gear 7-->
         <contact type="STRUCTURE" name="RADOME">
-            <location unit="IN">
-                <x> -468.7 </x>
+            <location unit="M">
+                <x> -11.90498 </x>
                 <y> 0 </y>
                 <z> 0 </z>
             </location>
@@ -262,10 +262,10 @@
         </contact>
         <!--gear 8-->
         <contact type="STRUCTURE" name="BELLY">
-            <location unit="IN">
-                <x> -7 </x>
+            <location unit="M">
+                <x> -0.1778 </x>
                 <y> 0 </y>
-                <z> -20 </z>
+                <z> -0.508 </z>
             </location>
             <static_friction> 0.2 </static_friction>
             <dynamic_friction> 0.2 </dynamic_friction>
@@ -275,8 +275,8 @@
         </contact>
         <!--gear 9-->
         <contact type="STRUCTURE" name="ARFUSE">
-            <location unit="IN">
-                <x>200</x>
+            <location unit="M">
+                <x> 5.08 </x>
                 <y> 0 </y>
                 <z> 0 </z>
             </location>
@@ -374,14 +374,7 @@
                 <pitch> 0 </pitch>
                 <yaw> 0 </yaw>
             </orient>
-            <feed>0</feed>
-			<feed>1</feed>
-			<feed>2</feed>
-			<feed>3</feed>
-			<feed>4</feed>
-			<feed>5</feed>
-			<feed>6</feed>
-			<feed>7</feed>
+			<feed>0</feed>
             <thruster file="direct-new">
                 <location unit="IN">
                     <x> 282 </x>
@@ -406,14 +399,7 @@
                 <pitch> 0 </pitch>
                 <yaw> 0 </yaw>
             </orient>
-            <feed>0</feed>
 			<feed>1</feed>
-			<feed>2</feed>
-			<feed>3</feed>
-			<feed>4</feed>
-			<feed>5</feed>
-			<feed>6</feed>
-			<feed>7</feed>
             <thruster file="direct-new">
                 <location unit="IN">
                     <x> 282 </x>
@@ -454,7 +440,48 @@
             <capacity unit="LBS"> 1 </capacity>
             <contents unit="LBS"> 0 </contents>
         </tank>-->
-		
+	
+	<!-- Right Fuel Manifold -->
+	
+	<tank type="FUEL">
+		<location unit="M">
+		<x> 0.5 </x>
+		<y> 1 </y>
+		<z> 0.6 </z>
+		</location>
+		<!--<drain_location unit="{FT | M | IN}">
+		<x> {number} </x>
+		<y> {number} </y>
+		<z> {number} </z>
+		</drain_location>-->
+		<radius unit="M"> 0.5 </radius>
+		<capacity unit="LBS"> 200 </capacity>
+		<contents unit="LBS"> 200 </contents>
+		<!-- <temperature> {number} </temperature>  must be degrees fahrenheit -->
+		<!--<standpipe unit="{LBS | KG"}> {number} </standpipe>-->
+		<type> JP-7 </type> <!-- will override previous density setting -->
+	</tank>
+
+	<!-- Left Fuel Manifold-->
+	<tank type="FUEL">
+		<location unit="M">
+		<x> 0.5 </x>
+		<y> -1 </y>
+		<z> 0.6 </z>
+		</location>
+		<!--<drain_location unit="{FT | M | IN}">
+		<x> {number} </x>
+		<y> {number} </y>
+		<z> {number} </z>
+		</drain_location>-->
+		<radius unit="M"> 0.5 </radius>
+		<capacity unit="LBS"> 200 </capacity>
+		<contents unit="LBS"> 200 </contents>
+		<!-- <temperature> {number} </temperature>  must be degrees fahrenheit -->
+		<!--<standpipe unit="{LBS | KG"}> {number} </standpipe>-->
+		<type> JP-7 </type> <!-- will override previous density setting -->
+	</tank>
+	
 	<!-- 1A -->
 	<tank type="FUEL">
 		<location unit="M">
@@ -469,10 +496,9 @@
 		</drain_location>-->
 		<radius unit="M"> 0.5 </radius>
 		<capacity unit="LBS"> 1650 </capacity>
-		<contents unit="LBS"> 200 </contents>
+		<contents unit="LBS"> 0 </contents>
 		<!-- <temperature> {number} </temperature>  must be degrees fahrenheit -->
 		<!--<standpipe unit="{LBS | KG"}> {number} </standpipe>-->
-		<priority> 1 </priority>
 		<type> JP-7 </type> <!-- will override previous density setting -->
 	</tank>
 	<!-- 1 -->
@@ -492,7 +518,6 @@
 		<contents unit="LBS"> 5000 </contents>
 		<!-- <temperature> {number} </temperature>  must be degrees fahrenheit -->
 		<!--<standpipe unit="{LBS | KG"}> {number} </standpipe>-->
-		<priority> 2 </priority>
 		<type> JP-7 </type> <!-- will override previous density setting -->
 	</tank>
 	<!-- 2 -->
@@ -509,10 +534,9 @@
 		</drain_location>-->
 		<radius unit="M"> 1.5 </radius>
 		<capacity unit="LBS"> 12970 </capacity>
-		<contents unit="LBS"> 5000 </contents>
+		<contents unit="LBS"> 4000 </contents>
 		<!-- <temperature> {number} </temperature>  must be degrees fahrenheit -->
 		<!--<standpipe unit="{LBS | KG"}> {number} </standpipe>-->
-		<priority> 3 </priority>
 		<type> JP-7 </type> <!-- will override previous density setting -->
 	</tank>
 	<!-- 3 -->
@@ -532,7 +556,6 @@
 		<contents unit="LBS"> 4000 </contents>
 		<!-- <temperature> {number} </temperature>  must be degrees fahrenheit -->
 		<!--<standpipe unit="{LBS | KG"}> {number} </standpipe>-->
-		<priority> 4 </priority>
 		<type> JP-7 </type> <!-- will override previous density setting -->
 	</tank>
 	<!-- 4 -->
@@ -549,10 +572,9 @@
 		</drain_location>-->
 		<radius unit="M"> 1.5 </radius>
 		<capacity unit="LBS"> 9550 </capacity>
-		<contents unit="LBS"> 4000 </contents>
+		<contents unit="LBS"> 3000 </contents>
 		<!-- <temperature> {number} </temperature>  must be degrees fahrenheit -->
 		<!--<standpipe unit="{LBS | KG"}> {number} </standpipe>-->
-		<priority> 5 </priority>
 		<type> JP-7 </type> <!-- will override previous density setting -->
 	</tank>
 	<!-- 5 -->
@@ -569,10 +591,9 @@
 		</drain_location>-->
 		<radius unit="M"> 1.5 </radius>
 		<capacity unit="LBS"> 11550 </capacity>
-		<contents unit="LBS"> 5000 </contents>
+		<contents unit="LBS"> 4200 </contents>
 		<!-- <temperature> {number} </temperature>  must be degrees fahrenheit -->
 		<!--<standpipe unit="{LBS | KG"}> {number} </standpipe>-->
-		<priority> 6 </priority>
 		<type> JP-7 </type> <!-- will override previous density setting -->
 	</tank>
 	<!-- 6A -->
@@ -592,7 +613,6 @@
 		<contents unit="LBS"> 3000 </contents>
 		<!-- <temperature> {number} </temperature>  must be degrees fahrenheit -->
 		<!--<standpipe unit="{LBS | KG"}> {number} </standpipe>-->
-		<priority> 7 </priority>
 		<type> JP-7 </type> <!-- will override previous density setting -->
 	</tank>
 	<!-- 6B -->
@@ -612,7 +632,6 @@
 		<contents unit="LBS"> 3000 </contents>
 		<!-- <temperature> {number} </temperature>  must be degrees fahrenheit -->
 		<!--<standpipe unit="{LBS | KG"}> {number} </standpipe>-->
-		<priority> 8 </priority>
 		<type> JP-7 </type> <!-- will override previous density setting -->
 	</tank>
     </propulsion>
@@ -781,13 +800,6 @@
     </flight_control>
 
     <aerodynamics>
-        <alphalimits>
-            <documentation>
-
-            </documentation>
-            <min unit="DEG">-7</min>
-            <max unit="DEG">15</max>
-        </alphalimits>
         <function name="aero/function/kCDge">
             <description>Change_in_drag_due_to_ground_effect</description>
             <product>
@@ -826,32 +838,6 @@
                   </table>
             </product>
         </function>
-
-        <!--L'avion deviendra incontrolabe au delà de 460 kts -->
-        <function name="aero/function/kOSctl">
-            <description>Change_in_control_due_to overspeed</description>
-            <product>
-                <table>
-                    <independentVar>velocities/vc-kts</independentVar>
-                    <tableData>
-                        460  	1.000
-                        465	        0.990
-                        470	        0.6000
-                        500	        0.2000
-                        700	        0.0100
-                    </tableData>
-                </table>
-            </product>
-            </function>
-
-            <function name="aero/function/kOSctli">
-                <description>Change_in_control_due_to overspeed_i</description>
-                <difference>
-                   <value>1</value>
-                   <property>aero/function/kOSctl</property>
-                </difference>
-            </function>
-
 
         <axis name="DRAG">
 
@@ -955,7 +941,7 @@
                 <product>
                     <property>aero/qbar-psf</property>
                     <property>metrics/Sw-sqft</property>
-                    <property>fcs/gear-surface-position</property>
+                    <property>/sim/multiplay/generic/float[0]</property>
                     <value>0.0200</value>
                 </product>
             </function>
@@ -1046,7 +1032,6 @@
                     <property>aero/qbar-psf</property>
                     <property>metrics/Sw-sqft</property>
                     <property>aero/function/kCLge</property>
-                    <!--<property>aero/function/kOSctl</property>-->
                     <table>
                         <independentVar lookup="row">aero/alpha-rad</independentVar>
                         <independentVar lookup="column">velocities/mach</independentVar>
@@ -1069,7 +1054,6 @@
                     <property>metrics/Sw-sqft</property>
                     <property>aero/ci2vel</property>
                     <property>velocities/q-aero-rad_sec</property>
-                    <!--<property>aero/function/kOSctl</property>-->
                       <table>
                           <independentVar>aero/alpha-rad</independentVar>
                           <tableData>
@@ -1111,7 +1095,6 @@
                     <property>aero/qbar-psf</property>
                     <property>metrics/Sw-sqft</property>
                     <property>fcs/elevator-pos-rad</property>
-                    <!--<property>aero/function/kOSctl</property>-->
                     <value>0.2000</value>
                 </product>
             </function>
@@ -1300,7 +1283,6 @@
                     <property>metrics/Sw-sqft</property>
                     <property>metrics/bw-ft</property>
                     <property>fcs/left-aileron-pos-rad</property>
-                    <!--<property>aero/function/kOSctl</property>-->
                       <table>
                           <independentVar>velocities/mach</independentVar>
                           <tableData>
@@ -1314,17 +1296,6 @@
         </axis>
 
         <axis name="PITCH">
-            <function name="aero/coefficient/Cmov">
-                <description>Pitch_moment_due_to_overspeed</description>
-                <!--<product>
-                    <property>aero/qbar-psf</property>
-                    <property>metrics/Sw-sqft</property>
-                    <property>metrics/cbarw-ft</property>
-                    <property>aero/function/kOSctli</property>
-                    <value>-0.1000</value>
-                </product>-->
-				<value>0</value>
-            </function>
             <function name="aero/coefficient/Cmalpha">
                 <description>Pitch_moment_due_to_alpha</description>
                 <product>
@@ -1373,6 +1344,37 @@
                     <value>-9.0000</value>
                 </product>
             </function>
+			<function name="aero/coefficient/Cmaover">
+				<description>Pitch_moment_due_to_over_alpha</description>
+				<product>
+					<property>aero/qbar-psf</property>
+                    <property>metrics/Sw-sqft</property>
+                    <property>metrics/cbarw-ft</property>
+					<table>
+						<independentVar lookup="row">aero/alpha-rad</independentVar>
+						<independentVar lookup="column">velocities/mach</independentVar>
+						<tableData>
+									0		0.25	0.50	0.75	1.00	1.10	2.80	4.00	
+			<!-- 00* -->	0		0		0		0		0		0		0		0		0
+			<!-- 05* -->	0.0873	0		0		0		0		0		0		0		0
+			<!-- 06* -->	0.1047	0		0		0		0		0		0		0		0
+			<!-- 08* -->	0.1396	0		0		0		0		0		0		0.01	0.01
+			<!-- 10* -->	0.1745	0		0		0		0		0		0.02	0.30	0.50
+			<!-- 14* -->	0.2444	0		0		0		0		0		0.05	0.90	1.50
+			<!-- 15* -->	0.2618	0		0		0		0		0.02	0.10	1.70	2.50
+			<!-- 18* -->	0.3142	0		0.10	0.25	0.40	1.00	1.60	2.40	3.80
+			<!-- 21* -->	0.3665	0		0.25	0.70	1.10	1.60	1.95	2.60	4.50
+			<!-- 24* -->	0.4189	0		0.30	0.95	1.40	2.00	2.45	3.10	7.50
+			<!-- 27* -->	0.4712	0		0.35	0.20	1.65	2.40	3.00	3.70	10.90
+			<!-- 30* -->	0.5236	0		0.40	1.45	1.90	2.80	3.30	4.20	12.40
+			<!-- 45* -->	0.7854	0		0.55	1.55	2.25	3.20	3.70	4.85	14.60
+			<!-- 60* -->	1.0472	0		0.25	0.70	1.10	1.20	1.40	2.40	10.90
+			<!-- 90* -->	1.5708	0		0		0		0		0		0		0		0
+							
+						</tableData>
+					</table>
+				</product>
+			</function>
         </axis>
 
         <axis name="YAW">
@@ -1435,4 +1437,21 @@
         </direction>
         </force>
     </external_reactions>
+	
+	
+<!--<output name="C:/Users/soweli/Documents/target_datalog.csv" type="CSV" rate="120">
+<property>propulsion/tank[8]/external-flow-rate-pps</property>
+<simulation> OFF </simulation>
+<rates> OFF </rates>
+<velocities> OFF </velocities>
+<forces> OFF </forces>
+<moments> OFF </moments>
+<position> OFF </position>
+<coefficients> OFF </coefficients>
+<fcs> OFF </fcs>
+<propulsion> OFF </propulsion>
+<aerosurfaces> OFF </aerosurfaces>
+<ground_reactions> OFF </ground_reactions>
+</output>-->
+	
 </fdm_config>

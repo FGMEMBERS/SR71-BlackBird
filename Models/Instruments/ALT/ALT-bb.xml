@@ -7,67 +7,69 @@
 
 <PropertyList>
 
- <path>Models/alt-bb.ac</path>
- <texture-path>Models/Textures</texture-path>
+ <path>alt-bb.ac</path>
 
-
-
-        <model>
-                <name>Bouton</name>
-                <path>Aircraft/SR71-BlackBird/Instruments/Bouton-Nord.xml</path>
-                <offsets>
-                        <x-m>0.0206361</x-m>
-                        <y-m>-0.047</y-m>
-                        <z-m>-0.047</z-m>
-                        <pitch-deg>0</pitch-deg>
-                </offsets>
-        </model>
-
-        <animation include="Instrument-Light4.xml">
+        <animation>
                 <object-name>Aiguille</object-name>
+				<type>material</type>
+				<emission>
+					<factor-prop>controls/lighting/instruments-norm</factor-prop>
+					<red>0.80</red>
+					<green>0.40</green>
+					<blue>0.30</blue>
+				</emission>
+				<diffuse>
+					<red>1</red>
+					<green>1</green>
+					<blue>1</blue>
+				</diffuse>
+				<ambient>
+					<red>01</red>
+					<green>1</green>
+					<blue>1</blue>
+				</ambient>
+				<specular>
+					<red>1</red>
+					<green>1</green>
+					<blue>1</blue>
+				</specular>
+				<shininess> 20</shininess>
         </animation>
 
-        <animation include="Instrument-Light3.xml">
-                <object-name>Cadran</object-name>
-        </animation>
-
-        <animation include="Instrument-Light3.xml">
+        <animation>
                 <object-name>Ft-m</object-name>
                 <object-name>Ft-dm</object-name>
                 <object-name>Ft-minus</object-name>
-        </animation>
-
-        <animation include="Instrument-Light3.xml">
-                <object-name>Tambour</object-name>
-        </animation>
-
-        <animation include="Instrument-Light3.xml">
-                <object-name>PA-cc</object-name>
+				<object-name>Cadran</object-name>
+				<object-name>PA-cc</object-name>
                 <object-name>PA-dc</object-name>
                 <object-name>PA-un</object-name>
                 <object-name>PA-di</object-name>
+				<object-name>Tambour</object-name>
+				<type>material</type>
+				<emission>
+					<factor-prop>controls/lighting/instruments-norm</factor-prop>
+					<red>0.60</red>
+					<green>0.30</green>
+					<blue>0.20</blue>
+				</emission>
+				<diffuse>
+					<red>1</red>
+					<green>1</green>
+					<blue>1</blue>
+				</diffuse>
+				<ambient>
+					<red>1</red>
+					<green>1</green>
+					<blue>1</blue>
+				</ambient>
+				<specular>
+					<red>1</red>
+					<green>1</green>
+					<blue>1</blue>
+				</specular>
+				<shininess> 32</shininess>
         </animation>
-
-        <!--******************** Hotspots ******************************-->
-	<panel>
-		<path>Aircraft/SR71-BlackBird/Instruments/ALT-bb-hotspots.xml</path>
-		<bottom-left>
-			<x-m>0.014</x-m>
-			<y-m>-0.0596174</y-m>
-			<z-m>-0.0596174</z-m>
-		</bottom-left>
-		<bottom-right>
-			<x-m>0.014</x-m>
-			<y-m>0.0596174</y-m>
-			<z-m>-0.0596174</z-m>
-		</bottom-right>
-		<top-left>
-			<x-m>0.014</x-m>
-			<y-m>-0.0596174</y-m>
-			<z-m>0.0596174</z-m>
-		</top-left>
-	</panel>
-<!--*************************************************-->
 
         <animation>
                 <type>rotate</type>
@@ -137,13 +139,13 @@
 
         <animation>
                 <type>rotate</type>
-                <object-name>Bouton</object-name>
+                <object-name>BTN</object-name>
                 <property>/instrumentation/altimeter/setting-inhg</property>
                 <factor>1000</factor>
                 <center>
                         <x-m>0</x-m>
-                        <y-m>-0.047</y-m>
-                        <z-m>-0.047</z-m>
+                        <y-m>-0.0397</y-m>
+                        <z-m>-0.0379</z-m>
                 </center>
                 <axis>
                         <x>-1</x>
@@ -151,6 +153,63 @@
                         <z>0</z>
                 </axis>
         </animation>
+		
+		<animation>
+			<type>pick</type>
+			<object-name>BTN</object-name>
+			<action>
+				<button>0</button>
+				<repeatable>true</repeatable>
+				<interval-sec>0.1</interval-sec>
+				<binding>
+					<command>property-adjust</command>
+					<property>/instrumentation/altimeter/setting-inhg</property>
+					<step>0.01</step>
+					<min>26.0</min>
+					<max>33.0</max>
+					<wrap>false</wrap>
+				</binding>
+			</action>
+			<action>
+				<button>1</button>
+				<repeatable>true</repeatable>
+				<interval-sec>0.1</interval-sec>
+				<binding>
+					<command>property-adjust</command>
+					<property>/instrumentation/altimeter/setting-inhg</property>
+					<step>-0.01</step>
+					<min>26.0</min>
+					<max>33.0</max>
+					<wrap>false</wrap>
+				</binding>
+			</action>
+			<action>
+				<button>4</button>
+				<repeatable>true</repeatable>
+				<interval-sec>0.1</interval-sec>
+				<binding>
+					<command>property-adjust</command>
+					<property>/instrumentation/altimeter/setting-inhg</property>
+					<step>-0.01</step>
+					<min>26.0</min>
+					<max>33.0</max>
+					<wrap>false</wrap>
+				</binding>
+			</action>
+			<action>
+				<button>3</button>
+				<repeatable>true</repeatable>
+				<interval-sec>0.1</interval-sec>
+				<binding>
+					<command>property-adjust</command>
+					<property>/instrumentation/altimeter/setting-inhg</property>
+					<step>0.01</step>
+					<min>26.0</min>
+					<max>33.0</max>
+					<wrap>false</wrap>
+				</binding>
+			</action>
+		</animation>
 
 
 
@@ -216,7 +275,7 @@
                 <property>/instrumentation/altimeter/indicated-altitude-ft</property>
                 <factor>0.36</factor>
                 <center>
-                        <x-m>-0.00102861</x-m>
+                        <x-m>-0.00852861</x-m>
                         <y-m>0</y-m>
                         <z-m>0</z-m>
                 </center>
